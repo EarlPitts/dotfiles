@@ -1,0 +1,108 @@
+let mapleader = ","
+"Plugin Manager
+execute pathogen#infect()
+
+"NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+"VimWiki
+set nocompatible
+filetype plugin on
+"syntax on
+let g:vimwiki_list = [{'path': '~/Personal/Mindmap/Notes', 'syntax': 'markdown', 'ext': '.md'}]
+"let g:vimwiki_folding = 'list'
+
+"Airline
+let g:airline_powerline_fonts = 1
+
+
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+
+"Indentation
+set autoindent
+set expandtab
+filetype indent on
+set shiftround
+set shiftwidth=4
+set smarttab
+set tabstop=4
+set softtabstop=4	"number of spaces while editing
+
+"Text Rendering
+set display+=lastline
+set encoding=UTF-8
+set linebreak
+set wrap
+syntax enable		"enable syntax 
+
+"Search
+set incsearch		"search as characters are entered
+set hlsearch		"highlight matches
+set ignorecase
+set smartcase
+set showmatch		"highlight matching parentheses
+
+
+"Performance
+set lazyredraw		"redraw only when needed
+
+"UI
+set ruler
+set wildmenu		"visual autocomplete for command menu
+set cursorline		"highlight current line
+set nu		        "show line numbers
+"set rnu
+set title
+set showcmd		    "show commands in bot line
+
+"Folding
+set foldmethod=indent	"fold based on indent level
+set foldnestmax=5	"10 nested fold max
+set foldenable		"enable folding
+set foldlevelstart=5	"open most folds by default
+nnoremap  <space> za	
+
+
+"Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 0
+let g:syntastic_check_on_wq = 0
+
+"Misc
+set autoread
+set backspace=indent,eol,start
+set history=1000
+set omnifunc=syntaxcomplete#Complete
+set clipboard=unnamed "system clipboard
+
+
+"Shortcuts
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+
+
+"Colors
+set t_Co=256
+colorscheme nord	"colors
+let g:gruvbox_italic=1
+let g:nord_italic=1
+let g:nord_underline=1
+let g:nord_italic_comments=1
+"set termguicolors   "enable true color
+"let g:nord_comment_brightness = 12
+let g:nord_cursor_line_number_background = 1

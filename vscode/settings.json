@@ -1,0 +1,65 @@
+{
+    //### Workbench ###
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.statusBar.visible": true,
+    "workbench.tips.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Nord",
+    "workbench.panel.defaultLocation": "right",
+
+    //### Editor ###
+    "editor.fontSize": 11,
+    "editor.minimap.enabled": false,
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "'Fira Code Medium'",
+    "editor.wordWrap": "on",
+    "editor.accessibilitySupport": "off",
+    "editor.dragAndDrop": false,
+    "editor.renderWhitespace": "none",
+    "editor.emptySelectionClipboard": false,
+    "editor.mouseWheelZoom": true,
+    "editor.parameterHints.cycle": true,
+    "editor.renderFinalNewline": false,
+    "editor.renderLineHighlight": "all",
+    "editor.smoothScrolling": true,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.suggest.localityBonus": true,
+    "editor.suggest.maxVisibleSuggestions": 10,
+
+    //### Files ###
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.factorypath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.vscode": true,
+        "**/*.class": true
+    },
+    "files.associations": {
+        "*.deploy": "groovy"
+    },
+    "files.enableTrash": false,
+    "files.eol": "\n",
+    "files.simpleDialog.enable": true,
+    "files.autoSave": "onFocusChange",
+
+    //### Window ###
+    "window.menuBarVisibility": "hidden",
+    "window.autoDetectHighContrast": false,
+    "window.enableMenuBarMnemonics": false,
+    "window.zoomLevel": -1,
+
+    ///### Terminal ###
+    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.splitCwd": "initial",
+    "terminal.integrated.copyOnSelection": true,
+
+    //### Misc ###
+    "explorer.confirmDelete": false,
+    "clock.dateFormat": "HH:MM",
+    "git.autofetch": true,
+    "explorer.confirmDragAndDrop": false,
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "C_Cpp.updateChannel": "Insiders",
+    "telemetry.enableTelemetry": false
+}
