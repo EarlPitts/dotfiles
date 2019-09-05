@@ -22,3 +22,4 @@ export PATH=$PATH:/home/obabo/.local/bin
 export PATH=$PATH:/home/obabo/.Scripts/rofi
 export PATH=$PATH:/home/obabo/.npm/bin
 export RANGER_LOAD_DEFAULT_RC=false 
+export EDITOR=vim
