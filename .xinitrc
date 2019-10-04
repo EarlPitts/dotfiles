@@ -36,9 +36,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 rescuetime &
-~/.Scripts/rclone_watch_local.sh 1> ~/logs &
+~/.Scripts/drive_sync/rclone_watch_local.sh &
 feh --no-fehbg --bg-fill '/home/obabo/.dotfiles/background.jpg'
-light -S 100
+#light -S 100
 xrdb -merge ~/.Xresources
 #~/.config/monitor.sh &
 #~/.Scripts/headphones.sh &

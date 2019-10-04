@@ -36,6 +36,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 default_border none
 default_floating_border none
 
+# Dunst
+#exec --no-start-up dunst
+
 # Lockscreen
 bindsym $mod+p exec /home/obabo/.Scripts/lock.sh
 
@@ -45,6 +48,7 @@ bindsym $mod+Shift+b exec /home/obabo/.Scripts/rofi/books.sh
 bindsym $mod+Shift+n exec /home/obabo/.Scripts/rofi/note.sh
 bindsym $mod+n exec /home/obabo/.Scripts/rofi/notes.sh
 bindsym $mod+t exec /home/obabo/.Scripts/rofi/tmux.sh
+bindsym $mod+Shift+d exec /home/obabo/.Scripts/rofi/scripts.sh 
 
 # Set brightness
 bindsym XF86WakeUp+Home exec light -A 10
@@ -65,7 +69,6 @@ bindsym $mod+Shift+q kill
 
 # Rofi
 bindsym $mod+d exec rofi -show combi
-bindsym $mod+Shift+d exec rofi -show run
 
 # Ranger
 bindsym Mod1+e exec "urxvt -e ranger"
@@ -181,5 +184,9 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-        bindsym button1 nop
+#        mode dock
+#        hidden_state hide
+        modifier none
 }
+
+bindsym $mod+m bar mode toggle
