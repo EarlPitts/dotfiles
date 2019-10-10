@@ -1,14 +1,25 @@
 let mapleader = ","
-"Plugin Manager
-execute pathogen#infect()
 
+"Plugin Manager
+filetype off
+set nocompatible
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vimwiki/vimwiki'
+Plugin 'arcticicestudio/nord-vim'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'sirver/ultisnips'
+"Plugin 'honza/vim-snippets'
+
+call vundle#end()    
 "NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "VimWiki
-set nocompatible
-filetype plugin on
 "syntax on
 let g:vimwiki_list = [{'path': '~/Personal/Mindmap/Notes', 'syntax': 'markdown', 'ext': '.md'}]
 "let g:vimwiki_folding = 'list'
@@ -29,7 +40,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "Indentation
 set autoindent
 set expandtab
-filetype indent on
+filetype plugin indent on
 set shiftround
 set shiftwidth=4
 set smarttab

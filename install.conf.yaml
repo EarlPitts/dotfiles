@@ -1,0 +1,31 @@
+- defaults:
+        link:
+                relink: true
+                create: true
+                relink: true
+
+- clean: ['~']
+
+- link:
+        ~/.vimrc:
+                path: vim/vimrc
+        ~/.tmux.conf:
+                path: tmux.conf
+        ~/.aliases:
+                path: bash/aliases
+        ~/.bashrc:
+                path: bash/bashrc
+        ~/.xinitrc:
+                path: x11/xinitrc
+        ~/.Xresources:
+                path: x11/Xresources
+        ~/.config/i3/config:
+                path: i3/config
+        ~/.i3status.conf:
+                path: i3/i3status.conf
+        ~/.config/Code\ -\ OSS/User/keybindings.json:
+                path: vscode/keybindings.json
+        ~/.config/Code\ -\ OSS/User/settings.json:
+                path: vscode/settings.json
+        ~/.config/zathura:
+                path: zathurarc
