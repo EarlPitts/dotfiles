@@ -4,28 +4,25 @@
                 create: true
                 relink: true
 
-- clean: ['~']
+- clean: ['~', "~/.config"]
 
 - link:
-        ~/.vimrc:
-                path: vim/vimrc
-        ~/.tmux.conf:
-                path: tmux.conf
-        ~/.aliases:
-                path: bash/aliases
-        ~/.bashrc:
-                path: bash/bashrc
-        ~/.xinitrc:
-                path: x11/xinitrc
-        ~/.Xresources:
-                path: x11/Xresources
-        ~/.config/i3/config:
-                path: i3/config
-        ~/.i3status.conf:
-                path: i3/i3status.conf
-        ~/.config/Code\ -\ OSS/User/keybindings.json:
-                path: vscode/keybindings.json
-        ~/.config/Code\ -\ OSS/User/settings.json:
-                path: vscode/settings.json
-        ~/.config/zathura:
-                path: zathurarc
+        # Vim
+        ~/.vimrc:  vim/vimrc
+        # Tmux
+        ~/.tmux.conf: tmux.conf
+        # Bash
+        ~/.aliases: bash/aliases
+        ~/.bashrc: bash/bashrc
+        # X11
+        ~/.xinitrc: x11/xinitrc
+        ~/.Xresources: x11/Xresources
+        # i3
+        ~/.config/i3/config: i3/config
+        ~/.i3status.conf: i3/i3status.conf
+        # VSCode
+        ~/.config/Code\ -\ OSS/User/keybindings.json: vscode/keybindings.json
+        ~/.config/Code\ -\ OSS/User/settings.json: vscode/settings.json
+        # Zathura
+        ~/.config/zathura: zathurarc
+        # TODO: Idea, GIT
