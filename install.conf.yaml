@@ -24,5 +24,5 @@
         ~/.config/Code\ -\ OSS/User/keybindings.json: vscode/keybindings.json
         ~/.config/Code\ -\ OSS/User/settings.json: vscode/settings.json
         # Zathura
-        ~/.config/zathura: zathurarc
+        ~/.config/zathura/zathurarc: zathurarc
         # TODO: Idea, GIT
