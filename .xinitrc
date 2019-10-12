@@ -37,6 +37,7 @@ fi
 
 rescuetime &
 ~/.Scripts/drive_sync/rclone_watch_local.sh &
+~/.Scripts/drive_sync/rclone_remote2local.sh
 feh --no-fehbg --bg-fill '/home/obabo/.dotfiles/background.jpg'
 #light -S 100
 xrdb -merge ~/.Xresources
