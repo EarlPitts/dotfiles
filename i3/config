@@ -51,8 +51,8 @@ bindsym $mod+t exec /home/obabo/.Scripts/rofi/tmux.sh
 bindsym $mod+Shift+d exec /home/obabo/.Scripts/rofi/scripts.sh 
 
 # Set brightness
-bindsym XF86WakeUp+Home exec light -A 10
-bindsym XF86WakeUp+End exec light -U 10
+bindsym $mod+Home exec xbacklight -inc 10 
+bindsym $mod+End exec xbacklight -dec 10 
 
 # Take screenshot
 bindsym Shift+Print --release exec "scrot -s /home/obabo/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"

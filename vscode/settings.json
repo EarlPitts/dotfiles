@@ -5,7 +5,6 @@
     "workbench.tips.enabled": false,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Nord",
-    "workbench.panel.defaultLocation": "right",
 
     //### Editor ###
     "editor.fontSize": 11,
@@ -61,5 +60,6 @@
     "explorer.confirmDragAndDrop": false,
     "java.errors.incompleteClasspath.severity": "ignore",
     "C_Cpp.updateChannel": "Insiders",
-    "telemetry.enableTelemetry": false
+    "telemetry.enableTelemetry": false,
+    "breadcrumbs.enabled": false
 }
