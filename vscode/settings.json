@@ -61,5 +61,6 @@
     "java.errors.incompleteClasspath.severity": "ignore",
     "C_Cpp.updateChannel": "Insiders",
     "telemetry.enableTelemetry": false,
-    "breadcrumbs.enabled": false
+    "breadcrumbs.enabled": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false
 }
