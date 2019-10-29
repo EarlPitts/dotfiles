@@ -10,9 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vimwiki/vimwiki'
 Plugin 'arcticicestudio/nord-vim'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'sirver/ultisnips'
-"Plugin 'honza/vim-snippets'
+Plugin 'vim-airline'
 
 call vundle#end()    
 "NERDTree
@@ -21,21 +19,11 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 
 "VimWiki
 "syntax on
-let g:vimwiki_list = [{'path': '~/Personal/Mindmap/Notes', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/Personal/Mindmap/Notes', 'index': 'README', 'syntax': 'markdown', 'ext': '.md'}]
 "let g:vimwiki_folding = 'list'
 
 "Airline
 let g:airline_powerline_fonts = 1
-
-
-let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
-let g:SuperTabDefaultCompletionType = '<C-n>'
-
-" better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = "<tab>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 "Indentation
 set autoindent
@@ -60,7 +48,6 @@ set hlsearch		"highlight matches
 set ignorecase
 set smartcase
 set showmatch		"highlight matching parentheses
-
 
 "Performance
 set lazyredraw		"redraw only when needed
@@ -106,14 +93,15 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-
 "Colors
 set t_Co=256
 colorscheme nord	"colors
-let g:gruvbox_italic=1
+"let g:gruvbox_italic=1
+let g:nord_bold=1
 let g:nord_italic=1
 let g:nord_underline=1
 let g:nord_italic_comments=1
 "set termguicolors   "enable true color
 "let g:nord_comment_brightness = 12
 let g:nord_cursor_line_number_background = 1
+

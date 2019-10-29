@@ -49,6 +49,7 @@ bindsym $mod+Shift+n exec /home/obabo/.Scripts/rofi/note.sh
 bindsym $mod+n exec /home/obabo/.Scripts/rofi/notes.sh
 bindsym $mod+t exec /home/obabo/.Scripts/rofi/tmux.sh
 bindsym $mod+Shift+d exec /home/obabo/.Scripts/rofi/scripts.sh 
+bindsym $mod+u exec /home/obabo/.Scripts/rofi/references.sh
 
 # Set brightness
 bindsym $mod+Home exec xbacklight -inc 10 

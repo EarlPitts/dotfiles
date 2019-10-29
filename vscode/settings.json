@@ -27,12 +27,14 @@
 
     //### Files ###
     "files.exclude": {
+        "**/__pycache__": true,
         "**/.classpath": true,
         "**/.factorypath": true,
         "**/.project": true,
         "**/.settings": true,
         "**/.vscode": true,
-        "**/*.class": true
+        "**/*.class": true,
+        "**/venv": true
     },
     "files.associations": {
         "*.deploy": "groovy"
@@ -62,5 +64,7 @@
     "C_Cpp.updateChannel": "Insiders",
     "telemetry.enableTelemetry": false,
     "breadcrumbs.enabled": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "openInApplication.applications": {"pdf": "zathura"}
+
 }

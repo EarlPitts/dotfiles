@@ -20,6 +20,7 @@ set -o vi
 export PATH=$PATH:/home/obabo/.gem/ruby/2.5.0/bin
 export PATH=$PATH:/home/obabo/.local/bin
 export PATH=$PATH:/home/obabo/.Scripts/rofi
+export PATH=$PATH:/home/obabo/.Scripts/util
 export PATH=$PATH:/home/obabo/.npm/bin
 export RANGER_LOAD_DEFAULT_RC=false 
 export EDITOR=vim
