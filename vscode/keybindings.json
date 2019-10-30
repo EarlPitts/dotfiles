@@ -1,32 +1,40 @@
-// Place your key bindings in this file to override the defaultsauto[]
 [
+    //#############
+    //### Added ###
+    //#############
+
     {
-        "key": "meta+z",
+        "key": "ctrl+n",
+        "command": "workbench.action.toggleSidebarVisibility",
+        "when": "!inQuickOpen"
+    },
+    {
+        "key": "ctrl+a ctrl+[",
+        "command": "workbench.action.decreaseViewSize"
+    },
+    {
+        "key": "ctrl+a ctrl+]",
+        "command": "workbench.action.increaseViewSize"
+    },
+    {
+        "key": "ctrl+a j",
+        "command": "workbench.action.moveActiveEditorGroupDown"
+    },
+    {
+        "key": "ctrl+a h",
+        "command": "workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+        "key": "ctrl+a l",
+        "command": "workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+        "key": "ctrl+a k",
+        "command": "workbench.action.moveActiveEditorGroupUp"
+    },
+    {
+        "key": "f11",
         "command": "workbench.action.toggleZenMode"
-    },
-    {
-        "key": "ctrl+k z",
-        "command": "-workbench.action.toggleZenMode"
-    },
-    {
-        "key": "ctrl+[Backquote]",
-        "command": "workbench.action.terminal.toggleTerminal"
-    },
-    {
-        "key": "ctrl+h",
-        "command": "workbench.action.navigateLeft"
-    },
-    {
-        "key": "ctrl+l",
-        "command": "workbench.action.navigateRight"
-    },
-    {
-        "key": "ctrl+k",
-        "command": "workbench.action.navigateUp"
-    },
-    {
-        "key": "ctrl+j",
-        "command": "workbench.action.navigateDown"
     },
     {
         "key": "ctrl+n",
@@ -39,9 +47,19 @@
         "when": "inQuickOpen"
     },
     {
-        "key": "ctrl+n",
-        "command": "-workbench.action.files.newUntitledFile"
+        "key": "ctrl+alt+/",
+        "command": "editor.action.blockComment",
+        "when": "editorTextFocus && !editorReadonly"
     },
+    {
+        "key": "ctrl+a [",
+        "command": "workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        "key": "ctrl+a ]",
+        "command": "workbench.action.moveEditorToNextGroup"
+    },
+    // ## Terminal ##
     { 
         "key": "ctrl+l",
         "command": "workbench.action.terminal.focusNext",
@@ -51,6 +69,75 @@
         "key": "ctrl+h",
         "command": "workbench.action.terminal.focusPrevious",
         "when": "terminalFocus"
+    },
+    { 
+        "key": "ctrl+alt+l",
+        "command": "workbench.action.terminal.focusNextPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+h",
+        "command": "workbench.action.terminal.focusPreviousPane",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+alt+\\",
+        "command": "workbench.action.terminal.new",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+\\",
+        "command": "workbench.action.terminal.toggleTerminal",
+    },
+
+    //## Pane Navigation ##
+    {
+        "key": "ctrl+h",
+        "command": "workbench.action.navigateLeft",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+l",
+        "command": "workbench.action.navigateRight",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "workbench.action.navigateUp"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "workbench.action.navigateDown"
+    },
+
+
+
+    //########################
+    //### Deleted defaults ###
+    //########################
+    {
+        "key": "ctrl+alt+left",
+        "command": "-workbench.action.moveEditorToPreviousGroup"
+    },
+    {
+        "key": "ctrl+k z",
+        "command": "-workbench.action.toggleZenMode"
+    },
+    {
+        "key": "ctrl+shift+`",
+        "command": "-workbench.action.terminal.new"
+    },
+    {
+        "key": "ctrl+shift+n",
+        "command": "-workbench.action.newWindow"
+    },
+    {
+        "key": "ctrl+`",
+        "command": "-workbench.action.terminal.toggleTerminal"
+    },
+    {
+        "key": "ctrl+n",
+        "command": "-workbench.action.files.newUntitledFile"
     },
     {
         "key": "down",
@@ -213,11 +300,6 @@
         "when": "textInputFocus"
     },
     {
-        "key": "ctrl+backspace",
-        "command": "-deleteWordLeft",
-        "when": "textInputFocus && !editorReadonly"
-    },
-    {
         "key": "ctrl+delete",
         "command": "-deleteWordRight",
         "when": "textInputFocus && !editorReadonly"
@@ -226,11 +308,6 @@
         "key": "ctrl+d",
         "command": "-editor.action.addSelectionToNextFindMatch",
         "when": "editorFocus"
-    },
-    {
-        "key": "ctrl+alt+/",
-        "command": "editor.action.blockComment",
-        "when": "editorTextFocus && !editorReadonly"
     },
     {
         "key": "shift+alt+a",
@@ -416,20 +493,8 @@
         "command": "-workbench.action.moveEditorRightInGroup"
     },
     {
-        "key": "ctrl+a ]",
-        "command": "workbench.action.moveEditorToNextGroup"
-    },
-    {
         "key": "ctrl+alt+right",
         "command": "-workbench.action.moveEditorToNextGroup"
-    },
-    {
-        "key": "ctrl+a [",
-        "command": "workbench.action.moveEditorToPreviousGroup"
-    },
-    {
-        "key": "ctrl+alt+left",
-        "command": "-workbench.action.moveEditorToPreviousGroup"
     },
     {
         "key": "ctrl+numpad_add",
@@ -446,14 +511,6 @@
     {
         "key": "ctrl+-",
         "command": "-workbench.action.zoomOut"
-    },
-    {
-        "key": "z i",
-        "command": "editor.action.fontZoomIn"
-    },
-    {
-        "key": "z o",
-        "command": "editor.action.fontZoomOut"
     },
     {
         "key": "ctrl+numpad_subtract",
@@ -473,12 +530,61 @@
         "when": "editorTextFocus && !editorReadonly && !editorTabMovesFocus"
     },
     {
-        "key": "ctrl+alt+n",
-        "command": "workbench.action.terminal.new",
-        "when": "terminalFocus"
+        "key": "ctrl+n",
+        "command": "-extension.vim_ctrl+n",
+        "when": "editorTextFocus && vim.active && vim.use<C-n> && !inDebugRepl || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-n> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
     },
     {
-        "key": "ctrl+shift+`",
-        "command": "-workbench.action.terminal.new"
-    }
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+i",
+        "command": "-editor.action.insertCursorAtEndOfEachLineSelected",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+k left",
+        "command": "-workbench.action.moveActiveEditorGroupLeft"
+    },
+    {
+        "key": "ctrl+k right",
+        "command": "-workbench.action.moveActiveEditorGroupRight"
+    },
+    {
+        "key": "ctrl+k down",
+        "command": "-workbench.action.moveActiveEditorGroupDown"
+    },
+    {
+        "key": "ctrl+k up",
+        "command": "-workbench.action.moveActiveEditorGroupUp"
+    },
+    {
+        "key": "shift+alt+1",
+        "command": "-workbench.action.moveEditorToFirstGroup"
+    },
+    {
+        "key": "shift+alt+9",
+        "command": "-workbench.action.moveEditorToLastGroup"
+    },
 ]

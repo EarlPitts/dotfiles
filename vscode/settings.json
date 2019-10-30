@@ -65,6 +65,14 @@
     "telemetry.enableTelemetry": false,
     "breadcrumbs.enabled": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
-    "openInApplication.applications": {"pdf": "zathura"}
+    "openInApplication.applications": {
+        "pdf": "zathura"
+    },
+    "pomodoro.workTime": 30,
+    "vim.sneak": true,
+    "vim.sneakUseIgnorecaseAndSmartcase": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "workbench.action.toggleSidebarVisibility"
+    ]
 
 }
