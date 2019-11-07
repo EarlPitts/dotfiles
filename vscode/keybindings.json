@@ -94,7 +94,7 @@
     {
         "key": "ctrl+h",
         "command": "workbench.action.navigateLeft",
-        "when": "!terminalFocus"
+        "when": "!terminalFocus && vim.mode != 'Insert'"
     },
     {
         "key": "ctrl+l",
@@ -581,5 +581,14 @@
     {
         "key": "shift+alt+9",
         "command": "-workbench.action.moveEditorToLastGroup"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "editor.action.startFindReplaceAction",
+        "when": "vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+h",
+        "command": "-editor.action.startFindReplaceAction"
     },
 ]
