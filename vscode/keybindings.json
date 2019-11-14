@@ -584,11 +584,10 @@
     },
     {
         "key": "ctrl+h",
-        "command": "editor.action.startFindReplaceAction",
-        "when": "vim.mode != 'Insert'"
+        "command": "-editor.action.startFindReplaceAction"
     },
     {
-        "key": "ctrl+h",
-        "command": "-editor.action.startFindReplaceAction"
+        "key": "ctrl+f",
+        "command": "-actions.find"
     },
 ]
