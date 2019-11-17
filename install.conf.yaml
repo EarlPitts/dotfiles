@@ -25,4 +25,6 @@
         ~/.config/Code\ -\ OSS/User/settings.json: vscode/settings.json
         # Zathura
         ~/.config/zathura/zathurarc: zathurarc
+        # GTK
+        ~/.config/gtk-3.0/settings.ini: gtk-3.0/settings.ini
         # TODO: Idea, GIT
