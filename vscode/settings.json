@@ -7,6 +7,7 @@
     "workbench.colorTheme": "Nord",
 
     //### Editor ###
+    "editor.lineNumbers": "relative",
     "editor.fontSize": 11,
     "editor.minimap.enabled": false,
     "editor.fontLigatures": true,
@@ -74,7 +75,6 @@
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.toggleSidebarVisibility"
     ],
-    "editor.lineNumbers": "relative",
-    "vsnotes.defaultNotePath": "/home/obabo/Personal/Mindmap/Notes",
-    "vsnotes.noteTitleConvertSpaces": "-"
+    "vsnotes.defaultNotePath": "/home/obabo/Coding/notes",
+    "vsnotes.noteTitleConvertSpaces": "-",
 }
