@@ -75,6 +75,10 @@
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.toggleSidebarVisibility"
     ],
-    "vsnotes.defaultNotePath": "/home/obabo/Coding/notes",
+    "vsnotes.defaultNotePath": "~/Coding/notes",
     "vsnotes.noteTitleConvertSpaces": "-",
+    "vsnotes.defaultNoteTitle": "inbox/{dt}_{title}.{ext}",
+    "vsnotes.commitPushShellCommand": "./gen_summary.py && git add -A && git commit -m \"{msg}\" && git push",
+    "vsnotes.treeviewHideTags": true,
+    "vim.foldfix": true,
 }

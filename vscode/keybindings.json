@@ -127,4 +127,14 @@
         "key": "ctrl+a g",
         "command": "vsnotes.commitPush"
     },
+    {
+        "key": "space",
+        "command": "editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+    },
+    {
+        "key": "ctrl+k ctrl+l",
+        "command": "-editor.toggleFold",
+        "when": "editorTextFocus && foldingEnabled"
+    },
 ]
