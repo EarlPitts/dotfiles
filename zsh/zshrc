@@ -1,0 +1,30 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=10000
+SAVEHIST=10000
+setopt autocd
+unsetopt beep
+export KEYTIMEOUT=1
+bindkey -v
+
+source <(antibody init)
+antibody bundle < ~/.zsh/plugins.txt
+
+source ~/.aliases
+
+bindkey '^ ' autosuggest-accept
+
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/obabo/.zshrc'
+
+autoload -Uz compinit
+compinit
+autoload -U promptinit; promptinit
+prompt pure
+# End of lines added by compinstall
+#
+export PATH=$PATH:~/.Scripts
+
+
+eval $(thefuck --alias)

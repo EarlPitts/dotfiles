@@ -27,4 +27,8 @@
         ~/.config/zathura/zathurarc: zathurarc
         # GTK
         ~/.config/gtk-3.0/settings.ini: gtk-3.0/settings.ini
+        # Zsh
+        ~/.zshrc: zsh/zshrc
+        ~/.zsh/plugins.txt: zsh/plugins.txt
+        ~/.zsh/fzf-functions.zsh: zsh/fzf-functions.zsh
         # TODO: Idea, GIT

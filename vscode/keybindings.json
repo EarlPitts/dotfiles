@@ -29,10 +29,6 @@
         "command": "workbench.action.moveActiveEditorGroupUp"
     },
     {
-        "key": "f11",
-        "command": "workbench.action.toggleZenMode"
-    },
-    {
         "key": "ctrl+n",
         "command": "workbench.action.quickOpenSelectNext",
         "when": "inQuickOpen"
@@ -136,5 +132,13 @@
         "key": "ctrl+k ctrl+l",
         "command": "-editor.toggleFold",
         "when": "editorTextFocus && foldingEnabled"
+    },
+    {
+        "key": "ctrl+alt+p",
+        "command": "projectManager.listProjects"
+    },
+    {
+        "key": "shift+alt+p",
+        "command": "-projectManager.listProjects"
     },
 ]
