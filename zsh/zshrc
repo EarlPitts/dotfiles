@@ -5,12 +5,17 @@ SAVEHIST=10000
 setopt autocd
 unsetopt beep
 export KEYTIMEOUT=1
-bindkey -v
+bindkey -v # vim keybindings
 
+# default editors
+export EDITOR='vim'
+export VEDITOR='code'
+
+# load antibody
 source <(antibody init)
 antibody bundle < ~/.zsh/plugins.txt
 
-source ~/.aliases
+source ~/.zsh/aliases.zsh
 
 bindkey '^ ' autosuggest-accept
 
