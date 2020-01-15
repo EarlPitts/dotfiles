@@ -81,6 +81,16 @@
         "key": "ctrl+\\",
         "command": "workbench.action.terminal.toggleTerminal",
     },
+    {
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFindWidget",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+a z",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when" : "terminalFocus"
+    },
 
     //## Pane Navigation ##
     {
@@ -123,11 +133,11 @@
         "key": "ctrl+a g",
         "command": "vsnotes.commitPush"
     },
-    {
-        "key": "space",
-        "command": "editor.toggleFold",
-        "when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
-    },
+    // {
+    //     "key": "space",
+    //     "command": "editor.toggleFold",
+    //     "when": "editorTextFocus && foldingEnabled && vim.mode != 'Insert'"
+    // },
     {
         "key": "ctrl+k ctrl+l",
         "command": "-editor.toggleFold",

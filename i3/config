@@ -53,7 +53,7 @@ bindsym $mod+u exec /home/obabo/.Scripts/rofi/references.sh
 
 # Set brightness
 bindsym $mod+Home exec xbacklight -inc 10 
-bindsym $mod+End exec xbacklight -dec 10 
+bindsym $mod+End exec xbacklight -dec 10
 
 # Take screenshot
 bindsym Shift+Print --release exec "scrot -s /home/obabo/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"

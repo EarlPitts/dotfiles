@@ -13,6 +13,9 @@ Plugin 'arcticicestudio/nord-vim'
 Plugin 'vim-airline'
 
 call vundle#end()    
+
+"### Plugins ###
+
 "NERDTree
 "map <C-n> :NERDTreeToggle<CR>
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -34,6 +37,8 @@ let g:airline_powerline_fonts = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 0
 "let g:syntastic_check_on_wq = 0
+
+"### Editor ###
 
 "Indentation
 set autoindent
