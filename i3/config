@@ -50,6 +50,7 @@ bindsym $mod+n exec /home/obabo/.Scripts/rofi/notes.sh
 bindsym $mod+t exec /home/obabo/.Scripts/rofi/tmux.sh
 bindsym $mod+Shift+d exec /home/obabo/.Scripts/rofi/scripts.sh 
 bindsym $mod+u exec /home/obabo/.Scripts/rofi/references.sh
+bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
 
 # Set brightness
 bindsym $mod+Home exec xbacklight -inc 10 
@@ -119,14 +120,14 @@ bindsym $mod+space focus mode_toggle
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1 Reading "
-set $ws2 "2 Firefox "
+set $ws2 "2 Browsing "
 set $ws3 "3 Coding "
-set $ws4 "4"
+set $ws4 "4 Workspace "
 set $ws5 "5"
 set $ws6 "6"
 set $ws7 "7"
-set $ws8 "8 Slack "
-set $ws9 "9 Telegram "
+set $ws8 "8 School "
+set $ws9 "9 Math "
 set $ws10 "10 Spotify "
 
 # switch to workspace

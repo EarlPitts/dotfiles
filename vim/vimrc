@@ -72,7 +72,7 @@ set ruler
 set wildmenu		"visual autocomplete for command menu
 set cursorline		"highlight current line
 set nu		        "show line numbers
-"set rnu
+set rnu
 set title
 set showcmd		    "show commands in bot line
 
@@ -100,13 +100,13 @@ nmap <C-l> <C-w>l
 
 "Colors
 set t_Co=256
+"set termguicolors   "enable true color
 colorscheme nord	"colors
 "let g:gruvbox_italic=1
 let g:nord_bold=1
 let g:nord_italic=1
 let g:nord_underline=1
 let g:nord_italic_comments=1
-"set termguicolors   "enable true color
 "let g:nord_comment_brightness = 12
 let g:nord_cursor_line_number_background=1
 

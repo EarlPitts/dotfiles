@@ -80,4 +80,6 @@
     "vsnotes.defaultNoteTitle": "inbox/{dt}_{title}.{ext}",
     "vsnotes.commitPushShellCommand": "./gen_summary.py && git add -A && git commit -m \"{msg}\" && git push",
     "vsnotes.treeviewHideTags": true,
+    "diffEditor.ignoreTrimWhitespace": true,
+    "files.autoGuessEncoding": true,
 }
