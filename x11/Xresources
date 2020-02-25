@@ -1,6 +1,6 @@
 URxvt.scrollBar:        false
 URxvt.termName:         rxvt-unicode-256color
-URxvt.font:             xft:xos4 Terminus:pixelsize=9
+URxvt.font:             xft:xos4 Terminus:pixelsize=13
 URxvt.visualbell:       false
 
 #define nord0 #2E3440

@@ -49,7 +49,6 @@
     "window.menuBarVisibility": "hidden",
     "window.autoDetectHighContrast": false,
     "window.enableMenuBarMnemonics": false,
-    "window.zoomLevel": -1,
 
     ///### Terminal ###
     "terminal.integrated.fontSize": 11,

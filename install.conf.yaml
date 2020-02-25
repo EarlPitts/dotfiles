@@ -35,4 +35,7 @@
         ~/.zsh/plugins.txt: zsh/plugins.txt
         ~/.zsh/fzf-functions.zsh: zsh/fzf-functions.zsh
         ~/.zsh/aliases.zsh: zsh/aliases
+        # Rofi
+        ~/.config/rofi/config.rasi: rofi/config.rasi
+        ~/.config/rofi/nord.rasi: rofi/nord.rasi
         # TODO: Idea, GIT
