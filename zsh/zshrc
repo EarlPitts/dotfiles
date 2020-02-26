@@ -17,6 +17,7 @@ source <(antibody init)
 antibody bundle < ~/.zsh/plugins.txt
 
 source ~/.zsh/aliases.zsh
+source ~/.zsh/colored-man.zsh
 
 bindkey '^ ' autosuggest-accept
 

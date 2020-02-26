@@ -82,5 +82,4 @@
     "vsnotes.treeviewHideTags": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "files.autoGuessEncoding": true,
-    "terminal.integrated.rendererType": "dom",
 }
