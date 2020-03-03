@@ -1,6 +1,6 @@
 configuration {
 /*	modi: "window,drun,ssh";*/
-/*	width: 50;*/
+	width: 40;
 /*	lines: 15;*/
 /*	columns: 1;*/
 	font: "Liberation Mono 10";

@@ -81,4 +81,7 @@
     "vsnotes.treeviewHideTags": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "files.autoGuessEncoding": true,
+    "rainbow_csv.autodetect_separators": [
+        ";"
+    ],
 }
