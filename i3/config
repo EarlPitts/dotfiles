@@ -39,6 +39,9 @@ default_floating_border none
 # Dunst
 #exec --no-start-up dunst
 
+# Layout
+bindsym $mod+space exec /home/obabo/.Scripts/layout.sh
+
 # Lockscreen
 bindsym $mod+p exec /home/obabo/.Scripts/lock.sh
 
@@ -47,6 +50,7 @@ bindsym $mod+b exec /home/obabo/.Scripts/rofi/board.sh
 bindsym $mod+Shift+b exec /home/obabo/.Scripts/rofi/books.sh
 bindsym $mod+Shift+n exec /home/obabo/.Scripts/rofi/note.sh
 bindsym $mod+n exec /home/obabo/.Scripts/rofi/notes.sh
+bindsym $mod+F10 exec /home/obabo/.Scripts/rofi/projects.sh
 bindsym $mod+t exec /home/obabo/.Scripts/rofi/tmux.sh
 bindsym $mod+Shift+d exec /home/obabo/.Scripts/rofi/scripts.sh 
 bindsym $mod+u exec /home/obabo/.Scripts/rofi/references.sh
@@ -109,7 +113,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+a focus parent

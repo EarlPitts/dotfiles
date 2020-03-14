@@ -13,7 +13,7 @@ alias task='taskell ~/Personal/Mindmap/Boards/Tasks.md'
 alias cat='bat'
 alias curl='http'
 alias gc='git commit -m"Autocommit"'
-alias gp='git push'
+alias gg='git push'
 alias gcp='git commit -m"Autocommit" && git push'
 alias note='vim ~/Personal/Mindmap/Notes/index.md'
 alias pass='~/.Scripts/gpg-wrapper.sh'
@@ -22,3 +22,51 @@ alias live='qemu-system-x86_64 -enable-kvm -boot order=d -m 2G -cdrom'
 alias df='df -h'
 alias du='du -hs *'
 alias grep='grep --color=auto'
+alias open='xdg-open'
+
+# Git
+alias ga.='git add .'
+alias ggs='gitupdate .' # Commit all with file name changes as commit msg
+alias gj='open `git config remote.origin.url`'
+alias gm='git branch -m' # Rename current branch
+alias ger='git checkout -' # Checkout last branch you were on
+alias grl='git reset --hard && git clean -df' # Reset to exact state as last commit
+alias grhf='git checkout HEAD --' # Git reset single file
+alias gf='git log --pretty=oneline --abbrev-commit --graph --decorate'
+alias gpm="git push origin master"
+alias gfk='git fetch && git reset --hard && git clean -dfx' # Reset repo to clean remote state
+alias gsp='git pull --rebase --autostash' # Git stash, pull and apply stash
+alias gu='git issues'
+alias gdp='git reset --hard HEAD~; git push --force-with-lease' # Delete previous commit locally and remote
+alias gpd="git push origin develop"
+alias ggh='push -u origin HEAD'
+alias gre='git rebase -i HEAD~4'
+alias gS='git stash'
+alias gqa='git stash apply'
+alias gb='git checkout -b'
+alias gr='git reset --hard'
+alias grc='git rm --cached'
+alias ggn='git_add_origin_and_origin_push'
+alias g:='git push -u origin master'
+alias ggf='git push -f'
+alias g::='git_remote_add_origin_from_active_link'
+alias gi='git init'
+alias gl='git pull'
+alias gn='git clone'
+alias g.='git add .'
+alias ga='git add'
+alias gg='git push'
+alias glp='git pull && git push'
+alias grao='git remote add origin'
+
+alias greset='git reset --soft HEAD^' # Undo last commit, but don't throw away your changes
+
+# Git Diff
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gdn='git diff --name-only'
+
+# Git Status
+alias gs='git status --short'
+alias gss='git show --word-diff=color' # See changes made
+alias todo='taskell todo'
