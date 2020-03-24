@@ -30,5 +30,5 @@ autoload -U promptinit; promptinit
 prompt pure
 # End of lines added by compinstall
 #
-export PATH=$PATH:~/.Scripts
-export PURE_PROMPT_SYMBOL=">"
+export PATH=$PATH:~/.scripts
+export PATH=$PATH:~/.local/bin

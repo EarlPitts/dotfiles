@@ -3,10 +3,9 @@ let mapleader = ","
 "Plugin Manager
 filetype off
 set nocompatible
-set rtp+=~/.vim/bundle/Vundle.vim
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
 "Plugin 'scrooloose/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'arcticicestudio/nord-vim'
@@ -22,7 +21,7 @@ call plug#end()
 
 "VimWiki
 "syntax on
-let g:vimwiki_list = [{'path': '~/Coding/notes', 'index': 'README', 'syntax': 'markdown', 'ext': '.md'}]
+let g:vimwiki_list = [{'path': '~/.notes', 'index': 'README', 'syntax': 'markdown', 'ext': '.md', 'custom_wiki2html': 'vimwiki_markdown', 'path_html': '~/html/notes/'}]
 "let g:vimwiki_folding = 'list'
 
 "Airline
