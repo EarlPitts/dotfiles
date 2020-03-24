@@ -64,6 +64,9 @@ bindsym $mod+End exec xbacklight -dec 10
 bindsym Shift+Print --release exec "scrot -s /home/obabo/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
 bindsym Print exec "scrot /home/obabo/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
 
+# Moving workspaces between screens
+bindsym $mod+F1 move workspace to output left
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 

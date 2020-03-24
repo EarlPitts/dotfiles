@@ -32,3 +32,4 @@ prompt pure
 # End of lines added by compinstall
 #
 export PATH=$PATH:~/.Scripts
+export TERMINAL=urxvt

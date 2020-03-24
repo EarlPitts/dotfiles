@@ -1,5 +1,5 @@
 configuration {
-/*	modi: "window,drun,ssh";*/
+/*	modi: "window,drun,ssh,tmuxopen:~/.Scripts/util/tmuxopen.sh";*/
 /*	width: 50;*/
 /*	lines: 15;*/
 /*	columns: 1;*/
@@ -10,10 +10,10 @@ configuration {
 /*	yoffset: 0;*/
 /*	xoffset: 0;*/
 /*	fixed-num-lines: true;*/
-/*	show-icons: false;*/
+/*	show-icons: true;*/
 /*	terminal: "rofi-sensible-terminal";*/
-/*	ssh-client: "ssh";*/
-/*	ssh-command: "{terminal} -e {ssh-client} {host} [-p {port}]";*/
+/*  ssh-client: "ssh";*/
+/*	ssh-command: "{terminal} -e {ssh-client} {host}";*/
 /*	run-command: "{cmd}";*/
 /*	run-list-command: "";*/
 /*	run-shell-command: "{terminal} -e {cmd}";*/
