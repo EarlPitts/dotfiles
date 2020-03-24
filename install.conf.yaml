@@ -15,20 +15,20 @@
         #~/.aliases: bash/aliases
         #~/.bashrc: bash/bashrc
         # X11
-        ~/.xinitrc: x11/xinitrc
-        ~/.Xresources: x11/Xresources
+        #~/.xinitrc: x11/xinitrc
+        #~/.Xresources: x11/Xresources
         # i3
-        ~/.config/i3/config: i3/config
-        ~/.i3status.conf: i3/i3status.conf
+        #~/.config/i3/config: i3/config
+        #~/.i3status.conf: i3/i3status.conf
         # VSCode
-        "~/.config/Code\ -\ OSS/User/keybindings.json": vscode/keybindings.json
-        "~/.config/Code\ -\ OSS/User/settings.json": vscode/settings.json
+        #"~/.config/Code\ -\ OSS/User/keybindings.json": vscode/keybindings.json
+        #"~/.config/Code\ -\ OSS/User/settings.json": vscode/settings.json
         # Zathura
-        ~/.config/zathura/zathurarc: zathurarc
+        #~/.config/zathura/zathurarc: zathurarc
         # Ranger
         ~/.config/ranger/rc.conf: ranger/rc.conf
         # GTK
-        ~/.config/gtk-3.0/settings.ini: gtk-3.0/settings.ini
+        #~/.config/gtk-3.0/settings.ini: gtk-3.0/settings.ini
         # Zsh
         ~/.zshrc: zsh/zshrc
         ~/.zsh/config.zsh: zsh/config.zsh
@@ -36,6 +36,6 @@
         ~/.zsh/fzf-functions.zsh: zsh/fzf-functions.zsh
         ~/.zsh/aliases.zsh: zsh/aliases
         # Rofi
-        ~/.config/rofi/config.rasi: rofi/config.rasi
-        ~/.config/rofi/nord.rasi: rofi/nord.rasi
+        #~/.config/rofi/config.rasi: rofi/config.rasi
+        #~/.config/rofi/nord.rasi: rofi/nord.rasi
         # TODO: Idea, GIT
