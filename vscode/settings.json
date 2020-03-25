@@ -11,7 +11,7 @@
     "editor.fontSize": 11,
     "editor.minimap.enabled": false,
     "editor.fontLigatures": true,
-    "editor.fontFamily": "'FiraCode Nerd Font'",
+    "editor.fontFamily": "'Fira Code'",
     "editor.wordWrap": "on",
     "editor.accessibilitySupport": "off",
     "editor.dragAndDrop": false,

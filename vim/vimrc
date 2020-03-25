@@ -3,10 +3,9 @@ let mapleader = ","
 "Plugin Manager
 filetype off
 set nocompatible
-set rtp+=~/.vim/bundle/Vundle.vim
+
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
 "Plugin 'scrooloose/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'arcticicestudio/nord-vim'
