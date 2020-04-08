@@ -17,6 +17,8 @@ source <(antibody init)
 antibody bundle < ~/.zsh/plugins.txt
 
 source ~/.zsh/aliases.zsh
+source ~/.zsh/fzf-functions.zsh
+source ~/.zsh/auto-tmux.zsh
 
 bindkey '^ ' autosuggest-accept
 
