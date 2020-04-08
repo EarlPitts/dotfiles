@@ -18,6 +18,8 @@ antibody bundle < ~/.zsh/plugins.txt
 
 source ~/.zsh/aliases.zsh
 source ~/.zsh/colored-man.zsh
+source ~/.zsh/fzf-functions.zsh
+source ~/.zsh/functions.zsh
 
 bindkey '^ ' autosuggest-accept
 

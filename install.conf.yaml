@@ -36,6 +36,7 @@
         ~/.zsh/fzf-functions.zsh: zsh/fzf-functions.zsh
         ~/.zsh/aliases.zsh: zsh/aliases
         ~/.zsh/colored-man.zsh: zsh/colored-man.zsh
+        ~/.zsh/functions.zsh: zsh/functions.zsh
         # Rofi
         ~/.config/rofi/config.rasi: rofi/config.rasi
         ~/.config/rofi/nord.rasi: rofi/nord.rasi

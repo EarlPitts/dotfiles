@@ -6,7 +6,7 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-"Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
@@ -16,12 +16,12 @@ call plug#end()
 "### Plugins ###
 
 "NERDTree
-"map <C-n> :NERDTreeToggle<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "VimWiki
 "syntax on
-let g:vimwiki_list = [{'path': '~/Personal/notes', 'index': 'README', 'syntax': 'markdown', 'ext': '.md', 'custom_wiki2html': '~/Personal/notes/wiki2html.sh'}]
+let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'README', 'syntax': 'markdown', 'ext': '.md', 'custom_wiki2html': '~/Personal/notes/wiki2html.sh'}]
 "let g:vimwiki_folding = 'list'
 
 "Airline

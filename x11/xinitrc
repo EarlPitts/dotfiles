@@ -38,13 +38,10 @@ fi
 rescuetime &
 redshift -l 47.49835:19.04045 &
 
-#xbacklight -set 100
-#~/.Scripts/drive_sync/rclone_watch_local.sh &
-#~/.Scripts/drive_sync/rclone_remote2local.sh
 feh --no-fehbg --bg-fill '/home/obabo/.dotfiles/wallpapers/background.jpg'
 xrdb -merge ~/.Xresources
 #~/.config/monitor.sh &
 #~/.Scripts/headphones.sh &
-#twm &
+
 #Start Window Manager
 exec i3

@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font
-font pango:Terminus 7
+font pango:Terminus 10
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -50,11 +50,12 @@ bindsym $mod+b exec /home/obabo/.Scripts/rofi/board.sh
 bindsym $mod+Shift+b exec /home/obabo/.Scripts/rofi/books.sh
 bindsym $mod+Shift+n exec /home/obabo/.Scripts/rofi/note.sh
 bindsym $mod+n exec /home/obabo/.Scripts/rofi/notes.sh
-bindsym $mod+F10 exec /home/obabo/.Scripts/rofi/projects.sh
 bindsym $mod+t exec /home/obabo/.Scripts/rofi/tmux.sh
 bindsym $mod+Shift+d exec /home/obabo/.Scripts/rofi/scripts.sh 
 bindsym $mod+u exec /home/obabo/.Scripts/rofi/references.sh
 bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
+bindsym Control+$mod+p exec ~/.Scripts/rofi/project.sh 
+
 
 # Set brightness
 bindsym $mod+Home exec xbacklight -inc 10 

@@ -1,5 +1,5 @@
 alias mixer='alsamixer'                                             
-alias clean='cat ~/.Scripts/bleach.txt | xargs bleachbit -c && yay -Sc --clean'
+alias clean='cat ~/.Scripts/bleach.txt | xargs bleachbit -c && yay -Sc --clean --noconfirm'
 alias ls='exa -l'
 alias monitor='~/.config/monitor.sh'
 alias hu='setxkbmap hu'
@@ -29,6 +29,7 @@ alias ts='~/.Scripts/util/ssh.sh'
 alias spt='spotifyd; spt'
 
 # Git
+alias save='git add --all && git commit -m"Autocommit." && git push'
 alias ga.='git add .'
 alias ggs='gitupdate .' # Commit all with file name changes as commit msg
 alias gj='open `git config remote.origin.url`'
