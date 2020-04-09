@@ -33,3 +33,6 @@ alias tdt='task +DUETODAY'
 alias tw='task +WEEK'
 alias to='task +OVERDUE'
 alias tn='task +next'
+
+alias save='git add --all && git commit -m"Autocommit." && git push'
+

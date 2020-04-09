@@ -39,4 +39,6 @@
         # Rofi
         #~/.config/rofi/config.rasi: rofi/config.rasi
         #~/.config/rofi/nord.rasi: rofi/nord.rasi
+        # Taskwarrior
+        ~/.taskrc: taskrc
         # TODO: Idea, GIT
