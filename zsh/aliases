@@ -9,7 +9,7 @@ alias nc='ncat'
 alias weather='curl wttr.in/Budapest'
 alias git='hub'
 #alias win='i3lock -p win -u -i ~/.config/winLock.jpg'
-alias task='taskell ~/Personal/Mindmap/Boards/Tasks.md'
+#alias task='taskell ~/Personal/Mindmap/Boards/Tasks.md'
 alias cat='bat'
 alias curl='http'
 alias gc='git commit -m"Autocommit"'
@@ -27,6 +27,16 @@ alias v='nvim'
 alias s='sudo'
 alias ts='~/.Scripts/util/ssh.sh'
 alias spt='spotifyd; spt'
+alias gdb='gdb -q'
+
+# Taskwarrior
+alias tp='task projects'
+alias td='task +DUE'
+alias tdt='task +DUETODAY'
+alias tw='task +WEEK'
+alias to='task +OVERDUE'
+alias tn='task +next'
+
 
 # Git
 alias save='git add --all && git commit -m"Autocommit." && git push'

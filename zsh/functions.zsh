@@ -1,18 +1,37 @@
 w() {
-  if [ $# -eq 0 ]; then
-    code .
-  else
-    code "${1:-.}"
-  fi
+    if [ $# -eq 0 ]; then
+        code .
+    else
+        code "${1:-.}"
+    fi
 }
 
 e() {
-  if [ $# -eq 0 ]; then
-    nvim .
-  else
-    nvim "${1:-.}"
-  fi
+    if [ $# -eq 0 ]; then
+        nvim .
+    else
+        nvim "${1:-.}"
+    fi
 }
+
+t() {
+    list=($(task projects | cut -f1 -d' ' | tail +5 | head -n -2))
+
+    setopt nocasematch;
+    
+    found=0
+
+    for pro in $list[@]
+    do
+        if [[ $PWD =~ $pro ]]; then
+            found=1
+            task pro:$pro
+        fi
+    done
+    [[ $found == 0 ]] && task
+    unsetopt nocasematch;
+}
+
 
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
 # # TODO: git-trim may replace this
