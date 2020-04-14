@@ -25,3 +25,14 @@ alias grep='grep --color=auto'
 alias v='nvim'
 alias vim='nvim'
 alias n='nvim +VimwikiIndex'
+
+# Taskwarrior
+alias t='task'
+alias tp='task projects'
+alias td='task +DUE'
+alias tdt='task +DUETODAY'
+alias tw='task +WEEK'
+alias to='task +OVERDUE'
+alias tn='task +next'
+
+alias save='git add --all && git commit -m"Autocommit." && git push'

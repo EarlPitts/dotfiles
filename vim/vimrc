@@ -6,10 +6,13 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
 Plug 'vimwiki/vimwiki'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'sirver/ultisnips'
+Plug 'preservim/nerdtree'
 
 call plug#end()    
 
@@ -90,6 +93,7 @@ set history=1000
 set omnifunc=syntaxcomplete#Complete
 set clipboard=unnamed "system clipboard
 
+nmap <C-p> :Files<CR>
 
 "Shortcuts
 nmap <C-h> <C-w>h
@@ -108,4 +112,3 @@ let g:nord_underline=1
 let g:nord_italic_comments=1
 "let g:nord_comment_brightness = 12
 let g:nord_cursor_line_number_background=1
-

@@ -35,7 +35,10 @@
         ~/.zsh/plugins.txt: zsh/plugins.txt
         ~/.zsh/fzf-functions.zsh: zsh/fzf-functions.zsh
         ~/.zsh/aliases.zsh: zsh/aliases
+        ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
         # Rofi
         #~/.config/rofi/config.rasi: rofi/config.rasi
         #~/.config/rofi/nord.rasi: rofi/nord.rasi
+        # Taskwarrior
+        ~/.taskrc: taskrc
         # TODO: Idea, GIT
