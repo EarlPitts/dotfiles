@@ -34,6 +34,7 @@
         ~/.zsh/config.zsh: zsh/config.zsh
         ~/.zsh/plugins.txt: zsh/plugins.txt
         ~/.zsh/fzf-functions.zsh: zsh/fzf-functions.zsh
+        ~/.zsh/functions.zsh: zsh/functions.zsh
         ~/.zsh/aliases.zsh: zsh/aliases
         ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
         # Rofi

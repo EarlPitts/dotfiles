@@ -32,6 +32,16 @@ t() {
     unsetopt nocasematch;
 }
 
+n() {
+    cd ~/Personal/notes
+    note=($(fzf -e --print-query))
+    if [[ -e $note[2] ]]; then
+        nvim $note[2]
+    else
+        nvim inbox/$note[1].wiki
+    fi
+}
+
 
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
 # # TODO: git-trim may replace this
