@@ -24,6 +24,7 @@ alias du='du -hs *'
 alias grep='grep --color=auto'
 alias v='nvim'
 alias vim='nvim'
+alias n='nvim +VimwikiIndex'
 
 # Taskwarrior
 alias t='task'

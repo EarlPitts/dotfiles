@@ -10,18 +10,22 @@ call plug#begin('~/.vim/plugged')
 Plug 'vimwiki/vimwiki'
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
+Plug 'junegunn/fzf.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'sirver/ultisnips'
+Plug 'preservim/nerdtree'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()    
 
 "### Plugins ###
 
-"NERDTree
-"map <C-n> :NERDTreeToggle<CR>
-"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "VimWiki
 "syntax on
-let g:vimwiki_list = [{'path': '~/sync/Personal/Notes', 'index': 'index', 'syntax': 'markdown', 'ext': '.md', 'custom_wiki2html': 'vimwiki_markdown', 'path_html': '~/web/notes/'}]
+let g:vimwiki_list = [{'path': '~/sync/Personal/Notes/', 'index': 'index', 'syntax': 'markdown', 'ext': '.wiki'}]
 "let g:vimwiki_folding = 'list'
 
 "Airline
@@ -90,6 +94,7 @@ set history=1000
 set omnifunc=syntaxcomplete#Complete
 set clipboard=unnamed "system clipboard
 
+nmap <C-p> :Files<CR>
 
 "Shortcuts
 nmap <C-h> <C-w>h
@@ -108,4 +113,3 @@ let g:nord_underline=1
 let g:nord_italic_comments=1
 "let g:nord_comment_brightness = 12
 let g:nord_cursor_line_number_background=1
-
