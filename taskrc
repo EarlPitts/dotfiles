@@ -11,9 +11,9 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=~/sync/Personal/.task
+data.location=~/Personal/.task
 
-include ~/sync/Personal/.task/dark-256.theme
+include ~/Personal/.task/dark-256.theme
 
 # Color theme (uncomment one to use)
 #include /usr/share/doc/task/rc/light-16.theme
