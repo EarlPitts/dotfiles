@@ -1,0 +1,11 @@
+- defaults:
+        link:
+                relink: true
+                create: true
+                relink: true
+
+- clean: ['~', "~/.config"]
+
+- link:
+        # Tmux
+        ~/.pi.tmux.conf: tmux/pi.tmux.conf

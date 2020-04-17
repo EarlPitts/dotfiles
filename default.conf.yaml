@@ -1,0 +1,26 @@
+- defaults:
+        link:
+                relink: true
+                create: true
+                relink: true
+
+- clean: ['~', "~/.config"]
+
+- link:
+        # Vim
+        ~/.vimrc:  vim/vimrc
+        # Tmux
+        ~/.tmux.conf: tmux/tmux.conf
+        # Ranger
+        ~/.config/ranger/rc.conf: ranger/rc.conf
+        # Zsh
+        ~/.zshrc: zsh/zshrc
+        ~/.zsh/config.zsh: zsh/config.zsh
+        ~/.zsh/plugins.txt: zsh/plugins.txt
+        ~/.zsh/fzf-functions.zsh: zsh/fzf-functions.zsh
+        ~/.zsh/functions.zsh: zsh/functions.zsh
+        ~/.zsh/aliases.zsh: zsh/aliases
+        ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
+        # Taskwarrior
+        ~/.taskrc: taskrc
+        # TODO: GIT
