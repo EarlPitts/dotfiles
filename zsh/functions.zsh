@@ -43,10 +43,6 @@ n() {
     cd -
 }
 
-s() {
-    source ~/.zshrc
-}
-
 d() {
     dotfiles=~/.dotfiles
     nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\dotbot/*' | fzf)
