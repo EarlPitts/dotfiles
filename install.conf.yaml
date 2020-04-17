@@ -10,7 +10,8 @@
         # Vim
         ~/.vimrc:  vim/vimrc
         # Tmux
-        ~/.tmux.conf: tmux.conf
+        ~/.tmux.conf: tmux/tmux.conf
+        ~/.pi.tmux.conf: tmux/pi.tmux.conf
         # Bash
         #~/.aliases: bash/aliases
         #~/.bashrc: bash/bashrc
