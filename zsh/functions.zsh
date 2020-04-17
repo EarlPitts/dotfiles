@@ -33,13 +33,14 @@ t() {
 }
 
 n() {
-    note_loc=~/Personal/Notes
-    note=($(find $note_loc | fzf -e --print-query))
+    cd ~/Personal/Notes
+    note=($(fzf -e --print-query))
     if [[ -e $note[2] ]]; then
         nvim $note[2]
     else
-        nvim $note_loc/inbox/$note[1].wiki
+        nvim inbox/$note[1].wiki
     fi
+    cd -
 }
 
 s() {
