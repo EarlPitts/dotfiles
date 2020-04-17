@@ -23,4 +23,6 @@
         ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
         # Taskwarrior
         ~/.taskrc: taskrc
+        # GDB
+        ~/.gdbinit: gdbinit
         # TODO: GIT

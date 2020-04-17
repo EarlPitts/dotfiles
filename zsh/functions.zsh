@@ -52,8 +52,6 @@ d() {
     nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\dotbot/*' | fzf)
 }
 
-
-
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
 # # TODO: git-trim may replace this
 # gdelsquashed() {

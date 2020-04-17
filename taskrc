@@ -33,5 +33,6 @@ include ~/Personal/.task/dark-256.theme
 
 context.work=+work or project:grad-boost
 context.school=+school or +study
-context.home=-work -school
 uda.priority.values=H,M,,L
+context.fordprog=project:fordprog
+context.thesis=pro:thesis

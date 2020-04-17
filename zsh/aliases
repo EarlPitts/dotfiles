@@ -1,5 +1,5 @@
 alias mixer='alsamixer'                                             
-alias clean='cat ~/.scripts/bleach.txt | xargs bleachbit -c && yay --clean'
+alias clean='cat ~/.Scripts/bleach.txt | xargs bleachbit -c && yay -Sc --clean --noconfirm'
 alias ls='exa -l'
 alias monitor='~/.config/monitor.sh'
 alias hu='setxkbmap hu'
@@ -9,11 +9,11 @@ alias nc='ncat'
 alias weather='curl wttr.in/Budapest'
 alias git='hub'
 #alias win='i3lock -p win -u -i ~/.config/winLock.jpg'
-alias tasks='taskell ~/Personal/Mindmap/Boards/Tasks.md'
+#alias task='taskell ~/Personal/Mindmap/Boards/Tasks.md'
 alias cat='bat'
 alias curl='http'
 alias gc='git commit -m"Autocommit"'
-alias gp='git push'
+alias gg='git push'
 alias gcp='git commit -m"Autocommit" && git push'
 alias note='vim ~/Personal/Mindmap/Notes/index.md'
 alias pass='~/.scripts/gpg-wrapper.sh'
@@ -25,8 +25,14 @@ alias grep='grep --color=auto'
 alias v='nvim'
 alias vim='nvim'
 
+alias open='xdg-open'
+alias v='nvim'
+alias s='sudo'
+alias ts='~/.Scripts/util/ssh.sh'
+alias spt='spotifyd; spt'
+alias gdb='gdb -q'
+
 # Taskwarrior
-#alias t='task'
 alias tp='task projects'
 alias td='task +DUE'
 alias tdt='task +DUETODAY'
@@ -34,4 +40,50 @@ alias tw='task +WEEK'
 alias to='task +OVERDUE'
 alias tn='task +next'
 
+# Git
 alias save='git add --all && git commit -m"Autocommit." && git push'
+alias ga.='git add .'
+alias ggs='gitupdate .' # Commit all with file name changes as commit msg
+alias gj='open `git config remote.origin.url`'
+alias gm='git branch -m' # Rename current branch
+alias ger='git checkout -' # Checkout last branch you were on
+alias grl='git reset --hard && git clean -df' # Reset to exact state as last commit
+alias grhf='git checkout HEAD --' # Git reset single file
+alias gf='git log --pretty=oneline --abbrev-commit --graph --decorate'
+alias gpm="git push origin master"
+alias gfk='git fetch && git reset --hard && git clean -dfx' # Reset repo to clean remote state
+alias gsp='git pull --rebase --autostash' # Git stash, pull and apply stash
+alias gu='git issues'
+alias gdp='git reset --hard HEAD~; git push --force-with-lease' # Delete previous commit locally and remote
+alias gpd="git push origin develop"
+alias ggh='push -u origin HEAD'
+alias gre='git rebase -i HEAD~4'
+alias gS='git stash'
+alias gqa='git stash apply'
+alias gb='git checkout -b'
+alias gr='git reset --hard'
+alias grc='git rm --cached'
+alias ggn='git_add_origin_and_origin_push'
+alias g:='git push -u origin master'
+alias ggf='git push -f'
+alias g::='git_remote_add_origin_from_active_link'
+alias gi='git init'
+alias gl='git pull'
+alias gn='git clone'
+alias g.='git add .'
+alias ga='git add'
+alias gg='git push'
+alias glp='git pull && git push'
+alias grao='git remote add origin'
+
+alias greset='git reset --soft HEAD^' # Undo last commit, but don't throw away your changes
+
+# Git Diff
+alias gd='git diff'
+alias gds='git diff --staged'
+alias gdn='git diff --name-only'
+
+# Git Status
+alias gs='git status --short'
+alias gss='git show --word-diff=color' # See changes made
+alias todo='taskell todo'

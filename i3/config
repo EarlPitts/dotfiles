@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font
-font pango:Terminus 8
+font pango:Terminus 10
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -39,6 +39,9 @@ default_floating_border none
 # Dunst
 #exec --no-start-up dunst
 
+# Layout
+bindsym $mod+space exec /home/obabo/.Scripts/layout.sh
+
 # Lockscreen
 bindsym $mod+p exec /home/obabo/.Scripts/lock.sh
 
@@ -51,6 +54,8 @@ bindsym $mod+t exec /home/obabo/.Scripts/rofi/tmux.sh
 bindsym $mod+Shift+d exec /home/obabo/.Scripts/rofi/scripts.sh 
 bindsym $mod+u exec /home/obabo/.Scripts/rofi/references.sh
 bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
+bindsym Control+$mod+p exec ~/.Scripts/rofi/project.sh 
+
 
 # Set brightness
 bindsym $mod+Home exec xbacklight -inc 10 
@@ -59,6 +64,9 @@ bindsym $mod+End exec xbacklight -dec 10
 # Take screenshot
 bindsym Shift+Print --release exec "scrot -s /home/obabo/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
 bindsym Print exec "scrot /home/obabo/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+
+# Moving workspaces between screens
+bindsym $mod+F1 move workspace to output left
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -109,7 +117,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 #bindsym $mod+a focus parent

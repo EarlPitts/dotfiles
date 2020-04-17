@@ -11,7 +11,7 @@
     "editor.fontSize": 11,
     "editor.minimap.enabled": false,
     "editor.fontLigatures": true,
-    "editor.fontFamily": "'Fira Code Medium'",
+    "editor.fontFamily": "'Fira Code'",
     "editor.wordWrap": "on",
     "editor.accessibilitySupport": "off",
     "editor.dragAndDrop": false,
@@ -38,7 +38,8 @@
         "**/venv": true
     },
     "files.associations": {
-        "*.deploy": "groovy"
+        "*.deploy": "groovy",
+        "*.ih": "cpp"
     },
     "files.enableTrash": false,
     "files.eol": "\n",
@@ -49,6 +50,7 @@
     "window.menuBarVisibility": "hidden",
     "window.autoDetectHighContrast": false,
     "window.enableMenuBarMnemonics": false,
+    "window.zoomLevel": 0,
 
     ///### Terminal ###
     "terminal.integrated.fontSize": 11,
@@ -84,4 +86,13 @@
     "rainbow_csv.autodetect_separators": [
         ";"
     ],
+    "todo-tree.tree.showScanModeButton": false,
+    "editor.fontWeight": "500",
+    "todo-tree.highlights.defaultHighlight": {
+        "background": "#ebcb8b",
+        "foreground": "#eceff4",
+        "opacity": "50",
+        "fontWeight": "bold"
+    },
+    "latex-workshop.view.pdf.viewer": "tab"
 }
