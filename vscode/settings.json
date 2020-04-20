@@ -83,6 +83,9 @@
     "vsnotes.treeviewHideTags": true,
     "diffEditor.ignoreTrimWhitespace": true,
     "files.autoGuessEncoding": true,
+    "rainbow_csv.autodetect_separators": [
+        ";"
+    ],
     "todo-tree.tree.showScanModeButton": false,
     "editor.fontWeight": "500",
     "todo-tree.highlights.defaultHighlight": {

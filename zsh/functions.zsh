@@ -32,6 +32,21 @@ t() {
     unsetopt nocasematch;
 }
 
+n() {
+    cd ~/Personal/Notes
+    note=($(fzf -e --print-query))
+    if [[ -e $note[2] ]]; then
+        nvim $note[2]
+    else
+        nvim inbox/$note[1].wiki
+    fi
+    cd -
+}
+
+d() {
+    dotfiles=~/.dotfiles
+    nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\dotbot/*' | fzf)
+}
 
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
 # # TODO: git-trim may replace this

@@ -7,13 +7,9 @@
 - clean: ['~', "~/.config"]
 
 - link:
-        # Vim
-        ~/.vimrc:  vim/vimrc
-        # Tmux
-        ~/.tmux.conf: tmux.conf
         # Bash
-        #~/.aliases: bash/aliases
-        #~/.bashrc: bash/bashrc
+        ~/.aliases: bash/aliases
+        ~/.bashrc: bash/bashrc
         # X11
         ~/.xinitrc: x11/xinitrc
         ~/.Xresources: x11/Xresources
@@ -25,23 +21,8 @@
         "~/.config/Code\ -\ OSS/User/settings.json": vscode/settings.json
         # Zathura
         ~/.config/zathura/zathurarc: zathurarc
-        # Ranger
-        ~/.config/ranger/rc.conf: ranger/rc.conf
         # GTK
         ~/.config/gtk-3.0/settings.ini: gtk-3.0/settings.ini
-        # Zsh
-        ~/.zshrc: zsh/zshrc
-        ~/.zsh/config.zsh: zsh/config.zsh
-        ~/.zsh/plugins.txt: zsh/plugins.txt
-        ~/.zsh/fzf-functions.zsh: zsh/fzf-functions.zsh
-        ~/.zsh/aliases.zsh: zsh/aliases
-        ~/.zsh/colored-man.zsh: zsh/colored-man.zsh
-        ~/.zsh/functions.zsh: zsh/functions.zsh
         # Rofi
         ~/.config/rofi/config.rasi: rofi/config.rasi
         ~/.config/rofi/nord.rasi: rofi/nord.rasi
-        # GDB
-        ~/.gdbinit: gdbinit
-        # Taskwarrior
-        ~/.taskrc: taskrc 
-        # TODO: Idea, GIT

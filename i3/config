@@ -200,3 +200,5 @@ bar {
 }
 
 bindsym $mod+m bar mode toggle
+
+exec --no-startup-id vmware-user-suid-wrapper

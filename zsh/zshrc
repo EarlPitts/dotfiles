@@ -17,15 +17,15 @@ source <(antibody init)
 antibody bundle < ~/.zsh/plugins.txt
 
 source ~/.zsh/aliases.zsh
-source ~/.zsh/colored-man.zsh
 source ~/.zsh/fzf-functions.zsh
 source ~/.zsh/functions.zsh
+source ~/.zsh/auto-tmux.zsh
 
 bindkey '^ ' autosuggest-accept
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/obabo/.zshrc'
+zstyle :compinstall filename '~/.zshrc'
 
 autoload -Uz compinit
 compinit
@@ -33,5 +33,6 @@ autoload -U promptinit; promptinit
 prompt pure
 # End of lines added by compinstall
 #
-export PATH=$PATH:~/.Scripts
+export PATH=$PATH:~/.scripts
+export PATH=$PATH:~/.local/bin
 export TERMINAL=urxvt
