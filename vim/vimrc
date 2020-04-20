@@ -94,9 +94,15 @@ set history=1000
 set omnifunc=syntaxcomplete#Complete
 set clipboard=unnamed "system clipboard
 
+"Mappings
 nmap <C-p> :Files<CR>
+nmap <C-b> :Buffers<CR>
+nmap <leader>. :Tags<CR>
+nmap <leader>, :w<CR>
 
-"Shortcuts
+set pastetoggle=<leader>p
+
+"Windows
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
@@ -112,4 +118,4 @@ let g:nord_italic=1
 let g:nord_underline=1
 let g:nord_italic_comments=1
 "let g:nord_comment_brightness = 12
-let g:nord_cursor_line_number_background=1
+"let g:nord_cursor_line_number_background=1
