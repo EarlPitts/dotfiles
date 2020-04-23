@@ -13,7 +13,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sirver/ultisnips'
 Plug 'preservim/nerdtree'
-Plug 'ryanoasis/vim-devicons'
+"Plug 'ryanoasis/vim-devicons'
 
 call plug#end()    
 
@@ -30,6 +30,7 @@ let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'index', 'syntax': '
 
 "Airline
 let g:airline_powerline_fonts = 1
+
 
 "Syntastic
 "set statusline+=%#warningmsg#
