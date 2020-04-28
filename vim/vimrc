@@ -14,14 +14,24 @@ Plug 'tpope/vim-fugitive'
 Plug 'sirver/ultisnips'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+Plug 'tikhomirov/vim-glsl'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 call plug#end()    
 
 "### Plugins ###
 
+"UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 "NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let NERDTreeShowHidden=1
 
 "VimWiki
 "syntax on
@@ -30,6 +40,11 @@ let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'index', 'syntax': '
 
 "Airline
 let g:airline_powerline_fonts = 1
+
+"Markdown Preview
+"Make it available for all formats
+let g:mkdp_command_for_global = 1
+nmap <leader>md :MarkdownPreview<CR>
 
 "Syntastic
 "set statusline+=%#warningmsg#
@@ -100,6 +115,10 @@ nmap <C-b> :Buffers<CR>
 nmap <leader>. :Tags<CR>
 nmap <leader>, :w<CR>
 
+" Copy to clipboard
+nmap <C-c> "*y
+vmap <C-c> "*y
+
 set pastetoggle=<leader>p
 
 "Windows
@@ -117,5 +136,44 @@ let g:nord_bold=1
 let g:nord_italic=1
 let g:nord_underline=1
 let g:nord_italic_comments=1
-"let g:nord_comment_brightness = 12
 "let g:nord_cursor_line_number_background=1
+"
+"
+"
+"
+
+"Fordprog
+autocmd BufNewFile,BufRead *.ih set syntax=cpp
+
+" Toggle 'default' terminal
+nnoremap <C-\> :call ChooseTerm("term-slider", 1)<CR>
+" Start terminal in current pane
+nnoremap <C-'> :call ChooseTerm("term-pane", 0)<CR>
+	
+function! ChooseTerm(termname, slider)
+	let pane = bufwinnr(a:termname)
+	let buf = bufexists(a:termname)
+	if pane > 0
+		" pane is visible
+		if a:slider > 0
+			:exe pane . "wincmd c"
+		else
+			:exe "e #"
+		endif
+	elseif buf > 0
+		" buffer is not in pane
+		if a:slider
+			:exe "botright split"
+		endif
+		:exe "buffer " . a:termname
+	else
+		" buffer is not loaded, create
+		if a:slider
+			:exe "botright split"
+		endif
+		:terminal
+		:exe "f " a:termname
+	endif
+endfunction
+
+

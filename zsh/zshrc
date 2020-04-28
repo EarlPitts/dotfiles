@@ -36,3 +36,4 @@ prompt pure
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:~/.local/bin
 export TERMINAL=urxvt
+export EDITOR=nvim
