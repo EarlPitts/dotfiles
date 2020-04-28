@@ -38,7 +38,7 @@ fi
 rescuetime &
 #redshift -l 47.49835:19.04045 &
 
-feh --no-fehbg --bg-fill '~/.dotfiles/wallpapers/background.jpg'
+feh --no-fehbg --bg-fill ~/.dotfiles/wallpapers/background.jpg
 xrdb -merge ~/.Xresources
 #~/.config/monitor.sh &
 #~/.Scripts/headphones.sh &
