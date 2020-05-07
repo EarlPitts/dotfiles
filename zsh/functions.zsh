@@ -15,22 +15,16 @@ e() {
 }
 
 t() {
-    list=($(task projects | cut -f1 -d' ' | tail +5 | head -n -2))
+    project=$(pwd | rev | cut -d/ -f1 | rev)
 
-    setopt nocasematch;
-    
-    found=0
+    if task projects | grep  $project > /dev/null; then
+        task $@ pro:$project
+    else
+        task $@
+    fi
 
-    for pro in $list[@]
-    do
-        if [[ $PWD =~ $pro ]]; then
-            found=1
-            task pro:$pro
-        fi
-    done
-    [[ $found == 0 ]] && task
-    unsetopt nocasematch;
 }
+
 
 n() {
     cd ~/Notes
@@ -45,7 +39,7 @@ n() {
 
 d() {
     dotfiles=~/.dotfiles
-    nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\dotbot/*' | fzf)
+    nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
 }
 
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
