@@ -40,22 +40,23 @@ default_floating_border none
 #exec --no-start-up dunst
 
 # Layout
-bindsym $mod+space exec /home/obabo/.Scripts/layout.sh
+bindsym $mod+space exec ~/.scripts/layout.sh
 
 # Lockscreen
-bindsym $mod+p exec /home/obabo/.Scripts/lock.sh
+bindsym $mod+p exec ~/.scripts/lock.sh
 
-# Rofi Scripts
-bindsym $mod+b exec /home/obabo/.Scripts/rofi/board.sh
-bindsym $mod+Shift+b exec /home/obabo/.Scripts/rofi/books.sh
-bindsym $mod+Shift+n exec /home/obabo/.Scripts/rofi/note.sh
-bindsym $mod+n exec /home/obabo/.Scripts/rofi/notes.sh
-bindsym $mod+t exec /home/obabo/.Scripts/rofi/tmux.sh
-bindsym $mod+Shift+d exec /home/obabo/.Scripts/rofi/scripts.sh 
-bindsym $mod+u exec /home/obabo/.Scripts/rofi/references.sh
+# Rofi.scripts
+bindsym $mod+b exec ~/.scripts/rofi/board.sh
+bindsym $mod+Shift+b exec ~/.scripts/rofi/books.sh
+bindsym $mod+Shift+n exec ~/.scripts/rofi/note.sh
+bindsym $mod+n exec ~/.scripts/rofi/quick-capture.sh
+bindsym Mod1+n exec xclip -o >> ~/Personal/Mindmap/quick-capture.md && echo -e "\n" >> ~/Personal/Mindmap/quick-capture.md
+bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
+bindsym $mod+Shift+d exec ~/.scripts/rofi/scripts.sh 
+bindsym $mod+u exec ~/.scripts/rofi/references.sh
 bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
-bindsym Control+$mod+p exec ~/.Scripts/rofi/project.sh 
-bindsym $mod+g exec /home/obabo/.Scripts/rofi/gollum.sh
+bindsym Control+$mod+p exec ~/.scripts/rofi/project.sh 
+bindsym $mod+g exec ~/.scripts/rofi/gollum.sh
 
 
 # Set brightness
@@ -63,8 +64,8 @@ bindsym $mod+Home exec xbacklight -inc 10
 bindsym $mod+End exec xbacklight -dec 10
 
 # Take screenshot
-bindsym Shift+Print --release exec "scrot -s /home/obabo/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
-bindsym Print exec "scrot /home/obabo/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+bindsym Shift+Print --release exec "scrot -s ~/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+bindsym Print exec "scrot ~/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
 
 # Moving workspaces between screens
 bindsym $mod+F1 move workspace to output left

@@ -33,6 +33,9 @@ include ~/Personal/.task/dark-256.theme
 
 context.work=+work or project:grad-boost
 context.school=+school or +study
-uda.priority.values=H,M,,L
 context.fordprog=project:fordprog
 context.thesis=pro:thesis
+uda.energy.type=numeric
+uda.energy.label=Energy
+report.next.labels=ID,Active,Age,Deps,Project,Energy,Tag,S,Due,Until,Description,Urg
+report.next.columns=id,start.age,entry.age,depends,project,energy,tags,scheduled.countdown,due.relative,until.remaining,description,urgency

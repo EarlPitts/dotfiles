@@ -37,10 +37,13 @@ alias newpass='rofi-pass --insert'
 # Taskwarrior
 alias tp='task projects'
 alias td='task +DUE'
-alias tdt='task +DUETODAY'
+alias tt='task +TODAY'
 alias tw='task +WEEK'
 alias to='task +OVERDUE'
-alias tn='task +next'
+alias tnp='task -PROJECT'
+alias t1='task energy:1'
+alias t2='task energy:2'
+alias t3='task energy:3'
 
 # Git
 alias save='git add --all && git commit -m"Autocommit." && git push'
