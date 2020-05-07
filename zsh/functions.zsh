@@ -33,7 +33,7 @@ t() {
 }
 
 n() {
-    cd ~/Personal/Notes
+    cd ~/Notes
     note=($(fzf -e --print-query))
     if [[ -e $note[2] ]]; then
         nvim $note[2]
