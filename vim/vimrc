@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'vimwiki/vimwiki'
 Plug 'arcticicestudio/nord-vim'
-Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'junegunn/fzf.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'sirver/ultisnips'
@@ -26,8 +26,8 @@ call plug#end()
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 "NERDTree
 map <C-n> :NERDTreeToggle<CR>
