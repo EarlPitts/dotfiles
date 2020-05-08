@@ -17,7 +17,11 @@ e() {
 t() {
     project=$(pwd | rev | cut -d/ -f1 | rev)
 
-    if task projects | grep  $project > /dev/null; then
+    if task context show > /dev/null | grep -q 'No context'; then
+        task context $(uname -n) > /dev/null
+    fi
+
+    if task _projects | grep  $project > /dev/null; then
         task $@ pro:$project
     else
         task $@
