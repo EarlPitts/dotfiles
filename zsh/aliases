@@ -44,6 +44,7 @@ alias tnp='task -PROJECT'
 alias t1='task energy:1'
 alias t2='task energy:2'
 alias t3='task energy:3'
+alias ta='command task context none; command task'
 
 # Git
 alias save='git add --all && git commit -m"Autocommit." && git push'
