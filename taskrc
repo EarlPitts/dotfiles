@@ -36,6 +36,5 @@ uda.energy.label=Energy
 report.next.labels=ID,Active,Age,Deps,Project,Energy,Tag,S,Due,Until,Description,Urg
 report.next.columns=id,start.age,entry.age,depends,project,energy,tags,scheduled.countdown,due.relative,until.remaining,description,urgency
 context.arch=+home or +system or +school
-context=arch
 context.work=+work
 context.hub=+hub

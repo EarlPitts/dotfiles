@@ -17,8 +17,12 @@ e() {
 t() {
     project=$(pwd | rev | cut -d/ -f1 | rev)
 
-    if task context show > /dev/null | grep -v $(uname -n); then
-        task context $(uname -n) > /dev/null
+    if task context show > /dev/null | grep -q 'No context'; then
+        if [[ $(uname -n) == 'BUDN34356338A' ]]; then
+            task context work > /dev/null
+        else
+            task context $(uname -n) > /dev/null
+        fi
     fi
 
     if task _projects | grep  $project > /dev/null; then
@@ -26,9 +30,7 @@ t() {
     else
         task $@
     fi
-
 }
-
 
 n() {
     cd ~/Personal/Notes
