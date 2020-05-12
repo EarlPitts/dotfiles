@@ -25,4 +25,5 @@
         ~/.taskrc: taskrc
         # GDB
         ~/.gdbinit: gdbinit
+        ~/.muttrc: muttrc
         # TODO: GIT
