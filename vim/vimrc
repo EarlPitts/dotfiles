@@ -55,6 +55,13 @@ let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'Home', 'syntax': 'm
 let g:startify_session_dir = '~/.vim/session'
 let g:startify_commands = [ ['VimWiki', 'VimwikiIndex'] ]
 let g:startify_padding_left = 5
+let g:startify_lists = [
+        \ { 'type': 'sessions',  'header': ['   Sessions']       },
+        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
+        \ { 'type': 'commands',  'header': ['   Commands']       },
+        \ { 'type': 'files',     'header': ['   MRU']            },
+        \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
+        \ ]
 
 "Airline
 let g:airline_powerline_fonts = 1
@@ -129,6 +136,7 @@ nmap <C-b> :Buffers<CR>
 nmap <leader>. :Tags<CR>
 nmap <leader>, :w<CR>
 nnoremap <C-g> :Rg 
+nnoremap ; :
 
 "Copy to clipboard
 nmap <C-c> "*y
@@ -161,3 +169,5 @@ let g:nord_italic_comments=1
 "let g:nord_cursor_line_number_background=1
 "Fordprog
 autocmd BufNewFile,BufRead *.ih set syntax=cpp
+
+:so ~/.vim/terminal.vim

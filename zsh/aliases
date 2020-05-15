@@ -26,7 +26,6 @@ alias vim='nvim'
 
 alias open='xdg-open'
 alias v='nvim'
-alias s='sudo'
 alias ts='~/.Scripts/util/ssh.sh'
 alias spt='spotifyd; spt'
 alias gdb='gdb -q'

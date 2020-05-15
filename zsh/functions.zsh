@@ -34,12 +34,15 @@ t() {
 
 n() {
     cd ~/Personal/Notes
-    note=($(fzf -e --print-query))
+
+    local note=($(fzf -e --print-query))
+
     if [[ -e $note[2] ]]; then
         nvim $note[2]
     else
         nvim inbox/$note[1].wiki
     fi
+
     cd -
 }
 
@@ -64,6 +67,18 @@ rp() {
     if [ -n "$package" ]; then
         yay -Rns $(echo $package | cut -f1 -d" ")
     fi
+}
+
+s() {
+    cd ~/.vim/session
+
+    local session=$(rg --files | fzf)
+
+    if [ -n "$session" ]; then
+        vim -S $session
+    fi
+
+    cd -
 }
 
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
