@@ -1,31 +1,41 @@
 let mapleader = ","
+set nocompatible
+syntax on
 
 "Plugin Manager
-filetype off
-set nocompatible
-
 call plug#begin('~/.vim/plugged')
 
-Plug 'vimwiki/vimwiki'
-Plug 'arcticicestudio/nord-vim'
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+"Utility
 Plug 'junegunn/fzf.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'sirver/ultisnips'
 Plug 'preservim/nerdtree'
-"Plug 'ryanoasis/vim-devicons'
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-Plug 'tikhomirov/vim-glsl'
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
-Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
+Plug 'vim-syntastic/syntastic'
+
+"Looks
+Plug 'arcticicestudio/nord-vim'
+Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+"Plug 'ryanoasis/vim-devicons'
+
+"Notes
+Plug 'vimwiki/vimwiki'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
+"Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+
+"Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+"Misc
+Plug 'tikhomirov/vim-glsl' " Shader Language support
 
 call plug#end()    
 
-"### Plugins ###
+"### Plugin Configs ###
 
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -38,91 +48,80 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeShowHidden=1
 
 "VimWiki
-"syntax on
 let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'Home', 'syntax': 'markdown', 'ext': '.wiki'}] 
 "let g:vimwiki_folding = 'list'
 
 "Startify
 let g:startify_session_dir = '~/.vim/session'
 let g:startify_commands = [ ['VimWiki', 'VimwikiIndex'] ]
-let g:startify_padding_left = 30
+let g:startify_padding_left = 5
 
 "Airline
 let g:airline_powerline_fonts = 1
 
 "Markdown Preview
-"Make it available for all formats
-let g:mkdp_command_for_global = 1
+let g:mkdp_command_for_global = 1 " Make it available for all formats
 nmap <leader>md :MarkdownPreview<CR>
 
-"if !exists('g:airline_symbols')
-"  let g:airline_symbols = {}
-"endif
-
-
 "Syntastic
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 0
-"let g:syntastic_check_on_wq = 0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 2
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 
 "### Editor ###
 
 "Indentation
-set autoindent
-set expandtab
-filetype plugin indent on
-set shiftround
-set shiftwidth=4
+set autoindent " Copy indent when starting new line
+set expandtab " Use spaces instead of tabs
+filetype plugin indent on " Filetype detection with indent and plugin stuff loaded
+set shiftround " Round indent to multiple of shiftwidth
+set shiftwidth=4 " Indent size
 set smarttab
 set tabstop=4
-set softtabstop=4	"number of spaces while editing
+set softtabstop=4 " Number of spaces while editing
 
 "Text Rendering
 set display+=lastline
 set encoding=UTF-8
-set linebreak
-set wrap
-syntax enable		"enable syntax 
+set linebreak " Wrap long lines between words
+set wrap " Wrap lines
+syntax enable " Enable syntax 
 
 "Search
-set incsearch		"search as characters are entered
-set hlsearch		"highlight matches
+set incsearch " Search as characters are entered
+set hlsearch " Highlight matches
 set ignorecase
 set smartcase
-set showmatch		"highlight matching parentheses
+set showmatch " Highlight matching parentheses
 
 "Performance
-set lazyredraw		"redraw only when needed
+set lazyredraw " Redraw only when needed
 
 "UI
-set ruler
-set wildmenu		"visual autocomplete for command menu
-set cursorline		"highlight current line
-set nu		        "show line numbers
-set rnu
+set noruler
+set wildmenu " Visual autocomplete for command menu
+set cursorline " Highlight current line
+set nu " Show line numbers
+set rnu " Relative number
 set title
-set showcmd		    "show commands in bot line
+set showcmd	" Show commands in bot line
 
 "Folding
-set foldmethod=indent	"fold based on indent level
-set foldnestmax=5	"10 nested fold max
-set foldenable		"enable folding
-set foldlevelstart=5	"open most folds by default
+set foldmethod=indent " Fold based on indent level
+set foldnestmax=5	" 5 nested fold max
+set foldenable " Enable folding
+set foldlevelstart=5 " Open most folds by default
 nnoremap  <space> za	
-
 
 "Misc
 set hidden " Enables hidden buffers, so you can have modified buffers in the background
-set autoread
+set autoread " Reload externally modified files in vim
 set backspace=indent,eol,start
 set history=1000
-set omnifunc=syntaxcomplete#Complete
-set clipboard=unnamed "system clipboard
+set omnifunc=syntaxcomplete#Complete " TODO what's this? :D
+set clipboard=unnamed " System clipboard TODO
 
 "Mappings
 nmap <C-p> :Files<CR>
@@ -131,18 +130,13 @@ nmap <leader>. :Tags<CR>
 nmap <leader>, :w<CR>
 nnoremap <C-g> :Rg 
 
-" Copy to clipboard
+"Copy to clipboard
 nmap <C-c> "*y
 vmap <C-c> "*y
 
 set pastetoggle=<leader>p
 
 "Windows
-"nmap <C-h> <C-w>h
-"nmap <C-j> <C-w>j
-"nmap <C-k> <C-w>k
-"nmap <C-l> <C-w>l
-
 tnoremap <C-h> <C-\><C-N><C-w>h
 tnoremap <C-j> <C-\><C-N><C-w>j
 tnoremap <C-k> <C-\><C-N><C-w>k
@@ -155,51 +149,15 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
 "Colors
-set t_Co=256
-"set termguicolors   "enable true color
-colorscheme nord	"colors
-"let g:gruvbox_italic=1
+"set t_Co=256
+colorscheme nord
 let g:nord_bold=1
 let g:nord_italic=1
 let g:nord_underline=1
 let g:nord_italic_comments=1
-"let g:nord_cursor_line_number_background=1
-"
-"
-"
-"
 
+"let g:nord_cursor_line_number_background=1
 "Fordprog
 autocmd BufNewFile,BufRead *.ih set syntax=cpp
-
-" Toggle 'default' terminal
-nnoremap <C-\> :call ChooseTerm("term-slider", 1)<CR>
-" Start terminal in current pane
-nnoremap <C-'> :call ChooseTerm("term-pane", 0)<CR>
-	
-function! ChooseTerm(termname, slider)
-	let pane = bufwinnr(a:termname)
-	let buf = bufexists(a:termname)
-	if pane > 0
-		" pane is visible
-		if a:slider > 0
-			:exe pane . "wincmd c"
-		else
-			:exe "e #"
-		endif
-	elseif buf > 0
-		" buffer is not in pane
-		if a:slider
-			:exe "botright split"
-		endif
-		:exe "buffer " . a:termname
-	else
-		" buffer is not loaded, create
-		if a:slider
-			:exe "botright split"
-		endif
-		:terminal
-		:exe "f " a:termname
-	endif
-endfunction
