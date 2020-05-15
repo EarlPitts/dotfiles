@@ -17,7 +17,7 @@ e() {
 t() {
     project=$(pwd | rev | cut -d/ -f1 | rev)
 
-    if task context show > /dev/null | grep -q 'No context'; then
+    if [[ "$(task context show)"  != *$(uname -n)* ]]; then
         if [[ $(uname -n) == 'BUDN34356338A' ]]; then
             task context work > /dev/null
         else

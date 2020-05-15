@@ -38,4 +38,3 @@ report.next.columns=id,start.age,entry.age,depends,project,energy,tags,scheduled
 context.arch=+home or +system or +school
 context.work=+work
 context.hub=+hub
-context=arch
