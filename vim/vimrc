@@ -19,6 +19,8 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
+Plug 'airblade/vim-gitgutter'
+Plug 'mhinz/vim-startify'
 
 call plug#end()    
 
@@ -38,6 +40,11 @@ let NERDTreeShowHidden=1
 "syntax on
 let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'Home', 'syntax': 'markdown', 'ext': '.wiki'}] 
 "let g:vimwiki_folding = 'list'
+
+"Startify
+let g:startify_session_dir = '~/.vim/session'
+let g:startify_commands = [ ['VimWiki', 'VimwikiIndex'] ]
+let g:startify_padding_left = 30
 
 "Airline
 let g:airline_powerline_fonts = 1
