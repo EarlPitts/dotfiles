@@ -44,8 +44,26 @@ n() {
 }
 
 d() {
-    dotfiles=~/.dotfiles
+    local dotfiles=~/.dotfiles
     nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
+}
+
+kp() {
+    local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
+	
+	if [ -n "$pid" ]
+	then
+	  echo $pid | xargs kill -${1:-9}
+	  kp
+	fi
+}
+
+rp() {
+    local package=$(yay -Qet | fzf)
+
+    if [ -n "$package" ]; then
+        yay -Rns $(echo $package | cut -f1 -d" ")
+    fi
 }
 
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)

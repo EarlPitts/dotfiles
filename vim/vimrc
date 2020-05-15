@@ -19,6 +19,7 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-commentary'
+Plug 'majutsushi/tagbar'
 
 call plug#end()    
 
@@ -121,6 +122,7 @@ nmap <C-p> :Files<CR>
 nmap <C-b> :Buffers<CR>
 nmap <leader>. :Tags<CR>
 nmap <leader>, :w<CR>
+nnoremap <C-g> :Rg 
 
 " Copy to clipboard
 nmap <C-c> "*y
@@ -194,5 +196,3 @@ function! ChooseTerm(termname, slider)
 		:exe "f " a:termname
 	endif
 endfunction
-
-
