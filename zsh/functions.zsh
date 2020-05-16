@@ -33,18 +33,27 @@ t() {
 }
 
 n() {
-    cd ~/Personal/Notes
-
-    local note=($(fzf -e --print-query))
-
-    if [[ -e $note[2] ]]; then
-        nvim $note[2]
+    if [ $# -ne 0 ]; then
+        v +VimwikiIndex +'lcd %:p:h' +"Rg $@"
     else
-        nvim inbox/$note[1].wiki
+        v +VimwikiIndex +'lcd %:p:h' +Files  
     fi
-
-    cd -
 }
+    
+
+# n() {
+#     cd ~/Personal/Notes
+
+#     local note=($(fzf -e --print-query))
+
+#     if [[ -e $note[2] ]]; then
+#         nvim $note[2]
+#     else
+#         nvim inbox/$note[1].wiki
+#     fi
+
+#     cd -
+# }
 
 d() {
     local dotfiles=~/.dotfiles
