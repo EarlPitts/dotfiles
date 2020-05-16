@@ -34,9 +34,9 @@ t() {
 
 n() {
     if [ $# -ne 0 ]; then
-        v +VimwikiIndex +'lcd %:p:h' +"Rg $@"
+        v +VimwikiIndex +"lcd %:p:h" +"Rg $1"
     else
-        v +VimwikiIndex +'lcd %:p:h' +Files  
+        v +VimwikiIndex +"lcd %:p:h" +Files  
     fi
 }
     
