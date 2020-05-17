@@ -31,10 +31,13 @@ include ~/Personal/.task/dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
-uda.energy.type=numeric
-uda.energy.label=Energy
-report.next.labels=ID,Active,Age,Deps,Project,Energy,Tag,S,Due,Until,Description,Urg
-report.next.columns=id,start.age,entry.age,depends,project,energy,tags,scheduled.countdown,due.relative,until.remaining,description,urgency
-context.arch=+home or +system or +school
-context.work=+work
-context.hub=+hub
+uda.type.type=string
+uda.type.label=Type
+uda.type.values=shallow,deep
+report.next.labels=ID,Active,Age,Deps,Project,Type,Tag,S,Due,Until,Description,Urg
+report.next.columns=id,start.age,entry.age,depends,project,type,tags,scheduled.countdown,due.relative,until.remaining,description,urgency
+context.home=(+home or +system or +school) and type:shallow or +TODAY
+context.deep-home=(+home or +system or +school) and type:deep or +TODAY
+context.deep-work=+work and type:deep or +TODAY
+context.shallow-work=+work and type:shallow or +TODAY
+context=deep-home

@@ -14,21 +14,34 @@ e() {
     fi
 }
 
+# t() {
+#     project=$(pwd | rev | cut -d/ -f1 | rev)
+
+#     if [[ "$(task context show)"  != *$(uname -n)* ]]; then
+#         if [[ $(uname -n) == 'BUDN34356338A' ]]; then
+#             task context work > /dev/null
+#         else
+#             task context $(uname -n) > /dev/null
+#         fi
+#     fi
+
+#     if task _projects | grep  $project > /dev/null; then
+#         task $@ pro:$project
+#     else
+#         task $@
+#     fi
+# }
+
 t() {
-    project=$(pwd | rev | cut -d/ -f1 | rev)
 
-    if [[ "$(task context show)"  != *$(uname -n)* ]]; then
-        if [[ $(uname -n) == 'BUDN34356338A' ]]; then
-            task context work > /dev/null
-        else
-            task context $(uname -n) > /dev/null
-        fi
-    fi
+    local hour=$(date +%H)
 
-    if task _projects | grep  $project > /dev/null; then
-        task $@ pro:$project
+    if [[ $hour < 12 ]]; then
+        task context deep-home > /dev/null && task $@
+    elif [[ $hour > 12 && $hour < 18 ]]; then
+        task context home > /dev/null && task $@
     else
-        task $@
+        task context home > /dev/null && task $@
     fi
 }
 
