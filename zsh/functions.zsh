@@ -1,10 +1,10 @@
-w() {
-    if [ $# -eq 0 ]; then
-        code .
-    else
-        code "${1:-.}"
-    fi
-}
+# w() {
+#     if [ $# -eq 0 ]; then
+#         code .
+#     else
+#         code "${1:-.}"
+#     fi
+# }
 
 e() {
     if [ $# -eq 0 ]; then
@@ -14,23 +14,43 @@ e() {
     fi
 }
 
-# t() {
-#     project=$(pwd | rev | cut -d/ -f1 | rev)
+# Search aliases/functions
+falias() {    CMD=$(
+        (
+            (alias)
+            (functions | grep "()" | cut -d ' ' -f1 | grep -v "^_" )
+        ) | fzf | cut -d '=' -f1
+    );
 
-#     if [[ "$(task context show)"  != *$(uname -n)* ]]; then
-#         if [[ $(uname -n) == 'BUDN34356338A' ]]; then
-#             task context work > /dev/null
-#         else
-#             task context $(uname -n) > /dev/null
-#         fi
-#     fi
+    eval $CMD
+}
 
-#     if task _projects | grep  $project > /dev/null; then
-#         task $@ pro:$project
-#     else
-#         task $@
-#     fi
-# }
+# Show $PATH
+path(){
+  echo -e ${PATH//:/\\n}
+}
+
+# md <folder-name> - Create folder and cd to it
+md(){
+  mkdir "$1"
+  cd "$1"
+}
+
+# Get cheat sheet of command from cheat.sh. h <cmd>
+h(){
+  curl cheat.sh/${@:-cheat}
+}
+
+# cfile <file> - Copy content of file to clipboard
+cfile(){
+    cat $1 | xclip
+}
+
+# down <url> - Download <url> and save to current dir.
+down(){
+    curl -O "$1"
+}
+
 
 t() {
 
@@ -91,17 +111,17 @@ rp() {
     fi
 }
 
-s() {
-    cd ~/.vim/session
+# s() {
+#     cd ~/.vim/session
 
-    local session=$(rg --files | fzf)
+#     local session=$(rg --files | fzf)
 
-    if [ -n "$session" ]; then
-        vim -S $session
-    fi
+#     if [ -n "$session" ]; then
+#         vim -S $session
+#     fi
 
-    cd -
-}
+#     cd -
+# }
 
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
 # # TODO: git-trim may replace this
@@ -151,27 +171,9 @@ s() {
 #   fi
 # }
 
-
-# # Search aliases/functions
-# falias() {
-#     CMD=$(
-#         (
-#             (alias)
-#             (functions | grep "()" | cut -d ' ' -f1 | grep -v "^_" )
-#         ) | fzf | cut -d '=' -f1
-#     );
-
-#     eval $CMD
-# }
-
 # # Lowercase every file in current dir
 # lowercaseCurrentDir(){
 #   for i in *; do mv $i ${(L)i}; done
-# }
-
-# # Show $PATH
-# path(){
-#   echo -e ${PATH//:/\\n}
 # }
 
 # # cd to Finder
@@ -207,23 +209,6 @@ s() {
 
 #         git fetch "git@github.com:${user}/${repo}" "${branch}:${user}/${branch}"
 #     )
-# }
-
-# # md <folder-name> - Create folder and cd to it
-# md(){
-#   mkdir "$1"
-#   cd "$1"
-# }
-
-# # Get cheat sheet of command from cheat.sh. h <cmd>
-# h(){
-#   curl cheat.sh/${@:-cheat}
-#   # curl cheat.sh/$@
-# }
-
-# # cfile <file> - Copy content of file to clipboard
-# cfile(){
-#   cat $1 | pbcopy
 # }
 
 # # wr - Release Alfred workflow
@@ -389,11 +374,6 @@ s() {
 #       echo "Nothing found"
 #     fi
 #   fi
-# }
-
-# # down <url> - Download <url> and save to current dir.
-# down(){
-# curl -O "$1"
 # }
 
 # # cw - Copy working dir.
