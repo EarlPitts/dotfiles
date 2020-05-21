@@ -34,10 +34,12 @@ include ~/Personal/.task/dark-256.theme
 uda.type.type=string
 uda.type.label=Type
 uda.type.values=shallow,deep
+uda.type.default=shallow
+
 report.next.labels=ID,Active,Age,Deps,Project,Type,Tag,S,Due,Until,Description,Urg
 report.next.columns=id,start.age,entry.age,depends,project,type,tags,scheduled.countdown,due.relative,until.remaining,description,urgency
 context.home=(+home or +system or +school) and type:shallow or +TODAY
 context.deep-home=(+home or +system or +school) and type:deep or +TODAY
 context.deep-work=+work and type:deep or +TODAY
-context.shallow-work=+work and type:shallow or +TODAY
-context=deep-home
+context.work=+work and type:shallow or +TODAY
+context=home

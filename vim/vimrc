@@ -158,10 +158,19 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+nnoremap <C-W>- 5<C-w>-
+nnoremap <C-W>+ 5<C-w>+
+nnoremap <C-W>, 10<C-w><
+nnoremap <C-W>. 10<C-w>>
+" This looks fucking ugly, but it works TODO
+tnoremap <C-\> <C-\><C-N> :call ChooseTerm("term-slider", 1)<CR>
 
-"Terminal
-"tnoremap <C-b> <C-\><C-N> :Buffers<CR>
-"tnoremap <C-p> <C-\><C-N> :Files<CR>
+
+"Notes
+" These must be improved TODO
+nnoremap <leader>n <C-W>v<C-W>l :VimwikiIndex<CR> :lcd %:p:h<CR> :Files<CR>
+nnoremap <leader>g <C-W>v<C-W>l :VimwikiIndex<CR> :lcd %:p:h<CR> :Rg<CR>
+	
 
 "Colors
 "set t_Co=256

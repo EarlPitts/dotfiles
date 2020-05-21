@@ -14,7 +14,6 @@ alias cat='bat'
 alias gc='git commit -m"Autocommit"'
 alias gg='git push'
 alias gcp='git commit -m"Autocommit" && git push'
-alias note='vim ~/Personal/Mindmap/Notes/index.md'
 alias pass='~/.scripts/gpg-wrapper.sh'
 alias projector='xrandr --output LVDS1 --mode 1280x800 --scale 1x1 --output VGA1 --same-as LVDS1 --mode 1280x1024'
 alias live='qemu-system-x86_64 -enable-kvm -boot order=d -m 2G -cdrom'
@@ -31,6 +30,7 @@ alias spt='spotifyd; spt'
 alias gdb='gdb -q'
 alias newpass='rofi-pass --insert'
 
+## System
 # Taskwarrior
 alias tp='task projects'
 alias td='task +DUE'
@@ -38,10 +38,17 @@ alias tt='task +TODAY'
 alias tw='task +WEEK'
 alias to='task +OVERDUE'
 alias tnp='task -PROJECT'
-alias t1='task energy:1'
-alias t2='task energy:2'
-alias t3='task energy:3'
 alias ta='command task context none; command task'
+alias td='task type:deep'
+alias ts='task type:shallow'
+
+# Projects
+alias pc='p create'
+alias pd='p delete'
+
+# Notes
+alias nc='n create'
+alias ng='n grep'
 
 # Git
 alias save='git add --all && git commit -m"Autocommit." && git push'

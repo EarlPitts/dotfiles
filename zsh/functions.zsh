@@ -5,6 +5,27 @@
 #         code "${1:-.}"
 #     fi
 # }
+#
+
+p () {
+    cd ~/Personal/Projects
+
+    if [ "$1" = "create" ]; then
+        touch $2.md
+        echo -e "## Backburner\n\n## To Do\n\n## Done\n" >> $2.md
+        taskell $2.md
+    elif [ "$1" = delete ]; then
+        project=$(fzf)
+        if [ -n "$project" ]; then
+            rm $project
+        fi
+    else
+        project=$(fzf)
+        if [ -n "$project" ]; then
+            taskell $project
+        fi
+    fi
+}
 
 e() {
     if [ $# -eq 0 ]; then
@@ -55,21 +76,40 @@ down(){
 t() {
 
     local hour=$(date +%H)
+    local day=$(date +%u)
 
-    if [[ $hour < 12 ]]; then
+    if [[ $hour < 12 && $day = 2 || $day = 5 ]]; then
+        task context deep-work > /dev/null && task $@
+    elif [[ $hour < 12 ]]; then
         task context deep-home > /dev/null && task $@
-    elif [[ $hour > 12 && $hour < 18 ]]; then
-        task context home > /dev/null && task $@
     else
         task context home > /dev/null && task $@
     fi
 }
 
+# t() {
+
+#     local hour=$(date +%H)
+#     local day=$(date +%u)
+
+#     if [[ $hour < 12 && $day < 6 ]]; then # Mon-Fri before noon
+#         task context deep-work > /dev/null && task $@
+#     elif [[ $hour > 12 && $hour < 18 && $day < 6 ]]; then
+#         task context work > /dev/null && task $@
+#     elif [[ $hour < 12 && $day > 6 ]]; then
+#         task context deep-home > /dev/null && task $@
+#     else
+#         task context deep-home > /dev/null && task $@
+#     fi
+# }
+
 n() {
-    if [ $# -ne 0 ]; then
-        v +VimwikiIndex +"lcd %:p:h" +"Rg $1"
+    if [ "$1" = "grep" ]; then
+        nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
+    elif [ "$1" = "create" ]; then
+        nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.md
     else
-        v +VimwikiIndex +"lcd %:p:h" +Files  
+        nvim +VimwikiIndex +"lcd %:p:h" +Files  
     fi
 }
     
