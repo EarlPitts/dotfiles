@@ -107,7 +107,7 @@ n() {
     if [ "$1" = "grep" ]; then
         nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
     elif [ "$1" = "create" ]; then
-        nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.md
+        nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
     else
         nvim +VimwikiIndex +"lcd %:p:h" +Files  
     fi
