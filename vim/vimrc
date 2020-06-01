@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
 Plug 'vim-syntastic/syntastic'
+Plug 'davidhalter/jedi-vim'
 
 "Looks
 Plug 'arcticicestudio/nord-vim'

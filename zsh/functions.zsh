@@ -1,13 +1,4 @@
-# w() {
-#     if [ $# -eq 0 ]; then
-#         code .
-#     else
-#         code "${1:-.}"
-#     fi
-# }
-#
-
-p () {
+p() {
     cd ~/Personal/Projects
 
     if [ "$1" = "create" ]; then
@@ -24,14 +15,6 @@ p () {
         if [ -n "$project" ]; then
             taskell $project
         fi
-    fi
-}
-
-e() {
-    if [ $# -eq 0 ]; then
-        nvim .
-    else
-        nvim "${1:-.}"
     fi
 }
 
@@ -87,53 +70,59 @@ t() {
     fi
 }
 
-# t() {
-
-#     local hour=$(date +%H)
-#     local day=$(date +%u)
-
-#     if [[ $hour < 12 && $day < 6 ]]; then # Mon-Fri before noon
-#         task context deep-work > /dev/null && task $@
-#     elif [[ $hour > 12 && $hour < 18 && $day < 6 ]]; then
-#         task context work > /dev/null && task $@
-#     elif [[ $hour < 12 && $day > 6 ]]; then
-#         task context deep-home > /dev/null && task $@
-#     else
-#         task context deep-home > /dev/null && task $@
-#     fi
-# }
+tn() {
+    echo -n "Description: "
+    read descr
+    echo -n "Due date: "
+    read due
+    echo -n "Tag: "
+    read tag
+    echo -n "Deep? (y/n) "
+    read deep
+    task add $descr +$tag due:$due type:$([ "$deep" = "y" ] && echo deep)
+}
 
 n() {
     if [ "$1" = "grep" ]; then
         nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
     elif [ "$1" = "create" ]; then
+<<<<<<< HEAD
         nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.md
     elif [ "$1" = "quick" ]; then
         nvim ~/Personal/Mindmap/quick-capture.md
+=======
+        nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
+    elif [ "$1" = "quick" ]; then
+        read note
+        echo $note >> ~/Personal/Mindmap/quick-capture.md
+>>>>>>> 0a865affbf40039d1086b0805cc99e799a5ed4ef
     else
         nvim +VimwikiIndex +"lcd %:p:h" +Files  
     fi
 }
     
-
-# n() {
-#     cd ~/Personal/Notes
-
-#     local note=($(fzf -e --print-query))
-
-#     if [[ -e $note[2] ]]; then
-#         nvim $note[2]
-#     else
-#         nvim inbox/$note[1].wiki
-#     fi
-
-#     cd -
-# }
-
 d() {
     local dotfiles=~/.dotfiles
     nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
 }
+
+s() {
+    cd ~/.scripts
+    nvim $(fzf)
+    cd -
+}
+
+b() {
+    cd ~/Personal/Mindmap/Boards
+
+    project=$(fzf)
+    if [ -n "$project" ]; then
+        taskell $project
+    fi
+
+    cd -
+}
+
 
 kp() {
     local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
