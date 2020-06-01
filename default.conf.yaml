@@ -8,7 +8,8 @@
 
 - link:
         # Vim
-        ~/.vimrc:  vim/vimrc
+        ~/.vimrc: vim/vimrc
+        ~/.vim/terminal.vim: vim/terminal.vim
         # Tmux
         ~/.tmux.conf: tmux/tmux.conf
         # Ranger

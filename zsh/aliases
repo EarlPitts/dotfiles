@@ -49,6 +49,7 @@ alias pd='p delete'
 # Notes
 alias nc='n create'
 alias ng='n grep'
+alias nq='n quick'
 
 # Git
 alias save='git add --all && git commit -m"Autocommit." && git push'

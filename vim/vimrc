@@ -138,6 +138,7 @@ nmap <leader>. :Tags<CR>
 nmap <leader>, :w<CR>
 nnoremap <C-g> :Rg 
 nnoremap ; :
+nnoremap <C-T> :Tagbar<CR>
 
 "Copy to clipboard
 nmap <C-c> "*y

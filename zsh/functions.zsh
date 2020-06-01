@@ -78,7 +78,7 @@ t() {
     local hour=$(date +%H)
     local day=$(date +%u)
 
-    if [[ $hour < 12 && $day = 2 || $day = 5 ]]; then
+    if [[ $hour < 12 && ($day = 2 || $day = 5) ]]; then
         task context deep-work > /dev/null && task $@
     elif [[ $hour < 12 ]]; then
         task context deep-home > /dev/null && task $@
@@ -108,6 +108,8 @@ n() {
         nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
     elif [ "$1" = "create" ]; then
         nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.md
+    elif [ "$1" = "quick" ]; then
+        nvim ~/Personal/Mindmap/quick-capture.md
     else
         nvim +VimwikiIndex +"lcd %:p:h" +Files  
     fi
