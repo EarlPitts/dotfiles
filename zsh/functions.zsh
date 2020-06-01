@@ -86,16 +86,10 @@ n() {
     if [ "$1" = "grep" ]; then
         nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
     elif [ "$1" = "create" ]; then
-<<<<<<< HEAD
-        nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.md
-    elif [ "$1" = "quick" ]; then
-        nvim ~/Personal/Mindmap/quick-capture.md
-=======
         nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
     elif [ "$1" = "quick" ]; then
         read note
         echo $note >> ~/Personal/Mindmap/quick-capture.md
->>>>>>> 0a865affbf40039d1086b0805cc99e799a5ed4ef
     else
         nvim +VimwikiIndex +"lcd %:p:h" +Files  
     fi
