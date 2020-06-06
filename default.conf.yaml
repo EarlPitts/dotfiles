@@ -26,5 +26,8 @@
         ~/.taskrc: taskrc
         # GDB
         ~/.gdbinit: gdbinit
+        # Mutt
         ~/.muttrc: muttrc
+        # Git
+        ~/.gitignore: git/gitignore
         # TODO: GIT

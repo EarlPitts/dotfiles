@@ -16,7 +16,7 @@ function! ChooseTerm(termname, slider)
 	elseif buf > 0
 		" buffer is not in pane
 		if a:slider
-			:exe "botright split"
+			:exe "botright 15split"
 		endif
 		:exe "buffer " . a:termname
         :resize 15
@@ -24,7 +24,7 @@ function! ChooseTerm(termname, slider)
 	else
 		" buffer is not loaded, create
 		if a:slider
-			:exe "botright split"
+			:exe "botright 15split"
             :resize 15
 		endif
 		:terminal

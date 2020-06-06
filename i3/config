@@ -64,8 +64,9 @@ bindsym $mod+Home exec xbacklight -inc 10
 bindsym $mod+End exec xbacklight -dec 10
 
 # Take screenshot
-bindsym Shift+Print --release exec "scrot -s ~/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
-bindsym Print exec "scrot ~/Media/Pictures/Screenshots/$(date +%F_%T).png -e 'xclip -selection c -t image/png < $f'"
+bindsym Shift+Print --release exec "~/.scripts/util/screenshot.sh select"
+bindsym Control+Print --release exec "~/.scripts/util/screenshot.sh note"
+bindsym Print exec "~/.scripts/util/screenshot.sh"
 
 # Moving workspaces between screens
 bindsym $mod+F1 move workspace to output left

@@ -17,7 +17,7 @@
 
 URxvt.scrollBar:        false
 URxvt.termName:         rxvt-unicode-256color
-URxvt.font:             xft:Fira Code :size=10
+URxvt.font:             xft:Fira Code:size=10
 URxvt.visualbell:       false
 
 URxvt.perl-ext-common: ...,font-size

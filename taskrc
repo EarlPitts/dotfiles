@@ -42,4 +42,4 @@ context.home=(+home or +system or +school) and type:shallow or +TODAY
 context.deep-home=(+home or +system or +school) and type:deep or +TODAY
 context.deep-work=+work and type:deep or +TODAY
 context.work=+work and type:shallow or +TODAY
-context=deep-home
+context=home
