@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font
-font pango:Terminus 10
+font pango:Terminus 6
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -48,7 +48,7 @@ bindsym $mod+p exec ~/.scripts/lock.sh
 # Rofi.scripts
 bindsym $mod+b exec ~/.scripts/rofi/board.sh
 bindsym $mod+Shift+b exec ~/.scripts/rofi/books.sh
-bindsym $mod+Shift+n exec urxvt -e zsh -c falias 
+bindsym $mod+Shift+n exec st -e zsh -c falias 
 bindsym $mod+n exec ~/.scripts/rofi/quick-capture.sh
 bindsym Mod1+n exec xclip -o >> ~/Personal/Mindmap/quick-capture.md && echo -e "\n" >> ~/Personal/Mindmap/quick-capture.md
 bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
@@ -84,7 +84,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec rofi -show combi
 
 # Ranger
-bindsym Mod1+e exec "urxvt -e ranger"
+bindsym Mod1+e exec "st -e ranger"
 
 # Password manager
 bindsym $mod+Shift+p exec rofi-pass

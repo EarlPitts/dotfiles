@@ -28,3 +28,5 @@
         # Rofi
         ~/.config/rofi/config.rasi: rofi/config.rasi
         ~/.config/rofi/nord.rasi: rofi/nord.rasi
+        # Dunst
+        ~/.config/dunst/dunstrc: dunst/dunstrc
