@@ -1,0 +1,12 @@
+[user]
+	name = Earl
+	email = k2sy12@inf.elte.hu
+[credential]
+	helper = store
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[alias]
+    st = status
+[github]
+    user = earlpitts

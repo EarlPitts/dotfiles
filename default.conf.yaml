@@ -31,4 +31,4 @@
         ~/.muttrc: muttrc
         # Git
         ~/.gitignore: git/gitignore
-        # TODO: GIT
+        ~/.gitconfig: git/gitconfig
