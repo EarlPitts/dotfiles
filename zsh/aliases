@@ -1,5 +1,5 @@
 alias mixer='alsamixer'                                             
-alias clean='cat ~/.Scripts/bleach.txt | xargs bleachbit -c && yay -Sc --clean --noconfirm'
+alias clean='cat ~/.scripts/bleach.txt | xargs bleachbit -c && yay -Sc --clean --noconfirm'
 alias ls='exa -l'
 alias monitor='~/.config/monitor.sh'
 alias hu='setxkbmap hu'

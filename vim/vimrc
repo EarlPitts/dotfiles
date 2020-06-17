@@ -137,7 +137,7 @@ nmap <C-p> :Files<CR>
 nmap <C-b> :Buffers<CR>
 nmap <leader>. :Tags<CR>
 nmap <leader>, :w<CR>
-nnoremap <C-g> :Rg 
+nnoremap <C-g> :Rg<CR>
 nnoremap ; :
 nnoremap <C-T> :Tagbar<CR>
 

@@ -22,6 +22,7 @@
         ~/.zsh/functions.zsh: zsh/functions.zsh
         ~/.zsh/aliases.zsh: zsh/aliases
         ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
+        ~/.zsh/gtd.zsh: zsh/gtd.zsh
         # Taskwarrior
         ~/.taskrc: taskrc
         # GDB

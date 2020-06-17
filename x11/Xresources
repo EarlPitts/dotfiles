@@ -20,7 +20,7 @@ URxvt.termName:         rxvt-unicode-256color
 URxvt.font:             xft:Fira Code:size=10
 URxvt.visualbell:       false
 
-URxvt.perl-ext-common: ...,font-size
+URxvt.perl-ext-common: font-size
 URxvt.keysym.C-equal:  font-size:increase
 
 *.foreground:           nord4

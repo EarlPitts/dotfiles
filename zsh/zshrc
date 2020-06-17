@@ -20,6 +20,7 @@ source ~/.zsh/aliases.zsh
 source ~/.zsh/fzf-functions.zsh
 source ~/.zsh/functions.zsh
 source ~/.zsh/auto-tmux.zsh
+source ~/.zsh/gtd.zsh
 
 bindkey '^ ' autosuggest-accept
 

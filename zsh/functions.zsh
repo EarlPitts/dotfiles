@@ -1,21 +1,43 @@
+# GTD
+
+daily() {
+    time_spent daily
+    inbox daily
+    calendar
+    #goals
+    habits
+    projects
+    #list
+    tasks
+    journal
+    echo "Reset everything"
+    press_enter
+    # echo "Pack for tomorrow"
+    # press_enter
+}
+
 p() {
     cd ~/Personal/Projects
 
     if [ "$1" = "create" ]; then
-        touch $2.md
-        echo -e "## Backburner\n\n## To Do\n\n## Done\n" >> $2.md
-        taskell $2.md
+        if [ -n "$2" ]; then
+            touch $2.md
+            echo -e "## Backburner\n\n## To Do\n\n## Done\n" >> $2.md
+            taskell $2.md
+        fi
     elif [ "$1" = delete ]; then
-        project=$(fzf)
+        project=$(command ls | cut -d"." -f1 | fzf)
         if [ -n "$project" ]; then
-            rm $project
+            rm $project.md
         fi
     else
-        project=$(fzf)
+        project=$(command ls | cut -d"." -f1 | fzf)
         if [ -n "$project" ]; then
-            taskell $project
+            taskell $project.md
         fi
     fi
+    
+    cd -
 }
 
 # Search aliases/functions
@@ -57,16 +79,24 @@ down(){
 
 
 t() {
-
     local hour=$(date +%H)
     local day=$(date +%u)
 
-    if [[ $hour < 12 && ($day = 2 || $day = 5) ]]; then
-        task context deep-work > /dev/null && task $@
-    elif [[ $hour < 12 ]]; then
-        task context deep-home > /dev/null && task $@
+    local home='(+home or +system or +school) and type:shallow or +TODAY'
+    local deep_home='(+home or +system or +school) and type:deep or +TODAY'
+    local deep_work='+work and type:deep or +TODAY'
+    local work='+work and type:shallow or +TODAY'
+
+    if [ $# = 0 ]; then
+        if [[ $hour < 12 && ($day = 2 || $day = 5) ]]; then
+            task $@ ${deep_work}
+        elif [[ $hour < 12 ]]; then
+            task $@ ${deep_home}
+        else
+            task $@ $home
+        fi
     else
-        task context home > /dev/null && task $@
+        task $@
     fi
 }
 
@@ -83,15 +113,19 @@ tn() {
 }
 
 n() {
-    if [ "$1" = "grep" ]; then
-        nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
-    elif [ "$1" = "create" ]; then
+    if [ -z "$(ps x | grep VimwikiIndex | grep -v grep)" ]; then
+        if [ "$1" = "grep" ]; then
+            nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
+        else
+            nvim +VimwikiIndex +"lcd %:p:h" +Files  
+        fi
+    fi
+
+    if [ "$1" = "create" ]; then
         nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
     elif [ "$1" = "quick" ]; then
         read note
         echo $note >> ~/Personal/Mindmap/quick-capture.md
-    else
-        nvim +VimwikiIndex +"lcd %:p:h" +Files  
     fi
 }
     
