@@ -36,6 +36,6 @@ prompt pure
 #
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:~/.local/bin
-export TERMINAL=urxvt
+#export TERMINAL=urxvt
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!venv/*"'

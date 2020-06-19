@@ -13,6 +13,7 @@ Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
 Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 "Looks
 Plug 'arcticicestudio/nord-vim'

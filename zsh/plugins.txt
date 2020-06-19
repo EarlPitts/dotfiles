@@ -4,4 +4,3 @@ zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
 zsh-users/zsh-syntax-highlighting
 junegunn/fzf
-MichaelAquilina/zsh-auto-notify
