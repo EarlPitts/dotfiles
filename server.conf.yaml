@@ -7,5 +7,3 @@
 - clean: ['~', "~/.config"]
 
 - link:
-        # Tmux
-        ~/.pi.tmux.conf: tmux/pi.tmux.conf

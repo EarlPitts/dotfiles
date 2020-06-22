@@ -8,34 +8,25 @@ export KEYTIMEOUT=1
 export TERM=xterm-256color # for tmux
 bindkey -v # vim keybindings
 
-# default editors
-export EDITOR='vim'
-export VEDITOR='code'
 
 # load antibody
 source <(antibody init)
 antibody bundle < ~/.zsh/plugins.txt
 
 source ~/.zsh/aliases.zsh
-source ~/.zsh/fzf-functions.zsh
-source ~/.zsh/functions.zsh
+source ~/.zsh/exports.zsh
+source ~/.zsh/keybindings.zsh
+source ~/.zsh/fzf-funcs.zsh
+source ~/.zsh/funcs.zsh
 source ~/.zsh/auto-tmux.zsh
 source ~/.zsh/gtd.zsh
-
-bindkey '^ ' autosuggest-accept
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
 
-autoload -Uz compinit
-compinit
-autoload -U promptinit; promptinit
-prompt pure
+# Autocompletion and Propmt
+autoload -Uz compinit promptinit; 
+compinit; promptinit
+
 # End of lines added by compinstall
-#
-export PATH=$PATH:~/.scripts
-export PATH=$PATH:~/.local/bin
-#export TERMINAL=urxvt
-export EDITOR=nvim
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!venv/*"'

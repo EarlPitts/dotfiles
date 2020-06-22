@@ -7,8 +7,6 @@
 - clean: ['~', "~/.config"]
 
 - link:
-        # ZSH
-        ~/.zprofile: zsh/zprofile
         # Bash
         ~/.aliases: bash/aliases
         ~/.bashrc: bash/bashrc

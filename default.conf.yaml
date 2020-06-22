@@ -16,10 +16,12 @@
         ~/.config/ranger/rc.conf: ranger/rc.conf
         # Zsh
         ~/.zshrc: zsh/zshrc
-        ~/.zsh/config.zsh: zsh/config.zsh
+        ~/.zprofile: zsh/zprofile
+        ~/.zsh/keybindings.zsh: zsh/keybindings.zsh
         ~/.zsh/plugins.txt: zsh/plugins.txt
-        ~/.zsh/fzf-functions.zsh: zsh/fzf-functions.zsh
-        ~/.zsh/functions.zsh: zsh/functions.zsh
+        ~/.zsh/fzf-funcs.zsh: zsh/fzf-funcs.zsh
+        ~/.zsh/exports.zsh: zsh/exports.zsh
+        ~/.zsh/funcs.zsh: zsh/funcs.zsh
         ~/.zsh/aliases.zsh: zsh/aliases
         ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
         ~/.zsh/gtd.zsh: zsh/gtd.zsh
