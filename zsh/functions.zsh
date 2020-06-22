@@ -113,20 +113,21 @@ tn() {
 }
 
 n() {
-    if [ -z "$(ps x | grep VimwikiIndex | grep -v grep)" ]; then
-        if [ "$1" = "grep" ]; then
-            nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
-        else
-            nvim +VimwikiIndex +"lcd %:p:h" +Files  
-        fi
-    fi
-
     if [ "$1" = "create" ]; then
         nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
     elif [ "$1" = "quick" ]; then
         read note
         echo $note >> ~/Personal/Mindmap/quick-capture.md
+    else
+        if [ -z "$(ps x | grep VimwikiIndex | grep -v grep)" ]; then
+            if [ "$1" = "grep" ]; then
+                nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
+            else
+                nvim +VimwikiIndex +"lcd %:p:h" +Files  
+            fi
+        fi
     fi
+
 }
     
 d() {

@@ -3,6 +3,10 @@
 #local HIGHLIGHTS_URL= moz-extension://ccd698fc-13e3-4eea-8adb-7df50092d616/content/addon-page/addon-page.html#page=history
 #local QNOTES=~/Personal/Mindmap/qnotes.md
 #local SS=~/Media/Pictures/Screenshots
+#
+        if [ -n "$SSH_CONNECTION" ]; then
+        else
+        fi
 
 press_enter() {
     echo  "Press enter to continue"
@@ -26,10 +30,18 @@ inbox() {
         echo "Process Moleskine"
         press_enter
         echo "Process Email"
-        xdg-open $EMAIL_URL
+        if [ -n "$SSH_CONNECTION" ]; then
+            echo $EMAIL_URL
+        else
+            xdg-open $EMAIL_URL
+        fi
         press_enter
         echo "Process Neptun"
-        xdg-open $NEPTUN_URL
+        if [ -n "$SSH_CONNECTION" ]; then
+            echo $NEPTUN_URL
+        else
+            xdg-open $NEPTUN_URL
+        fi
         press_enter
     elif [ "$1" = "weekly" ]; then
         echo "Process your inboxes"
@@ -55,7 +67,11 @@ calendar() {
     local CALENDAR_URL='https://calendar.google.com' 
 
     echo "Check your calendar"
-    xdg-open $CALENDAR_URL
+    if [ -n "$SSH_CONNECTION" ]; then
+        echo $CALENDAR_URL
+    else
+        xdg-open $CALENDAR_URL
+    fi
     press_enter
 }
 
@@ -86,11 +102,19 @@ time_spent() {
 
     if [ "$1" = "daily" ]; then
         echo "Reflect on time spent"
-        xdg-open $DASHBOARD_URL
+        if [ -n "$SSH_CONNECTION" ]; then
+            echo $DASHBOARD_URL
+        else
+            xdg-open $DASHBOARD_URL
+        fi
         press_enter
     elif [ "$1" = "weekly" ]; then
         echo "Reflect on time spent"
-        xdg-open $WEEKLY_DASHBOARD_URL
+        if [ -n "$SSH_CONNECTION" ]; then
+            echo $WEEKLY_DASHBOARD_URL
+        else
+            xdg-open $WEEKLY_DASHBOARD_URL
+        fi
         press_enter
     fi
 }
@@ -151,7 +175,11 @@ push_notes(){
 reading() {
     echo "Review what you read this week"
     echo "Review what your web highlights"
-    xdg-open $HIGHLIGHTS_URL
+    if [ -n "$SSH_CONNECTION" ]; then
+        echo $HIGHLIGHTS_URL
+    else
+        xdg-open $HIGHLIGHTS_URL
+    fi
     echo "Review your kindle highlights"
     press_enter
 }
