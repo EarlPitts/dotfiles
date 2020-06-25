@@ -1,21 +1,3 @@
-# GTD
-
-daily() {
-    time_spent daily
-    inbox daily
-    calendar
-    #goals
-    habits
-    projects
-    #list
-    tasks
-    journal
-    echo "Reset everything"
-    press_enter
-    # echo "Pack for tomorrow"
-    # press_enter
-}
-
 p() {
     cd ~/Personal/Projects
 
@@ -116,8 +98,7 @@ n() {
     if [ "$1" = "create" ]; then
         nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
     elif [ "$1" = "quick" ]; then
-        read note
-        echo $note >> ~/Personal/Mindmap/quick-capture.md
+        nvim "+normal Go" +startinsert ~/Personal/Mindmap/quick-capture.md
     else
         if [ -z "$(ps x | grep VimwikiIndex | grep -v grep)" ]; then
             if [ "$1" = "grep" ]; then

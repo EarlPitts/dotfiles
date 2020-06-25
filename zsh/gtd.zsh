@@ -4,14 +4,6 @@
 #local QNOTES=~/Personal/Mindmap/qnotes.md
 #local SS=~/Media/Pictures/Screenshots
 #
-        if [ -n "$SSH_CONNECTION" ]; then
-        else
-        fi
-
-press_enter() {
-    echo  "Press enter to continue"
-    read
-}
 
 tasks() {
     echo "Internalize these:"
