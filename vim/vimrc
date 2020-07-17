@@ -46,6 +46,7 @@ call plug#end()
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
 let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
