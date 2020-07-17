@@ -7,3 +7,7 @@
 - clean: ['~', "~/.config"]
 
 - link:
+    # Weechat
+    ~/.weechat/buflist.conf: weechat/buflist.conf
+    ~/.weechat/irc.conf: weechat/irc.conf
+    ~/.weechat/weechat.conf: weechat/weechat.conf

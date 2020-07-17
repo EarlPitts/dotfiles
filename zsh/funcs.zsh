@@ -1,21 +1,3 @@
-# GTD
-
-daily() {
-    time_spent daily
-    inbox daily
-    calendar
-    #goals
-    habits
-    projects
-    #list
-    tasks
-    journal
-    echo "Reset everything"
-    press_enter
-    # echo "Pack for tomorrow"
-    # press_enter
-}
-
 p() {
     cd ~/Personal/Projects
 
@@ -82,14 +64,16 @@ t() {
     local hour=$(date +%H)
     local day=$(date +%u)
 
-    local home='(+home or +system or +school) and type:shallow or +TODAY'
-    local deep_home='(+home or +system or +school) and type:deep or +TODAY'
+    local home='+home and type:shallow or +TODAY'
+    local deep_home='+home and type:deep or +TODAY'
     local deep_work='+work and type:deep or +TODAY'
     local work='+work and type:shallow or +TODAY'
 
     if [ $# = 0 ]; then
-        if [[ $hour < 12 && ($day = 2 || $day = 5) ]]; then
+        if [[ $hour < 12 && ($day != 6 && $day != 7) ]]; then
             task $@ ${deep_work}
+        elif [[ $hour -ge 12 && $hour < 15 && ($day != 6 && $day != 7) ]]; then
+            task $@ ${work}
         elif [[ $hour < 12 ]]; then
             task $@ ${deep_home}
         else
@@ -105,19 +89,18 @@ tn() {
     read descr
     echo -n "Due date: "
     read due
-    echo -n "Tag: "
+    echo -n "Tag: ([h]ome/[w]ork) "
     read tag
     echo -n "Deep? (y/n) "
     read deep
-    task add $descr +$tag due:$due type:$([ "$deep" = "y" ] && echo deep)
+    task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') due:$due type:$([ "$deep" = "y" ] && echo deep)
 }
 
 n() {
     if [ "$1" = "create" ]; then
         nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
     elif [ "$1" = "quick" ]; then
-        read note
-        echo $note >> ~/Personal/Mindmap/quick-capture.md
+        nvim "+normal Go" +startinsert ~/Personal/Mindmap/quick-capture.md
     else
         if [ -z "$(ps x | grep VimwikiIndex | grep -v grep)" ]; then
             if [ "$1" = "grep" ]; then

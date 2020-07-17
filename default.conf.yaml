@@ -8,8 +8,8 @@
 
 - link:
         # Vim
-        ~/.vimrc: vim/vimrc
-        ~/.vim/terminal.vim: vim/terminal.vim
+        ~/.config/nvim/init.vim: vim/vimrc
+        ~/.config/nvim/terminal.vim: vim/terminal.vim
         # Tmux
         ~/.tmux.conf: tmux/tmux.conf
         # Ranger
@@ -25,6 +25,7 @@
         ~/.zsh/aliases.zsh: zsh/aliases
         ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
         ~/.zsh/gtd.zsh: zsh/gtd.zsh
+        ~/.zsh/widgets.zsh: zsh/widgets.zsh
         # Taskwarrior
         ~/.taskrc: taskrc
         # GDB

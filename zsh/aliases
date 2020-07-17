@@ -50,6 +50,10 @@ alias nc='n create'
 alias ng='n grep'
 alias nq='n quick'
 
+# Review
+alias rd='review daily'
+alias rw='review weekly'
+
 # Git
 alias save='git add --all && git commit -m"Autocommit." && git push'
 alias ga.='git add .'
@@ -97,3 +101,6 @@ alias gdn='git diff --name-only'
 alias gs='git status --short'
 alias gss='git show --word-diff=color' # See changes made
 alias todo='taskell todo'
+
+# Pet
+alias pe='pet exec'

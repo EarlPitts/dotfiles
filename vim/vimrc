@@ -3,7 +3,7 @@ set nocompatible
 syntax on
 
 "Plugin Manager
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 "Utility
 Plug 'junegunn/fzf.vim'
@@ -188,4 +188,4 @@ let g:nord_italic_comments=1
 "Fordprog
 autocmd BufNewFile,BufRead *.ih set syntax=cpp
 
-:so ~/.vim/terminal.vim
+:so ~/.config/nvim/terminal.vim
