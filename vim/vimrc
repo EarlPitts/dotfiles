@@ -141,7 +141,13 @@ set omnifunc=syntaxcomplete#Complete " TODO what's this? :D
 set clipboard=unnamed " System clipboard TODO
 
 "Mappings
-nmap <C-p> :Files<CR>
+if isdirectory(".git")
+	" if in a git project, use :GFiles
+	nmap <C-p> :GitFiles --cached --others --exclude-standard<cr>
+else
+	" otherwise, use :FZF
+	nmap <C-p> :Files<CR>
+endif
 nmap <C-b> :Buffers<CR>
 nmap <leader>. :Tags<CR>
 nmap <leader>, :w<CR>
