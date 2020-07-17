@@ -3,7 +3,7 @@ set nocompatible
 syntax on
 
 "Plugin Manager
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 "Utility
 Plug 'junegunn/fzf.vim'
@@ -11,9 +11,10 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dense-analysis/ale'
 
 "Looks
 Plug 'arcticicestudio/nord-vim'
@@ -187,4 +188,4 @@ let g:nord_italic_comments=1
 "Fordprog
 autocmd BufNewFile,BufRead *.ih set syntax=cpp
 
-:so ~/.vim/terminal.vim
+:so ~/.config/nvim/terminal.vim
