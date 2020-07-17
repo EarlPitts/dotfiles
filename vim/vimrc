@@ -11,9 +11,10 @@ Plug 'preservim/nerdtree'
 Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
-Plug 'vim-syntastic/syntastic'
+"Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'dense-analysis/ale'
 
 "Looks
 Plug 'arcticicestudio/nord-vim'
