@@ -22,6 +22,10 @@ p() {
     cd -
 }
 
+start() {
+    watson start $(watson projects | fzf)
+}
+
 # Search aliases/functions
 falias() {    CMD=$(
         (
