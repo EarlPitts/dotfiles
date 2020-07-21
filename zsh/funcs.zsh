@@ -1,25 +1,24 @@
 p() {
-    cd ~/Personal/Projects
+    local dir=~/Personal/Projects
 
     if [ "$1" = "create" ]; then
         if [ -n "$2" ]; then
-            touch $2.md
-            echo -e "## Backburner\n\n## To Do\n\n## Done\n" >> $2.md
-            taskell $2.md
+            touch $dir/$2.md
+            echo -e "## Backburner\n\n## To Do\n\n## Done\n" >> $dir/$2.md
+            taskell $dir/$2.md
         fi
     elif [ "$1" = delete ]; then
-        project=$(command ls | cut -d"." -f1 | fzf)
+        project=$(command ls $dir | cut -d"." -f1 | fzf)
         if [ -n "$project" ]; then
-            rm $project.md
+            rm $dir/$project.md
         fi
     else
-        project=$(command ls | cut -d"." -f1 | fzf)
+        project=$(command ls $dir | cut -d"." -f1 | fzf)
         if [ -n "$project" ]; then
-            taskell $project.md
+            taskell $dir/$project.md
         fi
     fi
     
-    cd -
 }
 
 start() {
@@ -38,28 +37,28 @@ falias() {    CMD=$(
 }
 
 # Show $PATH
-path(){
+path() {
   echo -e ${PATH//:/\\n}
 }
 
 # md <folder-name> - Create folder and cd to it
-md(){
+md() {
   mkdir "$1"
   cd "$1"
 }
 
 # Get cheat sheet of command from cheat.sh. h <cmd>
-h(){
+h() {
   curl cheat.sh/${@:-cheat}
 }
 
 # cfile <file> - Copy content of file to clipboard
-cfile(){
+cfile() {
     cat $1 | xclip
 }
 
 # down <url> - Download <url> and save to current dir.
-down(){
+down() {
     curl -O "$1"
 }
 
@@ -123,22 +122,16 @@ d() {
 }
 
 s() {
-    cd ~/.scripts
-    nvim $(fzf)
-    cd -
+    local dir=~/.scripts
+    nvim $(find $dir -type f -not -path '*/\.git/*' | fzf)
 }
 
 b() {
-    cd ~/Personal/Mindmap/Boards
+    local dir=~/Personal/Mindmap/Boards
 
-    project=$(fzf)
-    if [ -n "$project" ]; then
-        taskell $project
-    fi
-
-    cd -
+    project=$(command ls $dir | fzf)
+    [[ -n "$project" ]] && taskell $dir/$project
 }
-
 
 kp() {
     local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
