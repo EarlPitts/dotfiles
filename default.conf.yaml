@@ -27,12 +27,8 @@
         ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
         ~/.zsh/gtd.zsh: zsh/gtd.zsh
         ~/.zsh/widgets.zsh: zsh/widgets.zsh
-        # Taskwarrior
-        ~/.taskrc: taskrc
         # GDB
         ~/.gdbinit: gdbinit
-        # Mutt
-        ~/.muttrc: muttrc
         # Git
         ~/.gitignore: git/gitignore
         ~/.gitconfig: git/gitconfig
