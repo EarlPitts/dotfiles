@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # Font
-font pango:Terminus 6
+font pango:Fira Code 11
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.

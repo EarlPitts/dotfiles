@@ -7,7 +7,11 @@
 - clean: ['~', "~/.config"]
 
 - link:
-    # Weechat
-    ~/.weechat/buflist.conf: weechat/buflist.conf
-    ~/.weechat/irc.conf: weechat/irc.conf
-    ~/.weechat/weechat.conf: weechat/weechat.conf
+        # Weechat
+        ~/.weechat/buflist.conf: weechat/buflist.conf
+        ~/.weechat/irc.conf: weechat/irc.conf
+        ~/.weechat/weechat.conf: weechat/weechat.conf
+        # Taskwarrior
+        ~/.taskrc: taskrc
+        # Mutt
+        ~/.config/neomutt/muttrc: muttrc
