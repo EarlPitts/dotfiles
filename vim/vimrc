@@ -5,17 +5,17 @@ syntax on
 "Plugin Manager
 call plug#begin(stdpath('data') . '/plugged')
 
-"Utility
+"Navigation
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
-Plug 'tpope/vim-commentary'
 Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
-"Plug 'vim-syntastic/syntastic'
-Plug 'davidhalter/jedi-vim'
-Plug 'christoomey/vim-tmux-navigator'
+
+"Editing
+Plug 'tpope/vim-commentary'
+
+"Analysis
 Plug 'dense-analysis/ale'
-"Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
 "Looks
@@ -37,6 +37,7 @@ Plug 'airblade/vim-gitgutter'
 
 "Misc
 Plug 'tikhomirov/vim-glsl' " Shader Language support
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()    
 
@@ -55,6 +56,7 @@ let g:ycm_key_list_previous_completion=[]
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
+let g:NERDTreeQuitOnOpen=1
 
 "VimWiki
 let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'Home', 'syntax': 'markdown', 'ext': '.wiki'}] 

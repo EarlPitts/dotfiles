@@ -1,10 +1,10 @@
 [user]
-	name = Earl
-	email = k2sy12@inf.elte.hu
+	name = Bendeguz Seres
+	email = grafitpor@gmail.com
 [credential]
 	helper = store
 [core]
-	editor = vim
+	editor = nvim
 	excludesfile = ~/.gitignore
 [alias]
     st = status
