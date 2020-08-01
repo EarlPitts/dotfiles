@@ -18,6 +18,7 @@ Plug 'tpope/vim-commentary'
 Plug 'dense-analysis/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 
+
 "Looks
 Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
@@ -38,6 +39,7 @@ Plug 'airblade/vim-gitgutter'
 "Misc
 Plug 'tikhomirov/vim-glsl' " Shader Language support
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'sevko/vim-nand2tetris-syntax'
 
 call plug#end()    
 
@@ -49,14 +51,25 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
-let g:ycm_key_list_select_completion=[]
-let g:ycm_key_list_previous_completion=[]
 
 "NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
 let g:NERDTreeQuitOnOpen=1
+
+"Ale
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚠'
+
+"YouCompleteMe
+let ycm_trigger_key = '<C-n>'
+let g:ycm_auto_trigger = 0
+let g:ycm_key_invoke_completion = ycm_trigger_key
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
 
 "VimWiki
 let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'Home', 'syntax': 'markdown', 'ext': '.wiki'}] 
