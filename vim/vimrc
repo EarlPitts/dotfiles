@@ -156,6 +156,9 @@ nmap <leader>, :w<CR>
 nnoremap <C-g> :Rg<CR>
 nnoremap ; :
 nnoremap <C-T> :Tagbar<CR>
+map <F5> :make<CR>
+map <F6> :make test<CR>
+
 
 "Copy to clipboard
 nmap <C-c> "*y

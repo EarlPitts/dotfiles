@@ -103,5 +103,7 @@ alias gs='git status --short'
 alias gss='git show --word-diff=color' # See changes made
 alias todo='taskell todo'
 
+alias gist='hub gist create --copy '
+
 # Pet
 alias pe='pet exec'

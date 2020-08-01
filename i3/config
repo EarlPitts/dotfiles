@@ -197,9 +197,8 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
-#        mode dock
-#        hidden_state hide
-        modifier none
+        modifier none # For not showing when hidden
+        bindsym button1 nop # Disable clickon on ws
 }
 
 bindsym $mod+m bar mode toggle
