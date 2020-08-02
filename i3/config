@@ -57,6 +57,7 @@ bindsym $mod+u exec ~/.scripts/rofi/references.sh
 bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
 bindsym Control+$mod+p exec ~/.scripts/rofi/project.sh 
 bindsym $mod+g exec ~/.scripts/rofi/gollum.sh
+bindsym $mod+F7 exec ~/.scripts/util/monitor.sh
 
 
 # Set brightness
