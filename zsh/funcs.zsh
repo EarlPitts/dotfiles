@@ -103,7 +103,7 @@ n() {
     if [ "$1" = "create" ]; then
         nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
     elif [ "$1" = "quick" ]; then
-        nvim "+normal Go" +startinsert ~/Personal/Mindmap/quick-capture.md
+        nvim "+normal Go" +startinsert ~/Personal/Notes/quick-capture.wiki
     else
         if [ -z "$(ps x | grep VimwikiIndex | grep -v grep)" ]; then
             if [ "$1" = "grep" ]; then
@@ -127,7 +127,7 @@ s() {
 }
 
 b() {
-    local dir=~/Personal/Mindmap/Boards
+    local dir=~/Personal/Boards
 
     project=$(command ls $dir | fzf)
     [[ -n "$project" ]] && taskell $dir/$project
