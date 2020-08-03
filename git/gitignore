@@ -2,3 +2,5 @@
 .gdbinit
 .gdb_history
 tags
+venv
+**/*.pyc

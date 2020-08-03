@@ -5,7 +5,10 @@
 	helper = store
 [core]
 	editor = nvim
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/ignore
+    pager = less
+[help]
+    autocorrect = 1
 [alias]
     st = status
 [github]
