@@ -30,5 +30,5 @@
         # GDB
         ~/.gdbinit: gdbinit
         # Git
-        ~/.gitignore: git/gitignore
-        ~/.gitconfig: git/gitconfig
+        ~/.config/git/ignore: git/gitignore
+        ~/.config/git/config: git/gitconfig
