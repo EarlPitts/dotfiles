@@ -17,6 +17,7 @@ Plug 'tpope/vim-commentary'
 "Analysis
 Plug 'dense-analysis/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'sheerun/vim-polyglot'
 
 
 "Looks
@@ -37,7 +38,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 "Misc
-Plug 'tikhomirov/vim-glsl' " Shader Language support
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'sevko/vim-nand2tetris-syntax'
 
