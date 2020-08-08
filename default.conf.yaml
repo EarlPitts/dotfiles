@@ -11,6 +11,8 @@
         ~/.config/nvim/init.vim: vim/vimrc
         ~/.config/nvim/terminal.vim: vim/terminal.vim
         ~/.config/nvim/my_snippets: vim/my_snippets
+        # Pet
+        ~/.config/pet: pet
         # Tmux
         ~/.tmux.conf: tmux/tmux.conf
         # Ranger

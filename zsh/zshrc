@@ -18,6 +18,8 @@ source ~/.zsh/funcs.zsh
 source ~/.zsh/auto-tmux.zsh
 source ~/.zsh/gtd.zsh
 source ~/.zsh/widgets.zsh
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall

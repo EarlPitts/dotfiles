@@ -45,6 +45,9 @@ call plug#end()
 
 "### Plugin Configs ###
 
+"FZF
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+
 "UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
@@ -163,12 +166,12 @@ else
 	" otherwise, use :FZF
 	nmap <C-p> :Files<CR>
 endif
+nnoremap ; :
 nmap <C-b> :Buffers<CR>
-nmap <leader>. :Tags<CR>
+nmap <leader>. :Tagbar<CR>
 nmap <leader>, :w<CR>
 nnoremap <C-g> :Rg<CR>
-nnoremap ; :
-nnoremap <C-T> :Tagbar<CR>
+nnoremap <C-T> :Tags<CR>
 map <F5> :make<CR>
 map <F6> :make test<CR>
 
