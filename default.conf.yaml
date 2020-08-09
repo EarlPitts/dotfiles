@@ -12,11 +12,12 @@
         ~/.config/nvim/terminal.vim: vim/terminal.vim
         ~/.config/nvim/my_snippets: vim/my_snippets
         # Pet
-        ~/.config/pet: pet
+        ~/.config/pet/snippet.toml: pet/snippet.toml
         # Tmux
         ~/.tmux.conf: tmux/tmux.conf
         # Ranger
         ~/.config/ranger/rc.conf: ranger/rc.conf
+        ~/.config/ranger/rifle.conf: ranger/rifle.conf
         # Zsh
         ~/.zshrc: zsh/zshrc
         ~/.zprofile: zsh/zprofile

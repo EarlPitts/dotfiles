@@ -23,5 +23,7 @@
         # Rofi
         ~/.config/rofi/config.rasi: rofi/config.rasi
         ~/.config/rofi/nord.rasi: rofi/nord.rasi
+        # GPG
+        ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
         # Dunst
         ~/.config/dunst/dunstrc: dunst/dunstrc
