@@ -11,6 +11,7 @@
         ~/.config/nvim/init.vim: vim/vimrc
         ~/.config/nvim/terminal.vim: vim/terminal.vim
         ~/.config/nvim/my_snippets: vim/my_snippets
+        ~/.config/nvim/vwtags.py: vim/vwtags.py
         # Pet
         ~/.config/pet/snippet.toml: pet/snippet.toml
         # Tmux
