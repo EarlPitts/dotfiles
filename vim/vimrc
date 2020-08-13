@@ -79,6 +79,17 @@ let g:ycm_key_list_previous_completion=[]
 let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'Home', 'syntax': 'markdown', 'ext': '.wiki'}] 
 "let g:vimwiki_folding = 'list'
 
+let g:tagbar_type_vimwiki = {
+          \   'ctagstype':'vimwiki'
+          \ , 'kinds':['h:header']
+          \ , 'sro':'&&&'
+          \ , 'kind2scope':{'h':'header'}
+          \ , 'sort':0
+          \ , 'ctagsbin':'~/.config/nvim/vwtags.py'
+          \ , 'ctagsargs': 'markdown'
+          \ }
+
+
 "Startify
 let g:startify_session_persistence = 1
 let g:startify_session_dir = '~/.vim/session'
@@ -175,6 +186,8 @@ nnoremap <C-g> :Rg<CR>
 nnoremap <C-T> :Tags<CR>
 map <F5> :make<CR>
 map <F6> :make test<CR>
+map gd :YcmCompleter GoToDefinition<CR>
+map gr :YcmCompleter GoToReferences<CR>
 
 
 "Copy to clipboard
