@@ -76,7 +76,18 @@ let g:ycm_key_list_select_completion=[]
 let g:ycm_key_list_previous_completion=[]
 
 "VimWiki
-let g:vimwiki_list = [{'path': '~/Personal/Notes', 'index': 'Home', 'syntax': 'markdown', 'ext': '.wiki'}]
+let g:vimwiki_list = [{
+	\ 'path': '~/Personal/Notes',
+	\ 'template_path': '~/Personal/Notes/templates/',
+	\ 'template_default': 'default',
+	\ 'index': 'Home',
+	\ 'syntax': 'markdown',
+	\ 'ext': '.wiki',
+	\ 'path_html': '/srv/http/notes/',
+	\ 'custom_wiki2html': 'vimwiki_markdown',
+	\ 'template_ext': '.tpl'}]
+"    \ 'auto_export': 1}]
+
 "let g:vimwiki_folding = 'list'
 
 let g:tagbar_type_vimwiki = {
