@@ -64,24 +64,12 @@ down() {
 
 
 t() {
-    local hour=$(date +%H)
-    local day=$(date +%u)
-
-    local home='+home and type:shallow or +TODAY'
-    local deep_home='+home and type:deep or +TODAY'
-    local deep_work='+work and type:deep or +TODAY'
-    local work='+work and type:shallow or +TODAY'
+    local home='+home'
+    local work='+work'
+    local waiting='+wait'
 
     if [ $# = 0 ]; then
-        if [[ $hour < 12 && ($day != 6 && $day != 7) ]]; then
-            task $@ ${deep_work}
-        elif [[ $hour -ge 12 && $hour < 15 && ($day != 6 && $day != 7) ]]; then
-            task $@ ${work}
-        elif [[ $hour < 12 ]]; then
-            task $@ ${deep_home}
-        else
-            task $@ $home
-        fi
+            task $@ ${work} or ${home}
     else
         task $@
     fi
@@ -92,11 +80,11 @@ tn() {
     read descr
     echo -n "Due date: "
     read due
-    echo -n "Tag: ([h]ome/[w]ork) "
+    echo -n "Tag: ([h]ome/[w]ork/w[a]it) "
     read tag
     echo -n "Deep? (y/n) "
     read deep
-    task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') due:$due type:$([ "$deep" = "y" ] && echo deep)
+    task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "a" ] && echo '+wait') due:$due type:$([ "$deep" = "y" ] && echo deep)
 }
 
 n() {

@@ -85,6 +85,7 @@ let g:vimwiki_list = [{
 	\ 'ext': '.wiki',
 	\ 'path_html': '/srv/http/notes/',
 	\ 'custom_wiki2html': 'vimwiki_markdown',
+    \ 'links_space_char': '-',
 	\ 'template_ext': '.tpl'}]
 "    \ 'auto_export': 1}]
 
