@@ -18,6 +18,7 @@ source ~/.zsh/funcs.zsh
 source ~/.zsh/auto-tmux.zsh
 source ~/.zsh/gtd.zsh
 source ~/.zsh/widgets.zsh
+source ~/.zsh/base16.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 

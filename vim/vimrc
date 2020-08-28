@@ -22,6 +22,7 @@ Plug 'sheerun/vim-polyglot'
 
 "Looks
 Plug 'arcticicestudio/nord-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 "Plug 'ryanoasis/vim-devicons'
 
@@ -235,14 +236,17 @@ nnoremap <leader>g <C-W>v<C-W>l :VimwikiIndex<CR> :lcd %:p:h<CR> :Rg<CR>
 	
 
 "Colors
-"set t_Co=256
-colorscheme nord
-let g:nord_bold=1
-let g:nord_italic=1
-let g:nord_underline=1
-let g:nord_italic_comments=1
-
+let base16colorspace=256
+set t_Co=256
+set background=dark
+colorscheme base16-eighties
+"colorscheme nord
+"let g:nord_bold=1
+"let g:nord_italic=1
+"let g:nord_underline=1
+"let g:nord_italic_comments=1
 "let g:nord_cursor_line_number_background=1
+
 "Fordprog
 autocmd BufNewFile,BufRead *.ih set syntax=cpp
 
