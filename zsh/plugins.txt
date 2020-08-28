@@ -2,5 +2,5 @@ mafredri/zsh-async
 sindresorhus/pure
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-completions
-zsh-users/zsh-syntax-highlighting
 junegunn/fzf
+zsh-users/zsh-syntax-highlighting

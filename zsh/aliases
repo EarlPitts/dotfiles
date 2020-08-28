@@ -21,6 +21,7 @@ alias grep='grep --color=auto'
 alias v='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+alias scratch='nvim +Codi $(mktemp --suffix=.py)'
 
 alias open='xdg-open'
 alias v='nvim'
