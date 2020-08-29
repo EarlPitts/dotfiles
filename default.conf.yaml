@@ -31,6 +31,8 @@
         ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
         ~/.zsh/gtd.zsh: zsh/gtd.zsh
         ~/.zsh/widgets.zsh: zsh/widgets.zsh
+        ~/.zsh/fzf-colors.zsh: zsh/fzf-colors.zsh
+        ~/.zsh/base16.zsh: zsh/base16.zsh
         # GDB
         ~/.gdbinit: gdbinit
         # Git
