@@ -69,9 +69,9 @@ t() {
     local waiting='+wait'
 
     if [ $# = 0 ]; then
-            task $@ ${work} or ${home}
+            task ${work} or ${home}
     else
-        task $@
+        task -wait $@
     fi
 }
 

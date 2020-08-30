@@ -36,8 +36,8 @@ alias tt='task +TODAY'
 #alias tw='task +WEEK'
 alias to='task +OVERDUE'
 alias ta='command task'
-alias td='task type:deep'
-alias ts='task type:shallow'
+alias td='task type:deep -wait'
+alias ts='task type:shallow -wait'
 alias tw='task +wait'
 
 # Projects
