@@ -22,3 +22,8 @@
   description = "Install package fzf"
   command = "yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk \"{print \\$2}\")' | xargs -ro  yay -S"
   output = ""
+
+[[snippets]]
+  description = "Resize image"
+  command = "convert <image> -resize <new-size> <new-image>"
+  output = ""
