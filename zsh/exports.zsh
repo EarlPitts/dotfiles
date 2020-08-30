@@ -12,4 +12,4 @@ export KEYTIMEOUT=1
 export TERM=xterm-256color # for tmux
 
 # Colored Manpages
-export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=Nord'"
+export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=base16'"
