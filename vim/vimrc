@@ -64,10 +64,10 @@ let NERDTreeShowHidden=1
 let g:NERDTreeQuitOnOpen=1
 
 "Ale
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚠'
+let g:ale_set_highlights = 0 "Disable highlights
 
 "YouCompleteMe
+let g:ycm_show_diagnostics_ui = 0 "Disable Diagnostics
 let ycm_trigger_key = '<C-n>'
 let g:ycm_auto_trigger = 0
 let g:ycm_key_invoke_completion = ycm_trigger_key
