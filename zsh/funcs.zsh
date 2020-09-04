@@ -1,26 +1,3 @@
-p() {
-    local dir=~/Personal/Projects
-
-    if [ "$1" = "create" ]; then
-        if [ -n "$2" ]; then
-            touch $dir/$2.md
-            echo -e "## Backburner\n\n## To Do\n\n## Done\n" >> $dir/$2.md
-            taskell $dir/$2.md
-        fi
-    elif [ "$1" = delete ]; then
-        project=$(command ls $dir | cut -d"." -f1 | fzf)
-        if [ -n "$project" ]; then
-            rm $dir/$project.md
-        fi
-    else
-        project=$(command ls $dir | cut -d"." -f1 | fzf)
-        if [ -n "$project" ]; then
-            taskell $dir/$project.md
-        fi
-    fi
-    
-}
-
 start() {
     watson start $(watson projects | fzf)
 }
@@ -97,7 +74,7 @@ n() {
             if [ "$1" = "grep" ]; then
                 nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
             else
-                nvim +VimwikiIndex +"lcd %:p:h" +Files  
+                nvim +VimwikiIndex +"lcd %:p:h" +Tagbar
             fi
         fi
     fi
@@ -112,13 +89,6 @@ d() {
 s() {
     local dir=~/.scripts
     nvim $(find $dir -type f -not -path '*/\.git/*' | fzf)
-}
-
-b() {
-    local dir=~/Personal/Boards
-
-    project=$(command ls $dir | fzf)
-    [[ -n "$project" ]] && taskell $dir/$project
 }
 
 kp() {

@@ -250,5 +250,3 @@ colorscheme base16-eighties
 
 "Fordprog
 autocmd BufNewFile,BufRead *.ih set syntax=cpp
-
-:so ~/.config/nvim/terminal.vim
