@@ -198,6 +198,7 @@ map <F5> :make<CR>
 map <F6> :make test<CR>
 map gd :YcmCompleter GoToDefinition<CR>
 map gr :YcmCompleter GoToReferences<CR>
+map K :YcmCompleter GetDoc<CR>
 
 
 "Copy to clipboard
