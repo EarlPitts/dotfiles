@@ -43,13 +43,10 @@ alias ts='task type:shallow -wait'
 alias tw='task +wait'
 
 # Projects
-alias pc='p create'
-alias pd='p delete'
+alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
 
 # Notes
-alias nc='n create'
-alias ng='n grep'
-alias nq='n quick'
+alias qn='nvim "+normal Go" +startinsert ~/Personal/Notes/quick-capture.wiki'
 
 # Review
 alias rd='review daily'

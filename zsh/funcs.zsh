@@ -64,23 +64,6 @@ tn() {
     task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "a" ] && echo '+wait') due:$due type:$([ "$deep" = "y" ] && echo deep)
 }
 
-n() {
-    if [ "$1" = "create" ]; then
-        nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
-    elif [ "$1" = "quick" ]; then
-        nvim "+normal Go" +startinsert ~/Personal/Notes/quick-capture.wiki
-    else
-        if [ -z "$(ps x | grep VimwikiIndex | grep -v grep)" ]; then
-            if [ "$1" = "grep" ]; then
-                nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
-            else
-                nvim +VimwikiIndex +"lcd %:p:h" +Tagbar
-            fi
-        fi
-    fi
-
-}
-    
 d() {
     local dotfiles=~/.dotfiles
     nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
