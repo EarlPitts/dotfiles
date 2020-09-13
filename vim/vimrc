@@ -193,12 +193,13 @@ nmap <C-b> :Buffers<CR>
 nmap <leader>. :Tagbar<CR>
 nmap <leader>, :w<CR>
 nnoremap <C-g> :Rg<CR>
-nnoremap <C-T> :Tags<CR>
+nnoremap <C-t> :Tags<CR>
 map <F5> :make<CR>
 map <F6> :make test<CR>
 map gd :YcmCompleter GoToDefinition<CR>
 map gr :YcmCompleter GoToReferences<CR>
 map K :YcmCompleter GetDoc<CR>
+nmap <F12> :tabnew wiki/index.md<CR>:Tagbar<CR>
 
 
 "Copy to clipboard
@@ -224,15 +225,6 @@ nnoremap <C-W>- 5<C-w>-
 nnoremap <C-W>+ 5<C-w>+
 nnoremap <C-W>, 10<C-w><
 nnoremap <C-W>. 10<C-w>>
-" This looks fucking ugly, but it works TODO
-tnoremap <C-\> <C-\><C-N> :call ChooseTerm("term-slider", 1)<CR>
-
-
-"Notes
-" These must be improved TODO
-nnoremap <leader>n <C-W>v<C-W>l :VimwikiIndex<CR> :lcd %:p:h<CR> :Files<CR>
-nnoremap <leader>g <C-W>v<C-W>l :VimwikiIndex<CR> :lcd %:p:h<CR> :Rg<CR>
-	
 
 "Colors
 let base16colorspace=256
