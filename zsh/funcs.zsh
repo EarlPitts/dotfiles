@@ -1,26 +1,3 @@
-p() {
-    local dir=~/Personal/Projects
-
-    if [ "$1" = "create" ]; then
-        if [ -n "$2" ]; then
-            touch $dir/$2.md
-            echo -e "## Backburner\n\n## To Do\n\n## Done\n" >> $dir/$2.md
-            taskell $dir/$2.md
-        fi
-    elif [ "$1" = delete ]; then
-        project=$(command ls $dir | cut -d"." -f1 | fzf)
-        if [ -n "$project" ]; then
-            rm $dir/$project.md
-        fi
-    else
-        project=$(command ls $dir | cut -d"." -f1 | fzf)
-        if [ -n "$project" ]; then
-            taskell $dir/$project.md
-        fi
-    fi
-    
-}
-
 start() {
     watson start $(watson projects | fzf)
 }
@@ -87,23 +64,6 @@ tn() {
     task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "a" ] && echo '+wait') due:$due type:$([ "$deep" = "y" ] && echo deep)
 }
 
-n() {
-    if [ "$1" = "create" ]; then
-        nvim ~/Personal/Notes/inbox/$(date +%m-%d)-$2.wiki
-    elif [ "$1" = "quick" ]; then
-        nvim "+normal Go" +startinsert ~/Personal/Notes/quick-capture.wiki
-    else
-        if [ -z "$(ps x | grep VimwikiIndex | grep -v grep)" ]; then
-            if [ "$1" = "grep" ]; then
-                nvim +VimwikiIndex +"lcd %:p:h" +"Rg $2"
-            else
-                nvim +VimwikiIndex +"lcd %:p:h" +Files  
-            fi
-        fi
-    fi
-
-}
-    
 d() {
     local dotfiles=~/.dotfiles
     nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
@@ -112,13 +72,6 @@ d() {
 s() {
     local dir=~/.scripts
     nvim $(find $dir -type f -not -path '*/\.git/*' | fzf)
-}
-
-b() {
-    local dir=~/Personal/Boards
-
-    project=$(command ls $dir | fzf)
-    [[ -n "$project" ]] && taskell $dir/$project
 }
 
 kp() {

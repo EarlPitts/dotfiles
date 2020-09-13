@@ -19,12 +19,9 @@ Plug 'dense-analysis/ale'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
 Plug 'sheerun/vim-polyglot'
 
-
 "Looks
-Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-"Plug 'ryanoasis/vim-devicons'
 
 "Notes
 Plug 'vimwiki/vimwiki'
@@ -201,6 +198,7 @@ map <F5> :make<CR>
 map <F6> :make test<CR>
 map gd :YcmCompleter GoToDefinition<CR>
 map gr :YcmCompleter GoToReferences<CR>
+map K :YcmCompleter GetDoc<CR>
 
 
 "Copy to clipboard
@@ -241,14 +239,6 @@ let base16colorspace=256
 set t_Co=256
 set background=dark
 colorscheme base16-eighties
-"colorscheme nord
-"let g:nord_bold=1
-"let g:nord_italic=1
-"let g:nord_underline=1
-"let g:nord_italic_comments=1
-"let g:nord_cursor_line_number_background=1
 
 "Fordprog
 autocmd BufNewFile,BufRead *.ih set syntax=cpp
-
-:so ~/.config/nvim/terminal.vim
