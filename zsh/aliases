@@ -46,6 +46,7 @@ alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
 
 # Notes
 alias qn='nvim "+normal Go" +startinsert ~/Personal/Notes/quick-capture.wiki'
+alias n='nvim +VimwikiIndex +"lcd %:p:h" +Tagbar'
 
 # Review
 alias rd='review daily'
