@@ -27,3 +27,8 @@
   description = "Resize image"
   command = "convert <image> -resize <new-size> <new-image>"
   output = ""
+
+[[snippets]]
+  description = "Live disk qemu"
+  command = "qemu-system-x86_64 -net tap -net nic -enable-kvm -boot order=d -m <memory>G -cdrom <image>"
+  output = ""

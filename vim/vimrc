@@ -61,7 +61,6 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
-let g:NERDTreeQuitOnOpen=1
 
 "Ale
 let g:ale_set_highlights = 0 "Disable highlights
@@ -197,6 +196,7 @@ nmap <leader>. :Tagbar<CR>
 nmap <leader>, :w<CR>
 nnoremap <C-g> :Rg<CR>
 nnoremap <C-T> :Tags<CR>
+map <F1> :!./%<CR>
 map <F5> :make<CR>
 map <F6> :make test<CR>
 map gd :YcmCompleter GoToDefinition<CR>
