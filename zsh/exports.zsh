@@ -6,7 +6,7 @@ export VEDITOR='code'
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:~/.local/bin
 
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!venv/*"'
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*" --glob "!venv/*" --glob "!__pycache__/*'
 
 export KEYTIMEOUT=1
 export TERM=xterm-256color # for tmux
