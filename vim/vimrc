@@ -196,6 +196,8 @@ nnoremap <C-t> :Tags<CR>
 map <F1> :!./%<CR>
 map <F5> :make<CR>
 map <F6> :make test<CR>
+" Format JSON
+map <leader>j :%!python -m json.tool<CR>
 map gd :YcmCompleter GoToDefinition<CR>
 map gr :YcmCompleter GoToReferences<CR>
 map K :YcmCompleter GetDoc<CR>
