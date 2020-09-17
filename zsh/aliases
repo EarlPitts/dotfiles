@@ -20,7 +20,7 @@ alias grep='grep --color=auto'
 alias v='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
-alias scratch='nvim +Codi ~/Scratch/$(date +%m-%d-%H-%M).py'
+alias scratch='source ~/Scratch/venv/bin/activate && nvim +Codi ~/Scratch/$(date +%m-%d-%H-%M).py'
 alias jup='jupyter lab --ip=0.0.0.0'
 
 alias open='xdg-open'
