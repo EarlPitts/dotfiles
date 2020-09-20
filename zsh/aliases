@@ -1,31 +1,24 @@
 alias mixer='alsamixer'                                             
 alias clean='cat ~/.scripts/bleach.txt | xargs bleachbit -c && yay -Sc --clean --noconfirm'
 alias ls='exa -l'
-alias monitor='~/.config/monitor.sh'
-alias hu='setxkbmap hu'
-alias us='setxkbmap us'
-alias scan='sudo iw dev wls1 scan | egrep "signal|SSID" | sed -e "s/\tsigna    l: //" -e "s/\tSSID: //" | awk '\''{ORS = (NR % 2 == 0)? "\n" : " "; print}    '\'' | sort'
+alias scan='sudo iw dev wlp4s0 scan | egrep "signal|SSID" | sed -e "s/\tsigna    l: //" -e "s/\tSSID: //" | awk '\''{ORS = (NR % 2 == 0)? "\n" : " "; print}    '\'' | sort'
 alias weather='curl wttr.in/Budapest'
-alias git='hub'
-#alias win='i3lock -p win -u -i ~/.config/winLock.jpg'
+alias win='i3lock -p win -u -i ~/.dotfiles/wallpapers/winLock.jpg'
 alias cat='bat --theme=Nord'
-alias gc='git commit -m"Autocommit"'
-alias gg='git push'
-alias gcp='git commit -m"Autocommit" && git push'
-alias pass='~/.scripts/gpg-wrapper.sh'
-alias projector='xrandr --output LVDS1 --mode 1280x800 --scale 1x1 --output VGA1 --same-as LVDS1 --mode 1280x1024'
 alias df='df -h'
 alias du='du -hs *'
 alias grep='grep --color=auto'
+alias pe='pet exec'
+
+# Neovim
 alias v='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+
 alias scratch='source ~/Scratch/venv/bin/activate && nvim +Codi ~/Scratch/$(date +%m-%d-%H-%M).py'
 alias jup='jupyter lab --ip=0.0.0.0'
 
 alias open='xdg-open'
-alias v='nvim'
-alias ts='~/.Scripts/util/ssh.sh'
 alias spt='spotifyd; spt'
 alias gdb='gdb -q'
 alias newpass='rofi-pass --insert'
@@ -47,7 +40,6 @@ alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
 
 # Notes
 alias qn='nvim "+normal Go" +startinsert ~/Personal/Notes/quick-capture.wiki'
-alias wiki='nvim +VimwikiIndex +"lcd %:p:h" +Tagbar'
 alias sp='nvim $(mktemp --suffix '.md')'
 
 # Review
@@ -55,6 +47,10 @@ alias rd='review daily'
 alias rw='review weekly'
 
 # Git
+alias git='hub'
+alias gc='git commit -m"Autocommit"'
+alias gg='git push'
+alias gcp='git commit -m"Autocommit" && git push'
 alias save='git add --all && git commit -m"Autocommit." && git push'
 alias ga.='git add .'
 alias ggs='gitupdate .' # Commit all with file name changes as commit msg
@@ -100,9 +96,5 @@ alias gdn='git diff --name-only'
 # Git Status
 alias gs='git status --short'
 alias gss='git show --word-diff=color' # See changes made
-alias todo='taskell todo'
 
-alias gist='hub gist create --copy '
-
-# Pet
-alias pe='pet exec'
+alias gist='hub gist create --copy'

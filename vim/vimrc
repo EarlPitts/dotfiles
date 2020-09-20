@@ -169,7 +169,7 @@ set foldmethod=indent " Fold based on indent level
 set foldnestmax=5	" 5 nested fold max
 set foldenable " Enable folding
 set foldlevelstart=5 " Open most folds by default
-nnoremap  <space> za	
+"nnoremap  <space> za	
 
 "Misc
 set hidden " Enables hidden buffers, so you can have modified buffers in the background
