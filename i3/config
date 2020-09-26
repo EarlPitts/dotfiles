@@ -45,7 +45,7 @@ bindsym $mod+space exec ~/.scripts/layout.sh
 # Lockscreen
 bindsym $mod+p exec ~/.scripts/lock.sh
 
-# Rofi.scripts
+# Rofi scripts
 bindsym $mod+b exec ~/.scripts/rofi/board.sh
 bindsym $mod+Shift+b exec ~/.scripts/rofi/books.sh
 bindsym $mod+Shift+n exec st -e zsh -c falias 
@@ -54,10 +54,13 @@ bindsym Mod1+n exec xclip -o >> ~/Personal/Mindmap/quick-capture.md && echo -e "
 bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
 bindsym $mod+Shift+d exec ~/.scripts/rofi/scripts.sh 
 bindsym $mod+u exec ~/.scripts/rofi/references.sh
-bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
+#bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
 bindsym Control+$mod+p exec ~/.scripts/rofi/project.sh 
 bindsym $mod+g exec ~/.scripts/rofi/gollum.sh
 bindsym $mod+F7 exec ~/.scripts/util/monitor.sh
+
+
+bindsym $mod+F12 exec xdg-open 'https://mynoise.net/NoiseMachines/carInteriorSoundscapeGenerator.php?l=55472835393424330000' &
 
 # Emoji
 bindsym $mod+F2 exec rofimoji
