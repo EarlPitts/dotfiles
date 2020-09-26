@@ -13,6 +13,7 @@ Plug 'majutsushi/tagbar'
 
 "Editing
 Plug 'tpope/vim-commentary'
+Plug 'mbbill/undotree'
 
 "Analysis
 Plug 'dense-analysis/ale'
@@ -201,6 +202,7 @@ map <leader>j :%!python -m json.tool<CR>
 map gd :YcmCompleter GoToDefinition<CR>
 map gr :YcmCompleter GoToReferences<CR>
 map K :YcmCompleter GetDoc<CR>
+nnoremap <F11> :UndotreeToggle<cr>
 nmap <F12> :tabnew wiki/index.md<CR>:Tagbar<CR>
 
 
