@@ -9,6 +9,7 @@ alias df='df -h'
 alias du='du -hs *'
 alias grep='grep --color=auto'
 alias pe='pet exec'
+alias pup='pup --color'
 
 # Neovim
 alias v='nvim'
