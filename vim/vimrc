@@ -16,7 +16,7 @@ Plug 'tpope/vim-commentary'
 
 "Analysis
 Plug 'dense-analysis/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer --go-completer' }
 Plug 'sheerun/vim-polyglot'
 
 "Looks

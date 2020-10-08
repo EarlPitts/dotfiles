@@ -63,7 +63,7 @@ bindsym $mod+F7 exec ~/.scripts/util/monitor.sh
 bindsym $mod+F12 exec xdg-open 'https://mynoise.net/NoiseMachines/carInteriorSoundscapeGenerator.php?l=55472835393424330000' &
 
 # Emoji
-bindsym $mod+F2 exec rofimoji
+bindsym $mod+F2 exec rofimoji -s light
 
 # Set brightness
 bindsym $mod+Home exec xbacklight -inc 10 
@@ -172,8 +172,8 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # move to other output
-bindsym $mod+Shift+Right exec i3-msg move workspace to output right
-bindsym $mod+Shift+Left exec i3-msg move workspace to output left
+bindsym $mod+Control+h exec i3-msg move workspace to output right
+bindsym $mod+Control+l exec i3-msg move workspace to output left
 
 
 # reload the configuration file
