@@ -8,6 +8,7 @@
 
 - link:
         # Vim
+        ~/.config/nvim/md2html.sh: vim/md2html.sh
         ~/.config/nvim/init.vim: vim/vimrc
         ~/.config/nvim/terminal.vim: vim/terminal.vim
         ~/.config/nvim/my_snippets: vim/my_snippets
@@ -38,3 +39,5 @@
         # Git
         ~/.config/git/ignore: git/gitignore
         ~/.config/git/config: git/gitconfig
+        # Ctags
+        ~/.config/ctags/conf.ctags: ctags/conf.ctags

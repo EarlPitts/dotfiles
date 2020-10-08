@@ -13,6 +13,14 @@ falias() {    CMD=$(
     eval $CMD
 }
 
+wiki() {
+    if [[ -e wiki/index.md ]]; then
+        nvim +Tagbar wiki/index.md
+    else
+        nvim +VimwikiIndex +"lcd %:p:h" +Tagbar
+    fi
+}
+
 # Show $PATH
 path() {
   echo -e ${PATH//:/\\n}
