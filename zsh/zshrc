@@ -27,7 +27,7 @@ source /usr/share/fzf/key-bindings.zsh
 zstyle :compinstall filename '~/.zshrc'
 
 # Autocompletion and Propmt
-autoload -Uz compinit promptinit; 
+autoload -Uz compinit promptinit;
 compinit; promptinit
 
 # End of lines added by compinstall
