@@ -1,0 +1,92 @@
+snippet argparse
+import argparse
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--morning', action='store_true', help='Morning') # This is just a flag
+
+args = parser.parse_args()
+
+print(args.morning) # This will print if the flag was switched on
+endsnippet
+
+snippet csv
+import csv
+
+with open(filename, 'r') as f:
+    reader = csv.reader(f)
+endsnippet
+
+snippet json
+import json
+
+with open(filename, 'r') as f:
+    data = json.loads(f.read())
+
+print(json.dumps(self.data, indent=4, sort_keys=True)) # pp
+endsnippet
+
+snippet datetime
+from datetime import datetime
+
+now = datetime.now() # current date and time
+
+year = now.strftime("%Y")
+print("year:", year)
+
+month = now.strftime("%m")
+print("month:", month)
+
+day = now.strftime("%d")
+print("day:", day)
+
+time = now.strftime("%H:%M:%S")
+print("time:", time)
+
+date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
+print("date and time:",date_time)
+endsnippet
+
+snippet enumerate
+[(i, number) for i, number in enumerate(list_of_nums)]
+endsnippet
+
+snippet lamdba
+(lambda first, second: f'{first} {second}')('John', 'Neumann')
+endsnippet
+
+snippet logging
+import logging
+
+logging.basicConfig(filename='example.log',level=logging.DEBUG)
+logging.debug('This message should go to the log file')
+logging.info('So should this')
+logging.warning('And this, too')
+endsnippet
+
+snippet regex
+import re
+
+line = re.search(r'[@;=a-zA-Z]+', line).group(0)
+endsnippet
+
+snippet serer_socket
+import socket
+
+soc = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+soc.bind(('0.0.0.0', 10012))
+
+soc.listen()
+
+soc, address = soc.accept()
+
+data = soc.recv(1024)
+print(data)
+endsnippet
+
+snippet struct
+import struct
+s = struct.pack('<i', 1179403647)
+
+struct.unpack('<i', s)
+endsnippet
