@@ -59,7 +59,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
-let NERDIgnore=['.git']
+let NERDTreeIgnore=['.git']
 
 "Ale
 let g:ale_set_highlights = 0 "Disable highlights
