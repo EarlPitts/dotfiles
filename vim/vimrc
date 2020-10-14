@@ -18,6 +18,7 @@ Plug 'majutsushi/tagbar'
 "Editing
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
+Plug 'tpope/vim-surround'
 
 "Analysis
 Plug 'dense-analysis/ale'
@@ -63,7 +64,7 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 "NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['.git']
+let NERDTreeIgnore=['.git', '__pycache__', '.pytest_cache']
 
 "Ale
 let g:ale_set_highlights = 0 "Disable highlights
