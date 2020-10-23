@@ -16,7 +16,14 @@ FORCEFLAG=
 
 OUTPUT="$OUTPUTDIR"/$(basename "$INPUT" .$EXTENSION).html
 
-$MKD2HTML -css "style.css" "$INPUT"
+MATHJAX1='<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>'
+MATHJAX2='<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>'
+INLINE='<script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]}};</script>'
+
+
+
+
+$MKD2HTML -css "style.css" -h  "$INPUT"
 OUTPUTTMP=$(dirname "$INPUT")/$(basename "$INPUT" ."$EXTENSION").html
 mv -f "$OUTPUTTMP" "$OUTPUT"
 

@@ -82,8 +82,8 @@ let g:vimwiki_list = [{
 	\ 'index': 'Home',
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md',
-	\ 'path_html': '/srv/http/notes/',
-	\ 'custom_wiki2html': '~/.config/nvim/md2html.sh',
+	\ 'path_html': '~/test/',
+	\ 'custom_wiki2html': '~/pandoc.sh',
     \ 'links_space_char': '-',
 	\ 'template_ext': '.tpl',
     \ 'auto_export': 1}]
