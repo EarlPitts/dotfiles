@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/bash
 
 MKD2HTML=mkd2html
 
@@ -9,23 +9,6 @@ OUTPUTDIR="$4"
 INPUT="$5"
 CSSFILE="$6"
 
-FORCEFLAG=
-
-[ $FORCE -eq 0 ] || { FORCEFLAG="-f"; };
-[ $SYNTAX = "markdown" ] || { echo "Error: Unsupported syntax"; exit -2; };
-
-OUTPUT="$OUTPUTDIR"/$(basename "$INPUT" .$EXTENSION).html
-
-MATHJAX1='<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>'
-MATHJAX2='<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>'
-INLINE='<script>window.MathJax={tex:{inlineMath:[["$","$"],["\\(","\\)"]]}};</script>'
-
-
-
-
-$MKD2HTML -css "style.css" -h  "$INPUT"
-OUTPUTTMP=$(dirname "$INPUT")/$(basename "$INPUT" ."$EXTENSION").html
-mv -f "$OUTPUTTMP" "$OUTPUT"
-
+pandoc --mathjax --quiet -s "$INPUT" -o "$OUTPUTDIR"/$(basename $INPUT | cut -d"." -f1).html
 
 
