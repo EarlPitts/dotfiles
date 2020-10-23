@@ -2,6 +2,10 @@ let mapleader = ","
 set nocompatible
 syntax on
 
+" ===========================
+" # Plugins
+" ===========================
+
 "Plugin Manager
 call plug#begin(stdpath('data') . '/plugged')
 
@@ -14,6 +18,7 @@ Plug 'majutsushi/tagbar'
 "Editing
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
+Plug 'tpope/vim-surround'
 
 "Analysis
 Plug 'dense-analysis/ale'
@@ -43,7 +48,9 @@ Plug 'metakirby5/codi.vim'
 
 call plug#end()    
 
-"### Plugin Configs ###
+" ===========================
+" # Plugin Configs
+" ===========================
 
 "FZF
 let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
@@ -54,12 +61,10 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "my_snippets"]
 
-
 "NERDTree
-map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeShowHidden=1
-let NERDTreeIgnore=['.git']
+let NERDTreeIgnore=['.git', '__pycache__', '.pytest_cache']
 
 "Ale
 let g:ale_set_highlights = 0 "Disable highlights
@@ -128,7 +133,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
-"### Editor ###
+" ===========================
+" # Editor
+" ===========================
 
 "Indentation
 set autoindent " Copy indent when starting new line
@@ -180,8 +187,19 @@ set backspace=indent,eol,start
 set history=1000
 set omnifunc=syntaxcomplete#Complete " TODO what's this? :D
 set clipboard=unnamed " System clipboard TODO
+"Fordprog
+autocmd BufNewFile,BufRead *.ih set syntax=cpp
 
-"Mappings
+"Colors
+let base16colorspace=256
+set t_Co=256
+set background=dark
+colorscheme base16-eighties
+
+" ===========================
+" # Key Mappings
+" ===========================
+
 if isdirectory(".git")
 	" if in a git project, use :GFiles
 	nmap <C-p> :GitFiles --cached --others --exclude-standard<cr>
@@ -201,11 +219,14 @@ map <F5> :make<CR>
 map <F6> :make test<CR>
 " Format JSON
 map <leader>j :%!python -m json.tool<CR>
+nnoremap <F11> :UndotreeToggle<cr>
+nmap <F12> :tabnew wiki/index.md<CR>:Tagbar<CR>
+
+"Code navigation
 map gd :YcmCompleter GoToDefinition<CR>
 map gr :YcmCompleter GoToReferences<CR>
 map K :YcmCompleter GetDoc<CR>
-nnoremap <F11> :UndotreeToggle<cr>
-nmap <F12> :tabnew wiki/index.md<CR>:Tagbar<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 
 "Copy to clipboard
@@ -231,12 +252,3 @@ nnoremap <C-W>- 5<C-w>-
 nnoremap <C-W>+ 5<C-w>+
 nnoremap <C-W>, 10<C-w><
 nnoremap <C-W>. 10<C-w>>
-
-"Colors
-let base16colorspace=256
-set t_Co=256
-set background=dark
-colorscheme base16-eighties
-
-"Fordprog
-autocmd BufNewFile,BufRead *.ih set syntax=cpp
