@@ -1,7 +1,5 @@
 #!/usr/bin/bash
 
-MKD2HTML=mkd2html
-
 FORCE="$1"
 SYNTAX="$2"
 EXTENSION="$3"
