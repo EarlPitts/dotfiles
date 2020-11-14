@@ -8,5 +8,3 @@ INPUT="$5"
 CSSFILE="$6"
 
 pandoc --mathjax --quiet -s "$INPUT" -o "$OUTPUTDIR"/$(basename $INPUT | cut -d"." -f1).html
-
-

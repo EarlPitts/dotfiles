@@ -25,8 +25,9 @@ alias gdb='gdb -q'
 alias newpass='rofi-pass --insert'
 alias venv='source venv/bin/activate'
 
-## System
-# Taskwarrior
+# Productivity System
+
+## Taskwarrior
 alias td='task +DUE'
 alias tt='task +TODAY'
 #alias tw='task +WEEK'
@@ -36,16 +37,18 @@ alias td='task type:deep -wait'
 alias ts='task type:shallow -wait'
 alias tw='task +wait'
 
-# Projects
+## Calendar
+alias calcurse='calcurse -D ~/Personal/Calendar'
+
+## Projects
 alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
 
-# Notes
+## Notes
 alias qn='nvim "+normal Go" +startinsert ~/Personal/Notes/quick-capture.md'
 alias sp='nvim $(mktemp --suffix '.md')'
 
-# Review
-alias rd='review daily'
-alias rw='review weekly'
+## Review
+alias journal='nvim ~/Personal/Gratitude/$(date +%Y-%b-%d).md'
 
 # Git
 alias git='hub'
