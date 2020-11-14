@@ -30,3 +30,5 @@
         ~/.config/dunst/dunstrc: dunst/dunstrc
         # Taskwarrior
         ~/.taskrc: taskrc
+        # Calcurse
+        ~/.config/calcurse: calcurse
