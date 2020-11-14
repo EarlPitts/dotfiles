@@ -13,3 +13,6 @@ export TERM=xterm-256color # for tmux
 
 # Colored Manpages
 export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=base16'"
+
+# Watson
+export WATSON_DIR=~/Personal/Watson
