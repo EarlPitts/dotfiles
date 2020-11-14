@@ -73,13 +73,19 @@ tn() {
 }
 
 d() {
-    local dotfiles=~/.dotfiles
-    nvim $(find $dotfiles -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
+    local dir=~/.dotfiles
+    local dotfile=$(find $dir -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
+    if [ -n "$dotfile" ]; then
+        nvim $dotfile
+    fi
 }
 
 s() {
     local dir=~/.scripts
-    nvim $(find $dir -type f -not -path '*/\.git/*' | fzf)
+    local script=$(find $dir -type f -not -path '*/\.git/*' | fzf)
+    if [ -n "$script" ]; then
+        nvim $script
+    fi
 }
 
 kp() {
