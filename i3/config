@@ -39,7 +39,7 @@ bindsym $mod+c exec i3-sensible-terminal -e calcurse -D ~/Personal/Calendar -C ~
 bindsym $mod+i exec ~/.scripts/productivity/watson.sh
 bindsym $mod+n exec ~/.scripts/rofi/quick-capture.sh
 #bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
-#bindsym $mod+u exec ~/.scripts/rofi/references.sh
+bindsym $mod+b exec ~/.scripts/rofi/references.sh
 #bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
 
 ## Rofi scripts
