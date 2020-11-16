@@ -4,80 +4,67 @@ set $mod Mod4
 # Font
 font pango:Fira Code 11
 
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
-
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend.
-#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
-
-
 # Open in specific workspace
 for_window [class="Spotify"] move to workspace $ws10
-for_window [class="code-oss"] move to workspace $ws3
 
-# Use pactl to adjust volume in PulseAudio.
+# Hiding borders
+default_border none
+default_floating_border none
+
+# Keybindings
+
+## Use pactl to adjust volume in PulseAudio.
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
-# Music player
-bindsym $mod+Left exec playerctl previous
-bindsym $mod+Right exec playerctl next
-bindsym $mod+Up exec playerctl stop
-bindsym $mod+Down exec playerctl play-pause
-
+## Music player
+# bindsym $mod+Left exec playerctl previous
+# bindsym $mod+Right exec playerctl next
+# bindsym $mod+Up exec playerctl stop
+# bindsym $mod+Down exec playerctl play-pause
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-
-# Hiding unnecessary shit
-default_border none
-default_floating_border none
-
-# Dunst
-#exec --no-start-up dunst
-
-# Layout
+## Keyboard Layout
 bindsym $mod+space exec ~/.scripts/layout.sh
 
-# Lockscreen
+## Lockscreen
 bindsym $mod+p exec ~/.scripts/lock.sh
 
-# Rofi scripts
-bindsym $mod+b exec ~/.scripts/rofi/board.sh
-bindsym $mod+Shift+b exec ~/.scripts/rofi/books.sh
-#bindsym $mod+Shift+n exec st -e zsh -c falias 
+## Productivity
+bindsym $mod+c exec i3-sensible-terminal -e calcurse -D ~/Personal/Calendar -C ~/.config/calcurse
+bindsym $mod+i exec ~/.scripts/productivity/watson.sh
 bindsym $mod+n exec ~/.scripts/rofi/quick-capture.sh
-bindsym Mod1+n exec xclip -o >> ~/Personal/Mindmap/quick-capture.md && echo -e "\n" >> ~/Personal/Mindmap/quick-capture.md
-bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
-bindsym $mod+Shift+d exec ~/.scripts/rofi/scripts.sh 
-bindsym $mod+u exec ~/.scripts/rofi/references.sh
-#bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
-bindsym Control+$mod+p exec ~/.scripts/rofi/project.sh 
-bindsym $mod+g exec ~/.scripts/rofi/gollum.sh
-bindsym $mod+F7 exec ~/.scripts/util/monitor.sh
+#bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
+#bindsym $mod+u exec ~/.scripts/rofi/references.sh
+#bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
 
+## Rofi scripts
+bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
 
-bindsym $mod+F12 exec xdg-open 'https://mynoise.net/NoiseMachines/carInteriorSoundscapeGenerator.php?l=55472835393424330000' &
+## Set Screen
+bindsym XF86Display exec ~/.scripts/util/monitor.sh
 
-# Emoji
-bindsym $mod+F2 exec rofimoji -s light
+## Brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
-# Set brightness
-bindsym $mod+Home exec xbacklight -inc 10 
-bindsym $mod+End exec xbacklight -dec 10
-
-# Take screenshot
+## Take Screenshot
 bindsym Shift+Print --release exec "~/.scripts/util/screenshot.sh select"
 bindsym Control+Print --release exec "~/.scripts/util/screenshot.sh note"
 bindsym Print exec "~/.scripts/util/screenshot.sh"
+
+## Rofi
+bindsym $mod+d exec rofi -show combi
+
+# Ranger
+bindsym Mod1+e exec i3-sensible-terminal -e ranger
+
+# Password manager
+bindsym $mod+Shift+p exec rofi-pass
 
 # Moving workspaces between screens
 bindsym $mod+F1 move workspace to output left
@@ -85,20 +72,11 @@ bindsym $mod+F1 move workspace to output left
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
+## Start a Terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
-# kill focused window
+## Kill focused window
 bindsym $mod+Shift+q kill
-
-# Rofi
-bindsym $mod+d exec rofi -show combi
-
-# Ranger
-bindsym Mod1+e exec "st -e ranger"
-
-# Password manager
-bindsym $mod+Shift+p exec rofi-pass
 
 # change focus
 bindsym $mod+h focus left
@@ -111,7 +89,6 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
 
 # split in horizontal orientation
 #bindsym $mod+h split h

@@ -38,7 +38,7 @@ alias ts='task type:shallow -wait'
 alias tw='task +wait'
 
 ## Calendar
-alias calcurse='calcurse -D ~/Personal/Calendar'
+alias cal='calcurse -D ~/Personal/Calendar -C ~/.config/calcurse'
 
 ## Projects
 alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
