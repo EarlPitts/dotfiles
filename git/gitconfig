@@ -13,3 +13,5 @@
     st = status
 [github]
     user = earlpitts
+[pull]
+	rebase = true
