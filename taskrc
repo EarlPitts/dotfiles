@@ -13,7 +13,7 @@
 # Files
 data.location=~/Personal/Tasks
 
-include ~/Personal/Tasks/dark-256.theme
+include ~/.config/taskwarrior/dark-256.theme
 
 # Color theme (uncomment one to use)
 #include /usr/share/doc/task/rc/light-16.theme
