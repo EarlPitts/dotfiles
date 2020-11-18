@@ -16,3 +16,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=base16'"
 
 # Watson
 export WATSON_DIR=~/Personal/Watson
+
+# Taskwarrior
+export TASKRC=~/.config/taskwarrior/taskrc
