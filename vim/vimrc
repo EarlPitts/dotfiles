@@ -85,8 +85,8 @@ let g:vimwiki_list = [{
 	\ 'path_html': '/srv/http/notes/',
 	\ 'custom_wiki2html': '~/.config/nvim/md2html.sh',
     \ 'links_space_char': '-',
-	\ 'template_ext': '.tpl',
-    \ 'auto_export': 1}]
+	\ 'template_ext': '.tpl'}]
+"    \ 'auto_export': 1}]
 
 "let g:vimwiki_folding = 'list'
 
