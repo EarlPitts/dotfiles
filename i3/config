@@ -43,7 +43,7 @@ bindsym $mod+b exec ~/.scripts/rofi/references.sh
 #bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
 
 ## Rofi scripts
-bindsym $mod+F12 exec  rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $mod+F12 exec rofi -show calc -modi calc -no-show-match -no-sort
 
 ## Set Screen
 bindsym XF86Display exec ~/.scripts/util/monitor.sh

@@ -8,7 +8,6 @@ call plug#begin(stdpath('data') . '/plugged')
 "Navigation
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
-Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
 
 "Editing
@@ -82,7 +81,7 @@ let g:vimwiki_list = [{
 	\ 'index': 'Home',
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md',
-	\ 'path_html': '/srv/http/notes/',
+	\ 'path_html': '~/notes/',
 	\ 'custom_wiki2html': '~/.config/nvim/md2html.sh',
     \ 'links_space_char': '-',
 	\ 'template_ext': '.tpl'}]
