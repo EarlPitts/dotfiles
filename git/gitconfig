@@ -15,3 +15,5 @@
     user = earlpitts
 [receive]
 	denyCurrentBranch = ignore
+[pull]
+	rebase = true

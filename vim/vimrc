@@ -8,7 +8,6 @@ call plug#begin(stdpath('data') . '/plugged')
 "Navigation
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
-Plug 'mhinz/vim-startify'
 Plug 'majutsushi/tagbar'
 
 "Editing
@@ -82,11 +81,11 @@ let g:vimwiki_list = [{
 	\ 'index': 'Home',
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md',
-	\ 'path_html': '/srv/http/notes/',
+	\ 'path_html': '~/notes/',
 	\ 'custom_wiki2html': '~/.config/nvim/md2html.sh',
     \ 'links_space_char': '-',
-	\ 'template_ext': '.tpl',
-    \ 'auto_export': 1}]
+	\ 'template_ext': '.tpl'}]
+"    \ 'auto_export': 1}]
 
 "let g:vimwiki_folding = 'list'
 
@@ -206,7 +205,13 @@ map gr :YcmCompleter GoToReferences<CR>
 map K :YcmCompleter GetDoc<CR>
 nnoremap <F11> :UndotreeToggle<cr>
 nmap <F12> :tabnew wiki/index.md<CR>:Tagbar<CR>
+nmap <F10> :Gdiffsplit<CR>
 
+"Meetings
+map <leader>mr :.!echo - - $(date +\%F)-review<CR>
+map <leader>mp :.!echo - - $(date +\%F)-planning<CR>
+map <leader>ms :.!echo - - $(date +\%F)-scrum<CR>
+map <leader>mt :.!echo - - $(date +\%F)-retro<CR>
 
 "Copy to clipboard
 nmap <C-c> "*y

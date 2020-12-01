@@ -29,6 +29,6 @@
         # Dunst
         ~/.config/dunst/dunstrc: dunst/dunstrc
         # Taskwarrior
-        ~/.taskrc: taskrc
+        ~/.config/taskwarrior: taskwarrior
         # Calcurse
         ~/.config/calcurse: calcurse

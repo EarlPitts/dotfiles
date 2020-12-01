@@ -16,7 +16,7 @@ alias v='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
-alias scratch='source ~/Scratch/venv/bin/activate && nvim +Codi ~/Scratch/$(date +%m-%d-%H-%M).py'
+alias scratch='nvim +Codi /tmp/$(date +%F-%T).py'
 alias jup='jupyter lab --ip=0.0.0.0'
 
 alias open='xdg-open'
@@ -47,8 +47,14 @@ alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
 alias qn='nvim "+normal Go" +startinsert ~/Personal/Notes/quick-capture.md'
 alias sp='nvim $(mktemp --suffix '.md')'
 
+## Checklists
+alias check='nvim ~/Personal/Checklists/index.md'
+
 ## Review
 alias journal='nvim ~/Personal/Gratitude/$(date +%Y-%b-%d).md'
+
+## Codebase
+alias code='cd ~/code && nvim +Rg'
 
 # Git
 alias git='hub'

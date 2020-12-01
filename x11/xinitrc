@@ -37,6 +37,7 @@ fi
 
 #rescuetime &
 redshift &
+calcurse --daemon
 
 feh --no-fehbg --bg-fill ~/.dotfiles/wallpapers/background.jpg
 xrdb -merge ~/.Xresources

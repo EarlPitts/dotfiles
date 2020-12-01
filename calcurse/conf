@@ -27,6 +27,6 @@ general.firstdayofweek=monday
 general.multipledays=no
 general.periodicsave=0
 general.systemevents=yes
-notification.command=notify-send "$(calcurse -D ~/Personal/Calendar --next)"
+notification.command=/home/obabo/.scripts/notification.sh
 notification.notifyall=all
 notification.warning=300

@@ -6,7 +6,7 @@ export VEDITOR='code'
 export PATH=$PATH:~/.scripts
 export PATH=$PATH:~/.local/bin
 
-export FZF_DEFAULT_COMMAND="rg --files --no-ignore --hidden --follow --glob '!.git/*' --glob '!venv/*' --glob '!__pycache__/*'"
+export FZF_DEFAULT_COMMAND="rg --files --no-ignore --hidden --follow --glob '!**/.git/*' --glob '!venv/*' --glob '!__pycache__/*'"
 
 export KEYTIMEOUT=1
 export TERM=xterm-256color # for tmux
@@ -16,3 +16,6 @@ export MANPAGER="sh -c 'col -bx | bat -l man -p --theme=base16'"
 
 # Watson
 export WATSON_DIR=~/Personal/Watson
+
+# Taskwarrior
+export TASKRC=~/.config/taskwarrior/taskrc
