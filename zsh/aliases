@@ -53,6 +53,9 @@ alias check='nvim ~/Personal/Checklists/index.md'
 ## Review
 alias journal='nvim ~/Personal/Gratitude/$(date +%Y-%b-%d).md'
 
+## Codebase
+alias code='cd ~/code && nvim +Rg'
+
 # Git
 alias git='hub'
 alias gc='git commit -m"Autocommit"'

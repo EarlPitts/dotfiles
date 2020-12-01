@@ -19,10 +19,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 ## Music player
-# bindsym $mod+Left exec playerctl previous
-# bindsym $mod+Right exec playerctl next
-# bindsym $mod+Up exec playerctl stop
-# bindsym $mod+Down exec playerctl play-pause
+bindsym $mod+Left exec playerctl previous
+bindsym $mod+Right exec playerctl next
+bindsym $mod+Up exec playerctl stop
+bindsym $mod+Down exec playerctl play-pause
+
 bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
