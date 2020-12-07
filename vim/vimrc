@@ -16,7 +16,7 @@ Plug 'mbbill/undotree'
 
 "Analysis
 Plug 'dense-analysis/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer --go-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer' }
 Plug 'sheerun/vim-polyglot'
 
 "Looks
@@ -98,20 +98,6 @@ let g:tagbar_type_vimwiki = {
           \ , 'ctagsbin':'~/.config/nvim/vwtags.py'
           \ , 'ctagsargs': 'markdown'
           \ }
-
-
-"Startify
-let g:startify_session_persistence = 1
-let g:startify_session_dir = '~/.vim/session'
-let g:startify_commands = [ ['VimWiki', 'VimwikiIndex'] ]
-let g:startify_padding_left = 5
-let g:startify_lists = [
-        \ { 'type': 'sessions',  'header': ['   Sessions']       },
-        \ { 'type': 'bookmarks', 'header': ['   Bookmarks']      },
-        \ { 'type': 'commands',  'header': ['   Commands']       },
-        \ { 'type': 'files',     'header': ['   MRU']            },
-        \ { 'type': 'dir',       'header': ['   MRU '. getcwd()] },
-        \ ]
 
 "Airline
 let g:airline_powerline_fonts = 1
@@ -213,10 +199,6 @@ map <leader>mp :.!echo - - $(date +\%F)-planning<CR>
 map <leader>ms :.!echo - - $(date +\%F)-scrum<CR>
 map <leader>mt :.!echo - - $(date +\%F)-retro<CR>
 
-"Calendar
-map <leader>c :.!~/.scripts/appointments.sh<CR>
-
-
 "Copy to clipboard
 nmap <C-c> "*y
 vmap <C-c> "*y
@@ -247,5 +229,6 @@ set t_Co=256
 set background=dark
 colorscheme base16-eighties
 
-"Fordprog
+"Autocommands
+autocmd BufNewFile ~/Personal/Notes/diary/*.md :silent 0r !~/.scripts/diary_template.sh '%'
 autocmd BufNewFile,BufRead *.ih set syntax=cpp

@@ -52,6 +52,7 @@ alias check='nvim ~/Personal/Checklists/index.md'
 
 ## Review
 alias journal='nvim ~/Personal/Gratitude/$(date +%Y-%b-%d).md'
+alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'
 
 ## Codebase
 alias code='cd ~/code && nvim +Rg'

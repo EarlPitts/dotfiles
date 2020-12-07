@@ -26,6 +26,13 @@ path() {
   echo -e ${PATH//:/\\n}
 }
 
+p() {
+    cd ~/Projects
+    cd $(command ls | fzf)
+    [[ -e venv ]] && source venv/bin/activate
+    tmux
+}
+
 # md <folder-name> - Create folder and cd to it
 md() {
   mkdir "$1"
