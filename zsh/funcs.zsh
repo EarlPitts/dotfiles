@@ -21,6 +21,15 @@ wiki() {
     fi
 }
 
+meeting() {
+  if [[ $# == 0 ]]; then
+    cd ~/meeting_notes
+    nvim index.md +Tagbar
+  else
+    nvim ~/meeting_notes/$(date +%Y-%m-%d)-$1.md +Tagbar
+  fi
+}
+
 # Show $PATH
 path() {
   echo -e ${PATH//:/\\n}
