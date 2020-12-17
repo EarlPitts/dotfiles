@@ -45,6 +45,7 @@ bindsym $mod+b exec ~/.scripts/rofi/references.sh
 
 ## Rofi scripts
 bindsym $mod+F12 exec rofi -show calc -modi calc -no-show-match -no-sort
+bindsym $mod+u exec ~/.scripts/util/kill_process.sh
 
 ## Set Screen
 bindsym XF86Display exec ~/.scripts/util/monitor.sh
