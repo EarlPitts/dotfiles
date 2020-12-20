@@ -13,6 +13,19 @@ falias() {    CMD=$(
     eval $CMD
 }
 
+# Codi
+# Usage: codi [filetype] [filename]
+codi() {
+  local syntax="${1:-python}"
+  #shift
+  vim -c \
+    "set bt=nofile ls=0 noru nonu nornu |\
+    hi ColorColumn ctermbg=NONE |\
+    hi VertSplit ctermbg=NONE |\
+    hi NonText ctermfg=0 |\
+    Codi $syntax" "$@"
+}
+
 wiki() {
     if [[ -e wiki/index.md ]]; then
         nvim +Tagbar wiki/index.md
