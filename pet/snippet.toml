@@ -10,7 +10,7 @@
 
 [[snippets]]
   description = "Mount bitlocker"
-  command = "sudo dislocker <partition> -u<password> -- /media; sudo mount -o loop /media/dislocker-file /mnt"
+  command = "sudo dislocker <partition> -u<password> -- /run/media; sudo mount -o loop /run/media/dislocker-file /mnt"
   output = ""
 
 [[snippets]]
