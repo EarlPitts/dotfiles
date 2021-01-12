@@ -16,7 +16,7 @@ Plug 'mbbill/undotree'
 
 "Analysis
 Plug 'dense-analysis/ale'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clangd-completer --ts-completer' }
 Plug 'sheerun/vim-polyglot'
 
 "Looks
