@@ -7,6 +7,9 @@ font pango:Fira Code 11
 # Open in specific workspace
 for_window [class="Spotify"] move to workspace $ws10
 
+# Open as floating winow
+for_window [title=codi] floating enable
+
 # Hiding borders
 default_border none
 default_floating_border none
@@ -44,6 +47,8 @@ bindsym $mod+Shift+n exec ~/.scripts/rofi/note_html.sh
 bindsym $mod+b exec ~/.scripts/rofi/references.sh
 #bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
 bindsym $mod+F11 exec ~/.scripts/productivity/pomodoro.sh
+
+bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi -e zsh -ic codi
 
 ## Rofi scripts
 bindsym $mod+F12 exec rofi -show calc -modi calc -no-show-match -no-sort

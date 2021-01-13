@@ -150,6 +150,7 @@ set nu " Show line numbers
 set rnu " Relative number
 set title
 set showcmd	" Show commands in bot line
+set shortmess+=I " Turn off intro message
 
 "Folding
 set foldmethod=indent " Fold based on indent level
