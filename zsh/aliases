@@ -10,6 +10,7 @@ alias du='du -hs *'
 alias grep='grep --color=auto'
 alias pe='pet exec'
 alias pup='pup --color'
+alias dirty='watch -d grep -e Dirty: -e Writeback: /proc/meminfo'
 
 # Neovim
 alias v='nvim'
