@@ -9,6 +9,7 @@ for_window [class="Spotify"] move to workspace $ws10
 
 # Open as floating winow
 for_window [title=codi] floating enable
+for_window [class="feh"] floating enable
 
 # Hiding borders
 default_border none
