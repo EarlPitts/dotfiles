@@ -1,0 +1,6 @@
+_pwgen () {
+    pwgen -1cnsy 30 1 "$@"
+}
+
+default_user=grafitpor@gmail.com
+password_length=20
