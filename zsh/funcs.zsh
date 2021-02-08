@@ -36,10 +36,10 @@ wiki() {
 
 meeting() {
   if [[ $# == 0 ]]; then
-    cd ~/meeting_notes
+    cd ~/notes
     nvim index.md +Tagbar
   else
-    nvim ~/meeting_notes/$(date +%Y-%m-%d)-$1.md +Tagbar
+    nvim ~/notes/$1.md +Tagbar
   fi
 }
 
