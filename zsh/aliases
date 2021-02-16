@@ -58,7 +58,7 @@ alias journal='nvim ~/Personal/Gratitude/$(date +%Y-%b-%d).md'
 alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'
 
 ## Codebase
-alias code='cd ~/code && nvim +Rg'
+alias code='cd ~/Codebase && nvim +Rg'
 
 # Git
 alias git='hub'
