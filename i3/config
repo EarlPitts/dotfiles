@@ -245,5 +245,3 @@ bar {
 }
 
 bindsym $mod+m bar mode toggle
-
-#exec redshift
