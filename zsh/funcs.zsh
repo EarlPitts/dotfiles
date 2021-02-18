@@ -76,30 +76,29 @@ down() {
     curl -O "$1"
 }
 
+# t() {
+#     local home='+home'
+#     local work='+work'
+#     local waiting='+wait'
 
-t() {
-    local home='+home'
-    local work='+work'
-    local waiting='+wait'
+#     if [ $# = 0 ]; then
+#             task ${work} or ${home}
+#     else
+#         task -wait $@
+#     fi
+# }
 
-    if [ $# = 0 ]; then
-            task ${work} or ${home}
-    else
-        task -wait $@
-    fi
-}
-
-tn() {
-    echo -n "Description: "
-    read descr
-    echo -n "Due date: "
-    read due
-    echo -n "Tag: ([h]ome/[w]ork/w[a]it) "
-    read tag
-    echo -n "Deep? (y/n) "
-    read deep
-    task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "a" ] && echo '+wait') due:$due type:$([ "$deep" = "y" ] && echo deep)
-}
+# tn() {
+#     echo -n "Description: "
+#     read descr
+#     echo -n "Due date: "
+#     read due
+#     echo -n "Tag: ([h]ome/[w]ork/w[a]it) "
+#     read tag
+#     echo -n "Deep? (y/n) "
+#     read deep
+#     task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "a" ] && echo '+wait') due:$due type:$([ "$deep" = "y" ] && echo deep)
+# }
 
 d() {
     local dir=~/.dotfiles

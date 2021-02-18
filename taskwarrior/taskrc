@@ -17,10 +17,9 @@ include ~/.config/taskwarrior/dark-256.theme
 # Verbosity
 verbose=off
 
-uda.type.type=string
-uda.type.label=Type
-uda.type.values=shallow,deep
-uda.type.default=shallow
+uda.energy.type=numeric
+uda.type.label=Energy
+uda.type.values=1,2,3
 
-report.next.labels=ID,Active,Age,Deps,Project,Type,Tag,S,Due,Until,Description,Urg
-report.next.columns=id,start.age,entry.age,depends,project,type,tags,scheduled.countdown,due.relative,until.remaining,description,urgency
+report.next.labels=ID,Active,Age,Deps,Project,Energy,Tag,S,Due,Until,Description,Urg
+report.next.columns=id,start.age,entry.age,depends,project,energy,tags,scheduled.countdown,due.relative,until.remaining,description,urgency

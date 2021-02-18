@@ -31,14 +31,13 @@ alias venv='source venv/bin/activate'
 # Productivity System
 
 ## Taskwarrior
-alias td='task +DUE'
-alias tt='task +TODAY'
-#alias tw='task +WEEK'
-alias to='task +OVERDUE'
-alias ta='command task'
-alias td='task type:deep -wait'
-alias ts='task type:shallow -wait'
-alias tw='task +wait'
+alias t='task'
+alias t1='task energy:1'
+alias t2='task energy:2'
+alias t3='task energy:3'
+alias tw='task +work'
+alias th='task +home'
+alias ta='task add'
 
 ## Calendar
 alias cal='calcurse -D ~/Personal/Calendar -C ~/.config/calcurse'
