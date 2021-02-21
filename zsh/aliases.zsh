@@ -19,7 +19,6 @@ alias v='nvim'
 alias vim='nvim'
 alias vimdiff='nvim -d'
 
-alias scratch='nvim +Codi /tmp/$(date +%F-%T).py'
 alias jup='jupyter lab --ip=0.0.0.0'
 
 alias open='xdg-open'
@@ -30,7 +29,7 @@ alias venv='source venv/bin/activate'
 # Productivity System
 
 ## Taskwarrior
-alias t='task -blocked'
+alias t='task'
 alias t1='task energy:1'
 alias t2='task energy:2'
 alias t3='task energy:3'

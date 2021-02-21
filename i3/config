@@ -43,10 +43,10 @@ bindsym $mod+p exec ~/.scripts/lock.sh
 bindsym $mod+c exec i3-sensible-terminal -e calcurse -D ~/Personal/Calendar -C ~/.config/calcurse
 bindsym $mod+i exec ~/.scripts/productivity/watson.sh
 bindsym $mod+n exec ~/.scripts/rofi/quick-capture.sh
-bindsym $mod+Shift+n exec ~/.scripts/rofi/note_html.sh
+#bindsym $mod+Shift+n exec ~/.scripts/rofi/note_html.sh
 #bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
 bindsym $mod+b exec ~/.scripts/rofi/references.sh
-#bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
+bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
 bindsym $mod+F11 exec ~/.scripts/productivity/pomodoro.sh
 
 bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi -e zsh -ic codi

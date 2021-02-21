@@ -87,7 +87,7 @@ tn() {
     read tag
     echo -n "Energy required? (1/2/3) "
     read energy
-    task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "b" ] && echo '+blocked') due:$due energy:${energye}
+    task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "b" ] && echo '+blocked') due:$due energy:$energy
 }
 
 # Edit dotfiles
