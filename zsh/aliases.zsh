@@ -25,19 +25,18 @@ alias jup='jupyter lab --ip=0.0.0.0'
 alias open='xdg-open'
 alias spt='spotifyd; spt'
 alias gdb='gdb -q'
-alias newpass='rofi-pass --insert'
 alias venv='source venv/bin/activate'
 
 # Productivity System
 
 ## Taskwarrior
-alias t='task'
+alias t='task -blocked'
 alias t1='task energy:1'
 alias t2='task energy:2'
 alias t3='task energy:3'
 alias tw='task +work'
 alias th='task +home'
-alias ta='task add'
+alias tb='task +blocked'
 
 ## Calendar
 alias cal='calcurse -D ~/Personal/Calendar -C ~/.config/calcurse'

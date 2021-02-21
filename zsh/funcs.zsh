@@ -1,3 +1,4 @@
+# Start watson with selectable project
 start() {
     watson start $(watson projects | fzf)
 }
@@ -76,30 +77,20 @@ down() {
     curl -O "$1"
 }
 
-# t() {
-#     local home='+home'
-#     local work='+work'
-#     local waiting='+wait'
+# Taskwarrior add task
+tn() {
+    echo -n "Description: "
+    read descr
+    echo -n "Due date: "
+    read due
+    echo -n "Tag: ([h]ome/[w]ork/[b]locked) "
+    read tag
+    echo -n "Energy required? (1/2/3) "
+    read energy
+    task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "b" ] && echo '+blocked') due:$due energy:${energye}
+}
 
-#     if [ $# = 0 ]; then
-#             task ${work} or ${home}
-#     else
-#         task -wait $@
-#     fi
-# }
-
-# tn() {
-#     echo -n "Description: "
-#     read descr
-#     echo -n "Due date: "
-#     read due
-#     echo -n "Tag: ([h]ome/[w]ork/w[a]it) "
-#     read tag
-#     echo -n "Deep? (y/n) "
-#     read deep
-#     task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "a" ] && echo '+wait') due:$due type:$([ "$deep" = "y" ] && echo deep)
-# }
-
+# Edit dotfiles
 d() {
     local dir=~/.dotfiles
     local dotfile=$(find $dir -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
@@ -108,6 +99,7 @@ d() {
     fi
 }
 
+# Edit scripts
 s() {
     local dir=~/.scripts
     local script=$(find $dir -type f -not -path '*/\.git/*' | fzf)
@@ -116,6 +108,7 @@ s() {
     fi
 }
 
+# Take a quick note
 n() {
     nvim ~/Personal/Notes/inbox/$(date +%Y-%m-%d_%H-%M).md
 }
@@ -137,18 +130,6 @@ rp() {
         yay -Rns $(echo $package | cut -f1 -d" ")
     fi
 }
-
-# s() {
-#     cd ~/.vim/session
-
-#     local session=$(rg --files | fzf)
-
-#     if [ -n "$session" ]; then
-#         vim -S $session
-#     fi
-
-#     cd -
-# }
 
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
 # # TODO: git-trim may replace this

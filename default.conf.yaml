@@ -27,7 +27,7 @@
         ~/.zsh/fzf-funcs.zsh: zsh/fzf-funcs.zsh
         ~/.zsh/exports.zsh: zsh/exports.zsh
         ~/.zsh/funcs.zsh: zsh/funcs.zsh
-        ~/.zsh/aliases.zsh: zsh/aliases
+        ~/.zsh/aliases.zsh: zsh/aliases.zsh
         ~/.zsh/auto-tmux.zsh: zsh/auto-tmux.zsh
         ~/.zsh/gtd.zsh: zsh/gtd.zsh
         ~/.zsh/widgets.zsh: zsh/widgets.zsh

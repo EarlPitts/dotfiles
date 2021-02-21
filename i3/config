@@ -50,6 +50,7 @@ bindsym $mod+b exec ~/.scripts/rofi/references.sh
 bindsym $mod+F11 exec ~/.scripts/productivity/pomodoro.sh
 
 bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi -e zsh -ic codi
+bindsym $mod+Shift+Return exec i3-sensible-terminal -e ssh ben
 
 ## Rofi scripts
 bindsym $mod+F12 exec rofi -show calc -modi calc -no-show-match -no-sort
