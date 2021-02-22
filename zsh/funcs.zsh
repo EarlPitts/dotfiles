@@ -14,6 +14,16 @@ falias() {    CMD=$(
     eval $CMD
 }
 
+# Send to the server for archiving
+archive() {
+    if [ -d "$1" ]; then 
+        tar cf "$1".tar "$1"
+        rsync -avz "$1".tar ben:Archive
+    else
+        rsync -avz "$1" ben:Archive
+    fi
+}
+
 # Codi
 # Usage: codi [filetype] [filename]
 codi() {
@@ -129,6 +139,10 @@ rp() {
     if [ -n "$package" ]; then
         yay -Rns $(echo $package | cut -f1 -d" ")
     fi
+}
+
+gitgrep() {
+    git grep "$1" $(git rev-list --all)
 }
 
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
