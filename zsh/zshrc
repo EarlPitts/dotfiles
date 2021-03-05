@@ -34,3 +34,4 @@ compinit; promptinit
 # This needs to be at the and, otherwise the
 # sourcing of zshrc would stop to start tmux
 source ~/.zsh/auto-tmux.zsh
+eval "$(direnv hook zsh)"
