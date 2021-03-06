@@ -8,7 +8,7 @@ font pango:Fira Code 11
 for_window [class="Spotify"] move to workspace $ws10
 
 # Open as floating winow
-for_window [title=codi] floating enable
+for_window [title=codi-float] floating enable
 for_window [title=note] floating enable
 for_window [class="feh"] floating enable
 
@@ -51,7 +51,7 @@ bindsym $mod+b exec ~/.scripts/rofi/references.sh
 bindsym $mod+t exec ~/.scripts/rofi/addtask.sh
 bindsym $mod+F11 exec ~/.scripts/productivity/pomodoro.sh
 
-bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi -e zsh -ic codi
+bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi-float -e zsh -ic codi
 bindsym $mod+Shift+Return exec i3-sensible-terminal -e ssh ben
 
 ## Rofi scripts
