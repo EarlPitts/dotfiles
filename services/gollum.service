@@ -1,8 +1,0 @@
-[Unit]
-Description=Start gollum
-
-[Service]
-ExecStart=/bin/gollum --config=/home/obabo/.notes/config.rb /home/obabo/.notes/
-
-[Install]
-WantedBy=multi-user.target

@@ -7,18 +7,31 @@
 - clean: ['~', "~/.config"]
 
 - link:
+        # Calcurse
+        ~/.config/calcurse: calcurse
+        # Ctags
+        ~/.config/ctags/conf.ctags: ctags/conf.ctags
+        # GDB
+        ~/.gdbinit: gdbinit
+        # Git
+        ~/.config/git/ignore: git/gitignore
+        ~/.config/git/config: git/gitconfig
+        # GPG
+        ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
+        # Pet
+        ~/.config/pet/snippet.toml: pet/snippet.toml
+        # Ranger
+        ~/.config/ranger/rc.conf: ranger/rc.conf
+        ~/.config/ranger/rifle.conf: ranger/rifle.conf
+        # Taskwarrior
+        ~/.config/taskwarrior: taskwarrior
+        # Tmux
+        ~/.tmux.conf: tmux/tmux.conf
         # Vim
         ~/.config/nvim/md2html.sh: vim/md2html.sh
         ~/.config/nvim/init.vim: vim/vimrc
         ~/.config/nvim/my_snippets: vim/my_snippets
         ~/.config/nvim/vwtags.py: vim/vwtags.py
-        # Pet
-        ~/.config/pet/snippet.toml: pet/snippet.toml
-        # Tmux
-        ~/.tmux.conf: tmux/tmux.conf
-        # Ranger
-        ~/.config/ranger/rc.conf: ranger/rc.conf
-        ~/.config/ranger/rifle.conf: ranger/rifle.conf
         # Zsh
         ~/.zshrc: zsh/zshrc
         ~/.zprofile: zsh/zprofile
@@ -33,10 +46,3 @@
         ~/.zsh/widgets.zsh: zsh/widgets.zsh
         ~/.zsh/fzf-colors.zsh: zsh/fzf-colors.zsh
         ~/.zsh/base16.zsh: zsh/base16.zsh
-        # GDB
-        ~/.gdbinit: gdbinit
-        # Git
-        ~/.config/git/ignore: git/gitignore
-        ~/.config/git/config: git/gitconfig
-        # Ctags
-        ~/.config/ctags/conf.ctags: ctags/conf.ctags

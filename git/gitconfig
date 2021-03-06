@@ -6,13 +6,13 @@
 [core]
 	editor = nvim
 	excludesfile = ~/.config/git/ignore
-    pager = less
+	pager = less
 [help]
-    autocorrect = 1
+	autocorrect = 1
 [alias]
-    st = status
+	st = status
 [github]
-    user = earlpitts
+	user = earlpitts
 [receive]
 	denyCurrentBranch = ignore
 [pull]
