@@ -34,6 +34,7 @@ Plug 'honza/vim-snippets'
 "Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-rhubarb'
 
 "Misc
 Plug 'christoomey/vim-tmux-navigator'
