@@ -5,13 +5,19 @@ start() {
 
 # Search aliases/functions
 falias() {    CMD=$(
-        (
-            (alias)
-            (functions | grep "()" | cut -d ' ' -f1 | grep -v "^_" )
-        ) | fzf | cut -d '=' -f1
+    (
+    (alias)
+    (functions | grep "()" | cut -d ' ' -f1 | grep -v "^_" )
+    ) | fzf | cut -d '=' -f1
     );
 
     eval $CMD
+}
+
+check() {
+    local folder=~/Personal/Checklists 
+    local checklist=$(command ls $folder | fzf)
+    [ -n "$checklist" ] && nvim $folder/$checklist
 }
 
 # Send to the server for archiving
@@ -27,15 +33,15 @@ archive() {
 # Codi
 # Usage: codi [filetype] [filename]
 codi() {
-  local syntax="${1:-python}"
-  #shift
-  vim -c \
-    "set bt=nofile ls=0 noru nonu nornu |\
-    hi ColorColumn ctermbg=NONE |\
-    hi VertSplit ctermbg=NONE |\
-    hi NonText ctermfg=0 |\
-    Codi $syntax" "$@"
-}
+    local syntax="${1:-python}"
+    #shift
+    vim -c \
+        "set bt=nofile ls=0 noru nonu nornu |\
+        hi ColorColumn ctermbg=NONE |\
+        hi VertSplit ctermbg=NONE |\
+        hi NonText ctermfg=0 |\
+        Codi $syntax" "$@"
+    }
 
 wiki() {
     if [[ -e wiki/index.md ]]; then
@@ -46,35 +52,36 @@ wiki() {
 }
 
 meeting() {
-  if [[ $# == 0 ]]; then
-    cd ~/notes
-    nvim index.md +Tagbar
-  else
-    nvim ~/notes/$1.md +Tagbar
-  fi
+    if [[ $# == 0 ]]; then
+        cd ~/notes
+        nvim index.md +Tagbar
+    else
+        nvim ~/notes/$1.md +Tagbar
+    fi
 }
 
 # Show $PATH
 path() {
-  echo -e ${PATH//:/\\n}
+    echo -e ${PATH//:/\\n}
 }
 
 p() {
-    cd ~/Projects
-    cd $(command ls | fzf)
-    [[ -e venv ]] && source venv/bin/activate
-    tmux
+    project=$(command ls ~/Projects | fzf)
+    if [ -n "$project" ]; then
+        cd ~/Projects/$project
+        tmux new -s $project
+    fi
 }
 
 # md <folder-name> - Create folder and cd to it
 md() {
-  mkdir "$1"
-  cd "$1"
+    mkdir "$1"
+    cd "$1"
 }
 
 # Get cheat sheet of command from cheat.sh. h <cmd>
 h() {
-  curl cheat.sh/${@:-cheat}
+    curl cheat.sh/${@:-cheat}
 }
 
 # cfile <file> - Copy content of file to clipboard
@@ -104,18 +111,14 @@ tn() {
 d() {
     local dir=~/.dotfiles
     local dotfile=$(find $dir -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
-    if [ -n "$dotfile" ]; then
-        nvim $dotfile
-    fi
+    [ -n "$dotfile" ] && nvim $dotfile
 }
 
 # Edit scripts
 s() {
     local dir=~/.scripts
     local script=$(find $dir -type f -not -path '*/\.git/*' | fzf)
-    if [ -n "$script" ]; then
-        nvim $script
-    fi
+    [ -n "$script" ] && nvim $script
 }
 
 # Take a quick note
@@ -125,12 +128,12 @@ n() {
 
 kp() {
     local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
-	
-	if [ -n "$pid" ]
-	then
-	  echo $pid | xargs kill -${1:-9}
-	  kp
-	fi
+
+    if [ -n "$pid" ]
+    then
+        echo $pid | xargs kill -${1:-9}
+        kp
+    fi
 }
 
 rp() {
@@ -430,58 +433,58 @@ gitgrep() {
 #           tar cjf $baseName.tar.bz2 $baseName
 #           ;;
 #         tar.gz)
-#           tar czf $baseName.tar.gz $baseName
-#           ;;
+    #           tar czf $baseName.tar.gz $baseName
+    #           ;;
 #         gz)
-#           gzip $baseName
-#           ;;
+    #           gzip $baseName
+    #           ;;
 #         tar)
-#           tar -cvvf $baseName.tar $baseName
-#           ;;
+    #           tar -cvvf $baseName.tar $baseName
+    #           ;;
 #         zip)
-#           zip -r $baseName.zip $baseName
-#           ;;
+    #           zip -r $baseName.zip $baseName
+    #           ;;
 #         *)
-#           echo "Method not passed compressing using tar.bz2"
-#           tar cjf $baseName.tar.bz2 $baseName
-#           ;;
-#       esac
-#       echo "Back to Directory $dirPriorToExe"
-#       cd $dirPriorToExe
-#     else
-#       if [ -d $1 ] ; then
-#         echo "It was a Directory change directory to $dirName"
-#         cd $dirName
-#         case $2 in
-#           tar.bz2)
-#             tar cjf $baseName.tar.bz2 $baseName
-#             ;;
+    #           echo "Method not passed compressing using tar.bz2"
+    #           tar cjf $baseName.tar.bz2 $baseName
+    #           ;;
+    #       esac
+    #       echo "Back to Directory $dirPriorToExe"
+    #       cd $dirPriorToExe
+    #     else
+    #       if [ -d $1 ] ; then
+    #         echo "It was a Directory change directory to $dirName"
+    #         cd $dirName
+    #         case $2 in
+    #           tar.bz2)
+    #             tar cjf $baseName.tar.bz2 $baseName
+    #             ;;
 #           tar.gz)
-#             tar czf $baseName.tar.gz $baseName
-#             ;;
+    #             tar czf $baseName.tar.gz $baseName
+    #             ;;
 #           gz)
-#             gzip -r $baseName
-#             ;;
+    #             gzip -r $baseName
+    #             ;;
 #           tar)
-#             tar -cvvf $baseName.tar $baseName
-#             ;;
+    #             tar -cvvf $baseName.tar $baseName
+    #             ;;
 #           zip)
-#             zip -r $baseName.zip $baseName
-#             ;;
+    #             zip -r $baseName.zip $baseName
+    #             ;;
 #           *)
-#             echo "Method not passed compressing using tar.bz2"
-#             tar cjf $baseName.tar.bz2 $baseName
-#             ;;
-#         esac
-#         echo "Back to Directory $dirPriorToExe"
-#         cd $dirPriorToExe
-#       else
-#         echo "'$1' is not a valid file/folder"
-#       fi
-#     fi
-#     echo "Done"
-#     echo "###########################################"
-#   }
+    #             echo "Method not passed compressing using tar.bz2"
+    #             tar cjf $baseName.tar.bz2 $baseName
+    #             ;;
+    #         esac
+    #         echo "Back to Directory $dirPriorToExe"
+    #         cd $dirPriorToExe
+    #       else
+    #         echo "'$1' is not a valid file/folder"
+    #       fi
+    #     fi
+    #     echo "Done"
+    #     echo "###########################################"
+    #   }
 
 # # TODO: Write a Go CLI that wraps extract and compress functions + more.
 # # extract <file.tar> - Extract <file.tar>.

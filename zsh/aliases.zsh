@@ -47,9 +47,6 @@ alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
 alias qn='nvim "+normal Go" +startinsert ~/Personal/Notes/quick-capture.md'
 alias sp='nvim $(mktemp --suffix '.md')'
 
-## Checklists
-alias check='nvim ~/Personal/Checklists/index.md'
-
 ## Review
 alias journal='nvim ~/Personal/Gratitude/$(date +%Y-%b-%d).md'
 alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'
