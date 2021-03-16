@@ -55,7 +55,6 @@ alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'
 alias code='cd ~/Codebase && nvim +Rg && cd -'
 
 # Git
-alias git='hub'
 alias gc='git commit -m"Autocommit"'
 alias gg='git push'
 alias gcp='git commit -m"Autocommit" && git push'
