@@ -185,7 +185,7 @@ nnoremap <C-t> :Tags<CR>
 nnoremap <C-s> :Snippets<CR>
 map <F1> :!./%<CR>
 map <F5> :make!<CR>
-"map <F5> :!~/.scripts/util/compile.sh %:p<CR>
+"map <F5> :!~/.scripts/compile.sh %:p<CR>
 map <F6> :make test<CR>
 " Format JSON
 map <leader>j :%!python -m json.tool<CR>

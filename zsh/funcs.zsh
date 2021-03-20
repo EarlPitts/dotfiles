@@ -46,8 +46,11 @@ codi() {
 wiki() {
     if [[ -e wiki/index.md ]]; then
         nvim +Tagbar wiki/index.md
-    else
+    elif [[ $1 == "i" ]]; then
         nvim +VimwikiIndex +"lcd %:p:h" +Tagbar
+    else
+        note=$(fd -e md . ~/Personal/Notes | fzf)
+        [[ -n "$note" ]] && nvim +"lcd %:p:h" +Tagbar $note
     fi
 }
 
