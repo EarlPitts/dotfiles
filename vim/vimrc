@@ -235,3 +235,9 @@ colorscheme base16-eighties
 "Autocommands
 autocmd BufNewFile ~/Personal/Notes/diary/*.md :silent 0r !~/.scripts/diary_template.sh '%'
 autocmd BufNewFile,BufRead *.ih set syntax=cpp
+
+"Custom functions
+function Stdlib()
+    :tabnew
+    :lcd /usr/lib/python3.?   
+endfunction
