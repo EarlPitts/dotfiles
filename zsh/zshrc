@@ -21,9 +21,6 @@ source ~/.zsh/base16.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
-# z
-source /usr/share/z/z.sh
-
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '~/.zshrc'
