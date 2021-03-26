@@ -24,7 +24,7 @@ alias jup='jupyter lab --ip=0.0.0.0'
 alias open='xdg-open'
 alias spt='spotifyd; spt'
 alias gdb='gdb -q'
-alias venv='source venv/bin/activate'
+alias venv='source .venv/bin/activate'
 
 # Productivity System
 

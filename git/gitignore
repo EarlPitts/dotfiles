@@ -2,4 +2,5 @@
 .gdb_history
 tags
 venv
+.venv
 **/*.pyc
