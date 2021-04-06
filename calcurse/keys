@@ -27,7 +27,7 @@ generic-add-todo  ^T
 generic-prev-day  T ^H 
 generic-next-day  t ^L 
 generic-prev-week  W ^K 
-generic-next-week  w ^J
+generic-next-week  w RET 
 generic-prev-month  M 
 generic-next-month  m 
 generic-prev-year  Y 
@@ -45,7 +45,7 @@ end-of-week  $
 add-item  a A 
 del-item  d D 
 edit-item  e E 
-view-item  v V
+view-item  v V 
 pipe-item  | 
 flag-item  ! 
 repeat  r 

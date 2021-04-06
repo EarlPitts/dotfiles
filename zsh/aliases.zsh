@@ -52,7 +52,7 @@ alias journal='nvim ~/Personal/Gratitude/$(date +%Y-%b-%d).md'
 alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'
 
 ## Codebase
-alias code='cd ~/Codebase && nvim +Rg && cd -'
+alias code='cd ~/.snippets && nvim +Rg && cd -'
 
 # Git
 alias gc='git commit -m"Autocommit"'
