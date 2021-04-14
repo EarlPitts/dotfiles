@@ -54,6 +54,15 @@ wiki() {
     fi
 }
 
+sap() {
+    if [[ $1 == "i" ]]; then
+        nvim +VimwikiIndex +"lcd %:p:h" +Tagbar
+    else
+        note=$(fd -e md . ~/Work/Notes | fzf)
+        [[ -n "$note" ]] && nvim +"lcd %:p:h" +Tagbar $note
+    fi
+}
+
 meeting() {
     if [[ $# == 0 ]]; then
         cd ~/notes
