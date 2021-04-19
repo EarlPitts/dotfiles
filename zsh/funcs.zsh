@@ -56,7 +56,7 @@ wiki() {
 
 sap() {
     if [[ $1 == "i" ]]; then
-        nvim +VimwikiIndex +"lcd %:p:h" +Tagbar
+        nvim ~/Work/Notes/index.md +"lcd %:p:h" +Tagbar
     else
         note=$(fd -e md . ~/Work/Notes | fzf)
         [[ -n "$note" ]] && nvim +"lcd %:p:h" +Tagbar $note
