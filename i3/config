@@ -43,9 +43,9 @@ bindsym $mod+p exec ~/.scripts/lock.sh
 ## Productivity
 bindsym $mod+c exec i3-sensible-terminal -e calcurse -D ~/Personal/Calendar -C ~/.config/calcurse
 bindsym $mod+i exec ~/.scripts/watson.sh
-bindsym $mod+n exec ~/.scripts/quick-capture.sh
+#bindsym $mod+n exec ~/.scripts/quick-capture.sh
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh
-bindsym $mod+Shift+n exec --no-startup-id i3-sensible-terminal -t note -e zsh -ic n
+bindsym $mod+n exec --no-startup-id i3-sensible-terminal -t note -e zsh -ic qn
 bindsym Mod1+n exec ~/.scripts/wiki.sh
 #bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
 bindsym $mod+b exec ~/.scripts/references.sh

@@ -139,7 +139,7 @@ s() {
 
 # Take a quick note
 n() {
-    nvim ~/Personal/Notes/inbox/$(date +%Y-%m-%d_%H-%M).md
+    nvim ~/Personal/Inbox/index.md
 }
 
 kp() {
