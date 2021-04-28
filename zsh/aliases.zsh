@@ -55,7 +55,9 @@ alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'
 alias code='cd ~/.snippets && nvim +Rg && cd -'
 
 ## Areas
-alias areas='nvim ~/Personal/Areas/index.md +"lcd %:p:h" +Tagbar'
+alias areas='nvim ~/Personal/Direction/index.md +"lcd %:p:h" +Tagbar'
+alias com='nvim ~/Personal/Direction/Commitments.md +"lcd %:p:h" +Tagbar'
+
 
 # Git
 alias gc='git commit -m"Autocommit"'
