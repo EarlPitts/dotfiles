@@ -44,7 +44,7 @@ alias cal='calcurse -D ~/Personal/Calendar -C ~/.config/calcurse'
 alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
 
 ## Notes
-alias qn='nvim "+normal Go" +startinsert ~/Personal/Inbox/index.md'
+alias qn='nvim "+normal Go " +startinsert ~/Personal/Inbox/index.md'
 alias sp='nvim $(mktemp --suffix '.md')'
 
 ## Review
