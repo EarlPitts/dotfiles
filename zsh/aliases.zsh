@@ -28,20 +28,15 @@ alias venv='source .venv/bin/activate'
 
 # Productivity System
 
-## Taskwarrior
-alias t='task'
-alias t1='task energy:1'
-alias t2='task energy:2'
-alias t3='task energy:3'
-alias tw='task +work'
-alias th='task +home'
-alias tb='task +blocked'
+## Tasks
+alias t='cat ~/Personal/tasks.md'
+alias waiting='cat ~/Personal/waiting.md'
 
 ## Calendar
-alias cal='calcurse -D ~/Personal/Calendar -C ~/.config/calcurse'
+#alias cal='calcurse -D ~/Personal/Calendar -C ~/.config/calcurse'
 
 ## Projects
-alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
+#alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
 
 ## Notes
 alias qn='nvim "+normal Go " +startinsert ~/Personal/Inbox/index.md'

@@ -41,7 +41,7 @@ bindsym $mod+space exec ~/.scripts/layout.sh
 bindsym $mod+p exec ~/.scripts/lock.sh
 
 ## Productivity
-bindsym $mod+c exec i3-sensible-terminal -e calcurse -D ~/Personal/Calendar -C ~/.config/calcurse
+#bindsym $mod+c exec xdg-open "https://calendar.google.com"
 bindsym $mod+i exec ~/.scripts/watson.sh
 #bindsym $mod+n exec ~/.scripts/quick-capture.sh
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh
