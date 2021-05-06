@@ -29,8 +29,10 @@ alias venv='source .venv/bin/activate'
 # Productivity System
 
 ## Tasks
-alias t='cat ~/Personal/tasks.md'
-alias waiting='cat ~/Personal/waiting.md'
+alias t='task'
+alias ti='task inverse'
+alias tw='task waiting'
+alias twi='task waiting inverse'
 
 ## Calendar
 #alias cal='calcurse -D ~/Personal/Calendar -C ~/.config/calcurse'
