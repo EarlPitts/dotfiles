@@ -9,7 +9,7 @@ for_window [class="Spotify"] move to workspace $ws10
 
 # Open as floating winow
 for_window [title=codi-float] floating enable
-for_window [title=note] floating enable
+#for_window [title=note] floating enable
 for_window [class="feh"] floating enable
 
 # Hiding borders
@@ -45,8 +45,12 @@ bindsym $mod+p exec ~/.scripts/lock.sh
 bindsym $mod+i exec ~/.scripts/watson.sh
 #bindsym $mod+n exec ~/.scripts/quick-capture.sh
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh
-bindsym $mod+n exec --no-startup-id i3-sensible-terminal -t note -e zsh -ic qn
-bindsym Mod1+n exec ~/.scripts/wiki.sh
+bindsym $mod+n exec ~/.scripts/note rofi
+#bindsym $mod+Shift+n exec ~/.scripts/note.sh rofi inverse
+bindsym Mod1+n exec ~/.scripts/note wiki rofi
+bindsym Mod1+Shift+n exec ~/.scripts/note wiki inverse rofi
+# bindsym $mod+n exec --no-startup-id i3-sensible-terminal -t note -e zsh -ic qn
+# bindsym Mod1+n exec ~/.scripts/wiki.sh
 #bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
 bindsym $mod+b exec ~/.scripts/references.sh
 bindsym $mod+t exec ~/.scripts/addtask.sh

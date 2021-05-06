@@ -38,7 +38,6 @@ Plug 'tpope/vim-rhubarb'
 
 "Misc
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'sevko/vim-nand2tetris-syntax'
 Plug 'metakirby5/codi.vim'
 
 call plug#end()    

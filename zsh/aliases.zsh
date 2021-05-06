@@ -39,7 +39,10 @@ alias waiting='cat ~/Personal/waiting.md'
 #alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
 
 ## Notes
-alias qn='nvim "+normal Go " +startinsert ~/Personal/Inbox/index.md'
+alias qn='note'
+alias qni='note inverse'
+alias wiki='note wiki'
+alias wikii='note wiki inverse'
 alias sp='nvim $(mktemp --suffix '.md')'
 
 ## Review
