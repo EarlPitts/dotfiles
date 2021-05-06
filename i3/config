@@ -41,19 +41,28 @@ bindsym $mod+space exec ~/.scripts/layout.sh
 bindsym $mod+p exec ~/.scripts/lock.sh
 
 ## Productivity
+
+### Notes
+bindsym $mod+n exec ~/.scripts/note rofi
+bindsym $mod+Shift+n exec ~/.scripts/note rofi inverse
+bindsym Mod1+n exec ~/.scripts/note wiki rofi
+bindsym Mod1+Shift+n exec ~/.scripts/note wiki inverse rofi
+
+### Tasks
+bindsym $mod+t exec ~/.scripts/task rofi
+bindsym $mod+Shift+t exec ~/.scripts/task rofi inverse
+bindsym Mod1+t exec ~/.scripts/task waiting rofi
+bindsym Mod1+Shift+t exec ~/.scripts/task waiting inverse rofi
+
 #bindsym $mod+c exec xdg-open "https://calendar.google.com"
 bindsym $mod+i exec ~/.scripts/watson.sh
 #bindsym $mod+n exec ~/.scripts/quick-capture.sh
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh
-bindsym $mod+n exec ~/.scripts/note rofi
-#bindsym $mod+Shift+n exec ~/.scripts/note.sh rofi inverse
-bindsym Mod1+n exec ~/.scripts/note wiki rofi
-bindsym Mod1+Shift+n exec ~/.scripts/note wiki inverse rofi
 # bindsym $mod+n exec --no-startup-id i3-sensible-terminal -t note -e zsh -ic qn
 # bindsym Mod1+n exec ~/.scripts/wiki.sh
 #bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
 bindsym $mod+b exec ~/.scripts/references.sh
-bindsym $mod+t exec ~/.scripts/addtask.sh
+#bindsym $mod+t exec ~/.scripts/addtask.sh
 bindsym $mod+F11 exec ~/.scripts/pomodoro.sh
 
 bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi-float -e zsh -ic codi

@@ -111,17 +111,17 @@ down() {
 }
 
 # Taskwarrior add task
-tn() {
-    echo -n "Description: "
-    read descr
-    echo -n "Due date: "
-    read due
-    echo -n "Tag: ([h]ome/[w]ork/[b]locked) "
-    read tag
-    echo -n "Energy required? (1/2/3) "
-    read energy
-    task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "b" ] && echo '+blocked') due:$due energy:$energy
-}
+# tn() {
+#     echo -n "Description: "
+#     read descr
+#     echo -n "Due date: "
+#     read due
+#     echo -n "Tag: ([h]ome/[w]ork/[b]locked) "
+#     read tag
+#     echo -n "Energy required? (1/2/3) "
+#     read energy
+#     task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "b" ] && echo '+blocked') due:$due energy:$energy
+# }
 
 # Edit dotfiles
 d() {
