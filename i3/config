@@ -9,7 +9,7 @@ for_window [class="Spotify"] move to workspace $ws10
 
 # Open as floating winow
 for_window [title=codi-float] floating enable
-#for_window [title=note] floating enable
+for_window [title=note] floating enable
 for_window [class="feh"] floating enable
 
 # Hiding borders
@@ -42,26 +42,34 @@ bindsym $mod+p exec ~/.scripts/lock.sh
 
 ## Productivity
 
-### Notes
-bindsym $mod+n exec ~/.scripts/note rofi
-bindsym $mod+Shift+n exec ~/.scripts/note rofi inverse
-bindsym Mod1+n exec ~/.scripts/note wiki rofi
-bindsym Mod1+Shift+n exec ~/.scripts/note wiki inverse rofi
+### Inbox
+bindsym $mod+n exec ~/.local/bin/quick_note_modi
+bindsym $mod+Shift+n exec ~/.local/bin/quick_note_modi open
+bindsym Mod1+n exec ~/.local/bin/work_quick_note_modi
+bindsym Mod1+Shift+n exec ~/.local/bin/work_quick_note_modi open
+
+### References
+bindsym $mod+b exec rofi -sidebar-mode -show combi \
+-combi-modi "wiki:~/.local/bin/wiki_modi#books:~/.local/bin/books_modi#cheatsheets:~/.local/bin/cheatsheets_modi#papers:~/.local/bin/papers_modi#work wiki:~/.local/bin/work_wiki_modi" \
+-modi "combi#wiki:~/.local/bin/wiki_modi#books:~/.local/bin/books_modi#cheatsheets:~/.local/bin/cheatsheets_modi#papers:~/.local/bin/papers_modi#work wiki:~/.local/bin/work_wiki_modi"
 
 ### Tasks
-bindsym $mod+t exec ~/.scripts/task rofi
-bindsym $mod+Shift+t exec ~/.scripts/task rofi inverse
-bindsym Mod1+t exec ~/.scripts/task waiting rofi
-bindsym Mod1+Shift+t exec ~/.scripts/task waiting inverse rofi
+bindsym $mod+t exec rofi -sidebar-mode -show combi \
+-combi-modi "tasks:~/.local/bin/tasks_modi#waiting:~/.local/bin/waiting_modi#checklists:~/.local/bin/checklists_modi#projects:~/.local/bin/projects_modi#direction:~/.local/bin/direction_modi" \
+-modi "combi#tasks:~/.local/bin/tasks_modi#waiting:~/.local/bin/waiting_modi#checklists:~/.local/bin/checklists_modi#projects:~/.local/bin/projects_modi#direction:~/.local/bin/direction_modi"
+
+# bindsym $mod+t exec ~/.scripts/task rofi
+# bindsym $mod+Shift+t exec ~/.scripts/task rofi inverse
+# bindsym Mod1+t exec ~/.scripts/task waiting rofi
+# bindsym Mod1+Shift+t exec ~/.scripts/task waiting inverse rofi
 
 #bindsym $mod+c exec xdg-open "https://calendar.google.com"
 bindsym $mod+i exec ~/.scripts/watson.sh
 #bindsym $mod+n exec ~/.scripts/quick-capture.sh
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh
-# bindsym $mod+n exec --no-startup-id i3-sensible-terminal -t note -e zsh -ic qn
 # bindsym Mod1+n exec ~/.scripts/wiki.sh
 #bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
-bindsym $mod+b exec ~/.scripts/references.sh
+#bindsym $mod+b exec ~/.scripts/references.sh
 #bindsym $mod+t exec ~/.scripts/addtask.sh
 bindsym $mod+F11 exec ~/.scripts/pomodoro.sh
 

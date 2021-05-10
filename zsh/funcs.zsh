@@ -77,13 +77,13 @@ path() {
     echo -e ${PATH//:/\\n}
 }
 
-p() {
-    project=$(command ls ~/Projects | fzf)
-    if [ -n "$project" ]; then
-        cd ~/Projects/$project
-        tmux new -s $project
-    fi
-}
+# p() {
+#     project=$(command ls ~/Projects | fzf)
+#     if [ -n "$project" ]; then
+#         cd ~/Projects/$project
+#         tmux new -s $project
+#     fi
+# }
 
 # md <dir-name> - Create directory and cd into it.
 md() {

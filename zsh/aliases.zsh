@@ -28,23 +28,30 @@ alias venv='source .venv/bin/activate'
 
 # Productivity System
 
+## References
+alias n='wiki'
+alias ni='wiki index'
+alias nw='work_wiki'
+alias nwi='work_wiki index'
+
 ## Tasks
-alias t='task'
-alias ti='task inverse'
-alias tw='task waiting'
-alias twi='task waiting inverse'
+alias c='checklists'
+alias ci='checklists open'
+alias p='projects'
+alias t='tasks'
+alias ti='tasks open'
+alias tw='work_tasks'
+alias twi='work_tasks open'
+alias w='waiting'
+alias wi='waiting open'
+alias ww='work_waiting'
+alias wwi='work_waiting open'
 
-## Calendar
-#alias cal='calcurse -D ~/Personal/Calendar -C ~/.config/calcurse'
-
-## Projects
-#alias projects='nvim +Tagbar ~/Personal/Projects/index.md'
-
-## Notes
-alias qn='note'
-alias qni='note inverse'
-alias wiki='note wiki'
-alias wikii='note wiki inverse'
+## Inbox
+alias q='quick_note'
+alias qi='quick_note open'
+alias qw='work_quick_note'
+alias qwi='work_quick_note open'
 alias sp='nvim $(mktemp --suffix '.md')'
 
 ## Review
@@ -54,10 +61,9 @@ alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'
 ## Codebase
 alias code='cd ~/.snippets && nvim +Rg && cd -'
 
-## Areas
-alias areas='nvim ~/Personal/Direction/index.md +"lcd %:p:h" +Tagbar'
-alias com='nvim ~/Personal/Direction/Commitments.md +"lcd %:p:h" +Tagbar'
-
+## Direction
+alias dir='direction'
+alias diri='direction open'
 
 # Git
 alias gc='git commit -m"Autocommit"'
