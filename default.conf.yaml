@@ -7,8 +7,6 @@
 - clean: ['~', "~/.config"]
 
 - link:
-        # Calcurse
-        ~/.config/calcurse: calcurse
         # Ctags
         ~/.config/ctags/conf.ctags: ctags/conf.ctags
         # GDB
@@ -18,13 +16,9 @@
         ~/.config/git/config: git/gitconfig
         # GPG
         ~/.gnupg/gpg-agent.conf: gpg/gpg-agent.conf
-        # Pet
-        ~/.config/pet/snippet.toml: pet/snippet.toml
         # Ranger
         ~/.config/ranger/rc.conf: ranger/rc.conf
         ~/.config/ranger/rifle.conf: ranger/rifle.conf
-        # Taskwarrior
-        ~/.config/taskwarrior: taskwarrior
         # Tmux
         ~/.tmux.conf: tmux/tmux.conf
         # Vim
