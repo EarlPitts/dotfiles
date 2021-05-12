@@ -35,10 +35,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 ## Keyboard Layout
-bindsym $mod+space exec ~/.scripts/layout.sh
+bindsym $mod+space exec ~/.local/bin/layout.sh
 
 ## Lockscreen
-bindsym $mod+p exec ~/.scripts/lock.sh
+bindsym $mod+p exec ~/.local/bin/lock.sh
 
 ## Productivity
 
@@ -64,33 +64,33 @@ bindsym $mod+t exec rofi -sidebar-mode -show combi \
 # bindsym Mod1+Shift+t exec ~/.scripts/task waiting inverse rofi
 
 #bindsym $mod+c exec xdg-open "https://calendar.google.com"
-bindsym $mod+i exec ~/.scripts/watson.sh
+#bindsym $mod+i exec ~/.scripts/watson.sh
 #bindsym $mod+n exec ~/.scripts/quick-capture.sh
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh
 # bindsym Mod1+n exec ~/.scripts/wiki.sh
 #bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
 #bindsym $mod+b exec ~/.scripts/references.sh
 #bindsym $mod+t exec ~/.scripts/addtask.sh
-bindsym $mod+F11 exec ~/.scripts/pomodoro.sh
+bindsym $mod+F11 exec ~/.local/bin/pomodoro.sh
 
 bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi-float -e zsh -ic codi
 bindsym $mod+Shift+Return exec i3-sensible-terminal -e ssh ben
 
 ## Rofi scripts
 bindsym $mod+F12 exec rofi -show calc -modi calc -no-show-match -no-sort
-bindsym $mod+u exec ~/.scripts/kill_process.sh
+bindsym $mod+u exec ~/.local/bin/kill_process.sh
 
 ## Set Screen
-bindsym XF86Display exec ~/.scripts/monitor.sh
+bindsym XF86Display exec ~/.local/bin/monitor.sh
 
 ## Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 ## Take Screenshot
-bindsym Shift+Print --release exec "~/.scripts/screenshot.sh select"
-bindsym Control+Print --release exec "~/.scripts/screenshot.sh note"
-bindsym Print exec "~/.scripts/screenshot.sh"
+bindsym Shift+Print --release exec "~/.local/bin/screenshot.sh select"
+bindsym Control+Print --release exec "~/.local/bin/screenshot.sh note"
+bindsym Print exec "~/.local/bin/screenshot.sh"
 
 ## Rofi
 bindsym $mod+d exec rofi -show combi

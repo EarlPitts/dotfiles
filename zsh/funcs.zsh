@@ -1,8 +1,3 @@
-# Start watson with selectable project
-start() {
-    watson start $(watson projects | fzf)
-}
-
 # Search aliases/functions
 falias() {    CMD=$(
     (
@@ -14,20 +9,22 @@ falias() {    CMD=$(
     eval $CMD
 }
 
-check() {
-    local folder=~/Personal/Checklists 
-    local checklist=$(command ls $folder | fzf)
-    [ -n "$checklist" ] && nvim $folder/$checklist
+dislocker() {
+    local partition=$(lsblk -nlo NAME,LABEL,SIZE | fzf | awk '{ print "/dev/"$1 }')
+    echo -n "Password: " && read password
+    sudo dislocker ${partition} -u${password} -- /run/media && 
+        sudo mount -o loop /run/media/dislocker-file /mnt
 }
 
-# Send to the server for archiving
-archive() {
-    if [ -d "$1" ]; then 
-        tar cf "$1".tar "$1"
-        rsync -avz "$1".tar ben:Archive
-    else
-        rsync -avz "$1" ben:Archive
-    fi
+tunnel() {
+    echo -n "Local port: " && read local_port
+    echo -n "Target port: " && read target_port
+    ssh -L ${local_port}:localhost:${target_port} ${1}
+}
+
+install() {
+    # TODO
+    #yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk \"{print \\$2}\")' | xargs -ro  yay -S
 }
 
 # Codi
@@ -43,51 +40,10 @@ codi() {
         Codi $syntax" "$@"
     }
 
-# wiki() {
-#     if [[ -e wiki/index.md ]]; then
-#         nvim +Tagbar wiki/index.md
-#     elif [[ $1 == "i" ]]; then
-#         nvim +VimwikiIndex +"lcd %:p:h" +Tagbar
-#     else
-#         note=$(fd -e md . ~/Personal/Notes | fzf)
-#         [[ -n "$note" ]] && nvim +"lcd %:p:h" +Tagbar $note
-#     fi
-# }
-
-sap() {
-    if [[ $1 == "i" ]]; then
-        nvim ~/Work/Notes/index.md +"lcd %:p:h" +Tagbar
-    else
-        note=$(fd -e md . ~/Work/Notes | fzf)
-        [[ -n "$note" ]] && nvim +"lcd %:p:h" +Tagbar $note
-    fi
-}
-
-meeting() {
-    if [[ $# == 0 ]]; then
-        cd ~/notes
-        nvim index.md +Tagbar
-    else
-        nvim ~/notes/$1.md +Tagbar
-    fi
-}
 
 # Show $PATH
 path() {
     echo -e ${PATH//:/\\n}
-}
-
-# p() {
-#     project=$(command ls ~/Projects | fzf)
-#     if [ -n "$project" ]; then
-#         cd ~/Projects/$project
-#         tmux new -s $project
-#     fi
-# }
-
-# md <dir-name> - Create directory and cd into it.
-md() {
-  [[ -n "$1" ]] && mkdir -p "$1" && builtin cd "$1"
 }
 
 # filenum <dir> - Give number of files found inside given directory.
@@ -110,18 +66,6 @@ down() {
     curl -O "$1"
 }
 
-# Taskwarrior add task
-# tn() {
-#     echo -n "Description: "
-#     read descr
-#     echo -n "Due date: "
-#     read due
-#     echo -n "Tag: ([h]ome/[w]ork/[b]locked) "
-#     read tag
-#     echo -n "Energy required? (1/2/3) "
-#     read energy
-#     task add $descr $([ "$tag" = "h" ] && echo '+home') $([ "$tag" = "w" ] && echo '+work') $([ "$tag" = "b" ] && echo '+blocked') due:$due energy:$energy
-# }
 
 # Edit dotfiles
 d() {
