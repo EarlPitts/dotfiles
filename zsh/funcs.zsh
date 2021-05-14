@@ -74,13 +74,6 @@ d() {
     [ -n "$dotfile" ] && nvim $dotfile
 }
 
-# Edit scripts
-s() {
-    local dir=~/.scripts
-    local script=$(find $dir -type f -not -path '*/\.git/*' | fzf)
-    [ -n "$script" ] && nvim $script
-}
-
 kp() {
     local pid=$(ps -ef | sed 1d | eval "fzf ${FZF_DEFAULT_OPTS} -m --header='[kill:process]'" | awk '{print $2}')
 
