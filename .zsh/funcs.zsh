@@ -69,9 +69,10 @@ down() {
 
 # Edit dotfiles
 d() {
-    local dir=~/.dotfiles
-    local dotfile=$(find $dir -type f -not -path '*/\.git/*' -not -path '*/\.dotbot/*' | fzf)
+    cd ~
+    local dotfile=$(git ls-files | fzf)
     [ -n "$dotfile" ] && nvim $dotfile
+    cd -
 }
 
 kp() {
