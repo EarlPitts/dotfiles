@@ -8,6 +8,6 @@ i3lock -u -k -e \
 --timestr="%H:%M" --timecolor=09050390 --timesize=45 \
 --datestr="%B %d, %A" --datecolor=09050390 \
 --greetertext="Hi, I'm a computer." --greetercolor=09050370 --greeterpos="${pos_x}:${pos_y}" --greetersize=40 \
- -i ~/.dotfiles/wallpapers/lockScreen.jpg \
+ -i ~/.local/share/wallpapers/lockScreen.jpg \
  --pass-media-keys
 
