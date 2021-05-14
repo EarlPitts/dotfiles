@@ -1,0 +1,9 @@
+#!/usr/bin/bash
+
+system_loc=~/Personal
+
+if [ $# = 0 ]; then
+    find ${system_loc}/Checklists -type f -printf "%f\n"
+else
+    i3-msg exec "i3-sensible-terminal -t note -e zsh -ic 'nvim ${system_loc}/Checklists/${1}'" > /dev/null
+fi

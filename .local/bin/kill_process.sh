@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+pid=$(ps -ef | sed 1d | rofi -dmenu -i -p"Process" | awk '{print $2}')
+
+if [ -n "$pid" ]
+then
+    echo $pid | xargs kill -${1:-9}
+    $0
+fi

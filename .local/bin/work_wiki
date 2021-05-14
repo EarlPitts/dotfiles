@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+system_loc=~/Work
+
+if [ "${1}" = index ]; then
+    nvim '+lcd %:p:h' '+Tagbar' ${system_loc}/Notes/index.md
+else
+    note=$(find ${system_loc}/Notes -type f -name '*.md' -printf "%f\n" | fzf)
+    [ -n "${note}" ] && nvim '+lcd %:p:h' '+Tagbar' ${system_loc}/Notes/${note}
+fi

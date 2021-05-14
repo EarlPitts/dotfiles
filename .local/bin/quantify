@@ -1,0 +1,169 @@
+#!/usr/bin/python
+
+import argparse
+import json
+from datetime import datetime
+
+class Morning:
+
+    def __init__(self, filename):
+        try:
+            with open(filename, 'r') as f:
+                self.filename = filename
+                self.data = json.loads(f.read())
+        except FileNotFoundError:
+            self.filename = filename
+            self.data = {}
+
+
+    def write(self):
+        with open(self.filename, 'w') as f:
+            f.write(json.dumps(self.data))
+
+
+    def dump(self):
+        print(json.dumps(self.data, indent=4, sort_keys=True))
+
+    def record(self):
+        curr_date = datetime.now().strftime('%Y-%m-%d')
+        if not curr_date in self.data:
+            self.data[curr_date] = {}
+        self.data[curr_date]['morning'] = {}
+        today = self.data[curr_date]['morning']
+        ate = input('Ate before sleep (y/n): ')
+
+        while ate != 'y' and ate != 'n':
+            ate = input('Ate before sleep (y/n): ')
+        if ate == 'y':
+            today['ate'] = 'True'
+        else:
+            today['ate'] = 'False'
+
+        today['sleep'] = int(input('Sleep quality: '))
+        today['energy'] = int(input('Energy level: '))
+
+        left_eye = int(input('Left eye: '))
+        right_eye = int(input('Right eye: '))
+        today['eye'] = {'left': left_eye, 'right': right_eye}
+
+        today['weight'] = float(input('Weight: '))
+        today['mood'] = int(input('Mood: '))
+
+class Noon:
+
+    def __init__(self, filename):
+        try:
+            with open(filename, 'r') as f:
+                self.filename = filename
+                self.data = json.loads(f.read())
+        except FileNotFoundError:
+            self.filename = filename
+            self.data = {}
+
+
+    def write(self):
+        with open(self.filename, 'w') as f:
+            f.write(json.dumps(self.data))
+
+
+    def dump(self):
+        print(json.dumps(self.data, indent=4, sort_keys=True))
+
+
+    def record(self):
+        curr_date = datetime.now().strftime('%Y-%m-%d')
+        if not curr_date in self.data:
+            self.data[curr_date] = {}
+        self.data[curr_date]['noon'] = {}
+
+        today = self.data[curr_date]['noon']
+        today['energy'] = int(input('Energy level: '))
+
+        left_eye = int(input('Left eye: '))
+        right_eye = int(input('Right eye: '))
+        today['eye'] = {'left': left_eye, 'right': right_eye}
+
+        today['mood'] = int(input('Mood: '))
+
+class Evening:
+
+    def __init__(self, filename):
+        try:
+            with open(filename, 'r') as f:
+                self.filename = filename
+                self.data = json.loads(f.read())
+        except FileNotFoundError:
+            self.filename = filename
+            self.data = {}
+
+
+    def write(self):
+        with open(self.filename, 'w') as f:
+            f.write(json.dumps(self.data))
+
+
+    def dump(self):
+        print(json.dumps(self.data, indent=4, sort_keys=True))
+
+
+    def record(self):
+        curr_date = datetime.now().strftime('%Y-%m-%d')
+        if not curr_date in self.data:
+            self.data[curr_date] = {}
+        self.data[curr_date]['evening'] = {}
+
+        today = self.data[curr_date]['evening']
+        today['energy'] = int(input('Energy level: '))
+
+        left_eye = int(input('Left eye: '))
+        right_eye = int(input('Right eye: '))
+        today['eye'] = {'left': left_eye, 'right': right_eye}
+
+        today['mood'] = int(input('Mood: '))
+        exercise = input('Exercise (y/n): ')
+
+        while exercise != 'y' and exercise != 'n':
+            exercise = input('Exercise (y/n): ')
+        if exercise == 'y':
+            today['exercise'] = 'True'
+        else:
+            today['exercise'] = 'False'
+
+        walk = input('Walk (y/n): ')
+
+        while walk != 'y' and walk != 'n':
+            walk = input('Walk (y/n): ')
+        if walk == 'y':
+            today['walk'] = 'True'
+        else:
+            today['walk'] = 'False'
+
+
+filename = '/home/obabo/Personal/Statistics/quantified_self.json'
+#filename = 'test2.json'
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--morning', '-m', action='store_true')
+parser.add_argument('--noon', '-n', action='store_true')
+parser.add_argument('--evening', '-e', action='store_true')
+
+args = parser.parse_args()
+
+if args.morning:
+    m = Morning(filename)
+    m.record()
+    m.dump()
+    m.write()
+
+if args.noon:
+    m = Noon(filename)
+    m.record()
+    m.dump()
+    m.write()
+
+if args.evening:
+    m = Evening(filename)
+    m.record()
+    m.dump()
+    m.write()

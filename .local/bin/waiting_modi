@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+system_loc=~/Personal
+
+if [ $# = 0 ]; then
+    echo -e "List waiting\nAdd waiting"
+elif [ "${1}" = "List waiting" ]; then
+    sed "s/- //" ${system_loc}/waiting.md
+elif [ "${1}" = "Add waiting" ]; then
+    echo "Enter name"
+else
+    echo "- ${1}" >> ${system_loc}/waiting.md
+fi

@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+system_loc=~/Projects
+
+project=$(find ${system_loc} -maxdepth 1 ! -name 'Projects' -type d -printf "%f\n" | fzf)
+grep -qw ${project} <(tmux list-sessions)
+# Check if the project is already open in an other session
+if [ $? -eq 0 ]; then
+    # Check if already in a tmux session, in which case just change client
+    if [ -z "${TMUX}" ]; then
+        tmux attach -t ${project}
+    else
+        tmux switch-client -t ${project}
+    fi
+else
+    [ -n "${project}" ] && cd ${system_loc}/${project} && tmux new -s ${project}
+fi

@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+system_loc=~/Personal
+
+if [ $# = 0 ]; then
+    echo -e "List tasks\nAdd task"
+elif [ "${1}" = "List tasks" ]; then
+    sed "s/- //" ${system_loc}/tasks.md
+elif [ "${1}" = "Add task" ]; then
+    echo "Enter name"
+else
+    echo "- ${1}" >> ${system_loc}/tasks.md
+fi
