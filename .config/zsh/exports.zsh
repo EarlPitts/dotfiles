@@ -2,6 +2,10 @@
 export EDITOR='nvim'
 export VEDITOR='code'
 
+# Indexes
+# TODO Add some frequently accessed files to my env?
+#export NOTES=$HOME"/Personal/Inbox/index.md"
+
 # Path
 export PATH=$PATH:~/.local/bin
 
