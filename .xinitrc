@@ -38,7 +38,7 @@ fi
 #rescuetime &
 #redshift &
 #calcurse -D ~/Personal/Calendar -C ~/.config/ --daemon 
-feh --no-fehbg --bg-fill ~/.dotfiles/wallpapers/background.jpg
+feh --no-fehbg --bg-fill ~/.local/share/wallpapers/background.jpg
 xrdb -merge ~/.Xresources
 #~/.config/monitor.sh &
 #~/.Scripts/headphones.sh &
