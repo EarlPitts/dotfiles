@@ -13,7 +13,6 @@ antibody bundle < ~/.config/zsh/plugins.txt
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/exports.zsh
 source ~/.config/zsh/keybindings.zsh
-source ~/.config/zsh/fzf-funcs.zsh
 source ~/.config/zsh/funcs.zsh
 source ~/.config/zsh/base16.zsh
 source /usr/share/fzf/completion.zsh
