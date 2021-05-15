@@ -7,7 +7,7 @@ unsetopt beep
 
 # load antibody
 source <(antibody init)
-antibody bundle < ~/.zsh/plugins.txt
+antibody bundle < ~/.config/zsh/plugins.txt
 
 # Imports
 source ~/.config/zsh/aliases.zsh
@@ -31,5 +31,5 @@ compinit; promptinit
 
 # This needs to be at the and, otherwise the
 # sourcing of zshrc would stop to start tmux
-source ~/.zsh/auto-tmux.zsh
+source ~/.config/zsh/auto-tmux.zsh
 eval "$(direnv hook zsh)"
