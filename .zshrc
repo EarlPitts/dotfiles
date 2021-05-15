@@ -10,14 +10,12 @@ source <(antibody init)
 antibody bundle < ~/.zsh/plugins.txt
 
 # Imports
-source ~/.zsh/aliases.zsh
-source ~/.zsh/exports.zsh
-source ~/.zsh/keybindings.zsh
-source ~/.zsh/fzf-funcs.zsh
-source ~/.zsh/funcs.zsh
-#source ~/.zsh/gtd.zsh
-#source ~/.zsh/widgets.zsh
-source ~/.zsh/base16.zsh
+source ~/.config/zsh/aliases.zsh
+source ~/.config/zsh/exports.zsh
+source ~/.config/zsh/keybindings.zsh
+source ~/.config/zsh/fzf-funcs.zsh
+source ~/.config/zsh/funcs.zsh
+source ~/.config/zsh/base16.zsh
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh
 
