@@ -70,7 +70,7 @@ down() {
 # Edit dotfiles
 d() {
     cd ~
-    local dotfile=$(git ls-files | fzf)
+    local dotfile=$(git ls-files | fzf-tmux -r 30% --reverse)
     [ -n "$dotfile" ] && nvim $dotfile
     cd -
 }

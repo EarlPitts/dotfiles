@@ -5,6 +5,6 @@ system_loc=~/Personal
 if [ "${1}" = open ]; then
     nvim '+lcd %:p:h' '+Tagbar' ${system_loc}/Direction/index.md
 else
-    area=$(find ${system_loc}/Direction -maxdepth 1 -type f ! -name 'index.md' -name '*.md' -printf "%f\n" | fzf)
+    area=$(find ${system_loc}/Direction -maxdepth 1 -type f ! -name 'index.md' -name '*.md' -printf "%f\n" | fzf-tmux -r 30% --reverse)
     [ -n "${area}" ] && nvim '+lcd %:p:h' '+Tagbar' ${system_loc}/Direction/${area}
 fi

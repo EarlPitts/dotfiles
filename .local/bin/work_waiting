@@ -5,6 +5,6 @@ system_loc=~/Work
 if [ "${1}" = open ]; then
     nvim '+lcd %:p:h' ${system_loc}/waiting.md
 else
-    task=$(cat ${system_loc}/waiting.md | fzf)
+    task=$(cat ${system_loc}/waiting.md | fzf-tmux -r 30% --reverse)
     [ -n "${task}" ] && sed -i "/^${task}$/d" ${system_loc}/waiting.md
 fi

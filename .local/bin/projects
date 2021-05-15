@@ -2,7 +2,7 @@
 
 system_loc=~/Projects
 
-project=$(find ${system_loc} -maxdepth 1 ! -name 'Projects' -type d -printf "%f\n" | fzf)
+project=$(find ${system_loc} -maxdepth 1 ! -name 'Projects' -type d -printf "%f\n" | fzf-tmux -r 30% --reverse)
 grep -qw ${project} <(tmux list-sessions)
 # Check if the project is already open in an other session
 if [ $? -eq 0 ]; then

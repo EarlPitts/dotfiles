@@ -7,6 +7,6 @@ if [ "${1}" = index ]; then
 elif [ -d wiki ]; then
     nvim '+lcd %:p:h' '+Tagbar' wiki/index.md
 else
-    note=$(find ${system_loc}/Notes -type f -name '*.md' -printf "%f\n" | fzf)
+    note=$(find ${system_loc}/Notes -type f -name '*.md' -printf "%f\n" | fzf-tmux -r 30% --reverse)
     [ -n "${note}" ] && nvim '+lcd %:p:h' '+Tagbar' ${system_loc}/Notes/${note}
 fi
