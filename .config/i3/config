@@ -35,10 +35,10 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 ## Keyboard Layout
-bindsym $mod+space exec ~/.local/bin/layout.sh
+bindsym $mod+space exec ~/.local/bin/keylayout
 
 ## Lockscreen
-bindsym $mod+p exec ~/.local/bin/lock.sh
+bindsym $mod+p exec ~/.local/bin/lock
 
 ## Productivity
 
@@ -71,17 +71,17 @@ bindsym $mod+t exec rofi -sidebar-mode -show combi \
 #bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
 #bindsym $mod+b exec ~/.scripts/references.sh
 #bindsym $mod+t exec ~/.scripts/addtask.sh
-bindsym $mod+F11 exec ~/.local/bin/pomodoro.sh
+bindsym $mod+F11 exec ~/.local/bin/pomodoro
 
 bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi-float -e zsh -ic codi
 bindsym $mod+Shift+Return exec i3-sensible-terminal -e ssh ben
 
 ## Rofi scripts
 bindsym $mod+F12 exec rofi -show calc -modi calc -no-show-match -no-sort
-bindsym $mod+u exec ~/.local/bin/kill_process.sh
+bindsym $mod+u exec ~/.local/bin/killprocess
 
 ## Set Screen
-bindsym XF86Display exec ~/.local/bin/monitor.sh
+bindsym XF86Display exec ~/.local/bin/screen
 
 ## Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
