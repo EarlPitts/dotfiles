@@ -43,10 +43,10 @@ bindsym $mod+p exec ~/.local/bin/lock
 ## Productivity
 
 ### Inbox
-bindsym $mod+n exec ~/.local/bin/quick_note_modi
-bindsym $mod+Shift+n exec ~/.local/bin/quick_note_modi open
-bindsym Mod1+n exec ~/.local/bin/work_quick_note_modi
-bindsym Mod1+Shift+n exec ~/.local/bin/work_quick_note_modi open
+bindsym $mod+n exec ~/.local/bin/rofiquicknote
+bindsym $mod+Shift+n exec ~/.local/bin/rofiquicknote open
+bindsym Mod1+n exec ~/.local/bin/rofiworkquicknote
+bindsym Mod1+Shift+n exec ~/.local/bin/rofiworkquicknote open
 
 ### References
 bindsym $mod+b exec rofi -sidebar-mode -show combi \
