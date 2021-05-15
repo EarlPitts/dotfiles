@@ -50,13 +50,13 @@ bindsym Mod1+Shift+n exec ~/.local/bin/work_quick_note_modi open
 
 ### References
 bindsym $mod+b exec rofi -sidebar-mode -show combi \
--combi-modi "wiki:~/.local/bin/wiki_modi#books:~/.local/bin/books_modi#cheatsheets:~/.local/bin/cheatsheets_modi#papers:~/.local/bin/papers_modi#work wiki:~/.local/bin/work_wiki_modi" \
--modi "combi#wiki:~/.local/bin/wiki_modi#books:~/.local/bin/books_modi#cheatsheets:~/.local/bin/cheatsheets_modi#papers:~/.local/bin/papers_modi#work wiki:~/.local/bin/work_wiki_modi"
+-combi-modi "wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#work wiki:~/.local/bin/rofiworkwiki" \
+-modi "combi#wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#work wiki:~/.local/bin/rofiworkwiki"
 
 ### Tasks
 bindsym $mod+t exec rofi -sidebar-mode -show combi \
--combi-modi "tasks:~/.local/bin/tasks_modi#waiting:~/.local/bin/waiting_modi#checklists:~/.local/bin/checklists_modi#projects:~/.local/bin/projects_modi#direction:~/.local/bin/direction_modi" \
--modi "combi#tasks:~/.local/bin/tasks_modi#waiting:~/.local/bin/waiting_modi#checklists:~/.local/bin/checklists_modi#projects:~/.local/bin/projects_modi#direction:~/.local/bin/direction_modi"
+-combi-modi "tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#direction:~/.local/bin/rofidirection" \
+-modi "combi#tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#direction:~/.local/bin/rofidirection"
 
 # bindsym $mod+t exec ~/.scripts/task rofi
 # bindsym $mod+Shift+t exec ~/.scripts/task rofi inverse
