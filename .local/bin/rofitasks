@@ -5,5 +5,5 @@ system_loc=~/Personal
 if [ $# = 0 ]; then
     echo -e "Open tasks"
 else
-    i3-msg exec "i3-sensible-terminal -e zsh -ic 'nvim $system_loc/tasks.md'" > /dev/null
+    i3-msg exec "i3-sensible-terminal -e zsh -ic 'nvim --noplugin $system_loc/tasks.md'" > /dev/null
 fi
