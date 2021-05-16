@@ -196,12 +196,6 @@ nnoremap <F2> :UndotreeToggle<cr>
 nmap <F12> :tabnew wiki/index.md<CR>:Tagbar<CR>
 nmap <F10> :Gdiffsplit<CR>
 
-"Meetings
-map <leader>mr :.!echo - - $(date +\%F)-review<CR>
-map <leader>mp :.!echo - - $(date +\%F)-planning<CR>
-map <leader>ms :.!echo - - $(date +\%F)-scrum<CR>
-map <leader>mt :.!echo - - $(date +\%F)-retro<CR>
-
 "Copy to clipboard
 nmap <C-c> "*y
 vmap <C-c> "*y
