@@ -3,11 +3,7 @@
 system_loc=~/Personal
 
 if [ $# = 0 ]; then
-    echo -e "List tasks\nAdd task"
-elif [ "${1}" = "List tasks" ]; then
-    sed "s/- //" ${system_loc}/tasks.md
-elif [ "${1}" = "Add task" ]; then
-    echo "Enter name"
+    echo -e "Open tasks"
 else
-    echo "- ${1}" >> ${system_loc}/tasks.md
+    i3-msg exec "i3-sensible-terminal -e zsh -ic 'nvim $system_loc/tasks.md'" > /dev/null
 fi

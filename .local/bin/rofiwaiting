@@ -3,11 +3,7 @@
 system_loc=~/Personal
 
 if [ $# = 0 ]; then
-    echo -e "List waiting\nAdd waiting"
-elif [ "${1}" = "List waiting" ]; then
-    sed "s/- //" ${system_loc}/waiting.md
-elif [ "${1}" = "Add waiting" ]; then
-    echo "Enter name"
+    echo -e "Open waiting"
 else
-    echo "- ${1}" >> ${system_loc}/waiting.md
+    i3-msg exec "i3-sensible-terminal -e zsh -ic 'nvim $system_loc/waiting.md'" > /dev/null
 fi
