@@ -3,15 +3,20 @@
 system_loc=~/Projects
 
 project=$(find ${system_loc} -maxdepth 1 ! -name 'Projects' -type d -printf "%f\n" | fzf-tmux -r 30% --reverse)
-grep -qw ${project} <(tmux list-sessions)
+[ -n "$project" ] || exit
 # Check if the project is already open in an other session
-if [ $? -eq 0 ]; then
+if grep -qw "$project" <(tmux list-sessions); then
     # Check if already in a tmux session, in which case just change client
-    if [ -z "${TMUX}" ]; then
-        tmux attach -t ${project}
+    if [ -n "$TMUX" ]; then
+        tmux switch-client -t $project
     else
-        tmux switch-client -t ${project}
+        tmux attach -t $project
     fi
 else
-    [ -n "${project}" ] && cd ${system_loc}/${project} && tmux new -s ${project}
+    if [ -n "$TMUX" ]; then
+        echo "Not working yet"
+        # TODO tmux detach && cd $system_loc/$project && tmux new -s $project
+    else
+        cd $system_loc/$project && tmux new -s $project
+    fi
 fi
