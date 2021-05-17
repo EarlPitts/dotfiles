@@ -82,7 +82,7 @@ let g:vimwiki_list = [{
 	\ 'path': '~/Personal/Notes',
 	\ 'template_path': '~/Personal/Notes/templates/',
 	\ 'template_default': 'default',
-	\ 'index': 'Home',
+	\ 'index': 'index',
 	\ 'syntax': 'markdown',
 	\ 'ext': '.md',
 	\ 'path_html': '~/notes/',
