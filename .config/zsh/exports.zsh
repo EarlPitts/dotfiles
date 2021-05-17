@@ -5,6 +5,8 @@ export VEDITOR='code'
 # Indexes
 # TODO Add some frequently accessed files to my env?
 #export NOTES=$HOME"/Personal/Inbox/index.md"
+export NOTES=$HOME/Personal/Notes
+export WORK_NOTES=$HOME/Work/Notes
 
 # Path
 export PATH=$PATH:~/.local/bin
