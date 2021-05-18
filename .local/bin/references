@@ -3,8 +3,16 @@
 ref=$(find $WIKI $WORK_WIKI $SNIPPETS -type f | cut -d/ -f4- | fzf)
 [ -z $ref ] && exit
 
-if [ "$(echo $ref | cut -d/ -f2)" = "Snippets" ]; then
-    $EDITOR +Codi $HOME/$ref
+# Changing the folder is needed, because
+# isdirectory() in vim is checked only when the file
+# is opened, so c-p will not work
+folder=$(echo "$ref" | rev | cut -d/ -f2- | rev)
+file=$(echo "$ref" | rev | cut -d/ -f-1 | rev)
+
+if [ "$(echo "$ref" | cut -d/ -f2)" = "Snippets" ]; then
+    cd $HOME/"$folder" || exit
+    $EDITOR +Codi "$file"
 else
-    $EDITOR $HOME/$ref
+    cd $HOME/"$folder" || exit
+    $EDITOR "$file"
 fi
