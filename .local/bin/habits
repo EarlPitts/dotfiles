@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 
 HABITS_FILE = '/home/obabo/Personal/Statistics/habits.json'
-COMMITMENTS = '/home/obabo/Personal/Direction/Commitments.md'
+COMMITMENTS = '/home/obabo/Personal/Areas/Commitments.md'
 
 def load(filename):
     """Loads the data from the JSON file."""
