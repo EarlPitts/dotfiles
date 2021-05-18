@@ -6,6 +6,9 @@ export VEDITOR='code'
 export WIKI="$HOME/Personal/Wiki"
 export WORK_WIKI="$HOME/Work/Wiki"
 export SNIPPETS="$HOME/Personal/Snippets"
+export BOOKS=$HOME/Personal/References/Books
+export CHEATSHEETS=$HOME/Personal/References/Cheatsheets
+export PAPERS=$HOME/Personal/References/Papers
 
 # Productivity
 export PROJECTS="$HOME/Projects"

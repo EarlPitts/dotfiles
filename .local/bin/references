@@ -1,6 +1,11 @@
 #!/usr/bin/sh
 
-ref=$(find $WIKI $WORK_WIKI $SNIPPETS -type f | cut -d/ -f4- | fzf)
+if [ -n "$DISPLAY" ]; then
+    # If has a wm, display other docs too
+    ref=$(find $WIKI $WORK_WIKI $SNIPPETS $BOOKS $PAPERS $CHEATSHEETS -type f | cut -d/ -f4- | fzf)
+else
+    ref=$(find $WIKI $WORK_WIKI $SNIPPETS -type f | cut -d/ -f4- | fzf)
+fi
 [ -z $ref ] && exit
 
 # Changing the folder is needed, because
@@ -12,6 +17,8 @@ file=$(echo "$ref" | rev | cut -d/ -f-1 | rev)
 if [ "$(echo "$ref" | cut -d/ -f2)" = "Snippets" ]; then
     cd $HOME/"$folder" || exit
     $EDITOR +Codi "$file"
+elif [ "$(echo "$ref" | cut -d/ -f2)" = "References" ]; then
+    i3-msg exec "xdg-open $HOME/$folder/$file" > /dev/null
 else
     cd $HOME/"$folder" || exit
     $EDITOR "$file"
