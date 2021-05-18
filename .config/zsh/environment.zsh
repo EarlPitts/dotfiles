@@ -3,14 +3,14 @@ export EDITOR='nvim'
 export VEDITOR='code'
 
 # References
-export WIKI="$HOME/Personal/Notes"
-export WORK_WIKI="$HOME/Work/Notes"
+export WIKI="$HOME/Personal/Wiki"
+export WORK_WIKI="$HOME/Work/Wiki"
 export SNIPPETS="$HOME/Personal/Snippets"
 
 # Productivity
 export PROJECTS="$HOME/Projects"
 export WORK_AREAS="$HOME/Work/Areas"
-export AREAS="$HOME/Personal/Direction"
+export AREAS="$HOME/Personal/Areas"
 export TASKLIST="$HOME/Personal/tasks.md"
 export WORK_TASKLIST="$HOME/Work/tasks.md"
 export WAITING="$HOME/Personal/waiting.md"
