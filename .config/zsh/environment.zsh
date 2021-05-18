@@ -8,9 +8,13 @@ export WORK_WIKI="$HOME/Work/Notes"
 export SNIPPETS="$HOME/Personal/Snippets"
 
 # Productivity
-PROJECTS="$HOME/Projects"
-WORK_AREAS="$HOME/Work/Areas"
-AREAS="$HOME/Personal/Direction"
+export PROJECTS="$HOME/Projects"
+export WORK_AREAS="$HOME/Work/Areas"
+export AREAS="$HOME/Personal/Direction"
+export TASKLIST="$HOME/Personal/tasks.md"
+export WORK_TASKLIST="$HOME/Work/tasks.md"
+export WAITING="$HOME/Personal/waiting.md"
+export WORK_WAITING="$HOME/Work/waiting.md"
 
 # Indexes
 # TODO Add some frequently accessed files to my env?
