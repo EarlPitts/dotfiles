@@ -2,6 +2,11 @@
 export EDITOR='nvim'
 export VEDITOR='code'
 
+# References
+WIKI="$HOME/Personal/Notes"
+WORK_WIKI="$HOME/Work/Notes"
+SNIPPETS="$HOME/Personal/Snippets"
+
 # Indexes
 # TODO Add some frequently accessed files to my env?
 #export NOTES=$HOME"/Personal/Inbox/index.md"
