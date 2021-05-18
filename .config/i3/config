@@ -88,9 +88,9 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
 ## Take Screenshot
-bindsym Shift+Print --release exec "~/.local/bin/screenshot.sh select"
-bindsym Control+Print --release exec "~/.local/bin/screenshot.sh note"
-bindsym Print exec "~/.local/bin/screenshot.sh"
+bindsym Shift+Print --release exec "~/.local/bin/screenshot select"
+bindsym Control+Print --release exec "~/.local/bin/screenshot note"
+bindsym Print exec "~/.local/bin/screenshot"
 
 ## Rofi
 bindsym $mod+d exec rofi -show combi
