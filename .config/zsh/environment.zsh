@@ -7,6 +7,11 @@ export WIKI="$HOME/Personal/Notes"
 export WORK_WIKI="$HOME/Work/Notes"
 export SNIPPETS="$HOME/Personal/Snippets"
 
+# Productivity
+PROJECTS="$HOME/Projects"
+WORK_AREAS="$HOME/Work/Areas"
+AREAS="$HOME/Personal/Direction"
+
 # Indexes
 # TODO Add some frequently accessed files to my env?
 #export NOTES=$HOME"/Personal/Inbox/index.md"
