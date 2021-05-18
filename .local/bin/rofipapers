@@ -1,9 +1,7 @@
-#!/usr/bin/bash
-
-system_loc=~/Personal
+#!/usr/bin/sh
 
 if [ $# = 0 ]; then
-    find ${system_loc}/References/Papers -type f -printf "%f\n"
+    find $PAPERS -type f -printf "%f\n"
 else
-    i3-msg exec xdg-open $(find ${system_loc}/References/Papers -type f -name "$1") > /dev/null
+    i3-msg exec xdg-open $(find $PAPERS -type f -name "$1") > /dev/null
 fi

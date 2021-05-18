@@ -1,7 +1,7 @@
-#!/usr/bin/bash
+#!/usr/bin/sh
 
 if [ $# = 0 ]; then
-    find ~/Personal/Notes -type f -name '*.md' -printf "%f\n"
+    find $WIKI -type f -name '*.md' -printf "%f\n"
 else
-    i3-msg exec "i3-sensible-terminal -e zsh -ic 'cd ~/Personal/Notes && nvim ${1}'" > /dev/null
+    i3-msg exec "i3-sensible-terminal -e zsh -ic 'cd $WIKI && nvim ${1}'" > /dev/null
 fi

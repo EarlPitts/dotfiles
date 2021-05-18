@@ -1,9 +1,7 @@
-#!/usr/bin/bash
-
-system_loc=~/Personal
+#!/usr/bin/sh
 
 if [ $# = 0 ]; then
-    find ${system_loc}/References/Cheatsheets -type f -printf "%f\n"
+    find $CHEATSHEETS -type f -printf "%f\n"
 else
-    i3-msg exec xdg-open $(find ${system_loc}/References/Cheatsheets -type f -name "$1") > /dev/null
+    i3-msg exec xdg-open $(find $CHEATSHEETS -type f -name "$1") > /dev/null
 fi

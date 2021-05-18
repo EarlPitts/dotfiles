@@ -55,8 +55,8 @@ bindsym $mod+b exec rofi -sidebar-mode -show combi \
 
 ### Tasks
 bindsym $mod+t exec rofi -sidebar-mode -show combi \
--combi-modi "tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#direction:~/.local/bin/rofidirection" \
--modi "combi#tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#direction:~/.local/bin/rofidirection"
+-combi-modi "tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas" \
+-modi "combi#tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas"
 
 # bindsym $mod+t exec ~/.scripts/task rofi
 # bindsym $mod+Shift+t exec ~/.scripts/task rofi inverse

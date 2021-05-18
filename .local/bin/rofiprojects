@@ -1,13 +1,11 @@
-#!/usr/bin/bash
-
-system_loc=~/Projects
+#!/usr/bin/sh
 
 if [ $# = 0 ]; then
-    find ${system_loc} -maxdepth 1 ! -name 'Projects' -type d -printf "%f\n"
+    find $PROJECTS -maxdepth 1 -type d -not -name 'Projects' -printf "%f\n"
 else
-    if grep -qw "$1" <(tmux list-sessions); then
-        i3-msg exec "i3-sensible-terminal -t $1 -e zsh -ic 'cd ${system_loc}/$1 && tmux attach -t $1'" > /dev/null
+    if tmux has-session -t "$1"; then
+        i3-msg exec "i3-sensible-terminal -t $1 -e zsh -ic 'cd $PROJECTS/$1 && tmux attach -t $1'" > /dev/null
     else
-        i3-msg exec "i3-sensible-terminal -t $1 -e zsh -ic 'cd ${system_loc}/$1 && tmux new -s $1'" > /dev/null
+        i3-msg exec "i3-sensible-terminal -t $1 -e zsh -ic 'cd $PROJECTS/$1 && tmux new -s $1'" > /dev/null
     fi
 fi

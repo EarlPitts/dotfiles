@@ -1,10 +1,8 @@
-#!/usr/bin/bash
-
-system_loc=~/Personal
+#!/usr/bin/sh
 
 if [ $# = 0 ]; then
-    find ${system_loc}/References/Books -type f | cut -sd / -f 7-
+    find $BOOKS -type f | cut -sd / -f 7-
 else
     book=$(echo "${1}" | rev | cut -d / -f 1 | rev)
-    i3-msg exec xdg-open $(find ${system_loc}/References/Books -type f -name "${book}") > /dev/null
+    i3-msg exec xdg-open $(find $BOOKS -type f -name "${book}") > /dev/null
 fi

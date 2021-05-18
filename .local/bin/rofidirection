@@ -1,9 +1,0 @@
-#!/usr/bin/bash
-
-system_loc=~/Personal
-
-if [ $# = 0 ]; then
-    find ${system_loc}/Direction -maxdepth 1 -type f -printf "%f\n"
-else
-    i3-msg exec "i3-sensible-terminal -e zsh -ic 'nvim ${system_loc}/Direction/${1}'" > /dev/null
-fi
