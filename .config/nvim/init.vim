@@ -174,7 +174,7 @@ set clipboard=unnamed " System clipboard TODO
 "Mappings
 if isdirectory(".git")
 	" if in a git project, use :GFiles
-	nmap <C-p> :GitFiles --cached --others --exclude-standard<cr>
+	nmap <C-p> :GitFiles<CR>
 else
 	" otherwise, use :FZF
 	nmap <C-p> :Files<CR>
