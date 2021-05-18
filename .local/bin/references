@@ -1,6 +1,7 @@
 #!/usr/bin/sh
 
 ref=$(find $WIKI $WORK_WIKI $SNIPPETS -type f | cut -d/ -f4- | fzf)
+[ -z $ref ] && exit
 
 if [ "$(echo $ref | cut -d/ -f2)" = "Snippets" ]; then
     $EDITOR +Codi $HOME/$ref
