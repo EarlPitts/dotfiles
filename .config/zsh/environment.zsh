@@ -3,9 +3,9 @@ export EDITOR='nvim'
 export VEDITOR='code'
 
 # References
-WIKI="$HOME/Personal/Notes"
-WORK_WIKI="$HOME/Work/Notes"
-SNIPPETS="$HOME/Personal/Snippets"
+export WIKI="$HOME/Personal/Notes"
+export WORK_WIKI="$HOME/Work/Notes"
+export SNIPPETS="$HOME/Personal/Snippets"
 
 # Indexes
 # TODO Add some frequently accessed files to my env?

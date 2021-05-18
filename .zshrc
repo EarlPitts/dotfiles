@@ -11,7 +11,7 @@ antibody bundle < ~/.config/zsh/plugins.txt
 
 # Imports
 source ~/.config/zsh/aliases.zsh
-source ~/.config/zsh/exports.zsh
+source ~/.config/zsh/environment.zsh
 source ~/.config/zsh/keybindings.zsh
 source ~/.config/zsh/funcs.zsh
 source ~/.config/zsh/base16.zsh
