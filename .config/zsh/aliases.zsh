@@ -29,23 +29,10 @@ alias venv='source .venv/bin/activate'
 # Productivity System
 
 ## References
-alias n='wiki'
-alias ni='wiki index'
-alias nw='work_wiki'
-alias nwi='work_wiki index'
+alias b='references'
 
 ## Tasks
-alias c='checklists'
-alias ci='checklists open'
-alias p='projects'
-alias t='tasks'
-alias ti='tasks open'
-alias tw='work_tasks'
-alias twi='work_tasks open'
-alias w='waiting'
-alias wi='waiting open'
-alias ww='work_waiting'
-alias wwi='work_waiting open'
+alias m='productivity'
 
 ## Inbox
 alias q='quick_note'

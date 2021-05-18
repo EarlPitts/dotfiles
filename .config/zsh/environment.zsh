@@ -15,6 +15,7 @@ export TASKLIST="$HOME/Personal/tasks.md"
 export WORK_TASKLIST="$HOME/Work/tasks.md"
 export WAITING="$HOME/Personal/waiting.md"
 export WORK_WAITING="$HOME/Work/waiting.md"
+export CHECKLISTS="$HOME/Personal/Checklists"
 
 # Indexes
 # TODO Add some frequently accessed files to my env?
