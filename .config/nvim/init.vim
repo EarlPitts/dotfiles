@@ -185,7 +185,8 @@ nmap <leader>. :Tagbar<CR>
 nmap <leader>, :w<CR>
 nnoremap <C-g> :Rg<CR>
 nnoremap <C-t> :Tags<CR>
-nnoremap <C-s> :Snippets<CR>
+"nnoremap <C-s> :Snippets<CR>
+nnoremap <C-s> :Files ~/Personal/Snippets<CR>
 map <F1> :!./%<CR>
 map <F5> :make!<CR>
 "map <F5> :!~/.scripts/compile.sh %:p<CR>
