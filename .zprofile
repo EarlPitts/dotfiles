@@ -20,6 +20,10 @@ export WAITING="$HOME/Personal/waiting.md"
 export WORK_WAITING="$HOME/Work/waiting.md"
 export CHECKLISTS="$HOME/Personal/Checklists"
 
+# Inboxes
+export INBOX=$HOME/Personal/Inbox/index.md
+export WORK_INBOX=$HOME/Work/Inbox/index.md
+
 # Path
 export PATH=$PATH:~/.local/bin
 
