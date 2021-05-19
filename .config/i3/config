@@ -43,18 +43,18 @@ bindsym $mod+p exec ~/.local/bin/lock
 ## Productivity
 
 ### Inbox
-bindsym $mod+n exec ~/.local/bin/rofiquicknote
-bindsym $mod+Shift+n exec ~/.local/bin/rofiquicknote open
-bindsym Mod1+n exec ~/.local/bin/rofiworkquicknote
-bindsym Mod1+Shift+n exec ~/.local/bin/rofiworkquicknote open
+bindsym $mod+i exec ~/.local/bin/rofiquicknote
+bindsym $mod+Shift+i exec ~/.local/bin/rofiquicknote open
+bindsym Mod1+i exec ~/.local/bin/rofiworkquicknote
+bindsym Mod1+Shift+i exec ~/.local/bin/rofiworkquicknote open
 
 ### References
-bindsym $mod+b exec rofi -sidebar-mode -show combi \
+bindsym $mod+u exec rofi -sidebar-mode -show combi \
 -combi-modi "wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#work wiki:~/.local/bin/rofiworkwiki" \
 -modi "combi#wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#work wiki:~/.local/bin/rofiworkwiki"
 
-### Tasks
-bindsym $mod+t exec rofi -sidebar-mode -show combi \
+### Productivity
+bindsym $mod+o exec rofi -sidebar-mode -show combi \
 -combi-modi "tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas" \
 -modi "combi#tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas"
 
@@ -78,7 +78,7 @@ bindsym $mod+Shift+Return exec i3-sensible-terminal -e ssh ben
 
 ## Rofi scripts
 bindsym $mod+F12 exec rofi -show calc -modi calc -no-show-match -no-sort
-bindsym $mod+u exec ~/.local/bin/killprocess
+bindsym $mod+F8 exec ~/.local/bin/killprocess
 
 ## Set Screen
 bindsym XF86Display exec ~/.local/bin/screen

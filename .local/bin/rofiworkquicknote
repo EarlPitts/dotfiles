@@ -1,10 +1,8 @@
-#!/usr/bin/bash
-
-system_loc=~/Work
+#!/usr/bin/sh
 
 if [ "$1" = open ]; then
-    i3-sensible-terminal -t note -e zsh -ic "nvim '+lcd %:p:h' '+normal G' ${system_loc}/Inbox/index.md"
+    i3-sensible-terminal -t note -e zsh -ic "nvim '+lcd %:p:h' '+normal G' $WORK_INBOX"
 else
     note=$(rofi -dmenu -p "Note" -lines 0 -location 6)
-    [ -n "$note" ] && echo "- $note" >> ${system_loc}/Inbox/index.md
+    [ -n "$note" ] && echo "- $note" >> $WORK_INBOX
 fi
