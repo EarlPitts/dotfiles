@@ -34,6 +34,8 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+bindsym $mod+F1 exec ~/.local/bin/lidclose
+
 ## Keyboard Layout
 bindsym $mod+space exec ~/.local/bin/keylayout
 
@@ -102,7 +104,7 @@ bindsym Mod1+e exec i3-sensible-terminal -e ranger
 bindsym $mod+Shift+p exec rofi-pass
 
 # Moving workspaces between screens
-bindsym $mod+F1 move workspace to output left
+#bindsym $mod+F1 move workspace to output left
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod

@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+if [ -e /tmp/lidpid ]; then
+    kill $(cat /tmp/lidpid)
+    rm /tmp/lidpid
+else
+    systemd-inhibit --what=handle-lid-switch sleep 1d &
+    echo $! >> /tmp/lidpid
+fi
