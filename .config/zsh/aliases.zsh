@@ -28,6 +28,8 @@ alias venv='source .venv/bin/activate'
 
 # Productivity System
 
+alias wiki='nvim +Tagbar wiki/index.md'
+
 ## References
 alias b='references'
 
@@ -47,10 +49,6 @@ alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'
 
 ## Codebase
 alias code='cd ~/.snippets && nvim +Rg && cd -'
-
-## Direction
-alias dir='direction'
-alias diri='direction open'
 
 # Git
 alias gc='git commit -m"Autocommit"'
