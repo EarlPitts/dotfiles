@@ -1,19 +1,22 @@
-#define nord0 #2E3440
-#define nord1 #3B4252
-#define nord2 #434C5E
-#define nord3 #4C566A
-#define nord4 #D8DEE9
-#define nord5 #E5E9F0
-#define nord6 #ECEFF4
-#define nord7 #8FBCBB
-#define nord8 #88C0D0
-#define nord9 #81A1C1
-#define nord10 #5E81AC
-#define nord11 #BF616A
-#define nord12 #D08770
-#define nord13 #EBCB8B
-#define nord14 #A3BE8C
-#define nord15 #B48EAD
+! Base16 Eighties
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #2d2d2d
+#define base01 #393939
+#define base02 #515151
+#define base03 #747369
+#define base04 #a09f93
+#define base05 #d3d0c8
+#define base06 #e8e6df
+#define base07 #f2f0ec
+#define base08 #f2777a
+#define base09 #f99157
+#define base0A #ffcc66
+#define base0B #99cc99
+#define base0C #66cccc
+#define base0D #6699cc
+#define base0E #cc99cc
+#define base0F #d27b53
 
 URxvt.scrollBar:        false
 URxvt.termName:         rxvt-unicode-256color
@@ -23,25 +26,28 @@ URxvt.visualbell:       false
 URxvt.perl-ext-common: font-size
 URxvt.keysym.C-equal:  font-size:increase
 
-*.foreground:           nord4
-*.background:           nord0
-*.cursorColor:          nord4
-*fading:                35
-*fadeColor:             nord3
+*foreground:   base05
+#ifdef background_opacity
+*background:   [background_opacity]base00
+#else
+*background:   base00
+#endif
+*cursorColor:  base05
 
-*.color0:               nord1
-*.color1:               nord11
-*.color2:               nord14
-*.color3:               nord13
-*.color4:               nord9
-*.color5:               nord15
-*.color6:               nord8
-*.color7:               nord5
-*.color8:               nord3
-*.color9:               nord11
-*.color10:              nord14
-*.color11:              nord13
-*.color12:              nord9
-*.color13:              nord15
-*.color14:              nord7
-*.color15:              nord6
+*color0:       base00
+*color1:       base08
+*color2:       base0B
+*color3:       base0A
+*color4:       base0D
+*color5:       base0E
+*color6:       base0C
+*color7:       base05
+
+*color8:       base03
+*color9:       base09
+*color10:      base01
+*color11:      base02
+*color12:      base04
+*color13:      base06
+*color14:      base0F
+*color15:      base07
