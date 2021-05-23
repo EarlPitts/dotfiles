@@ -5,17 +5,21 @@ SAVEHIST=10000
 setopt autocd
 unsetopt beep
 
-# load antibody
-source <(antibody init)
-antibody bundle < ~/.config/zsh/plugins.txt
+# Plugins
+source ~/.local/share/zsh-async/async.plugin.zsh
+source ~/.local/share/pure/pure.plugin.zsh
+source ~/.local/share/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source ~/.local/share/zsh-completions/zsh-completions.plugin.zsh
+source ~/.local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+# These two are installed by the fzf package
+source /usr/share/fzf/completion.zsh
+source /usr/share/fzf/key-bindings.zsh
 
 # Imports
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/keybindings.zsh
 source ~/.config/zsh/funcs.zsh
 source ~/.config/zsh/base16.zsh
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
 
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall

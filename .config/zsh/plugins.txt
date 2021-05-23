@@ -1,6 +1,0 @@
-mafredri/zsh-async
-sindresorhus/pure
-zsh-users/zsh-autosuggestions
-zsh-users/zsh-completions
-junegunn/fzf
-zsh-users/zsh-syntax-highlighting
