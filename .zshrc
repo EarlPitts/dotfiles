@@ -6,11 +6,11 @@ setopt autocd
 unsetopt beep
 
 # Plugins
-source ~/.local/share/zsh-async/async.plugin.zsh
-source ~/.local/share/pure/pure.plugin.zsh
-source ~/.local/share/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-source ~/.local/share/zsh-completions/zsh-completions.plugin.zsh
-source ~/.local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+source ~/.local/share/zsh/zsh-async/async.plugin.zsh
+source ~/.local/share/zsh/pure/pure.plugin.zsh
+source ~/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source ~/.local/share/zsh/zsh-completions/zsh-completions.plugin.zsh
+source ~/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 # These two are installed by the fzf package
 source /usr/share/fzf/completion.zsh
 source /usr/share/fzf/key-bindings.zsh

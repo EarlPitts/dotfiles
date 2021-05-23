@@ -13,3 +13,18 @@
 [submodule ".local/share/zsh-async"]
 	path = .local/share/zsh-async
 	url = git@github.com:mafredri/zsh-async.git
+[submodule ".local/share/zsh/zsh-async"]
+	path = .local/share/zsh/zsh-async
+	url = git@github.com:mafredri/zsh-async.git
+[submodule ".local/share/zsh/pure"]
+	path = .local/share/zsh/pure
+	url = git@github.com:sindresorhus/pure.git
+[submodule ".local/share/zsh/zsh-autosuggestions"]
+	path = .local/share/zsh/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule ".local/share/zsh/zsh-completions"]
+	path = .local/share/zsh/zsh-completions
+	url = git@github.com:zsh-users/zsh-completions.git
+[submodule ".local/share/zsh/zsh-syntax-highlighting"]
+	path = .local/share/zsh/zsh-syntax-highlighting
+	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
