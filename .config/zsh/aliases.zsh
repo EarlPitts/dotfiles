@@ -11,7 +11,6 @@ alias pe='pet exec'
 alias pup='pup --color'
 alias dirty='watch -d grep -e Dirty: -e Writeback: /proc/meminfo'
 alias curl='curlie'
-alias sudo='doas'
 
 # Neovim
 alias v='nvim'
