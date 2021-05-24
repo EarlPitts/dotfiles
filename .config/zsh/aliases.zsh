@@ -1,6 +1,6 @@
 alias mixer='alsamixer'                                             
 alias clean='cat ~/.local/share/bleach.txt | xargs bleachbit -c && yay -Sc --clean --noconfirm'
-alias ls='ls -l'
+alias ls='ls -l --color'
 alias scan='sudo iw dev wlp4s0 scan | egrep "signal|SSID" | sed -e "s/\tsigna    l: //" -e "s/\tSSID: //" | awk '\''{ORS = (NR % 2 == 0)? "\n" : " "; print}    '\'' | sort'
 alias weather='curl wttr.in/Budapest'
 alias win='i3lock -p win -u -i ~/.dotfiles/wallpapers/winLock.jpg'
@@ -11,6 +11,7 @@ alias pe='pet exec'
 alias pup='pup --color'
 alias dirty='watch -d grep -e Dirty: -e Writeback: /proc/meminfo'
 alias curl='curlie'
+alias reload='source ~/.zshrc'
 
 # Neovim
 alias v='nvim'
