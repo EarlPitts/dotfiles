@@ -28,3 +28,12 @@
 [submodule ".local/share/zsh/zsh-syntax-highlighting"]
 	path = .local/share/zsh/zsh-syntax-highlighting
 	url = git@github.com:zsh-users/zsh-syntax-highlighting.git
+[submodule ".local/share/tmux/tmux-resurrect"]
+	path = .local/share/tmux/tmux-resurrect
+	url = git@github.com:tmux-plugins/tmux-resurrect.git
+[submodule ".local/share/tmux/tmux-sessionist"]
+	path = .local/share/tmux/tmux-sessionist
+	url = git@github.com:tmux-plugins/tmux-sessionist.git
+[submodule ".local/share/tmux/tmux-sensible"]
+	path = .local/share/tmux/tmux-sensible
+	url = git@github.com:tmux-plugins/tmux-sensible.git
