@@ -5,6 +5,7 @@ system_loc=~/Personal
 if [ "$1" = open ]; then
     nvim '+lcd %:p:h' '+normal G' ${system_loc}/Inbox/index.md
 else
+    echo -n "Note: "
     read note
     [ -n "$note" ] && echo "- $note" >> ${system_loc}/Inbox/index.md
 fi
