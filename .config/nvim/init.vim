@@ -199,6 +199,7 @@ map K :YcmCompleter GetDoc<CR>
 nnoremap <F2> :UndotreeToggle<cr>
 nmap <F12> :tabnew wiki/index.md<CR>:Tagbar<CR>
 nmap <F10> :Gdiffsplit<CR>
+nmap <leader>g :Git<CR>
 
 "Copy to clipboard
 nmap <C-c> "*y
