@@ -5,6 +5,8 @@ alias scan='sudo iw dev wlp4s0 scan | egrep "signal|SSID" | sed -e "s/\tsigna   
 alias weather='curl wttr.in/Budapest'
 alias win='i3lock -p win -u -i ~/.dotfiles/wallpapers/winLock.jpg'
 alias cat='bat --theme=base16'
+alias drill='dog'
+alias dig='dog'
 alias df='df -h'
 alias du='du -hs *'
 alias grep='grep --color=auto'
