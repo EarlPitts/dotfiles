@@ -15,6 +15,10 @@ alias dirty='watch -d grep -e Dirty: -e Writeback: /proc/meminfo'
 alias curl='curlie'
 alias reload='source ~/.zshrc'
 
+# Python
+alias venv='source venv/bin/activate'
+alias pdb='python -m pdb'
+
 # Neovim
 alias v='nvim'
 alias vim='nvim'
@@ -25,7 +29,6 @@ alias jup='jupyter lab --ip=0.0.0.0'
 alias open='xdg-open'
 alias spt='spotifyd; spt'
 alias gdb='gdb -q'
-alias venv='source venv/bin/activate'
 
 # Productivity System
 
