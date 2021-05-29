@@ -125,6 +125,35 @@ fg() {
 FZF-EOF"
 }
 
+# Creates a sandbox environment for fun
+sandbox() {
+local name
+local environment
+
+echo -n "[p]y/[s]hell/p[e]ntest: " && read environment
+echo -n "name: " && read name
+
+case "$environment" in
+    p)
+        cd ~/Desktop || exit
+        mkdir $name
+        cd $name 
+        python -m venv venv
+        echo "source venv/bin/activate" > .envrc
+        direnv allow ;;
+    s) 
+        cd ~/Desktop || exit
+        mkdir $name
+        cd $name 
+        docker run --rm --net=host -itv $(pwd):/home archlinux/archlinux bash ;;
+    e) 
+        cd ~/Desktop || exit
+        mkdir $name
+        cd $name 
+        docker run --rm --net=host -itv $(pwd):/home kalilinux/kali-rolling bash ;;
+esac
+}
+
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
 # # TODO: git-trim may replace this
 # gdelsquashed() {
