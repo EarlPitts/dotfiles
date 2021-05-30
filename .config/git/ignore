@@ -3,4 +3,7 @@
 tags
 venv
 .venv
-**/*.pyc
+*.pyc
+.envrc
+wiki
+*.swp
