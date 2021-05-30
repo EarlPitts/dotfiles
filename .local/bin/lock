@@ -5,9 +5,9 @@ pos_y=$(( $(xrandr | grep \* | head -n 1| cut -d' ' -f4  | cut -d'x' -f2) / 2.5 
 
 
 i3lock -u -k -e \
---timestr="%H:%M" --timecolor=09050390 --timesize=45 \
---datestr="%B %d, %A" --datecolor=09050390 \
---greetertext="Hi, I'm a computer." --greetercolor=09050370 --greeterpos="${pos_x}:${pos_y}" --greetersize=40 \
+--time-str="%H:%M" --time-color=09050390 --time-size=45 \
+--date-str="%B %d, %A" --date-color=09050390 \
+--greeter-text="Hi, I'm a computer." --greeter-color=09050370 --greeter-pos="${pos_x}:${pos_y}" --greeter-size=40 \
  -i ~/.local/share/wallpapers/lockScreen.jpg \
  --pass-media-keys
 
