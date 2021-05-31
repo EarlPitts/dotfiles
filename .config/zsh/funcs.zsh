@@ -66,6 +66,12 @@ down() {
     curl -O "$1"
 }
 
+# Lists my remote repos and clones the selected one
+clone() {
+    local repo=$(ssh git@ben ls | fzf)
+    [ -n "$repo" ] && git clone git@ben:"$repo"
+}
+
 
 # Edit dotfiles
 d() {
