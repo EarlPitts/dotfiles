@@ -160,6 +160,87 @@ case "$environment" in
 esac
 }
 
+# References
+ref() {
+    if [ -n "$DISPLAY" ]; then
+        # If has a wm, display other docs too
+        ref=$(find $WIKI $WORK_WIKI $SNIPPETS $BOOKS $PAPERS $CHEATSHEETS -type f | cut -d/ -f4- | fzf)
+    else
+        ref=$(find $WIKI $WORK_WIKI $SNIPPETS -type f | cut -d/ -f4- | fzf)
+    fi
+    
+    if [ -n "$ref" ]; then
+        # Changing the folder is needed, because
+        # isdirectory() in vim is checked only when the file
+        # is opened, so c-p will not work
+        folder=$(echo "$ref" | rev | cut -d/ -f2- | rev)
+        file=$(echo "$ref" | rev | cut -d/ -f-1 | rev)
+
+        if [ "$(echo "$ref" | cut -d/ -f2)" = "Snippets" ]; then
+            if cd $HOME/"$folder"; then
+                $EDITOR +Codi "$file"
+                cd -
+            fi
+        elif [ "$(echo "$ref" | cut -d/ -f2)" = "References" ]; then
+            i3-msg exec "xdg-open $HOME/$folder/$file" > /dev/null
+        else
+            if cd $HOME/"$folder"; then
+                $EDITOR "$file"
+                cd -
+            fi
+        fi
+    fi
+}
+# Productivity
+prod() {
+    item=$(cat \
+            <(find $PROJECTS -maxdepth 1 -type d -not -path $PROJECTS | cut -d/ -f4-) \
+            <(echo -e "Work Tasks\nWork Waiting\nTasks\nWaiting\nInbox\nWork Inbox") \
+            <(find $CHECKLISTS -maxdepth 1 -type f | cut -d/ -f4-) \
+            <(find $AREAS -maxdepth 1 -type f | cut -d/ -f4-) \
+            <(find $WORK_AREAS -maxdepth 1 -type f | cut -d/ -f4-) \
+            | fzf)
+    if [ -n "$item" ]; then
+
+        if [ "$(echo $item | cut -d/ -f1)" = "Projects" ]; then
+            # Selected project's name
+            project=$(echo $item | cut -d/ -f2)
+            # If already inside a tmux session
+            if [ -n "$TMUX" ]; then
+                # Session for project already exists
+                if tmux has-session -t $project; then
+                    tmux switch -t $project
+                else
+                    tmux new -s $project -c $HOME/$item -d && tmux switch -t $project
+                fi
+            # If not in a tmux session yet
+            else
+                # Session for project already exists
+                if $(tmux has-session -t $project); then
+                    tmux attach -t $project
+                else
+                    tmux new -s $project -c $HOME/$item
+                fi
+            fi
+        elif [ "$item" = "Tasks" ]; then
+            $EDITOR $TASKLIST
+        elif [ "$item" = "Work Tasks" ]; then
+            $EDITOR $WORK_TASKLIST
+        elif [ "$item" = "Waiting" ]; then
+            $EDITOR $WAITING
+        elif [ "$item" = "Work Waiting" ]; then
+            $EDITOR $WORK_WAITING
+        elif [ "$item" = "Inbox" ]; then
+            $EDITOR $INBOX
+        elif [ "$item" = "Work Inbox" ]; then
+            $EDITOR $WORK_INBOX
+        else
+            $EDITOR $HOME/$item
+        fi
+    fi
+}
+
+
 # # Delete branches that have been squashed and merged into master (https://github.com/not-an-aardvark/git-delete-squashed)
 # # TODO: git-trim may replace this
 # gdelsquashed() {
