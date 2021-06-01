@@ -79,7 +79,7 @@ let g:ycm_key_list_previous_completion=[]
 
 "VimWiki
 let g:vimwiki_list = [{
-	\ 'path': '~/Personal/Notes',
+	\ 'path': '~/Personal/Wiki',
 	\ 'template_path': '~/Personal/Notes/templates/',
 	\ 'template_default': 'default',
 	\ 'index': 'index',
