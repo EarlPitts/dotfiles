@@ -39,6 +39,7 @@ alias b='references'
 
 ## Tasks
 alias m='productivity'
+alias deadlines='calcurse -c $CALENDAR -G | grep Deadline | cut -d" " -f1,4-'
 
 ## Inbox
 alias q='quick_note'
