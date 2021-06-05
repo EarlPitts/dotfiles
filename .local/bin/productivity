@@ -1,46 +1,33 @@
 #!/usr/bin/sh
 
 item=$(cat \
-        <(find $PROJECTS -maxdepth 1 -type d -not -path $PROJECTS | cut -d/ -f4-) \
-        <(echo -e "Work Tasks\nWork Waiting\nTasks\nWaiting\nInbox\nWork Inbox") \
-        <(find $CHECKLISTS -maxdepth 1 -type f | cut -d/ -f4-) \
-        <(find $AREAS -maxdepth 1 -type f | cut -d/ -f4-) \
-        <(find $WORK_AREAS -maxdepth 1 -type f | cut -d/ -f4-) \
+        <(find "$PROJECTS" -maxdepth 1 -type d -not -path "$PROJECTS" | cut -d/ -f4-) \
+        <(find "$CHECKLISTS" -maxdepth 1 -type f | cut -d/ -f4-) \
+        <(find "$AREAS" -maxdepth 1 -type f | cut -d/ -f4-) \
+        <(find "$AREAS_ALT" -maxdepth 1 -type f | cut -d/ -f4-) \
         | fzf)
 [ -z "$item" ] && exit
 
-if [ "$(echo $item | cut -d/ -f1)" = "Projects" ]; then
+if [ "$(echo "$item" | cut -d/ -f1)" = "Projects" ]; then
     # Selected project's name
-    project=$(echo $item | cut -d/ -f2)
+    project=$(echo "$item" | cut -d/ -f2)
     # If already inside a tmux session
     if [ -n "$TMUX" ]; then
         # Session for project already exists
-        if tmux has-session -t $project; then
-            tmux switch -t $project
+        if tmux has-session -t "$project"; then
+            tmux switch -t "$project"
         else
-            tmux new -s $project -c $HOME/$item -d && tmux switch -t $project
+            tmux new -s "$project" -c "$HOME/$item" -d && tmux switch -t "$project"
         fi
     # If not in a tmux session yet
     else
         # Session for project already exists
-        if $(tmux has-session -t $project); then
-            tmux attach -t $project
+        if tmux has-session -t "$project"; then
+            tmux attach -t "$project"
         else
-            tmux new -s $project -c $HOME/$item
+            tmux new -s "$project" -c "$HOME/$item"
         fi
     fi
-elif [ "$item" = "Tasks" ]; then
-    $EDITOR $TASKLIST
-elif [ "$item" = "Work Tasks" ]; then
-    $EDITOR $WORK_TASKLIST
-elif [ "$item" = "Waiting" ]; then
-    $EDITOR $WAITING
-elif [ "$item" = "Work Waiting" ]; then
-    $EDITOR $WORK_WAITING
-elif [ "$item" = "Inbox" ]; then
-    $EDITOR $INBOX
-elif [ "$item" = "Work Inbox" ]; then
-    $EDITOR $WORK_INBOX
 else
-    $EDITOR $HOME/$item
+    $EDITOR "$HOME/$item"
 fi
