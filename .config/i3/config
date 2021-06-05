@@ -9,8 +9,10 @@ for_window [class="Spotify"] move to workspace $ws10
 
 # Open as floating winow
 for_window [title=codi-float] floating enable
-#for_window [title=note] floating enable
+for_window [title="calendar"] floating enable resize set 50 ppt 60 ppt
+for_window [title="calendar"] move absolute position center
 for_window [class="Sxiv"] floating enable
+#for_window [title=note] floating enable
 
 # Hiding borders
 default_border none
@@ -44,11 +46,17 @@ bindsym $mod+p exec ~/.local/bin/lock
 
 ## Productivity
 
+### Calendar
+bindsym $mod+b exec i3-sensible-terminal -t calendar calcurse -c $CALENDAR
+bindsym $mod+Control+b exec i3-sensible-terminal -t calendar calcurse -c $CALENDAR_ALT
+
+### Quick Note
+bindsym $mod+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> $INBOX
+bindsym $mod+Control+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> $INBOX_ALT
+
 ### Inbox
-bindsym $mod+i exec ~/.local/bin/rofiquicknote
-bindsym $mod+Shift+i exec ~/.local/bin/rofiquicknote open
-bindsym Mod1+i exec ~/.local/bin/rofiworkquicknote
-bindsym Mod1+Shift+i exec ~/.local/bin/rofiworkquicknote open
+bindsym $mod+i exec i3-sensible-terminal zsh -ic "nvim '+lcd %:p:h' '+normal G' $INBOX"
+bindsym $mod+Control+i exec i3-sensible-terminal zsh -ic "nvim '+lcd %:p:h' '+normal G' $INBOX_ALT"
 
 ### References
 bindsym $mod+u exec rofi -sidebar-mode -show combi \
