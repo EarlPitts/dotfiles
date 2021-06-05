@@ -31,7 +31,4 @@ compinit; promptinit
 
 # End of lines added by compinstall
 
-# This needs to be at the and, otherwise the
-# sourcing of zshrc would stop to start tmux
-source ~/.config/zsh/auto-tmux.zsh
 eval "$(direnv hook zsh)"
