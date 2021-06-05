@@ -6,7 +6,7 @@ export PERSONAL="$HOME/Personal"
 export WORK="$HOME/Work"
 
 # References
-export WIKI="$WORK/Wiki"
+export WIKI="$PERSONAL/Wiki"
 export WORK_WIKI="$WORK/Wiki"
 export SNIPPETS="$PERSONAL/Snippets"
 export BOOKS=$PERSONAL/References/Books
