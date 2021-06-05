@@ -51,8 +51,8 @@ if systemctl -q is-active graphical.target && [[ ! $TMUX && ! $DISPLAY && $XDG_V
 fi
 
 # Start tmux in SSH session automatically
-if [[ $SSH_CONNECTION && $TMUX ]]; then
+if [[ $SSH_CONNECTION && -n "$(pgrep tmux)" && ! $TMUX ]]; then
     tmux a;
-elif [ $SSH_CONNECTION ]; then
+elif [[ $SSH_CONNECTION && -z "$(pgrep tmux)" ]]; then
     tmux;
 fi
