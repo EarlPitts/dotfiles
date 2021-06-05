@@ -65,15 +65,13 @@ bindsym $mod+u exec rofi -sidebar-mode -show combi \
 
 ### Productivity
 bindsym $mod+o exec rofi -sidebar-mode -show combi \
--combi-modi "tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas" \
--modi "combi#tasks:~/.local/bin/rofitasks#waiting:~/.local/bin/rofiwaiting#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas"
+-combi-modi "checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas" \
+-modi "combi#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas"
 
-# bindsym $mod+t exec ~/.scripts/task rofi
-# bindsym $mod+Shift+t exec ~/.scripts/task rofi inverse
-# bindsym Mod1+t exec ~/.scripts/task waiting rofi
-# bindsym Mod1+Shift+t exec ~/.scripts/task waiting inverse rofi
+bindsym $mod+Control+o exec rofi -sidebar-mode -show combi \
+-combi-modi "checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareasalt" \
+-modi "combi#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareasalt"
 
-#bindsym $mod+c exec xdg-open "https://calendar.google.com"
 #bindsym $mod+i exec ~/.scripts/watson.sh
 #bindsym $mod+n exec ~/.scripts/quick-capture.sh
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh
