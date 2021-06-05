@@ -55,8 +55,8 @@ bindsym $mod+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> 
 bindsym $mod+Control+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> $INBOX_ALT
 
 ### Inbox
-bindsym $mod+i exec i3-sensible-terminal zsh -ic "nvim '+lcd %:p:h' '+normal G' $INBOX"
-bindsym $mod+Control+i exec i3-sensible-terminal zsh -ic "nvim '+lcd %:p:h' '+normal G' $INBOX_ALT"
+bindsym $mod+i exec i3-sensible-terminal zsh -ic "nvim '+lcd %:p:h' + $INBOX"
+bindsym $mod+Control+i exec i3-sensible-terminal zsh -ic "nvim '+lcd %:p:h' + $INBOX_ALT"
 
 ### References
 bindsym $mod+u exec rofi -sidebar-mode -show combi \
