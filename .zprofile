@@ -46,6 +46,13 @@ export KEYTIMEOUT=1
 export TERM=xterm-256color # for tmux
 
 # Start x server if it's not already running
-if systemctl -q is-active graphical.target && [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+if systemctl -q is-active graphical.target && [[ ! $TMUX && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     exec startx
+fi
+
+# Start tmux in SSH session automatically
+if [[ $SSH_CONNECTION && $TMUX ]]; then
+    tmux a;
+elif [ $SSH_CONNECTION ]; then
+    tmux;
 fi
