@@ -73,12 +73,7 @@ bindsym $mod+Control+o exec rofi -sidebar-mode -show combi \
 -modi "combi#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareasalt"
 
 #bindsym $mod+i exec ~/.scripts/watson.sh
-#bindsym $mod+n exec ~/.scripts/quick-capture.sh
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh
-# bindsym Mod1+n exec ~/.scripts/wiki.sh
-#bindsym Mod1+n exec xclip -o >> ~/Personal/Notes/quick-capture.md && echo -e "\n" >> ~/Personal/Notes/quick-capture.md
-#bindsym $mod+b exec ~/.scripts/references.sh
-#bindsym $mod+t exec ~/.scripts/addtask.sh
 bindsym $mod+F11 exec ~/.local/bin/pomodoro
 
 bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi-float -e zsh -ic codi
