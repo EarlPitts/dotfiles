@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 item=$(cat \
-        <(find "$PROJECTS" -maxdepth 1 -type d -not -path "$PROJECTS" | cut -d/ -f4-) \
+        <(find "$PROJECTS" -maxdepth 2 -type d -not -path "$PROJECTS" -not -path "$PROJECTS/active" -not -path "$PROJECTS/inactive" | cut -d/ -f4-) \
         <(find "$CHECKLISTS" -maxdepth 1 -type f | cut -d/ -f4-) \
         <(find "$AREAS" -maxdepth 1 -type f | cut -d/ -f4-) \
         <(find "$AREAS_ALT" -maxdepth 1 -type f | cut -d/ -f4-) \
@@ -10,7 +10,7 @@ item=$(cat \
 
 if [ "$(echo "$item" | cut -d/ -f1)" = "Projects" ]; then
     # Selected project's name
-    project=$(echo "$item" | cut -d/ -f2)
+    project=$(echo "$item" | cut -d/ -f3)
     # If already inside a tmux session
     if [ -n "$TMUX" ]; then
         # Session for project already exists
