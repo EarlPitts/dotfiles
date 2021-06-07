@@ -11,23 +11,12 @@ item=$(cat \
 if [ "$(echo "$item" | cut -d/ -f1)" = "Projects" ]; then
     # Selected project's name
     project=$(echo "$item" | cut -d/ -f3)
-    # If already inside a tmux session
-    if [ -n "$TMUX" ]; then
-        # Session for project already exists
-        if tmux has-session -t "$project"; then
-            tmux switch -t "$project"
-        else
-            tmux new -s "$project" -c "$HOME/$item" -d && tmux switch -t "$project"
-        fi
-    # If not in a tmux session yet
+    # Session for project already exists
+    if tmux has-session -t "$project"; then
+        tmux switch -t "$project"
     else
-        # Session for project already exists
-        if tmux has-session -t "$project"; then
-            tmux attach -t "$project"
-        else
-            tmux new -s "$project" -c "$HOME/$item"
-        fi
+        tmux new -s "$project" -c "$HOME/$item" -d && tmux switch -t "$project"
     fi
 else
-    $EDITOR "$HOME/$item"
+    tmux split-window -h $EDITOR "$HOME/$item"
 fi
