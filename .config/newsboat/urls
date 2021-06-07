@@ -1,0 +1,73 @@
+# Queries
+"query:→ Podcasts:tags # \"Podcast\"" "Podcast"
+"query:→ Comics:tags # \"Comic\"" "Comic"
+"query:→ Blogs:tags # \"Blog\"" "Blog"
+#"query:→ Unread Articles:unread = \"yes\""
+#"query:→ Bookmarked Articles:flags # \"s\"" "Starred"
+# "query:→ YouTube:tags # \"YouTube\"" "YouTube"
+# "query:→ Browsers:tags # \"Browsers\"" "Browsers"
+# "query:→ CSS:tags # \"CSS\"" "CSS"
+# "query:→ Design:tags # \"Design\"" "Design"
+#"query:→ Engineering:tags # \"Engineering\"" "Engineering"
+# "query:→ Friends:tags # \"Friends\"" "Friends"
+# "query:→ Github:tags # \"Github\"" "Github"
+# "query:→ HTML:tags # \"HTML\"" "HTML"
+# "query:→ JavaScript:tags # \"JavaScript\"" "JavaScript"
+# # "query:→ Clojure:tags # \"Clojure\" and \"ClojureScript\"" "Clojure"
+# "query:→ Clojure:tags # \"Clojure\"" "Clojure"
+# "query:→ logo:tags # \"logo\"" "logo"
+# "query:→ Mobile:tags # \"Mobile\"" "Mobile"
+# "query:→ Must:tags # \"Must\"" "Must"
+# "query:→ node.js:tags # \"node.js\"" "node"
+# "query:→ Performance:tags # \"Performance\"" "Performance"
+# "query:→ Python:tags # \"Python\"" "Python"
+# "query:→ Typography:tags # \"Typography\"" "Typography"
+# "query:→ UI:tags # \"UI\"" "UI"
+# "query:→ Unix:tags # \"Unix\"" "Unix"
+# "query:→ Usability:tags # \"Usability\"" "Usability"
+# "query:→ xmas:tags # \"xmas\"" "xmas"
+# "query:→ Football:tags # \"football\"" "football"
+
+# Comics
+http://xkcd.com/rss.xml "Comic"
+
+# Podcasts
+https://lexfridman.com/feed/podcast/ "Podcast"
+https://rss.art19.com/the-inforium "Podcast"
+https://hubermanlab.libsyn.com/rss "Podcast"
+
+# Blogs
+## Uncategorized
+https://educationrealist.wordpress.com/feed/ "Blog"
+https://slatestarcodex.com/feed/ "Blog"
+http://feeds.feedburner.com/TheReasonIAmHere "Blog"
+http://blog.startaylor.net/feed/all.atom.xml "Blog"
+https://www.stephendiehl.com/feed.rss "Blog"
+https://jameshfisher.com/feed.xml "Blog"
+https://thesquareplanet.com/feed.xml "Blog"
+https://vincent.bernat.ch/en/blog/atom.xml "Blog"
+http://codemadness.org/rss_content.xml "Blog"
+https://davmac.wordpress.com/feed "Blog"
+https://christine.website/blog.rss "Blog"
+http://www.brendangregg.com/blog/rss.xml "Blog"
+https://www.meta-nomad.net/feed/ "Blog"
+https://martinfowler.com/feed.atom "Blog"
+https://feeds.feedburner.com/mrmoneymustache "Blog"
+https://perell.com/feed "Blog"
+https://www.saminiir.com/feed.xml "Blog"
+https://blog.balthazar-rouberol.com/feeds/all.atom.xml "Blog"
+https://box.matto.nl/index.rss "Blog"
+http://bit-101.com/techtips/atom.xml "Blog"
+https://blog.nelhage.com/atom.xml "Blog"
+http://www.roughtype.com/?feed=rss2 "Blog"
+https://blog.sanctum.geek.nz/feed "Blog"
+https://iximiuz.com/feed.atom "Blog"
+https://eseth.org/rss.xml "Blog"
+https://blog.aurynn.com/feed "Blog"
+
+## Productivity
+
+
+# Podcasts
+
+# YouTube

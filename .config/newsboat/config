@@ -1,0 +1,90 @@
+# Main config
+# show-read-articles no
+always-display-description true
+article-sort-order date-asc
+browser "xdg-open"
+feed-sort-order date-desc
+max-items 100
+notify-always yes
+notify-screen yes
+prepopulate-query-feeds yes
+refresh-on-startup no
+auto-reload yes
+reload-threads 3
+reload-time 120
+save-path "~/Sync/saved-articles"
+bookmark-cmd ~/.config/newsboat/bookmark.sh
+bookmark-interactive no
+bookmark-autopilot yes
+show-read-feeds no
+text-width 120
+external-url-viewer "urlview"
+
+feedlist-title-format "—[%u feeds with new articles]——%>——(%N %V)—"
+feedlist-format "%S [%U] %-80t %?d?- %-80d&? %>"
+articlelist-title-format "—[%T]——(%u unread, %t total)——%>——(%U)—"
+articlelist-format "%?T?%-60T ?%t"
+notify-format  "%I %d %n %f new articles (%n unread articles, %f unread feeds)"
+datetime-format "%b %d %H:%M"
+html-renderer "w3m -dump -T text/html"
+
+# Podcasts config
+download-path "~/Downloads/podcasts/%n"
+player "mpv --no-audio-display"
+
+# ignore-article "*" "title =~ \"Sponsor\""
+# ignore-article "*" "title =~ \"Sponsored\""
+
+# Key bindings
+bind-key j down feedlist
+bind-key j down podboat
+bind-key k up feedlist
+bind-key k up podboat
+bind-key j next articlelist
+bind-key k prev articlelist
+bind-key J next-feed articlelist
+bind-key K prev-feed articlelist
+bind-key j down article
+bind-key k up article
+bind-key B bookmark article
+bind-key O open-in-browser-and-mark-read
+bind-key U show-urls
+
+# Formatting and colors
+# highlight all "━━.*━━" yellow black blink
+# highlight feedlist "^ *[0-9]+ *N " color156 default
+# highlight articlelist "^ *[0-9]+ *N " color156 default
+
+highlight article "^(Feed|Title|Author|Link|Date):.*" yellow default bold
+highlight article "^Podcast Download URL:.*" blue default
+highlight article "^Links:" white color240 underline
+highlight article "\\[[0-9][0-9]*\\]" color72 default bold
+highlight article "\\[image [0-9][0-9]*\\]" color72 default bold
+highlight article "\\[embedded flash: [0-9][0-9]*\\]" color72 default bold
+highlight article ":.*\\(link\\)$" color74 default
+highlight article ":.*\\(image\\)$" color74 default
+highlight article ":.*\\(embedded flash\\)$" color74 default
+
+color info                  red default
+color listnormal            red default
+color listnormal_unread     white default
+color listfocus             black yellow
+color listfocus_unread      black yellow
+# color background        white cyan
+#color article color244 color234
+
+# Macros
+## Note: macro prefix key ( default: , )
+## add video or audio to play queue using mpv (requires: mpv, youtube-dl)
+macro p set browser "i3 exec mpv --ontop --speed=1.5 %u"; open-in-browser ; set browser "$BROWSER %u"
+
+# Play podcast
+# macro e open ; enqueue ; set browser "~/.config/newsboat/play_podcast.sh" ; open-in-browser ; set browser "$BROWSER %u" ; quit
+macro e pipe-to "grep -o 'http.*mp3' | xargs -n1 mpv" ; toggle-article-read "read"
+
+# read reddit comments with rtv (reddit terminal viewer)
+# macro r set browser "rtv -l %u"; open-in-browser ; set browser "$BROWSER %u"
+macro r set browser "tmux split-window && tmux send-keys 'tuir -l %u && tmux kill-pane\n'"; open-in-browser ; set browser "$BROWSER %u"
+
+# copy url to clipboard "yank"
+macro y set browser "echo %u | pbcopy"; open-in-browser ; set browser "$BROWSER %u"
