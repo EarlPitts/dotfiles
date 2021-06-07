@@ -35,11 +35,7 @@ alias gdb='gdb -q'
 alias wiki='nvim +Tagbar wiki/index.md'
 alias calcurse='calcurse -c $CALENDAR'
 
-## References
-alias b='references'
-
 ## Tasks
-alias m='productivity'
 alias deadlines='calcurse -c $CALENDAR -G | grep Deadline | cut -d" " -f1,4-'
 
 ## Inbox
