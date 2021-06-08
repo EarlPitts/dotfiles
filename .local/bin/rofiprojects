@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 if [ $# = 0 ]; then
-    find $PROJECTS -maxdepth 1 -type d -not -name 'Projects' -printf "%f\n"
+    find $PROJECTS -maxdepth 2 -type d -not -name 'Projects' -not -name 'active' -not -name 'inactive' | cut -d'/' -f5-
 else
     if tmux has-session -t "$1"; then
         i3-msg exec "i3-sensible-terminal -t $1 -e zsh -ic 'cd $PROJECTS/$1 && tmux attach -t $1'" > /dev/null
