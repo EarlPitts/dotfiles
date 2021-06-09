@@ -13,6 +13,7 @@ Plug 'majutsushi/tagbar'
 "Editing
 Plug 'tpope/vim-commentary'
 Plug 'mbbill/undotree'
+Plug 'editorconfig/editorconfig-vim'
 
 "Writing
 Plug 'junegunn/goyo.vim'
