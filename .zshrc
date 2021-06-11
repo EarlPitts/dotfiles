@@ -32,3 +32,6 @@ compinit; promptinit
 # End of lines added by compinstall
 
 eval "$(direnv hook zsh)"
+
+# Start tmux in SSH session automatically
+source ~/.config/zsh/auto-tmux.zsh

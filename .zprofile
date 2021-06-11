@@ -49,10 +49,3 @@ export TERM=xterm-256color # for tmux
 if systemctl -q is-active graphical.target && [[ ! $TMUX && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     exec startx
 fi
-
-# Start tmux in SSH session automatically
-if [[ $SSH_CONNECTION && -n "$(pgrep tmux)" && ! $TMUX ]]; then
-    tmux a;
-elif [[ $SSH_CONNECTION && -z "$(pgrep tmux)" ]]; then
-    tmux;
-fi
