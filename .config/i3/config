@@ -47,16 +47,16 @@ bindsym $mod+p exec ~/.local/bin/lock
 ## Productivity
 
 ### Calendar
-bindsym $mod+b exec i3-sensible-terminal -t calendar calcurse -c $CALENDAR
-bindsym $mod+Control+b exec i3-sensible-terminal -t calendar calcurse -c $CALENDAR_ALT
+bindsym $mod+b exec i3-sensible-terminal -t calendar sh -c "source ~/.config/zsh/base16.zsh && calcurse -c $CALENDAR"
+bindsym $mod+Control+b exec i3-sensible-terminal -t calendar sh -c "source ~/.config/zsh/base16.zsh && calcurse -c $CALENDAR_ALT"
 
 ### Quick Note
 bindsym $mod+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> $INBOX
 bindsym $mod+Control+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> $INBOX_ALT
 
 ### Inbox
-bindsym $mod+i exec i3-sensible-terminal zsh -ic "nvim '+lcd %:p:h' + $INBOX"
-bindsym $mod+Control+i exec i3-sensible-terminal zsh -ic "nvim '+lcd %:p:h' + $INBOX_ALT"
+bindsym $mod+i exec i3-sensible-terminal sh -c "source ~/.config/zsh/base16.zsh && nvim '+lcd %:p:h' + $INBOX"
+bindsym $mod+Control+i exec i3-sensible-terminal sh -c "source ~/.config/zsh/base16.zsh && nvim '+lcd %:p:h' + $INBOX_ALT"
 
 ### References
 bindsym $mod+u exec rofi -sidebar-mode -show combi \
