@@ -55,7 +55,6 @@ https://christine.website/blog.rss "Blog"
 http://www.brendangregg.com/blog/rss.xml "Blog"
 https://www.meta-nomad.net/feed/ "Blog"
 https://martinfowler.com/feed.atom "Blog"
-https://feeds.feedburner.com/mrmoneymustache "Blog"
 https://perell.com/feed "Blog"
 https://www.saminiir.com/feed.xml "Blog"
 https://blog.balthazar-rouberol.com/feeds/all.atom.xml "Blog"
@@ -67,6 +66,7 @@ https://blog.sanctum.geek.nz/feed "Blog"
 https://iximiuz.com/feed.atom "Blog"
 https://eseth.org/rss.xml "Blog"
 https://blog.aurynn.com/feed "Blog"
+https://educationrealist.wordpress.com/feed/ "Blog"
 
 ## Tech
 https://drewdevault.com/blog/index.xml "Blog"
@@ -75,8 +75,14 @@ http://www.theorangeduck.com/feeds/pages "Blog"
 http://www.codersnotes.com/notes/feed "Blog"
 https://mcfunley.com/feed.xml "Blog"
 https://www.taniarascia.com/rss.xml "Blog"
+https://www.darkcoding.net/feed/ "Blog"
 
 ## Productivity
 https://vasilishynkarenka.com/rss/ "Blog"
+http://feeds.feedburner.com/scotthyoung/HAHx "Blog"
+http://stevepavlina.com/feed "Blog"
+
+## Finance
+https://feeds.feedburner.com/mrmoneymustache "Blog"
 
 # YouTube
