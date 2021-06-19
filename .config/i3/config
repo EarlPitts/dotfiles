@@ -99,7 +99,7 @@ bindsym Print exec "~/.local/bin/screenshot"
 bindsym $mod+d exec rofi -show combi
 
 # Ranger
-bindsym Mod1+e exec i3-sensible-terminal -e ranger
+bindsym Mod1+e exec i3-sensible-terminal sh -c "source ~/.config/zsh/base16.zsh && ranger"
 
 # Password manager
 bindsym $mod+Shift+p exec rofi-pass
