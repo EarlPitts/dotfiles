@@ -1,0 +1,24 @@
+#!/usr/bin/python3
+
+import datetime as dt
+import os
+
+try:
+    calendar = os.environ['CALENDAR']
+except KeyError:
+    print('No $CALENDAR defined in the environment. :(')
+    exit(1)
+
+def get_remaining(line):
+    date = line.split()[0]
+    title = " ".join(line.split()[3:])
+    date = dt.datetime.strptime(date, '%m/%d/%Y')
+
+    remaining = date - dt.datetime.now()
+    return f'{title} - {remaining.days} days'
+
+
+with open(calendar, 'r') as f:
+    for line in f:
+        if 'Deadline' in line:
+            print(get_remaining(line))

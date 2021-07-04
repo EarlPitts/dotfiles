@@ -35,9 +35,6 @@ alias gdb='gdb -q'
 alias wiki='nvim +Tagbar wiki/index.md'
 alias calcurse='calcurse -c $CALENDAR'
 
-## Tasks
-alias deadlines='calcurse -c $CALENDAR -G | grep Deadline | cut -d" " -f1,4-'
-
 ## Inbox
 alias q='quick_note'
 alias qi='quick_note open'
