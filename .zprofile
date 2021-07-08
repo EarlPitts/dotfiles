@@ -2,6 +2,10 @@
 export EDITOR="nvim"
 export VEDITOR="code"
 
+# Some project already support this for
+# opting our of telemetry
+export DO_NOT_TRACK=1
+
 export PERSONAL="$HOME/Personal"
 export WORK="$HOME/Work"
 
