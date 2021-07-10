@@ -3,5 +3,5 @@
 if [ $# = 0 ]; then
     find $WIKI -type f -name '*.md' -printf "%f\n"
 else
-    i3-msg exec "i3-sensible-terminal -e zsh -ic 'cd $WIKI && nvim ${1}'" > /dev/null
+    i3-msg exec "i3-sensible-terminal -e zsh -ic 'cd $WIKI && nvim $1'" > /dev/null
 fi
