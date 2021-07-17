@@ -1,3 +1,6 @@
+# Terminal (i3-sensible-terminal uses it)
+export TERMINAL="st"
+
 # Default editors
 export EDITOR="nvim"
 export VEDITOR="code"
