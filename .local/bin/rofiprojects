@@ -3,9 +3,10 @@
 if [ $# = 0 ]; then
     find $PROJECTS -maxdepth 2 -type d -not -name 'Projects' -not -name 'active' -not -name 'inactive' | cut -d'/' -f5-
 else
-    if tmux has-session -t "$1"; then
-        i3-msg exec "i3-sensible-terminal -t $1 -e zsh -ic 'cd $PROJECTS/$1 && tmux attach -t $(echo $1 | cut -d'/' -f2)'" > /dev/null
+    project=$(echo "$1" | cut -d"/" -f2)
+    if tmux has-session -t "$project"; then
+        i3-msg exec "$TERMINAL -t "$project" -e zsh -ic 'tmux attach -t $project'" > /dev/null
     else
-        i3-msg exec "i3-sensible-terminal -t $1 -e zsh -ic 'cd $PROJECTS/$1 && tmux new -s $(echo $1 | cut -d'/' -f2)'" > /dev/null
+        i3-msg exec "$TERMINAL -t "$project" -e zsh -ic 'cd "$PROJECTS/$1" && tmux new -s $project'" > /dev/null
     fi
 fi
