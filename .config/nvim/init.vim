@@ -6,6 +6,7 @@ syntax on
 call plug#begin(stdpath('data') . '/plugged')
 
 "Navigation
+Plug 'junegunn/fzf'             "This is only needed on my work laptop
 Plug 'junegunn/fzf.vim'
 Plug 'preservim/nerdtree'
 Plug 'majutsushi/tagbar'
