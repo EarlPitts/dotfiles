@@ -59,3 +59,7 @@ export TERM=xterm-256color # for tmux
 if systemctl -q is-active graphical.target && [[ ! $TMUX && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     exec startx
 fi
+
+# Needed because tmux uses the deafult login shell, which is bash, and the exec zsh is only in the bashrc for now
+# TODO Should be fixed somehow
+[ $TMUX -a "$(hostname)" = "budl34356338a" ] && exec zsh
