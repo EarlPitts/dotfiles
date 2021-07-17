@@ -60,8 +60,8 @@ bindsym $mod+Control+i exec i3-sensible-terminal sh -c "source ~/.config/zsh/bas
 
 ### References
 bindsym $mod+u exec rofi -sidebar-mode -show combi \
--combi-modi "wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#work wiki:~/.local/bin/rofiworkwiki" \
--modi "combi#wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#work wiki:~/.local/bin/rofiworkwiki"
+-combi-modi "wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#work wiki:~/.local/bin/rofiworkwiki#snippets:~/.local/bin/rofisnippets" \
+-modi "combi#wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#work wiki:~/.local/bin/rofiworkwiki#snippets:~/.local/bin/rofisnippets"
 
 ### Productivity
 bindsym $mod+o exec rofi -sidebar-mode -show combi \

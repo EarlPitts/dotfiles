@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+if [ $# = 0 ]; then
+    find $SNIPPETS -type f | cut -sd / -f 6-
+else
+    i3-msg exec "$TERMINAL -t codi-float sh -c 'cd $SNIPPETS && bat --paging always $1'" > /dev/null
+fi

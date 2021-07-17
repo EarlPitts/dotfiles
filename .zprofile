@@ -15,10 +15,10 @@ export WORK="$HOME/Work"
 # References
 export WIKI="$PERSONAL/Wiki"
 export WORK_WIKI="$WORK/Wiki"
-export SNIPPETS="$PERSONAL/Snippets"
-export BOOKS="$PERSONAL/References/Books"
-export CHEATSHEETS="$PERSONAL/References/Cheatsheets"
-export PAPERS="$PERSONAL/References/Papers"
+export SNIPPETS="$HOME/References/Snippets"
+export BOOKS="$HOME/References/Books"
+export CHEATSHEETS="$HOME/References/Cheatsheets"
+export PAPERS="$HOME/References/Papers"
 
 # Productivity
 
