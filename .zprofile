@@ -22,7 +22,7 @@ export PAPERS="$PERSONAL/References/Papers"
 
 # Productivity
 
-if [ "$(uname -n)" = "work" ]; then
+if [ "$(uname -n)" = "budl34356338a" ]; then
     export CALENDAR="$WORK/calendar"
     export CALENDAR_ALT="$PERSONAL/calendar"
     export AREAS="$WORK/Areas"
