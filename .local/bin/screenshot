@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
-FILENAME="/home/obabo/Personal/Inbox/$(date +%F_%H%M%S).png"
-NOTE_FILENAME="/home/obabo/Personal/Notes/pics/$(date +%F_%H%M%S).png"
+FILENAME="$HOME/Personal/Inbox/$(date +%F_%H%M%S).png"
+NOTE_FILENAME="$HOME/Personal/Notes/pics/$(date +%F_%H%M%S).png"
 
 if [ $# = 0 ]; then
     scrot $FILENAME -e 'xclip -selection c -t image/png < $f'
