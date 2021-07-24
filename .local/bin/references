@@ -2,9 +2,9 @@
 
 if [ -n "$DISPLAY" ]; then
     # If has a wm, display other docs too
-    ref=$(find $WIKI $WORK_WIKI $SNIPPETS $BOOKS $PAPERS $CHEATSHEETS -type f | cut -d/ -f4- | fzf)
+    ref=$(find $WIKI $SNIPPETS $BOOKS $PAPERS $CHEATSHEETS -type f | cut -d/ -f4- | fzf)
 else
-    ref=$(find $WIKI $WORK_WIKI $SNIPPETS -type f | cut -d/ -f4- | fzf)
+    ref=$(find $WIKI $SNIPPETS -type f | cut -d/ -f4- | fzf)
 fi
 [ -z $ref ] && exit
 
