@@ -12,34 +12,34 @@ export DO_NOT_TRACK=1
 export PERSONAL="$HOME/Personal"
 export WORK="$HOME/Work"
 
-# References
-export WIKI="$PERSONAL/Wiki"
-export WORK_WIKI="$WORK/Wiki"
-export SNIPPETS="$HOME/References/Snippets"
-export BOOKS="$HOME/References/Books"
-export CHEATSHEETS="$HOME/References/Cheatsheets"
-export PAPERS="$HOME/References/Papers"
-
-# Productivity
-
-if [ "$(uname -n)" = "budl34356338a" ]; then
-    export CALENDAR="$WORK/calendar"
-    export CALENDAR_ALT="$PERSONAL/calendar"
-    export AREAS="$WORK/Areas"
-    export AREAS_ALT="$PERSONAL/Areas"
-    export INBOX_ALT="$PERSONAL/Inbox/index.md"
-    export INBOX="$WORK/Inbox/index.md"
-else
-    export CALENDAR="$PERSONAL/calendar"
-    export CALENDAR_ALT="$WORK/calendar"
-    export AREAS="$PERSONAL/Areas"
-    export AREAS_ALT="$WORK/Areas"
-    export INBOX="$PERSONAL/Inbox/index.md"
-    export INBOX_ALT="$WORK/Inbox/index.md"
-fi
+# Folders
+export REFERENCES="$HOME/References"
+export SNIPPETS="$REFERENCES/Snippets"
+export BOOKS="$REFERENCES/Books"
+export CHEATSHEETS="$REFERENCES/Cheatsheets"
+export PAPERS="$REFERENCES/Papers"
 
 export PROJECTS="$HOME/Projects"
-export CHECKLISTS="$HOME/Personal/Checklists"
+
+if [ "$(uname -n)" = "budl34356338a" ]; then
+    export WIKI="$WORK/Wiki"
+    export CHECKLISTS="$WORK/Checklists"
+    export CALENDAR="$WORK/calendar"
+    #export CALENDAR_ALT="$PERSONAL/calendar"
+    export AREAS="$WORK/Areas"
+    #export AREAS_ALT="$PERSONAL/Areas"
+    #export INBOX_ALT="$PERSONAL/Inbox/index.md"
+    export INBOX="$WORK/Inbox/index.md"
+else
+    export WIKI="$PERSONAL/Wiki"
+    export CHECKLISTS="$PERSONAL/Checklists"
+    export CALENDAR="$PERSONAL/calendar"
+    #export CALENDAR_ALT="$WORK/calendar"
+    export AREAS="$PERSONAL/Areas"
+    #export AREAS_ALT="$WORK/Areas"
+    export INBOX="$PERSONAL/Inbox/index.md"
+    #export INBOX_ALT="$WORK/Inbox/index.md"
+fi
 
 # Needed on work laptop for i3-sensible-terminal
 export TERMINAL="st"
