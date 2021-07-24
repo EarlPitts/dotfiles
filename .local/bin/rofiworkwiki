@@ -1,7 +1,0 @@
-#!/usr/bin/sh
-
-if [ $# = 0 ]; then
-    find $WORK_WIKI -type f -name '*.md' -printf "%f\n"
-else
-    i3-msg exec "i3-sensible-terminal -e zsh -ic 'cd $WORK_WIKI && nvim ${1}'" > /dev/null
-fi
