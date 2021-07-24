@@ -28,8 +28,8 @@ if [ "$(uname -n)" = "budl34356338a" ]; then
     #export CALENDAR_ALT="$PERSONAL/calendar"
     export AREAS="$WORK/Areas"
     #export AREAS_ALT="$PERSONAL/Areas"
-    #export INBOX_ALT="$PERSONAL/Inbox/index.md"
-    export INBOX="$WORK/Inbox/index.md"
+    #export INBOX_ALT="$PERSONAL/Inbox"
+    export INBOX="$WORK/Inbox"
 else
     export WIKI="$PERSONAL/Wiki"
     export CHECKLISTS="$PERSONAL/Checklists"
@@ -37,8 +37,8 @@ else
     #export CALENDAR_ALT="$WORK/calendar"
     export AREAS="$PERSONAL/Areas"
     #export AREAS_ALT="$WORK/Areas"
-    export INBOX="$PERSONAL/Inbox/index.md"
-    #export INBOX_ALT="$WORK/Inbox/index.md"
+    export INBOX="$PERSONAL/Inbox"
+    #export INBOX_ALT="$WORK/Inbox"
 fi
 
 # Needed on work laptop for i3-sensible-terminal
