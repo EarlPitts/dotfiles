@@ -27,6 +27,16 @@ install() {
     #yay -Slq | fzf -m --preview 'cat <(yay -Si {1}) <(yay -Fl {1} | awk \"{print \\$2}\")' | xargs -ro  yay -S
 }
 
+# If no arg is passed to man, it will start fzf with all
+# the installed manpages
+man() {
+    if [ $# -gt 0 ]; then
+        command man $@
+    else
+        command man -k . | fzf | cut -d' ' -f1,2 | tr -d '()' | awk '{s=$1;$1=$NF;$NF=s}1' | xargs man
+    fi
+}
+
 # Codi
 # Usage: codi [filetype] [filename]
 codi() {
