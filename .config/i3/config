@@ -44,6 +44,9 @@ bindsym $mod+space exec ~/.local/bin/keylayout
 ## Lockscreen
 bindsym $mod+p exec ~/.local/bin/lock
 
+## VM
+bindsym $mod+Home exec remote-viewer -f spice://192.168.0.20:5900
+
 ## Productivity
 
 ### Calendar
