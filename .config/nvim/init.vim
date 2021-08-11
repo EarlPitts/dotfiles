@@ -1,4 +1,5 @@
 let mapleader = ","
+let maplocalleader = ","    "Needed for conjure
 set nocompatible
 syntax on
 
@@ -42,10 +43,12 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rhubarb'
+Plug 'sindrets/diffview.nvim'
 
 "Misc
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'metakirby5/codi.vim'
+Plug 'Olical/conjure'
 
 call plug#end()    
 
