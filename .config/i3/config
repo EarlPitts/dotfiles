@@ -107,9 +107,6 @@ bindsym Mod1+e exec i3-sensible-terminal sh -c "source ~/.config/zsh/base16.zsh 
 # Password manager
 bindsym $mod+Shift+p exec rofi-pass
 
-# Moving workspaces between screens
-#bindsym $mod+F1 move workspace to output left
-
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
