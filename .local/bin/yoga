@@ -18,6 +18,7 @@ urls=(
     "https://youtu.be/ydtmPONM-rw?t=57"
 )
 
+# $((RANDOM % 15)) is not random enough
+rand=$(python -c "import random; print(random.randint(0,15))")
 
-
-mpv --no-resume-playback --no-sub "${urls[$((RANDOM % 15))]}"
+mpv --no-resume-playback --no-sub "${urls[$rand]}"
