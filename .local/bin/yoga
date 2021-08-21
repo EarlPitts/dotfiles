@@ -1,0 +1,23 @@
+#!/usr/bin/bash
+
+urls=(
+    "https://youtu.be/XzWctoBI-6g?t=101"
+    "https://youtu.be/-fac_iJ8Nw8?t=71"
+    "https://youtu.be/IYiV4ztPVu0?t=68"
+    "https://youtu.be/-u14ME3nMWA?t=110"
+    "https://youtu.be/BsKUBO_TPRk?t=68"
+    "https://youtu.be/ICanFGTsW8c?t=57"
+    "https://youtu.be/DYQHo7OboEM?t=86"
+    "https://youtu.be/2FUC8fazHx4?t=90"
+    "https://youtu.be/YCEtPI3dk2U?t=71"
+    "https://youtu.be/SoymL3XAHWk?t=193"
+    "https://youtu.be/cwHu9PSNtKM?t=156"
+    "https://youtu.be/7mi15YbS8wg?t=87"
+    "https://youtu.be/pL1RWA_Qavs?t=76"
+    "https://youtu.be/4IeS84sb3ZQ?t=79"
+    "https://youtu.be/ydtmPONM-rw?t=57"
+)
+
+
+
+mpv --no-resume-playback --no-sub "${urls[$((RANDOM % 15))]}"
