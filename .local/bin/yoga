@@ -21,4 +21,5 @@ urls=(
 # $((RANDOM % 15)) is not random enough
 rand=$(python -c "import random; print(random.randint(0,15))")
 
+sleep 5 # For preparing
 mpv --no-resume-playback --no-sub "${urls[$rand]}"
