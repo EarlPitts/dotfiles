@@ -90,6 +90,7 @@ configuration {
 /*	kb-accept-custom: "Control+Return";*/
 /*	kb-accept-alt: "Shift+Return";*/
 /*	kb-delete-entry: "Shift+Delete";*/
+	kb-mode-complete: "";
 	kb-mode-next: "Shift+Right,Control+Tab,Control+l";
 	kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab,Control+h";
 /*	kb-row-left: "Control+Page_Up";*/
