@@ -41,9 +41,6 @@ else
     #export INBOX_ALT="$WORK/Inbox"
 fi
 
-# Needed on work laptop for i3-sensible-terminal
-export TERMINAL="st"
-
 # Path
 export PATH=$PATH:~/.local/bin
 
