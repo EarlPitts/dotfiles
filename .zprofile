@@ -23,6 +23,7 @@ export PROJECTS="$HOME/Projects"
 
 if [ "$(uname -n)" = "budl34356338a" ]; then
     export WIKI="$WORK/Wiki"
+    export TODOS="$WORK/Todos"
     export CHECKLISTS="$WORK/Checklists"
     export CALENDAR="$WORK/calendar"
     #export CALENDAR_ALT="$PERSONAL/calendar"
@@ -32,6 +33,7 @@ if [ "$(uname -n)" = "budl34356338a" ]; then
     export INBOX="$WORK/Inbox"
 else
     export WIKI="$PERSONAL/Wiki"
+    export TODOS="$PERSONAL/Todos"
     export CHECKLISTS="$PERSONAL/Checklists"
     export CALENDAR="$PERSONAL/calendar"
     #export CALENDAR_ALT="$WORK/calendar"
