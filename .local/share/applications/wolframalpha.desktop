@@ -1,0 +1,5 @@
+[Desktop Entry]
+Name=WolframAlpha
+Exec=firefox --new-window https://www.wolframalpha.com/
+Terminal=false
+Type=Application
