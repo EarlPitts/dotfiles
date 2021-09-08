@@ -8,11 +8,9 @@ font pango:Fira Code 11
 for_window [class="Spotify"] move to workspace $ws10
 
 # Open as floating winow
-for_window [title=codi-float] floating enable
-for_window [title="calendar"] floating enable resize set 50 ppt 60 ppt
-for_window [title="calendar"] move absolute position center
+for_window [title="small_window"] floating enable resize set 50 ppt 60 ppt
+for_window [title="small_window"] move absolute position center
 for_window [class="Sxiv"] floating enable
-#for_window [title=note] floating enable
 
 # Hiding borders
 default_border none
@@ -36,8 +34,6 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
-bindsym $mod+F1 exec ~/.local/bin/lidclose
-
 ## Keyboard Layout
 bindsym $mod+space exec ~/.local/bin/keylayout
 
@@ -50,8 +46,10 @@ bindsym $mod+Home exec remote-viewer -f spice://192.168.0.20:5900
 ## Productivity
 
 ### Calendar
-bindsym $mod+b exec i3-sensible-terminal -t calendar sh -c "source ~/.config/zsh/base16.zsh && calcurse -c $CALENDAR"
+bindsym $mod+b exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && calcurse -c $CALENDAR"
 #bindsym $mod+Control+b exec i3-sensible-terminal -t calendar sh -c "source ~/.config/zsh/base16.zsh && calcurse -c $CALENDAR_ALT"
+
+bindsym $mod+F1 exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && pulsemixer"
 
 ### Quick Note
 bindsym $mod+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> $INBOX/index.md
@@ -83,7 +81,7 @@ bindsym $mod+Control+o exec rofi -sidebar-mode -show combi \
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh
 bindsym $mod+F11 exec ~/.local/bin/pomodoro
 
-bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t codi-float -e zsh -ic codi
+bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t small_window -e zsh -ic codi
 bindsym $mod+Shift+Return exec i3-sensible-terminal -e ssh ben
 
 ## Rofi scripts
