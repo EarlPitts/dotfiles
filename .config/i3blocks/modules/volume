@@ -1,0 +1,21 @@
+#!/usr/bin/sh
+
+# The first parameter sets the step to change the volume by (and units to display)
+# This may be in in % or dB (eg. 5% or 3dB)
+if [[ -z "$STEP" ]] ; then
+    STEP="${1:-5%}"
+fi
+
+amixer_output=$(amixer -D $MIXER get $SCONTROL)
+
+line=$(echo "$amixer_output" | grep '%')
+volume=$(echo $line | sed 's/.*\[\([0-9%]*\)\].*\[\([on|off]*\)\]/\1/')
+state=$(echo $line | sed 's/.*\[\([0-9%]*\)\].*\[\([on|off]*\)\]/\2/')
+if [ "$state" = off ]; then
+    echo " ($volume)"
+    echo " ($volume)"
+    echo "#F2777A"
+else
+    echo " $volume"
+    echo " $volume"
+fi

@@ -1,0 +1,56 @@
+# i3blocks config file
+#
+# Please see man i3blocks for a complete reference!
+# The man page is also hosted at http://vivien.github.io/i3blocks
+#
+# List of valid properties:
+#
+# align
+# color
+# command
+# full_text
+# instance
+# interval
+# label
+# min_width
+# name
+# separator
+# separator_block_width
+# short_text
+# signal
+# urgent
+
+SCRIPT_DIR=/home/obabo/.config/i3blocks/modules
+# Global properties
+#
+# The top properties below are applied to every block, but can be overridden.
+# Each block command defaults to the script name to avoid boilerplate.
+# Change $SCRIPT_DIR to the location of your scripts!
+command=$SCRIPT_DIR/$BLOCK_NAME
+separator_block_width=15
+markup=none
+
+[volume]
+interval=5 # If volume is changed by other means
+signal=10
+STEP=5%
+MIXER=pulse
+SCONTROL=Master
+
+[load_average]
+command=$SCRIPT_DIR/load
+label= 
+interval=5
+
+[battery]
+interval=5
+
+[wifi]
+command=$SCRIPT_DIR/wifi
+label= 
+INTERFACE=wlp4s0
+interval=5
+
+[time]
+command=date "+%m-%d %H:%M"
+interval=5
