@@ -10,7 +10,6 @@ export VEDITOR="code"
 export DO_NOT_TRACK=1
 
 export PERSONAL="$HOME/Personal"
-export WORK="$HOME/Work"
 
 # Folders
 export REFERENCES="$HOME/References"
@@ -21,27 +20,12 @@ export PAPERS="$REFERENCES/Papers"
 
 export PROJECTS="$HOME/Projects"
 
-if [ "$(uname -n)" = "budl34356338a" ]; then
-    export WIKI="$WORK/Wiki"
-    export TODOS="$WORK/Todos"
-    export CHECKLISTS="$WORK/Checklists"
-    export CALENDAR="$WORK/calendar"
-    #export CALENDAR_ALT="$PERSONAL/calendar"
-    export AREAS="$WORK/Areas"
-    #export AREAS_ALT="$PERSONAL/Areas"
-    #export INBOX_ALT="$PERSONAL/Inbox"
-    export INBOX="$WORK/Inbox"
-else
-    export WIKI="$PERSONAL/Wiki"
-    export TODOS="$PERSONAL/Todos"
-    export CHECKLISTS="$PERSONAL/Checklists"
-    export CALENDAR="$PERSONAL/calendar"
-    #export CALENDAR_ALT="$WORK/calendar"
-    export AREAS="$PERSONAL/Areas"
-    #export AREAS_ALT="$WORK/Areas"
-    export INBOX="$PERSONAL/Inbox"
-    #export INBOX_ALT="$WORK/Inbox"
-fi
+export WIKI="$PERSONAL/Wiki"
+export TODOS="$PERSONAL/Todos"
+export CHECKLISTS="$PERSONAL/Checklists"
+export CALENDAR="$PERSONAL/calendar"
+export AREAS="$PERSONAL/Areas"
+export INBOX="$PERSONAL/Inbox"
 
 # Path
 export PATH=$PATH:~/.local/bin
@@ -58,7 +42,3 @@ export TERM=xterm-256color # for tmux
 if systemctl -q is-active graphical.target && [[ ! $TMUX && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     exec startx
 fi
-
-# Needed because tmux uses the deafult login shell, which is bash, and the exec zsh is only in the bashrc for now
-# TODO Should be fixed somehow
-[ "$TMUX" -a "$(uname -n)" = "budl34356338a" ] && exec zsh
