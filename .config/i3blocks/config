@@ -27,7 +27,7 @@ SCRIPT_DIR=/home/obabo/.config/i3blocks/modules
 # Each block command defaults to the script name to avoid boilerplate.
 # Change $SCRIPT_DIR to the location of your scripts!
 command=$SCRIPT_DIR/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=10
 markup=none
 
 [volume]
