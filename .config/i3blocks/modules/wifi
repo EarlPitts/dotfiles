@@ -1,14 +1,12 @@
 #!/usr/bin/sh
 
-#------------------------------------------------------------------------
 if [[ -z "$INTERFACE" ]] ; then
     INTERFACE="${BLOCK_INSTANCE:-wlan0}"
 fi
-#------------------------------------------------------------------------
 
-COLOR_GE20=#FFAE00
-COLOR_LOWR=#F2777A
-COLOR_DOWN=#F2777A
+color_20_60=#FFAE00
+color_low=#F2777A
+color_down=#F2777A
 
 # As per #36 -- It is transparent: e.g. if the machine has no battery or wireless
 # connection (think desktop), the corresponding block should not be displayed.
@@ -18,24 +16,20 @@ COLOR_DOWN=#F2777A
 if [[ "$(cat /sys/class/net/$INTERFACE/operstate)" = 'down' ]]; then
     echo "down"
     echo "down"
-    echo $COLOR_DOWN
+    echo $color_down
     exit
 fi
 
-#------------------------------------------------------------------------
+quality=$(iw dev ${INTERFACE} link | grep 'dBm$' | grep -Eoe '-[0-9]{2}' | awk '{print  ($1 > -50 ? 100 :($1 < -100 ? 0 : ($1+100)*2))}')
 
-QUALITY=$(iw dev ${INTERFACE} link | grep 'dBm$' | grep -Eoe '-[0-9]{2}' | awk '{print  ($1 > -50 ? 100 :($1 < -100 ? 0 : ($1+100)*2))}')
-
-#------------------------------------------------------------------------
-
-echo $QUALITY% # full text
-echo $QUALITY% # short text
+echo $quality% # full text
+echo $quality% # short text
 
 # color
-if [[ $QUALITY -ge 60 ]]; then
+if [[ $quality -ge 60 ]]; then
     exit
-elif [[ $QUALITY -ge 20 ]]; then
-    echo $COLOR_GE20
+elif [[ $quality -ge 20 ]]; then
+    echo $color_20_60
 else
-    echo $COLOR_LOWR
+    echo $color_low
 fi
