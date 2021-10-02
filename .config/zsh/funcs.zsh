@@ -227,13 +227,6 @@ esac
 #   reflex -g '*.py' python3 "$@"
 # }
 
-
-# # server - Create server of current dir on port 8000 and open it in browser.
-# server() {
-#     sleep 1 && xdg-open http://localhost:8000 &
-#     python -m http.server
-# }
-
 # # compress <file/dir> - Compress <file/dir>.
 # compress()
 #   {
