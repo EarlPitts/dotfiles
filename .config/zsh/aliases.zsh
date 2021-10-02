@@ -14,6 +14,8 @@ alias dirty='watch -d grep -e Dirty: -e Writeback: /proc/meminfo'
 alias curl='curlie'
 alias reload='source ~/.zshrc'
 alias yoga='ssh pi yoga'
+alias httpserver='python -m http.server'
+alias ftpserver='python -m pyftpdlib'
 
 # rsync
 alias cpr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1'
