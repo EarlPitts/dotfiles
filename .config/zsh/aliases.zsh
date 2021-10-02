@@ -15,6 +15,10 @@ alias curl='curlie'
 alias reload='source ~/.zshrc'
 alias yoga='ssh pi yoga'
 
+# rsync
+alias cpr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1'
+alias mvr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1 --remove-source-files'
+
 # Python
 alias venv='source venv/bin/activate'
 alias pdb='python -m pdb'
