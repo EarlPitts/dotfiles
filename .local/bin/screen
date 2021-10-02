@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 intern="eDP1"
-extern=$(xrandr | grep -E "^HDMI2 connected|^DP1 connected " | tail -n 1 | cut -f1 -d" ")
+extern=$(xrandr | grep -E "^HDMI2 connected|^DP1 connected|^DP2-2 connected" | tail -n 1 | cut -f1 -d" ")
 #extern=$(xrandr | grep "DP1 connected " | tail -n 1 | cut -f1 -d" ")
 [ -z "$extern" -a ! -e /tmp/monitorstate ] && exit 1
 
