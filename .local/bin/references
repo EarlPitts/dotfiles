@@ -17,7 +17,7 @@ file=$(echo "$ref" | rev | cut -d/ -f-1 | rev)
 if [ "$(echo "$ref" | cut -d/ -f2)" = "Snippets" ]; then
     cd $HOME/"$folder" || exit
     tmux split-window -h $EDITOR +Codi "$file"
-elif [ "$(echo "$ref" | cut -d/ -f2)" = "References" ]; then
+elif [ "$(echo "$ref" | cut -d/ -f1)" = "References" ]; then
     i3 exec "xdg-open $HOME/$folder/$file" > /dev/null
 else
     cd $HOME/"$folder" || exit
