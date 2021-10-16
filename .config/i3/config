@@ -53,7 +53,7 @@ bindsym $mod+b exec i3-sensible-terminal -t small_window sh -c "source ~/.config
 bindsym $mod+F1 exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && pulsemixer"
 
 ### Quick Note
-bindsym $mod+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> $INBOX/index.md
+bindsym $mod+n exec note=$(rofi -dmenu -p "Note" -l 0) && echo "- $note" >> $INBOX/index.md
 #bindsym $mod+Control+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> $INBOX_ALT
 
 ### Inbox
