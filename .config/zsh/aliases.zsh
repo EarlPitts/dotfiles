@@ -1,5 +1,4 @@
 alias mixer='alsamixer'                                             
-alias clean='cat ~/.local/share/bleach.txt | xargs bleachbit -c && yay -Sc --clean --noconfirm'
 alias ls='exa -l'
 alias scan='sudo iw dev wlp4s0 scan | egrep "signal|SSID" | sed -e "s/\tsigna    l: //" -e "s/\tSSID: //" | awk '\''{ORS = (NR % 2 == 0)? "\n" : " "; print}    '\'' | sort'
 alias weather='curl wttr.in/Budapest'
