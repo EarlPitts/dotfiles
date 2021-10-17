@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rofi -sidebar-mode -show combi \
+-combi-modi "wiki:~/.config/rofi/scripts/wiki#books:~/.config/rofi/scripts/books#cheatsheets:~/.config/rofi/scripts/cheatsheets#papers:~/.config/rofi/scripts/papers#snippets:~/.config/rofi/scripts/snippets" \
+-modi "combi#wiki:~/.config/rofi/scripts/wiki#books:~/.config/rofi/scripts/books#cheatsheets:~/.config/rofi/scripts/cheatsheets#papers:~/.config/rofi/scripts/papers#snippets:~/.config/rofi/scripts/snippets"

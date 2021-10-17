@@ -44,39 +44,29 @@ bindsym Mod1+p exec ~/.local/bin/winlock
 ## VM
 bindsym $mod+Home exec remote-viewer -f spice://192.168.0.20:5900
 
+bindsym $mod+F10 exec ~/.config/rofi/scripts/bluetooth
+
 ## Productivity
 
 ### Calendar
 bindsym $mod+b exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && calcurse -c $CALENDAR"
-#bindsym $mod+Control+b exec i3-sensible-terminal -t calendar sh -c "source ~/.config/zsh/base16.zsh && calcurse -c $CALENDAR_ALT"
 
 bindsym $mod+F1 exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && pulsemixer"
 
 ### Quick Note
-bindsym $mod+n exec note=$(rofi -dmenu -p "Note" -l 0) && echo "- $note" >> $INBOX/index.md
-#bindsym $mod+Control+n exec note=$(rofi -dmenu -p "Note" -lines 0) && echo "- $note" >> $INBOX_ALT
+bindsym $mod+n exec ~/.config/rofi/scripts/note
 
 ### Inbox
 bindsym $mod+i exec i3-sensible-terminal sh -c "source ~/.config/zsh/base16.zsh && nvim '+lcd %:p:h' + $INBOX/index.md"
-#bindsym $mod+Control+i exec i3-sensible-terminal sh -c "source ~/.config/zsh/base16.zsh && nvim '+lcd %:p:h' + $INBOX_ALT"
 
 ### Todos
 bindsym $mod+t exec i3-sensible-terminal sh -c "source ~/.config/zsh/base16.zsh && nvim '+lcd %:p:h' + $TODOS/index.md"
-#bindsym $mod+Control+i exec i3-sensible-terminal sh -c "source ~/.config/zsh/base16.zsh && nvim '+lcd %:p:h' + $INBOX_ALT"
 
 ### References
-bindsym $mod+u exec rofi -sidebar-mode -show combi \
--combi-modi "wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#snippets:~/.local/bin/rofisnippets" \
--modi "combi#wiki:~/.local/bin/rofiwiki#books:~/.local/bin/rofibooks#cheatsheets:~/.local/bin/roficheatsheets#papers:~/.local/bin/rofipapers#snippets:~/.local/bin/rofisnippets"
+bindsym $mod+u exec ~/.config/rofi/scripts/references
 
 ### Productivity
-bindsym $mod+o exec rofi -sidebar-mode -show combi \
--combi-modi "checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas" \
--modi "combi#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareas"
-
-bindsym $mod+Control+o exec rofi -sidebar-mode -show combi \
--combi-modi "checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareasalt" \
--modi "combi#checklists:~/.local/bin/rofichecklists#projects:~/.local/bin/rofiprojects#areas:~/.local/bin/rofiareasalt"
+bindsym $mod+o exec ~/.config/rofi/scripts/productivity
 
 #bindsym $mod+i exec ~/.scripts/watson.sh
 #bindsym $mod+Shift+n exec ~/.scripts/note_html.sh

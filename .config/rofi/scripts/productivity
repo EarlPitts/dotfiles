@@ -1,0 +1,5 @@
+#!/bin/sh
+
+rofi -sidebar-mode -show combi \
+-combi-modi "checklists:~/.config/rofi/scripts/checklists#projects:~/.config/rofi/scripts/projects#areas:~/.config/rofi/scripts/areas" \
+-modi "combi#checklists:~/.config/rofi/scripts/checklists#projects:~/.config/rofi/scripts/projects#areas:~/.config/rofi/scripts/areas"
