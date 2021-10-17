@@ -1,6 +1,10 @@
 # Terminal (i3-sensible-terminal uses it)
 export TERMINAL="st"
 
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CACHE_HOME="$HOME/.cache"
+
 # Default editors
 export EDITOR="nvim"
 export VEDITOR="code"
@@ -40,5 +44,5 @@ export TERM=xterm-256color # for tmux
 
 # Start x server if it's not already running
 if systemctl -q is-active graphical.target && [[ ! $TMUX && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-    exec startx
+    exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
 fi
