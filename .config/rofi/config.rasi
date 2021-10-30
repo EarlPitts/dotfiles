@@ -42,13 +42,12 @@ configuration {
 /*	line-padding: 1;*/
 /*	filter: ;*/
 /*	separator-style: "dash";*/
-/*	hide-scrollbar: false;*/
 /*	fullscreen: false;*/
 /*	fake-transparency: false;*/
 /*	dpi: -1;*/
 /*	threads: 0;*/
 /*	scrollbar-width: 8;*/
-/*	scroll-method: 0;*/
+	scroll-method: 1;
 /*	fake-background: "screenshot";*/
 /*	window-format: "{w}    {c}   {t}";*/
 /*	click-to-exit: true;*/
