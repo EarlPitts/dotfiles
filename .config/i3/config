@@ -206,7 +206,7 @@ client.placeholder      $base00 $base00 $base05 $base00 $base00
 client.background       $base07
 
 bar {
-        status_command i3blocks
+        status_command i3blocks -c ~/.config/i3/i3blocks.conf
         modifier none # For not showing when hidden
         bindsym button1 nop # Disable clickon on ws
 
