@@ -1,4 +1,4 @@
-#!/usr/bin/sh -x
+#!/usr/bin/sh
 
 if [ -n "$DISPLAY" ]; then
     # If has a wm, display other docs too

@@ -1,17 +1,19 @@
-#!/usr/bin/zsh
+#!/usr/bin/sh
+
 LENGTH=24
 FILE=/tmp/pomodoro
 
-if [[ -e $FILE ]]; then
+if [[ -e $FILE ]]; then # If the timer is already started
     notify-send "$(cat $FILE) minutes passed"
-    exit 0
-fi
+else
+    notify-send "Pomodoro started"
+    touch $FILE
 
-notify-send "Pomodoro started"
-touch $FILE
-for minute in {0..$LENGTH}; do
-    echo $minute > $FILE
-    sleep 60
-done
-rm $FILE
-notify-send "Pomodoro done"
+    for minute in {0..$LENGTH}; do
+        echo $minute > $FILE
+        sleep 60
+    done
+
+    rm $FILE
+    notify-send "Pomodoro done"
+fi

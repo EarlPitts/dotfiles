@@ -11,19 +11,19 @@ if [ ! -e /tmp/monitorstate ]; then
     # pactl set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo
     feh --bg-fill .local/share/wallpapers/background.jpg
     notify-send "Mirroring Screen"
-elif [ $(cat /tmp/monitorstate) = "doubled" ]; then
+elif [ "$(cat /tmp/monitorstate)" = "doubled" ]; then
     echo "extended" > /tmp/monitorstate
     xrandr --output "$intern" --auto --output "$extern" --right-of $intern
     # pactl set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo
     feh --bg-fill .local/share/wallpapers/background.jpg
     notify-send "Extending Screen"
-elif [ $(cat /tmp/monitorstate) = "extended" ]; then
+elif [ "$(cat /tmp/monitorstate)" = "extended" ]; then
     echo "only" > /tmp/monitorstate
     xrandr --output "$intern" --off --output "$extern" --auto
     # pactl set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo
     feh --bg-fill .local/share/wallpapers/background.jpg
     notify-send "Screen 2"
-elif [ $(cat /tmp/monitorstate) = "only" ]; then
+elif [ "$(cat /tmp/monitorstate)" = "only" ]; then
     rm /tmp/monitorstate
     xrandr --output "$intern" --auto --output "$extern" --off
     # pactl set-card-profile 0 output:analog-stereo+input:analog-stereo
