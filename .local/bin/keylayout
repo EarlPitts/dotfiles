@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-if [ "$(setxkbmap -query | grep layout | cut -d: -f2)" = "us" ]; then
+if [ "$(setxkbmap -query | grep layout | cut -d: -f2 | tr -d ' ')" = "us" ]; then
         setxkbmap hu
         notify-send " Layout set to Hungarian"
 else
