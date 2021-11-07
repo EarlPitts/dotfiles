@@ -1,25 +1,25 @@
-#!/usr/bin/sh
+#!/usr/bin/sh -x
 
 if [ -n "$DISPLAY" ]; then
     # If has a wm, display other docs too
-    ref=$(find $WIKI $SNIPPETS $BOOKS $PAPERS $CHEATSHEETS -type f | cut -d/ -f4- | fzf)
+    ref=$(find "$WIKI" "$SNIPPETS" "$BOOKS" "$PAPERS" "$CHEATSHEETS" -type f | cut -d/ -f4- | fzf)
 else
-    ref=$(find $WIKI $SNIPPETS -type f | cut -d/ -f4- | fzf)
+    ref=$(find "$WIKI" "$SNIPPETS" -type f | cut -d/ -f4- | fzf)
 fi
-[ -z $ref ] && exit
+[ -z "$ref" ] && exit
 
 # Changing the folder is needed, because
 # isdirectory() in vim is checked only when the file
 # is opened, so c-p will not work
-folder=$(echo "$ref" | rev | cut -d/ -f2- | rev)
-file=$(echo "$ref" | rev | cut -d/ -f-1 | rev)
+folder=$(dirname "$ref")
+file=$(basename "$ref")
 
 if [ "$(echo "$ref" | cut -d/ -f2)" = "Snippets" ]; then
-    cd $HOME/"$folder" || exit
-    tmux split-window -h $EDITOR +Codi "$file"
+    cd "$HOME/$folder" || exit
+    tmux split-window -h "$EDITOR" +Codi "$file"
 elif [ "$(echo "$ref" | cut -d/ -f1)" = "References" ]; then
     i3 exec "xdg-open $HOME/$folder/$file" > /dev/null
 else
-    cd $HOME/"$folder" || exit
-    tmux split-window -h $EDITOR "$file"
+    cd "$HOME/$folder" || exit
+    tmux split-window -h "$EDITOR" "$file"
 fi

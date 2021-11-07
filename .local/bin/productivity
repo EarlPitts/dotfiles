@@ -18,5 +18,5 @@ if [ "$(echo "$item" | cut -d/ -f1)" = "Projects" ]; then
         tmux new -s "$project" -c "$HOME/$item" -d && tmux switch -t "$project"
     fi
 else
-    tmux split-window -h $EDITOR "$HOME/$item"
+    tmux split-window -h "$EDITOR" "$HOME/$item"
 fi
