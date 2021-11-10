@@ -16,7 +16,7 @@ alias yoga='ssh pi yoga'
 alias httpserver='python -m http.server'
 alias ftpserver='python -m pyftpdlib'
 alias startx='startx "$XDG_CONFIG_HOME/X11/xinitrc"'
-alias scheme='rlwrap scheme'
+alias scheme='rlwrap -f "$XDG_DATA_HOME/mit_scheme_bindings.txt" scheme'
 
 # rsync
 alias cpr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1'
