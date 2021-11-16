@@ -121,6 +121,8 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+"Conjure
+nmap <leader>sr :ConjureEval (RESTART 1)<CR> " Restart Scheme
 
 "### Editor ###
 
