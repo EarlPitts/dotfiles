@@ -16,10 +16,10 @@ file=$(basename "$ref")
 
 if [ "$(echo "$ref" | cut -d/ -f2)" = "Snippets" ]; then
     cd "$HOME/$folder" || exit
-    tmux split-window -h "$EDITOR" +Codi "$file"
+    tmux new-window "$EDITOR" +Codi "$file"
 elif [ "$(echo "$ref" | cut -d/ -f1)" = "References" ]; then
     i3 exec "xdg-open $HOME/$folder/$file" > /dev/null
 else
     cd "$HOME/$folder" || exit
-    tmux split-window -h "$EDITOR" "$file"
+    tmux new-window "$EDITOR" "$file"
 fi
