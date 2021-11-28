@@ -14,7 +14,7 @@ def get_remaining(line):
     title = " ".join(line.split()[3:])
     date = dt.datetime.strptime(date, '%m/%d/%Y')
 
-    remaining = date - dt.datetime.now()
+    remaining = date - dt.datetime.now() + dt.timedelta(1)
     return f'{title} - {remaining.days} days'
 
 
