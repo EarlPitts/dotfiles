@@ -9,6 +9,8 @@ for_window [class="Spotify"] move to workspace $ws10
 # Open as floating winow
 for_window [title="small_window"] floating enable resize set 50 ppt 60 ppt
 for_window [title="small_window"] move absolute position center
+for_window [title="bigger_window"] floating enable resize set 70 ppt 75 ppt
+for_window [title="bigger_window"] move absolute position center
 for_window [class="Sxiv"] floating enable
 
 # Hiding borders
@@ -44,6 +46,8 @@ bindsym Mod1+p exec ~/.local/bin/winlock
 bindsym $mod+Home exec remote-viewer -f spice://192.168.0.20:5900
 
 bindsym $mod+F10 exec ~/.config/rofi/scripts/bluetooth
+
+bindsym $mod+End exec i3-sensible-terminal -t bigger_window sh -c "source ~/.config/zsh/base16.zsh && curl wttr.in && read"
 
 ## Productivity
 
