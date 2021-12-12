@@ -42,7 +42,7 @@ Plug 'honza/vim-snippets'
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rhubarb'
-Plug 'sindrets/diffview.nvim'
+"Plug 'sindrets/diffview.nvim'
 
 "Misc
 Plug 'christoomey/vim-tmux-navigator'
@@ -127,56 +127,56 @@ nmap <leader>sr :ConjureEval (RESTART 1)<CR> " Restart Scheme
 "### Editor ###
 
 "Indentation
-set autoindent                  " Copy indent when starting new line
-set expandtab                   " Use spaces instead of tabs
-set shiftround                  " Round indent to multiple of shiftwidth
-set shiftwidth=4                " Indent size
+set autoindent                          " Copy indent when starting new line
+set expandtab                           " Use spaces instead of tabs
+set shiftround                          " Round indent to multiple of shiftwidth
+set shiftwidth=4                        " Indent size
 set smarttab
-set tabstop=4                   " How many columns a tab counts for
-set softtabstop=4               " Number of columns when you hit tab
-filetype plugin indent on       " Filetype detection with indent and plugin stuff loaded
+set tabstop=4                           " How many columns a tab counts for
+set softtabstop=4                       " Number of columns when you hit tab
+filetype plugin indent on               " Filetype detection with indent and plugin stuff loaded
 
 "Text Rendering
 set display+=lastline
 set encoding=UTF-8
-set linebreak                   " Wrap long lines between words
-set wrap                        " Wrap lines
-syntax enable                   " Enable syntax 
+set linebreak                           " Wrap long lines between words
+set wrap                                " Wrap lines
+syntax enable                           " Enable syntax 
 
 "Search
-set incsearch                   " Search as characters are entered
-set hlsearch                    " Highlight matches
-set ignorecase                  " Case insensitive search
+set incsearch                           " Search as characters are entered
+set hlsearch                            " Highlight matches
+set ignorecase                          " Case insensitive search
 set smartcase
-set showmatch                   " Highlight matching parentheses
+set showmatch                           " Highlight matching parentheses
 
 "Performance
-set lazyredraw                  " Redraw only when needed
+set lazyredraw                          " Redraw only when needed
 
 "UI
 set noruler
-set wildmenu                    " Visual autocomplete for command menu
-set cursorline                  " Highlight current line
-set number                      " Show line numbers
-set relativenumber              " Relative number
+set wildmenu                            " Visual autocomplete for command menu
+set cursorline cursorlineopt=line       " Highlight current line
+set number                              " Show line numbers
+set relativenumber                      " Relative number
 set title
-set showcmd	                    " Show commands in bot line
-set shortmess+=I                " Turn off intro message
+set showcmd	                            " Show commands in bot line
+set shortmess+=I                        " Turn off intro message
 
 "Folding
-set foldmethod=indent           " Fold based on indent level
-set foldnestmax=5	            " 5 nested fold max
-set foldenable                  " Enable folding
-set foldlevelstart=5            " Open most folds by default
+set foldmethod=indent                   " Fold based on indent level
+set foldnestmax=5	                    " 5 nested fold max
+set foldenable                          " Enable folding
+set foldlevelstart=5                    " Open most folds by default
 "nnoremap  <space> za	
 
 "Misc
-set autoread                    " Reload externally modified files in vim
-set backspace=indent,eol,start  " Allow backspace over anything
+set autoread                            " Reload externally modified files in vim
+set backspace=indent,eol,start          " Allow backspace over anything
 set history=1000
-set clipboard=unnamed           " System clipboard TODO
-set omnifunc=syntaxcomplete#Complete " TODO what's this? :D
-set hidden                      " Enables hidden buffers, so you can have modified buffers in the background
+set clipboard=unnamed                   " System clipboard TODO
+set omnifunc=syntaxcomplete#Complete    " TODO what's this? :D
+set hidden                              " Enables hidden buffers, so you can have modified buffers in the background
 
 "Mappings
 if isdirectory(".git")
