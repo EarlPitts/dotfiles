@@ -38,8 +38,6 @@ alias spt='spotifyd; spt'
 alias gdb='gdb -q'
 
 # Productivity System
-
-alias wiki='nvim +Tagbar wiki/index.md'
 alias calcurse='calcurse -c $CALENDAR'
 
 ## Inbox

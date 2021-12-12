@@ -50,6 +50,16 @@ codi() {
         Codi $syntax" "$@"
     }
 
+# Open wiki, or create it if it doesn't exist yet
+wiki() {
+    if [ -d "wiki" ]; then
+        nvim wiki/index.md
+    else
+        echo -n "No wiki folder, create it? [y/n]"
+        read
+        [ "$REPLY" = "y" ] && mkdir wiki && nvim wiki/index.md
+    fi
+}
 
 # Show $PATH
 path() {
