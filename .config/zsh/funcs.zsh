@@ -43,12 +43,22 @@ codi() {
     local syntax="${1:-python}"
     #shift
     vim -c \
-        "set bt=nofile ls=0 noru nonu nornu |\
-        hi ColorColumn ctermbg=NONE |\
-        hi VertSplit ctermbg=NONE |\
-        hi NonText ctermfg=0 |\
-        Codi $syntax" "$@"
-    }
+    "set bt=nofile ls=0 noru nonu nornu |\
+    hi ColorColumn ctermbg=NONE |\
+    hi VertSplit ctermbg=NONE |\
+    hi NonText ctermfg=0 |\
+    Codi $syntax" "$@"
+}
+
+scm() {
+    vim -c \
+    "set bt=nofile ls=0 noru nonu nornu splitright |\
+    hi ColorColumn ctermbg=NONE |\
+    hi VertSplit ctermbg=NONE |\
+    hi NonText ctermfg=0 |\
+    let g:conjure#log#hud#enabled = v:false" \
+    $(mktemp --suffix=.scm)
+}
 
 # Open wiki, or create it if it doesn't exist yet
 wiki() {

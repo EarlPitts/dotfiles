@@ -76,6 +76,7 @@ bindsym $mod+o exec ~/.config/rofi/scripts/productivity
 bindsym $mod+F11 exec ~/.local/bin/pomodoro
 
 bindsym $mod+F9 exec --no-startup-id i3-sensible-terminal -t small_window -e zsh -ic codi
+bindsym $mod+Insert exec --no-startup-id i3-sensible-terminal -t small_window -e zsh -ic scm
 bindsym $mod+Shift+Return exec i3-sensible-terminal -e ssh ben
 
 ## Rofi scripts
