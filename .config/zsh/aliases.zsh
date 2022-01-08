@@ -40,13 +40,6 @@ alias gdb='gdb -q'
 # Productivity System
 alias calcurse='calcurse -c $CALENDAR'
 
-## Inbox
-alias q='quick_note'
-alias qi='quick_note open'
-alias qw='work_quick_note'
-alias qwi='work_quick_note open'
-alias sp='nvim $(mktemp --suffix '.md')'
-
 ## Review
 alias journal='nvim ~/Personal/Gratitude/$(date +%Y-%b-%d).md'
 alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'
