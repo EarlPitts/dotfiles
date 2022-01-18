@@ -37,9 +37,6 @@ alias open='xdg-open'
 alias spt='spotifyd; spt'
 alias gdb='gdb -q'
 
-# Productivity System
-alias calcurse='calcurse -c $CALENDAR'
-
 ## Review
 alias journal='nvim ~/Personal/Gratitude/$(date +%Y-%b-%d).md'
 alias diary='nvim +VimwikiMakeDiaryNote +Tagbar'

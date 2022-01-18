@@ -30,7 +30,6 @@ export PROJECTS="$HOME/Projects"
 export WIKI="$PERSONAL/Wiki"
 export TODOS="$PERSONAL/Todos"
 export CHECKLISTS="$PERSONAL/Checklists"
-export CALENDAR="$PERSONAL/calendar"
 export AREAS="$PERSONAL/Areas"
 export INBOX="$PERSONAL/Inbox"
 

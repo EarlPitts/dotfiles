@@ -52,7 +52,7 @@ bindsym $mod+End exec i3-sensible-terminal -t bigger_window sh -c "source ~/.con
 ## Productivity
 
 ### Calendar
-bindsym $mod+b exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && calcurse -c $CALENDAR"
+bindsym $mod+b exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && calcurse"
 
 bindsym $mod+F1 exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && pulsemixer"
 
