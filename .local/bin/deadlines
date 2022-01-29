@@ -3,11 +3,7 @@
 import datetime as dt
 import os
 
-try:
-    calendar = os.environ['CALENDAR']
-except KeyError:
-    print('No $CALENDAR defined in the environment. :(')
-    exit(1)
+calendar = f'{os.environ["HOME"]}/Personal/calendar'
 
 def get_remaining(line):
     date = line.split()[0]
