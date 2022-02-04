@@ -122,7 +122,9 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 "Conjure
-nmap <leader>sr :ConjureEval (RESTART 1)<CR> " Restart Scheme
+"nmap <leader>sr :ConjureEval (RESTART 1)<CR> " Restart Scheme
+let g:conjure#filetype#scheme = "conjure.client.guile.socket"
+let g:conjure#client#guile#socket#pipename = "/tmp/.guile-socket"
 
 "### Editor ###
 
