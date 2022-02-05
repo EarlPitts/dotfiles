@@ -9,7 +9,6 @@ notify-always yes
 notify-screen yes
 prepopulate-query-feeds yes
 refresh-on-startup no
-auto-reload yes
 reload-threads 3
 reload-time 120
 save-path "~/Sync/saved-articles"
