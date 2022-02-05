@@ -37,3 +37,6 @@
 [submodule ".local/share/tmux/tmux-sensible"]
 	path = .local/share/tmux/tmux-sensible
 	url = git@github.com:tmux-plugins/tmux-sensible.git
+[submodule ".local/share/tmux/tmux-extrakto"]
+	path = .local/share/tmux/tmux-extrakto
+	url = git@github.com:laktak/extrakto.git
