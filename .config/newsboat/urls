@@ -41,6 +41,7 @@ https://theknowledgeproject.libsyn.com/rss "Podcast"
 https://nav.al/feed "Podcast"
 https://notrelated.xyz/rss "Podcast"
 https://www.functionalgeekery.com/feed/mp3/ "Podcast"
+https://www.typetheoryforall.com/episodes.mp3.rss "Podcast"
 
 # Blogs
 ## Uncategorized
@@ -95,6 +96,8 @@ https://blog.royalsloth.eu/posts/index.xml "Blog"
 https://asylum.madhouse-project.org/blog/atom.xml "Blog"
 http://tonsky.me/blog/atom.xml "Blog"
 https://unixsheikh.com/feed.rss "Blog"
+https://apenwarr.ca/log/rss.php "Blog"
+https://bartoszmilewski.com/rss "Blog"
 
 ## Productivity
 https://vasilishynkarenka.com/rss/ "Blog"
