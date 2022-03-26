@@ -3,14 +3,14 @@
 LENGTH=24
 FILE=/tmp/pomodoro
 
-if [[ -e $FILE ]]; then # If the timer is already started
+if [ -e $FILE ]; then # If the timer is already started
     notify-send "$(cat $FILE) minutes passed"
 else
     notify-send "Pomodoro started"
     touch $FILE
 
-    for minute in {0..$LENGTH}; do
-        echo $minute > $FILE
+    for minute in $(seq 0 $LENGTH); do
+        echo "$minute" > $FILE
         sleep 60
     done
 
