@@ -1,11 +1,6 @@
 #!/usr/bin/sh
 
 BAT=$(acpi -b | grep -E -o '1?[0-9][0-9]?%' | tr -d %)
-BAT1=$(echo "$BAT" | sed '1q;d')
-BAT2=$(echo "$BAT" | sed '2q;d')
-
-# Aggregate the two batteries
-BAT="$(( ($BAT1 + $BAT2) / 2 ))%"
 
 # Set the icon and the color, based on status
 if ! acpi -b | grep -q "Discharging"; then
