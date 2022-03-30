@@ -1,0 +1,3 @@
+#!/bin/sh
+
+curl -s "https://projecteuler.net/minimal=$1" | pandoc -f html -t markdown
