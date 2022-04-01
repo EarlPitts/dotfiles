@@ -1,0 +1,67 @@
+#!/usr/bin/python
+
+import json
+import numpy as np
+import os
+import plotille
+
+try:
+    DATA_FILE = f'{os.environ["PERSONAL"]}/Statistics/quantified_self.json'
+except KeyError:
+    print('No personal folder found in env')
+    exit(1)
+
+
+def weight(data):
+    def handle(day):
+        try:
+            return data_dict[day]['morning']['weight']
+        except:
+            return 0
+
+    Y = list(map(handle, data_dict.keys()))
+    X = range(len(Y))
+
+    fig = plotille.Figure()
+    fig.width = 80
+    fig.height = 30
+    fig.y_label = 'Kg'
+    fig.x_label = 'Days'
+    fig.set_x_limits(min_=0, max_=len(Y))
+    fig.set_y_limits(min_=70, max_=90)
+    fig.color_mode = 'byte'
+
+    fig.scatter(X, Y, lc=100, label='Weight')
+
+    return fig
+
+def eyesight(data):
+    def handle(day):
+        try:
+            return data_dict[day]['morning']['eye']['left']
+        except:
+            return 0
+
+    left = list(map(handle, data_dict.keys()))
+    right = list(map(handle, data_dict.keys()))
+    X = range(len(data_dict.keys()))
+
+    fig = plotille.Figure()
+    fig.width = 80
+    fig.height = 30
+    fig.y_label = 'cm'
+    fig.x_label = 'Days'
+    fig.set_x_limits(min_=0, max_=len(data_dict.keys()))
+    fig.set_y_limits(min_=30, max_=60)
+    fig.color_mode = 'byte'
+
+    fig.scatter(X, left, lc=100, label='Left')
+    fig.scatter(X, right, lc=30, label='Right')
+
+    return fig
+
+with open(DATA_FILE) as data:
+    data_dict = json.loads(data.read())
+
+    print(weight(data).show())
+    print(eyesight(data).show(legend=True))
