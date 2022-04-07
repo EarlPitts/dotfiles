@@ -12,6 +12,7 @@ for_window [title="small_window"] move absolute position center
 for_window [title="bigger_window"] floating enable resize set 70 ppt 75 ppt
 for_window [title="bigger_window"] move absolute position center
 for_window [class="Sxiv"] floating enable
+for_window [class="matplotlib"] floating enable
 
 # Hiding borders
 default_border none
