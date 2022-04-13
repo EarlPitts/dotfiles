@@ -1,12 +1,20 @@
 #!/usr/bin/zsh
 
-pos_x=$(( $(xrandr | grep \* | head -n 1| cut -d' ' -f4  | cut -d'x' -f1) / 2 ))
-pos_y=$(( $(xrandr | grep \* | head -n 1| cut -d' ' -f4  | cut -d'x' -f2) / 2.5 ))
+# Get the output only once, as it's pretty slow
+xrandr_output=$(xrandr)
 
+pos_x=$(( $(echo $xrandr_output | grep \* | head -n 1| cut -d' ' -f4  | cut -d'x' -f1) / 2 ))
+pos_y=$(( $(echo $xrandr_output | grep \* | head -n 1| cut -d' ' -f4  | cut -d'x' -f2) / 2.5 ))
+
+if echo $xrandr_output | grep -q "DP-2 disconnected"; then
+    wallpaper="/home/$USER/.local/share/wallpapers/lockScreenSmall.jpg"
+else
+    wallpaper="/home/$USER/.local/share/wallpapers/lockScreen.jpg"
+fi
 
 i3lock -u -k -e \
     --time-str="%H:%M" --time-color=09050390 --time-size=45 \
     --date-str="%B %d, %A" --date-color=09050390 \
     --greeter-text="Hi, I'm a computer." --greeter-color=09050370 --greeter-pos="${pos_x}:${pos_y}" --greeter-size=40 \
-    -i ~/.local/share/wallpapers/lockScreen.jpg \
+    -i $wallpaper \
     --pass-media-keys
