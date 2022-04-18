@@ -1,20 +1,23 @@
 #!/usr/bin/zsh
 
-# Get the output only once, as it's pretty slow
-xrandr_output=$(xrandr)
+# TODO Maybe use something like bc for floats to make it posix compliant?
 
-pos_x=$(( $(echo $xrandr_output | grep \* | head -n 1| cut -d' ' -f4  | cut -d'x' -f1) / 2 ))
-pos_y=$(( $(echo $xrandr_output | grep \* | head -n 1| cut -d' ' -f4  | cut -d'x' -f2) / 2.5 ))
+resolution=$(xdpyinfo | grep dimensions | awk '{print $2}')
+height=$(echo "$resolution" | cut -d'x' -f2)
+width=$(echo "$resolution" | cut -d'x' -f1)
 
-if echo $xrandr_output | grep -q "DP-2 disconnected"; then
-    wallpaper="/home/$USER/.local/share/wallpapers/lockScreenSmall.jpg"
-else
+pos_x=$(( width / 2 ))
+pos_y=$(( height / 2.5 ))
+
+if [ "$resolution" = "1920x1080" ]; then
     wallpaper="/home/$USER/.local/share/wallpapers/lockScreen.jpg"
+else
+    wallpaper="/home/$USER/.local/share/wallpapers/lockScreenSmall.jpg"
 fi
 
 i3lock -u -k -e \
     --time-str="%H:%M" --time-color=09050390 --time-size=45 \
     --date-str="%B %d, %A" --date-color=09050390 \
     --greeter-text="Hi, I'm a computer." --greeter-color=09050370 --greeter-pos="${pos_x}:${pos_y}" --greeter-size=40 \
-    -i $wallpaper \
+    -i "$wallpaper" \
     --pass-media-keys
