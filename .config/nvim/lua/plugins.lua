@@ -14,8 +14,8 @@ return require('packer').startup(function()
     -- use 'editorconfig/editorconfig-vim'
 
     --Writing
-    use 'junegunn/goyo.vim'
-    use 'junegunn/limelight.vim'
+    use {'junegunn/goyo', ft = {'md'}}
+    use {'junegunn/limelight.vim', ft = {'md'}}
 
     --Analysis
     use 'dense-analysis/ale'
@@ -47,6 +47,6 @@ return require('packer').startup(function()
     --Misc
     use 'christoomey/vim-tmux-navigator'
     use 'metakirby5/codi.vim'
-    use 'Olical/conjure'
+    use {'Olical/conjure', ft = {'scm'}}
     use 'tweekmonster/startuptime.vim'
 end)

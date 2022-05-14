@@ -1,5 +1,8 @@
 --Plugin Configs
 
+local map = vim.api.nvim_set_keymap
+local noremap = {noremap = true}
+
 --FZF
 vim.g.fzf_layout = {
     up = '~90%',
@@ -20,19 +23,21 @@ vim.g.UltiSnipsJumpForwardTrigger = '<tab>'
 vim.g.UltiSnipsSnippetDirectories = {'UltiSnips', 'my_snippets'}
 
 --NvimTree
---vim.api.nvim_set_keymap('n', '<C-n>', ':NvimTreeToggle<CR>', {noremap = true})
+map('n', '<C-n>', ':NvimTreeToggle<CR>', noremap)
+vim.g.nvim_tree_add_trailing = 1                                            --Append slash to folder names
+vim.g.nvim_tree_symlink_arrow = ' -> '
+vim.g.nvim_tree_show_icons = {}                                             --Disable icons
 require'nvim-tree'.setup {
-    -- vim.g.nvim_tree_ignore = {'.git', '__pycache__', '.pytest_cache'}
-    -- vim.g.nvim_tree_auto_close = 1                                              --Closes the tree when it's the last window
-    -- vim.g.nvim_tree_add_trailing = 1                                            --Append slash to folder names
-    -- vim.g.nvim_tree_symlink_arrow = ' -> '
-    -- vim.g.nvim_tree_show_icons = {}                                             --Disable icons
+    filters = {custom = {'.git', '__pycache__', '.pytest_cache'}},
 }
 
 --Ale
 vim.g.ale_set_highlights = 0        --Disable highlights
 
 --YouCompleteMe
+map('n', 'gd', ':YcmCompleter GoToDefinition<CR>', noremap)
+map('n', 'gr', ':YcmCompleter GoToReferences<CR>', noremap)
+map('n', 'K', ':YcmCompleter GetDoc<CR>', noremap)
 vim.g.ycm_show_diagnostics_ui = 0 --Disable Diagnostics
 vim.g.ycm_auto_trigger = 0
 vim.g.ycm_key_invoke_completion = '<C-n>'

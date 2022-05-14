@@ -12,13 +12,8 @@ map('n', '<F2>', ':UndotreeToggle<CR>', noremap)
 map('n', '<F12>', ':tabnew wiki/index.md<CR>:Tagbar<CR>', noremap)
 map('n', '<leader>j', ':%!python -m json.tool<CR>', noremap) --Format JSON
 map('', '<F1>', ':!./%<CR>', noremap)
-map('n', '<C-n>', ':NvimTreeToggle<CR>', noremap)
 map('n', '<leader>md', ':MarkdownPreview<CR>', noremap)
 map('n', '<leader>sr', ':ConjureEval (RESTART 1)<CR>', noremap) -- Restart Scheme
-
-map('n', 'gd', ':YcmCompleter GoToDefinition<CR>', noremap)
-map('n', 'gr', ':YcmCompleter GoToReferences<CR>', noremap)
-map('n', 'K', ':YcmCompleter GetDoc<CR>', noremap)
 
 --Make
 map('', '<F5>', ':make!<CR>', noremap)
