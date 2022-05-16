@@ -23,9 +23,8 @@ return require('packer').startup(function()
         run = './install.py --clang-completer',
         ft = {'python', 'c'}
     }
-    use 'sheerun/vim-polyglot'
     -- use 'neovim/nvim-lspconfig'
-    -- use 'nvim-treesitter/nvim-treesitter' --TODO TSUpdate is recommended after update
+    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
     --Notes
     use {'vimwiki/vimwiki', ft = {'markdown'}}
@@ -49,6 +48,7 @@ return require('packer').startup(function()
     --use 'hoob3rt/lualine.nvim'
     --use 'ryanoasis/vim-devicons'
     use {'vim-airline/vim-airline', requires = 'vim-airline/vim-airline-themes'}
+    -- use 'RRethy/nvim-base16'
 
     --Misc
     use 'christoomey/vim-tmux-navigator'

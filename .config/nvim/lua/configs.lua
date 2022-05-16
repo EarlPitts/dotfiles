@@ -3,6 +3,22 @@
 local map = vim.api.nvim_set_keymap
 local noremap = {noremap = true}
 
+--Treesitter
+require'nvim-treesitter.configs'.setup {
+    ensure_installed = {'c', 'bash', 'lua', 'python', 'scheme'},
+    highlight = {
+        enable = true,
+    },
+    indent = {
+        enable = true
+    },
+}
+
+vim.api.nvim_exec([[
+    set foldmethod=expr
+    set foldexpr=nvim_treesitter#foldexpr()
+]], true)
+
 --FZF
 vim.g.fzf_layout = {
     up = '~90%',
