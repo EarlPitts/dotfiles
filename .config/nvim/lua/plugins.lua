@@ -14,19 +14,25 @@ return require('packer').startup(function()
     -- use 'editorconfig/editorconfig-vim'
 
     --Writing
-    use {'junegunn/goyo', ft = {'md'}}
-    use {'junegunn/limelight.vim', ft = {'md'}}
+    use {'junegunn/goyo.vim', ft = {'markdown'}}
+    use {'junegunn/limelight.vim', ft = {'markdown'}}
 
     --Analysis
-    use 'dense-analysis/ale'
-    use {'Valloric/YouCompleteMe', run = './install.py --clang-completer'}
+    use {'dense-analysis/ale', ft = {'python', 'bash', 'sh', 'zsh', 'c', 'tex'}}
+    use {'Valloric/YouCompleteMe', 
+        run = './install.py --clang-completer',
+        ft = {'python', 'c'}
+    }
     use 'sheerun/vim-polyglot'
     -- use 'neovim/nvim-lspconfig'
     -- use 'nvim-treesitter/nvim-treesitter' --TODO TSUpdate is recommended after update
 
     --Notes
-    use 'vimwiki/vimwiki'
-    use { 'iamcco/markdown-preview.nvim', run = function() vim.fn["mkdp#util#install"]() end}
+    use {'vimwiki/vimwiki', ft = {'markdown'}}
+    use { 'iamcco/markdown-preview.nvim', 
+        run = function() vim.fn["mkdp#util#install"]() end,
+        ft = {'markdown'}
+    }
 
     --Snippets
     use 'SirVer/ultisnips'
@@ -46,7 +52,7 @@ return require('packer').startup(function()
 
     --Misc
     use 'christoomey/vim-tmux-navigator'
-    use 'metakirby5/codi.vim'
-    use {'Olical/conjure', ft = {'scm'}}
+    use 'metakirby5/codi.vim' -- TODO ft python, codi zsh func
+    use {'Olical/conjure', ft = {'scheme'}}
     use 'tweekmonster/startuptime.vim'
 end)
