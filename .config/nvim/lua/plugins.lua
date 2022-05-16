@@ -6,6 +6,7 @@ return require('packer').startup(function()
     use 'junegunn/fzf.vim'
     use 'kyazdani42/nvim-tree.lua'
     use 'majutsushi/tagbar'
+    use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}}
 
     --Editing
     use 'tpope/vim-commentary'
@@ -45,9 +46,9 @@ return require('packer').startup(function()
 
     --Looks
     use 'chriskempson/base16-vim'
-    --use 'hoob3rt/lualine.nvim'
-    --use 'ryanoasis/vim-devicons'
-    use {'vim-airline/vim-airline', requires = 'vim-airline/vim-airline-themes'}
+    use 'hoob3rt/lualine.nvim'
+    -- use 'ryanoasis/vim-devicons'
+    -- use {'vim-airline/vim-airline', requires = 'vim-airline/vim-airline-themes'}
     -- use 'RRethy/nvim-base16'
 
     --Misc

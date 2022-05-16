@@ -5,7 +5,7 @@ local noremap = {noremap = true}
 
 --Treesitter
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {'c', 'bash', 'lua', 'python', 'scheme'},
+    ensure_installed = {'c', 'bash', 'lua', 'python', 'scheme', 'comment'},
     highlight = {
         enable = true,
     },
@@ -18,6 +18,14 @@ vim.api.nvim_exec([[
     set foldmethod=expr
     set foldexpr=nvim_treesitter#foldexpr()
 ]], true)
+
+--Lualine
+require('lualine').setup {
+  options = {
+    icons_enabled = false,
+    theme = 'seoul256',
+  }
+}
 
 --FZF
 vim.g.fzf_layout = {
@@ -85,9 +93,6 @@ vim.g.tagbar_type_vimwiki = {
     ctagsargs = 'markdown',
 }
 --vim.g.vimwiki_folding = 'list'
-
---Airline
-vim.g.airline_powerline_fonts = 1
 
 --Markdown Preview
 vim.g.mkdp_command_for_global = 1       --Make it available for all formats

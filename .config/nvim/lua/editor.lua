@@ -26,7 +26,8 @@ set.cursorlineopt = 'line'                  -- Don't underline line number
 set.number = true                           -- Show line numbers
 set.relativenumber = true                   -- Relative number
 set.title = true                            -- TODO
-set.shortmess = 'I'                         -- Turn off intro message
+set.shortmess = set.shortmess + 'I'         -- Turn off intro message
+set.showcmd = false
 
 --Folding
 set.foldmethod = 'indent'                   -- Fold based on indent level
@@ -36,7 +37,7 @@ set.foldlevelstart = 5                      -- Open most folds by default
 --Colors
 vim.g.base16colorspace = 256
 vim.cmd 'set t_Co=256'
-vim.cmd 'colorscheme base16-eighties'
+vim.cmd 'colorscheme base16-tomorrow-night-eighties'
 
 --Misc
 set.clipboard = 'unnamed'                   -- System clipboard TODO
