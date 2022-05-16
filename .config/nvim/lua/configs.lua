@@ -82,6 +82,12 @@ vim.g.syntastic_auto_loc_list = 2
 vim.g.syntastic_check_on_open = 1
 vim.g.syntastic_check_on_wq = 0
 
+--Diffview
+local cb = require'diffview.config'.diffview_callback
+require'diffview'.setup {
+    use_icons = false
+}
+
 --Conjure
 vim.g['conjure#filetype#scheme'] = 'conjure.client.guile.socket'
 vim.g['conjure#client#guile#socket#pipename'] = "/tmp/.guile-socket"

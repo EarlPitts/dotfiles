@@ -18,7 +18,7 @@ return require('packer').startup(function()
     use {'junegunn/limelight.vim', ft = {'markdown'}}
 
     --Analysis
-    use {'dense-analysis/ale', ft = {'python', 'bash', 'sh', 'zsh', 'c', 'tex'}}
+    use {'dense-analysis/ale', ft = {'python', 'bash', 'sh', 'zsh', 'c', 'tex', 'lua'}}
     use {'Valloric/YouCompleteMe', 
         run = './install.py --clang-completer',
         ft = {'python', 'c'}
@@ -29,7 +29,7 @@ return require('packer').startup(function()
 
     --Notes
     use {'vimwiki/vimwiki', ft = {'markdown'}}
-    use { 'iamcco/markdown-preview.nvim', 
+    use {'iamcco/markdown-preview.nvim', 
         run = function() vim.fn["mkdp#util#install"]() end,
         ft = {'markdown'}
     }
@@ -38,16 +38,16 @@ return require('packer').startup(function()
     use 'SirVer/ultisnips'
     use 'honza/vim-snippets'
 
-    --Git
+    --Git TODO load these only if in git repo
     use 'tpope/vim-fugitive'
     use 'airblade/vim-gitgutter'
     use 'tpope/vim-rhubarb'
-    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+    use {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
 
     --Looks
     use 'chriskempson/base16-vim'
-    -- 'hoob3rt/lualine.nvim';
-    --'ryanoasis/vim-devicons';
+    --use 'hoob3rt/lualine.nvim'
+    --use 'ryanoasis/vim-devicons'
     use {'vim-airline/vim-airline', requires = 'vim-airline/vim-airline-themes'}
 
     --Misc
