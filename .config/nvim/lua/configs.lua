@@ -1,11 +1,11 @@
---Plugin Configs
+-- Plugin Configs
 
 local map = vim.api.nvim_set_keymap
 local noremap = {noremap = true}
 
---Treesitter
+-- Treesitter
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {'c', 'bash', 'lua', 'python', 'scheme', 'comment'},
+    ensure_installed = {'c', 'bash', 'lua', 'python', 'scheme', 'comment', 'make'},
     highlight = {
         enable = true,
     },
@@ -19,7 +19,7 @@ vim.api.nvim_exec([[
     set foldexpr=nvim_treesitter#foldexpr()
 ]], true)
 
---Lualine
+-- Lualine
 require('lualine').setup {
   options = {
     icons_enabled = false,
@@ -27,26 +27,30 @@ require('lualine').setup {
   }
 }
 
---FZF
-vim.g.fzf_layout = {
-    up = '~90%',
-    window = { 
-        width = 0.8,
-        height = 0.8,
-        yoffset = 0.5,
-        xoffset = 0.5,
-        highlight = 'Todo',
-        border = 'sharp' 
+-- Telescope
+require('telescope').setup{
+    defaults = {
+        mappings = {
+            i = {
+                ["<esc>"] = require('telescope.actions').close,
+            },
+        }
+    },
+    pickers = {
+        git_files = {
+            show_untracked = false,
+            follow = true -- TODO seems to have no effect
+        }
     }
 }
 
---UltiSnips
+-- UltiSnips
 vim.g.UltiSnipsExpandTrigger = '<tab>'
 vim.g.UltiSnipsJumpForwardTrigger = '<tab>'
 --let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 vim.g.UltiSnipsSnippetDirectories = {'UltiSnips', 'my_snippets'}
 
---NvimTree
+-- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>', noremap)
 vim.g.nvim_tree_add_trailing = 1                                            --Append slash to folder names
 vim.g.nvim_tree_symlink_arrow = ' -> '
@@ -55,10 +59,10 @@ require'nvim-tree'.setup {
     filters = {custom = {'.git', '__pycache__', '.pytest_cache'}},
 }
 
---Ale
+-- Ale
 vim.g.ale_set_highlights = 0        --Disable highlights
 
---YouCompleteMe
+-- YouCompleteMe
 map('n', 'gd', ':YcmCompleter GoToDefinition<CR>', noremap)
 map('n', 'gr', ':YcmCompleter GoToReferences<CR>', noremap)
 map('n', 'K', ':YcmCompleter GetDoc<CR>', noremap)
@@ -69,7 +73,7 @@ vim.g.ycm_autoclose_preview_window_after_insertion = 1
 vim.g.ycm_key_list_select_completion = '[]'
 vim.g.ycm_key_list_previous_completion = '[]'
 
---VimWiki
+-- VimWiki
 vim.g.vimwiki_list = {{
         path = '~/Personal/Wiki',
         template_path = '~/Personal/Notes/templates/',
@@ -94,21 +98,21 @@ vim.g.tagbar_type_vimwiki = {
 }
 --vim.g.vimwiki_folding = 'list'
 
---Markdown Preview
+-- Markdown Preview
 vim.g.mkdp_command_for_global = 1       --Make it available for all formats
 
---Syntastic
+-- Syntastic
 vim.g.syntastic_always_populate_loc_list = 1
 vim.g.syntastic_auto_loc_list = 2
 vim.g.syntastic_check_on_open = 1
 vim.g.syntastic_check_on_wq = 0
 
---Diffview
+-- Diffview
 local cb = require'diffview.config'.diffview_callback
 require'diffview'.setup {
     use_icons = false
 }
 
---Conjure
+-- Conjure
 vim.g['conjure#filetype#scheme'] = 'conjure.client.guile.socket'
 vim.g['conjure#client#guile#socket#pipename'] = "/tmp/.guile-socket"

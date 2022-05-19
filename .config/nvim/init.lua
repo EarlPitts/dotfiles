@@ -1,3 +1,7 @@
+--Plugins
+require 'plugins'
+require 'configs'
+
 --Editor config
 require 'editor'
 
@@ -6,7 +10,3 @@ require 'keymaps'
 
 --Autocmds
 require 'autocmd'
-
---Plugins
-require 'plugins'
-require 'configs'

@@ -2,23 +2,22 @@ return require('packer').startup(function()
     -- Packer can manage itself
     use 'wbthomason/packer.nvim'
 
-    --Navigation
-    use 'junegunn/fzf.vim'
+    -- Navigation
     use 'kyazdani42/nvim-tree.lua'
     use 'majutsushi/tagbar'
-    use {'nvim-telescope/telescope.nvim', requires = {'nvim-lua/plenary.nvim'}}
+    use 'nvim-telescope/telescope.nvim'
 
-    --Editing
+    -- Editing
     use 'tpope/vim-commentary'
     use 'mbbill/undotree'
     use 'tpope/vim-surround'
     -- use 'editorconfig/editorconfig-vim'
 
-    --Writing
-    use {'junegunn/goyo.vim', ft = {'markdown'}}
-    use {'junegunn/limelight.vim', ft = {'markdown'}}
+    -- Writing
+    use {'junegunn/goyo.vim', ft = 'markdown'}
+    use {'junegunn/limelight.vim', ft = 'markdown'}
 
-    --Analysis
+    -- Analysis
     use {'dense-analysis/ale', ft = {'python', 'bash', 'sh', 'zsh', 'c', 'tex', 'lua'}}
     use {'Valloric/YouCompleteMe', 
         run = './install.py --clang-completer',
@@ -26,34 +25,36 @@ return require('packer').startup(function()
     }
     -- use 'neovim/nvim-lspconfig'
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+    use 'nvim-treesitter/playground'
 
-    --Notes
-    use {'vimwiki/vimwiki', ft = {'markdown'}}
+    -- Notes
+    use {'vimwiki/vimwiki', ft = 'markdown'}
     use {'iamcco/markdown-preview.nvim', 
         run = function() vim.fn["mkdp#util#install"]() end,
         ft = {'markdown'}
     }
 
-    --Snippets
+    -- Snippets
     use 'SirVer/ultisnips'
     use 'honza/vim-snippets'
 
-    --Git TODO load these only if in git repo
+    -- Git TODO load these only if in git repo
     use 'tpope/vim-fugitive'
     use 'airblade/vim-gitgutter'
     use 'tpope/vim-rhubarb'
-    use {'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim'}
+    use 'sindrets/diffview.nvim'
 
-    --Looks
+    -- Looks
     use 'chriskempson/base16-vim'
     use 'hoob3rt/lualine.nvim'
     -- use 'ryanoasis/vim-devicons'
     -- use {'vim-airline/vim-airline', requires = 'vim-airline/vim-airline-themes'}
     -- use 'RRethy/nvim-base16'
 
-    --Misc
+    -- Misc
     use 'christoomey/vim-tmux-navigator'
     use 'metakirby5/codi.vim' -- TODO ft python, codi zsh func
-    use {'Olical/conjure', ft = {'scheme'}}
+    use {'Olical/conjure', ft = 'scheme'}
     use 'tweekmonster/startuptime.vim'
+    use 'nvim-lua/plenary.nvim'
 end)
