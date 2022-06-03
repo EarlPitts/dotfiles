@@ -5,7 +5,7 @@ local noremap = {noremap = true}
 
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {'c', 'bash', 'lua', 'python', 'scheme', 'comment', 'make'},
+    ensure_installed = {'c', 'bash', 'lua', 'python', 'scheme', 'comment', 'make', 'norg', 'haskell'},
     highlight = {
         enable = true,
     },
@@ -21,10 +21,10 @@ vim.api.nvim_exec([[
 
 -- Lualine
 require('lualine').setup {
-  options = {
-    icons_enabled = false,
-    theme = 'seoul256',
-  }
+    options = {
+        icons_enabled = false,
+        theme = 'seoul256',
+    },
 }
 
 -- Telescope
@@ -52,11 +52,24 @@ vim.g.UltiSnipsSnippetDirectories = {'UltiSnips', 'my_snippets'}
 
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>', noremap)
-vim.g.nvim_tree_add_trailing = 1                                            --Append slash to folder names
-vim.g.nvim_tree_symlink_arrow = ' -> '
-vim.g.nvim_tree_show_icons = {}                                             --Disable icons
+vim.api.nvim_create_autocmd('BufEnter', {                                   -- Close nvim-tree is last buffer
+    command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
+    nested = true,
+})
 require'nvim-tree'.setup {
     filters = {custom = {'.git', '__pycache__', '.pytest_cache'}},
+    renderer = {
+        icons = {
+            symlink_arrow = ' -> ',
+            show = {
+                file = false,
+                folder = false,
+                folder_arrow = false,
+                git = false
+            }
+        },
+        add_trailing = true                                                 -- Append slash to folder names
+    }
 }
 
 -- Ale
@@ -75,17 +88,17 @@ vim.g.ycm_key_list_previous_completion = '[]'
 
 -- VimWiki
 vim.g.vimwiki_list = {{
-        path = '~/Personal/Wiki',
-        template_path = '~/Personal/Notes/templates/',
-        template_default = 'default',
-        index = 'index',
-        syntax = 'markdown',
-        ext = '.md',
-        path_html = '~/notes/',
-        custom_wiki2html = '~/.config/nvim/md2html.sh',
-        links_space_char = '-',
-        template_ext = '.tpl'
---    \ 'auto_export': 1}]
+    path = '~/Personal/Wiki',
+    template_path = '~/Personal/Notes/templates/',
+    template_default = 'default',
+    index = 'index',
+    syntax = 'markdown',
+    ext = '.md',
+    path_html = '~/notes/',
+    custom_wiki2html = '~/.config/nvim/md2html.sh',
+    links_space_char = '-',
+    template_ext = '.tpl'
+    --    \ 'auto_export': 1}]
 }}
 vim.g.tagbar_type_vimwiki = {
     ctagstype ='vimwiki',
@@ -98,8 +111,15 @@ vim.g.tagbar_type_vimwiki = {
 }
 --vim.g.vimwiki_folding = 'list'
 
+-- Neorg
+require('neorg').setup {
+    load = {
+        ["core.defaults"] = {}
+    }
+}
+
 -- Markdown Preview
-vim.g.mkdp_command_for_global = 1       --Make it available for all formats
+vim.g.mkdp_command_for_global = 1       -- Make it available for all formats
 
 -- Syntastic
 vim.g.syntastic_always_populate_loc_list = 1

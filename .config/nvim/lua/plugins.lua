@@ -33,6 +33,7 @@ return require('packer').startup(function()
         run = function() vim.fn["mkdp#util#install"]() end,
         ft = {'markdown'}
     }
+    use 'nvim-neorg/neorg'
 
     -- Snippets
     use 'SirVer/ultisnips'
