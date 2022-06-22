@@ -1,0 +1,31 @@
+#!/bin/bash
+
+uuids=(
+    6004-E538
+    5EC5-D544
+    9AF4-A5C3
+    9636-D152
+    D280-DDD6
+    )
+
+backup_folder="/mnt/Backup/"
+
+source /root/.secrets
+
+for uuid in "${uuids[@]}"; do 
+    if blkid -U "$uuid" > /dev/null; then
+        echo "Found device with UUID: $uuid"
+
+        # Create temporary folder and mount on it
+        temp_folder=$(mktemp -d)
+        echo "Mounting on $temp_folder"
+        mount -U "$uuid" "$temp_folder"
+
+        # Create new backup
+        echo "Creating backup..."
+        borg create "${backup_folder}/${uuid}::$(date +%m-%d)" "${temp_folder}"
+
+        echo "Backup created, unmounting..."
+        umount "$temp_folder" && rm -r "$temp_folder"
+    fi
+done
