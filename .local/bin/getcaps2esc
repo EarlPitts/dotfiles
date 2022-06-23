@@ -1,0 +1,26 @@
+#!/bin/sh
+
+[ $(whoami) != root ] && echo "Run as root!" && exit 1
+
+pacman -S interception-caps2esc
+
+cat << EOF > /etc/systemd/system/udevmon.service
+[Unit]
+Description=udevmon service for caps2esc
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/udevmon
+
+[Install]
+WantedBy=default.target
+EOF
+
+cat << EOF > /etc/interception/udevmon.d/caps2esc.yaml
+- JOB: intercept -g \$DEVNODE | caps2esc | uinput -d \$DEVNODE
+  DEVICE:
+    EVENTS:
+      EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
+EOF
+
+systemctl enable --now udevmon.service
