@@ -8,7 +8,7 @@ return require('packer').startup(function()
     use 'nvim-telescope/telescope.nvim'
 
     -- Editing
-    use 'tpope/vim-commentary'
+    use 'numToStr/Comment.nvim'
     use 'mbbill/undotree'
     use 'tpope/vim-surround'
     -- use 'editorconfig/editorconfig-vim'
@@ -18,12 +18,12 @@ return require('packer').startup(function()
     use {'junegunn/limelight.vim', ft = 'markdown'}
 
     -- Analysis
-    use {'dense-analysis/ale', ft = {'python', 'bash', 'sh', 'zsh', 'c', 'tex', 'lua'}}
-    use {'Valloric/YouCompleteMe', 
-        run = './install.py --clang-completer',
-        ft = {'python', 'c'}
-    }
-    -- use 'neovim/nvim-lspconfig'
+    use {'dense-analysis/ale', ft = {'python', 'bash', 'sh', 'zsh', 'c', 'tex', 'lua', 'haskell'}}
+    -- use {'Valloric/YouCompleteMe', 
+    --     run = './install.py --clang-completer',
+    --     ft = {'python', 'c'}
+    -- }
+    use 'neovim/nvim-lspconfig'
     use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
     use 'nvim-treesitter/playground'
 
@@ -58,4 +58,5 @@ return require('packer').startup(function()
     use {'Olical/conjure', ft = 'scheme'}
     use 'tweekmonster/startuptime.vim'
     use 'nvim-lua/plenary.nvim'
+    use 'lewis6991/impatient.nvim'
 end)

@@ -3,6 +3,9 @@
 local map = vim.api.nvim_set_keymap
 local noremap = {noremap = true}
 
+-- Lower startup time
+require 'impatient'
+
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
     ensure_installed = {'c', 'bash', 'lua', 'python', 'scheme', 'comment', 'make', 'norg', 'haskell'},
@@ -18,6 +21,9 @@ vim.api.nvim_exec([[
     set foldmethod=expr
     set foldexpr=nvim_treesitter#foldexpr()
 ]], true)
+
+-- Comment.nvim
+require('Comment').setup()
 
 -- Lualine
 require('lualine').setup {
@@ -73,13 +79,13 @@ require'nvim-tree'.setup {
 }
 
 -- Ale
-vim.g.ale_set_highlights = 0        --Disable highlights
+vim.g.ale_set_highlights = 0        -- Disable highlights
 
 -- YouCompleteMe
 map('n', 'gd', ':YcmCompleter GoToDefinition<CR>', noremap)
 map('n', 'gr', ':YcmCompleter GoToReferences<CR>', noremap)
 map('n', 'K', ':YcmCompleter GetDoc<CR>', noremap)
-vim.g.ycm_show_diagnostics_ui = 0 --Disable Diagnostics
+vim.g.ycm_show_diagnostics_ui = 0 -- Disable Diagnostics
 vim.g.ycm_auto_trigger = 0
 vim.g.ycm_key_invoke_completion = '<C-n>'
 vim.g.ycm_autoclose_preview_window_after_insertion = 1
