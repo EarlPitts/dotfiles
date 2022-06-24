@@ -16,6 +16,13 @@ dislocker() {
         sudo mount -o loop /run/media/dislocker-file /mnt
 }
 
+update() {
+    # Update git submodules (zsh and tmux plugins)
+    git submodule update --recursive --remote
+    # Update neovim plugins
+    nvim --headless +PackerSync +qa 
+}
+
 tunnel() {
     echo -n "Local port: " && read local_port
     echo -n "Target port: " && read target_port
