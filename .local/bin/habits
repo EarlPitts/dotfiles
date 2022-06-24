@@ -1,10 +1,11 @@
 #!/usr/bin/python
 
+import os
 import json
 from datetime import datetime
 
-HABITS_FILE = '/home/obabo/Personal/Statistics/habits.json'
-COMMITMENTS = '/home/obabo/Personal/Areas/Commitments.md'
+HABITS_FILE = f'{os.environ["PERSONAL"]}/Statistics/habits.json'
+COMMITMENTS = f'{os.environ["AREAS"]}/Commitments.md'
 
 def load(filename):
     """Loads the data from the JSON file."""
