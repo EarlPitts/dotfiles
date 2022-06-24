@@ -1,6 +1,7 @@
 --Plugins
 require 'plugins'
 require 'configs'
+require 'lsp'
 
 --Editor config
 require 'editor'
