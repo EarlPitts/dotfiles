@@ -1,0 +1,9 @@
+#!/bin/sh
+
+sounds="snow\nrain\nfire"
+
+sound=$(echo -e $sounds | fzf)
+
+[ "$sound" = rain ] && mpv --no-resume-playback --no-video https://www.youtube.com/watch?v=mPZkdNFkNps
+[ "$sound" = snow ] && mpv --no-resume-playback --no-video https://www.youtube.com/watch?v=sGkh1W5cbH4
+[ "$sound" = fire ] && mpv --no-resume-playback --no-video https://www.youtube.com/watch?v=jK3cMcH9e_c
