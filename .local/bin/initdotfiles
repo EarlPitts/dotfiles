@@ -5,6 +5,6 @@ sudo pacman -S --needed git
 cd || exit 1
 
 git init
-git remote add origin get@ben:dotfiles.git
-git git pull origin master
+git remote add origin git@ben:dotfiles.git
+git pull origin master
 git config --local status.showUntrackedFiles no
