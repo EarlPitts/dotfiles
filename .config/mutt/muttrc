@@ -1,0 +1,27 @@
+set my_name = "Bendeguz Seres"
+
+# SMTP
+set realname='Bendeguz Seres'
+set from="grafitpor@gmail.com"
+set sendmail="/usr/bin/msmtp"
+
+# IMAP
+set folder = "~/.mail/gmail/"
+set spoolfile = "+INBOX"
+set record = "+[Gmail]/Sent Mail"
+set trash = "+[Gmail]/Trash"
+set postponed = "+[Gmail]/Drafts"
+
+mailboxes =INBOX =[Gmail]/Drafts =[Gmail]/Trash ="[Gmail]/Sent Mail"
+
+unset imap_passive
+set imap_keepalive = 300
+
+macro index G "!mbsync -a^M" "Update through mbsync"
+
+# HTML
+set mailcap_path   = ~/.config/mutt/mailcap
+auto_view text/html
+
+# Source
+source colors
