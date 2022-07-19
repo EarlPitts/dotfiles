@@ -82,15 +82,15 @@ require'nvim-tree'.setup {
 vim.g.ale_set_highlights = 0        -- Disable highlights
 
 -- YouCompleteMe
-map('n', 'gd', ':YcmCompleter GoToDefinition<CR>', noremap)
-map('n', 'gr', ':YcmCompleter GoToReferences<CR>', noremap)
-map('n', 'K', ':YcmCompleter GetDoc<CR>', noremap)
-vim.g.ycm_show_diagnostics_ui = 0 -- Disable Diagnostics
-vim.g.ycm_auto_trigger = 0
-vim.g.ycm_key_invoke_completion = '<C-n>'
-vim.g.ycm_autoclose_preview_window_after_insertion = 1
-vim.g.ycm_key_list_select_completion = '[]'
-vim.g.ycm_key_list_previous_completion = '[]'
+-- map('n', 'gd', ':YcmCompleter GoToDefinition<CR>', noremap)
+-- map('n', 'gr', ':YcmCompleter GoToReferences<CR>', noremap)
+-- map('n', 'K', ':YcmCompleter GetDoc<CR>', noremap)
+-- vim.g.ycm_show_diagnostics_ui = 0 -- Disable Diagnostics
+-- vim.g.ycm_auto_trigger = 0
+-- vim.g.ycm_key_invoke_completion = '<C-n>'
+-- vim.g.ycm_autoclose_preview_window_after_insertion = 1
+-- vim.g.ycm_key_list_select_completion = '[]'
+-- vim.g.ycm_key_list_previous_completion = '[]'
 
 -- VimWiki
 vim.g.vimwiki_list = {{
@@ -142,3 +142,40 @@ require'diffview'.setup {
 -- Conjure
 vim.g['conjure#filetype#scheme'] = 'conjure.client.guile.socket'
 vim.g['conjure#client#guile#socket#pipename'] = "/tmp/.guile-socket"
+
+-- Tagbar Haskell
+vim.g.tagbar_type_haskell = {
+    ctagsbin = 'hasktags',
+    ctagsargs = '-x -c -o-',
+    kinds = {
+        'm:modules:0:1',
+        'd:data: 0:1',
+        'd_gadt: data gadt:0:1',
+        't:type names:0:1',
+        'nt:new types:0:1',
+        'c:classes:0:1',
+        'cons:constructors:1:1',
+        'c_gadt:constructor gadt:1:1',
+        'c_a:constructor accessors:1:1',
+        'ft:function types:1:1',
+        'fi:function implementations:0:1',
+        'i:instance:0:1',
+        'o:others:0:1'
+    },
+    sro = '.',
+    kind2scope = {
+        m = 'module',
+        c = 'class',
+        d = 'data',
+        t = 'type',
+        i = 'instance'
+    },
+    scope2kind = {
+        module   = 'm',
+        class    = 'c',
+        data     = 'd',
+        type     = 't',
+        instance = 'i'
+    }
+}
+
