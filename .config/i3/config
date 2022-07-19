@@ -1,6 +1,9 @@
 set $mod Mod4
 floating_modifier $mod
 
+set $big_window i3-sensible-terminal -t bigger_window sh -c "source ~/.config/zsh/base16.zsh && 
+set $small_window i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh &&
+
 font pango:Fira Code 11
 
 # Open in specific workspace
@@ -48,14 +51,21 @@ bindsym $mod+Home exec remote-viewer -f spice://192.168.0.20:5900
 
 bindsym $mod+F10 exec ~/.config/rofi/scripts/bluetooth
 
-bindsym $mod+End exec i3-sensible-terminal -t bigger_window sh -c "source ~/.config/zsh/base16.zsh && curl wttr.in && read"
+bindsym $mod+End exec $big_window curl wttr.in && read"
 
 ## Productivity
 
 ### Calendar
-bindsym $mod+b exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && calcurse"
+bindsym $mod+b exec $small_window calcurse"
 
-bindsym $mod+F1 exec i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh && pulsemixer"
+### Mail
+bindsym $mod+m exec $big_window neomutt"
+
+### RSS Reader
+#bindsym Shift+$mod+n exec i3-sensible-terminal -t bigger_window sh -c "source ~/.config/zsh/base16.zsh && newsboat"
+bindsym Shift+$mod+n exec $big_window newsboat"
+
+bindsym $mod+F1 exec $small_window pulsemixer"
 
 ### Quick Note
 bindsym $mod+n exec ~/.config/rofi/scripts/note
@@ -230,7 +240,7 @@ bar {
         }
 }
 
-bindsym $mod+m bar mode toggle
+bindsym Shift+$mod+m bar mode toggle
 
 # Set Background
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.local/share/wallpapers/background.jpg
