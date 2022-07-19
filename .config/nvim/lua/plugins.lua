@@ -18,7 +18,7 @@ return require('packer').startup(function()
     use {'junegunn/limelight.vim', ft = 'markdown'}
 
     -- Analysis
-    use {'dense-analysis/ale', ft = {'python', 'bash', 'sh', 'zsh', 'c', 'tex', 'lua', 'haskell'}}
+    use {'dense-analysis/ale', ft = {'bash', 'sh', 'zsh', 'c', 'tex', 'lua'}}
     -- use {'Valloric/YouCompleteMe', 
     --     run = './install.py --clang-completer',
     --     ft = {'python', 'c'}
