@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+
+killall mpv
+
+file="$(find "$1" -type f | shuf | head -n1)"
+
+mpv --alpha=yes --loop --no-audio "$file"
