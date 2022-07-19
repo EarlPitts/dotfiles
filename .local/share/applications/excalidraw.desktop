@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Excalidraw
-Exec=firefox --new-window https://excalidraw.com/
-Terminal=false
-Type=Application

@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=CyberChef
-Exec=firefox --new-window https://gchq.github.io/CyberChef/
-Terminal=false
-Type=Application

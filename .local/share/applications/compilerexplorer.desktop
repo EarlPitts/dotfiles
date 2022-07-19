@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Compiler Explorer
-Exec=firefox --new-window https://godbolt.org/
-Terminal=false
-Type=Application

@@ -1,5 +1,0 @@
-[Desktop Entry]
-Name=Octave Online
-Exec=firefox --new-window https://octave-online.net/
-Terminal=false
-Type=Application
