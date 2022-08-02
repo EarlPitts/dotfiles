@@ -12,7 +12,7 @@ set record = "+[Gmail]/Sent Mail"
 set trash = "+[Gmail]/Trash"
 set postponed = "+[Gmail]/Drafts"
 
-mailboxes =INBOX =[Gmail]/Drafts =[Gmail]/Trash ="[Gmail]/Sent Mail"
+mailboxes =INBOX =[Gmail]/Drafts =[Gmail]/Trash ="[Gmail]/Sent Mail" =[Gmail]/Spam
 
 unset imap_passive
 set imap_keepalive = 300
