@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# level <level> (<level> is 0-7, auto, disengaged, full-speed)
+echo level "$1" > /proc/acpi/ibm/fan
