@@ -1,0 +1,63 @@
+#!/usr/bin/guile \
+-e main -s
+!#
+
+(use-modules (srfi srfi-1))
+(use-modules (srfi srfi-19))
+(use-modules (json))
+
+(define FILE "/home/obabo/Personal/Statistics/didit.json")
+
+(define data
+  (json->scm (open-input-file FILE)))
+
+(define dates
+  (map (lambda (x) (string->date x "~Y-~m-~d"))
+       (vector->list data)))
+
+; Gets the difference of two dayes in days
+(define (delta date1 date2)
+  (let ((time1 (date->time-utc date1))
+        (time2 (date->time-utc date2)))
+    (/
+      (time-second (time-difference time1 time2))
+      60 60 24)))
+
+; Gets today's date without the time
+(define (current-day)
+  (let ((today (current-date)))
+    (make-date 0 0 0 0
+               (date-day today)
+               (date-month today)
+               (date-year today)
+               7200)))
+
+(define (streak-current dates)
+  (let ((today (current-day)))
+    (delta today (car (reverse dates)))))
+
+; Creates day pairs
+(define (take-tuples l)
+  (cond ((null? l) '())
+        ((null? (cdr l)) '())
+        (else (cons (cons (car l) (cadr l)) (take-tuples (cdr l))))))
+
+(define (streak-longest dates)
+  (let ((date-tups (take-tuples (reverse dates)))
+        (curr (streak-current dates)))
+    (reduce
+      max
+      0
+      (cons curr ; Add the current streak to the list
+            (map
+              (lambda (tup) (delta (car tup) (cdr tup)))
+              date-tups)))))
+
+(define (main args)
+  (begin
+    (display "Current streak: ")
+    (display (streak-current dates))
+    (newline)
+    (display "Longest streak: ")
+    (display (streak-longest dates))
+    (newline)))
