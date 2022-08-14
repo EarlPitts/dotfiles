@@ -4,7 +4,7 @@ floating_modifier $mod
 set $big_window i3-sensible-terminal -t bigger_window sh -c "source ~/.config/zsh/base16.zsh && 
 set $small_window i3-sensible-terminal -t small_window sh -c "source ~/.config/zsh/base16.zsh &&
 
-font pango:Fira Code 11
+font pango:Fira Code 10
 
 # Open in specific workspace
 for_window [class="Spotify"] move to workspace $ws10
