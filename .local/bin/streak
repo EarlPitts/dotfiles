@@ -32,32 +32,51 @@
                (date-year today)
                7200)))
 
-(define (streak-current dates)
-  (let ((today (current-day)))
-    (delta today (car (reverse dates)))))
-
 ; Creates day pairs
 (define (take-tuples l)
   (cond ((null? l) '())
         ((null? (cdr l)) '())
         (else (cons (cons (car l) (cadr l)) (take-tuples (cdr l))))))
 
+(define (streaks dates)
+  (let ((date-tups
+          (take-tuples (cons (current-day) (reverse dates)))))
+    (map
+      (lambda (tup) (delta (car tup) (cdr tup)))
+      date-tups)))
+
+    
+(define (streak-current dates)
+  (car (streaks dates)))
+
 (define (streak-longest dates)
-  (let ((date-tups (take-tuples (reverse dates)))
-        (curr (streak-current dates)))
-    (reduce
-      max
-      0
-      (cons curr ; Add the current streak to the list
-            (map
-              (lambda (tup) (delta (car tup) (cdr tup)))
-              date-tups)))))
+    (reduce max 0 (streaks dates)))
+
+(define (streak-average dates)
+  (let ((total (reduce + 0 (streaks dates)))
+        (count (length (streaks dates))))
+    (round-two (exact->inexact (/ total count)))))
+
+(define (average-weekly dates)
+  (round-two (/ 7 (streak-average dates))))
+
+(define (average-monthly dates)
+  (round-two (/ 31 (streak-average dates))))
+
+; I'm sure there is a way to do this, but I just couldn't find
+; it in the docs... TODO
+(define (round-two n)
+  (/ (round (* n 100)) 100))
 
 (define (main args)
   (begin
     (display "Current streak: ")
-    (display (streak-current dates))
-    (newline)
+    (display (streak-current dates)) (newline)
     (display "Longest streak: ")
-    (display (streak-longest dates))
-    (newline)))
+    (display (streak-longest dates)) (newline)
+    (display "Average sreak: ")
+    (display (streak-average dates)) (newline)
+    (display "Weekly average: ")
+    (display (average-weekly dates)) (newline)
+    (display "Monthly average: ")
+    (display (average-monthly dates)) (newline)))
