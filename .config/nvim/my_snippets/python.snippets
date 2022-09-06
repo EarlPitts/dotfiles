@@ -14,14 +14,14 @@ snippet csv
 import csv
 
 with open(filename, 'r') as f:
-    reader = csv.reader(f)
+	reader = csv.reader(f)
 endsnippet
 
 snippet json
 import json
 
 with open(filename, 'r') as f:
-    data = json.loads(f.read())
+	data = json.loads(f.read())
 
 print(json.dumps(self.data, indent=4, sort_keys=True)) # pp
 endsnippet
