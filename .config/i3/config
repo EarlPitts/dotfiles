@@ -113,6 +113,7 @@ bindsym $mod+d exec rofi -show combi
 bindsym Mod1+e exec i3-sensible-terminal sh -c "source ~/.config/zsh/base16.zsh && ranger"
 
 ## Password manager
+## TODO rofi-pass --dump-xresources
 bindsym $mod+Shift+p exec rofi-pass
 
 bindsym $mod+Return exec i3-sensible-terminal
