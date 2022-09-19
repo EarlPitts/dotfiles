@@ -45,6 +45,8 @@
       (lambda (tup) (delta (car tup) (cdr tup)))
       date-tups)))
 
+(define (last-ten dates)
+  (take (streaks dates) 10))
     
 (define (streak-current dates)
   (car (streaks dates)))
@@ -79,4 +81,6 @@
     (display "Weekly average: ")
     (display (average-weekly dates)) (newline)
     (display "Monthly average: ")
-    (display (average-monthly dates)) (newline)))
+    (display (average-monthly dates)) (newline)
+    (display "Last ten: ")
+    (display (last-ten dates)) (newline)))
