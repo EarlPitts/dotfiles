@@ -1,9 +1,5 @@
 local set = vim.opt
 
--- Experimental, filetype.lua TODO
-vim.g.do_filetype_lua = 1
-vim.g.did_load_filetypes = 0
-
 -- Indentation
 set.expandtab = true                        -- Use spaces instead of tabs
 set.shiftround = true                       -- Round indent to multiple of shiftwidth
