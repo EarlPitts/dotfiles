@@ -20,6 +20,7 @@ alias scheme='rlwrap -f "$XDG_DATA_HOME/mit_scheme_bindings.txt" scheme'
 alias guiles='guile --listen=/tmp/.guile-socket && rm /tmp/.guile-socket'
 alias diff='difft'
 alias todos='rg "TODO|XXX"'
+alias e='emacs -nw'
 
 # rsync
 alias cpr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1'
