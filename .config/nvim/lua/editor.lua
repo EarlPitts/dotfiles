@@ -42,4 +42,5 @@ vim.cmd 'colorscheme base16-tomorrow-night-eighties'
 
 -- Misc
 set.clipboard = 'unnamed'                   -- System clipboard TODO
+set.mouse = ''                              -- Disable mouse
 -- set.omnifunc = 'syntaxcomplete#Complete'    -- TODO what's this? :D
