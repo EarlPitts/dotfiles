@@ -15,13 +15,14 @@
   (map (lambda (x) (string->date x "~Y-~m-~d"))
        (vector->list data)))
 
-; Gets the difference of two dayes in days
+; Gets the difference of two days in days
+; TODO This is not correct because of the zone-offset value
 (define (delta date1 date2)
   (let ((time1 (date->time-utc date1))
         (time2 (date->time-utc date2)))
-    (/
-      (time-second (time-difference time1 time2))
-      60 60 24)))
+    (round                                          ; Rounding is needed because of the zone-offset
+      (/ (time-second (time-difference time1 time2))
+         60 60 24))))
 
 ; Gets today's date without the time
 (define (current-day)
