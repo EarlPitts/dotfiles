@@ -21,6 +21,9 @@ alias guiles='guile --listen=/tmp/.guile-socket && rm /tmp/.guile-socket'
 alias diff='difft'
 alias todos='rg "TODO|XXX"'
 alias e='emacs -nw'
+alias yta='yt-dlp -f "ba" -x --audio-format mp3'
+alias ghci='stack ghci'
+alias hv='stack exec nvim'
 
 # rsync
 alias cpr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1'
