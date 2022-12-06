@@ -101,6 +101,10 @@ bindsym XF86Display exec ~/.local/bin/screen
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 
+## Fan
+bindsym $mod+Prior exec ~/.local/bin/fan up
+bindsym $mod+Next exec ~/.local/bin/fan down
+
 ## Screenshot
 bindsym Shift+Print --release exec "~/.local/bin/screenshot select"
 bindsym Control+Print --release exec "~/.local/bin/screenshot note"

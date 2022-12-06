@@ -1,4 +1,18 @@
 #!/bin/sh
 
+curr_level=$(grep level: /proc/acpi/ibm/fan | cut -f3)
+
 # level <level> (<level> is 0-7, auto, disengaged, full-speed)
-echo level "$1" > /proc/acpi/ibm/fan
+if [ "$1" = "up" ]; then
+    echo level $(( curr_level + 1 )) > /proc/acpi/ibm/fan
+elif [ "$1" = "down" ]; then
+    if [ "$curr_level" = "auto" ]; then
+        echo level 0 > /proc/acpi/ibm/fan
+    elif [ "$curr_level" = "0" ]; then
+        exit
+    else
+        echo level $(( curr_level - 1 )) > /proc/acpi/ibm/fan
+    fi
+else
+    echo level "$1" > /proc/acpi/ibm/fan
+fi
