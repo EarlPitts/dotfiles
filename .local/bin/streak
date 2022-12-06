@@ -66,6 +66,9 @@
 (define (average-monthly dates)
   (round-two (/ 31 (streak-average dates))))
 
+(define (count dates)
+  (length dates))
+
 ; I'm sure there is a way to do this, but I just couldn't find
 ; it in the docs... TODO
 (define (round-two n)
@@ -84,4 +87,7 @@
     (display "Monthly average: ")
     (display (average-monthly dates)) (newline)
     (display "Last ten: ")
-    (display (last-ten dates)) (newline)))
+    (display (last-ten dates)) (newline))
+    (display (count dates))
+    (display " since ")
+    (display (date->string (car dates) "~Y-~m-~d")) (newline))
