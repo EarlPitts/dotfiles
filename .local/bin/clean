@@ -6,9 +6,14 @@ echo "deepscan.ds_store
     deepscan.backup
     deepscan.thumbs_db
     deepscan.tmp
+    journald.clean
     firefox.cache
     firefox.crash_reports
     firefox.vacuum
+    slack.cache
+    slack.cookies
+    slack.history
+    slack.vacuum
     system.desktop_entry
     system.cache
     system.clipboard
@@ -17,5 +22,5 @@ echo "deepscan.ds_store
     system.rotated_logs
     thumbnails.cache
     x11.debug_logs" | \
-xargs bleachbit --clean
+xargs sudo bleachbit --clean
 yay --sync --clean --noconfirm
