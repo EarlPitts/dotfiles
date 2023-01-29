@@ -1,9 +1,10 @@
 #!/bin/sh
 
-sounds="snow\nrain\nfire\nwind\nbinaural"
+sounds="snow\nrain\nfire\nwind\nbinaural\nlofi"
 
 sound=$(echo -e $sounds | fzf)
 
+[ "$sound" = lofi ] && mpv --no-resume-playback --no-video https://www.youtube.com/watch?v=jfKfPfyJRdk
 [ "$sound" = rain ] && mpv --no-resume-playback --no-video https://www.youtube.com/watch?v=mPZkdNFkNps
 [ "$sound" = snow ] && mpv --no-save-position-on-quit --no-resume-playback --no-video https://www.youtube.com/watch?v=sGkh1W5cbH4
 [ "$sound" = fire ] && mpv --no-save-position-on-quit --no-resume-playback --no-video https://www.youtube.com/watch?v=jK3cMcH9e_c
