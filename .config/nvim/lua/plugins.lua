@@ -33,7 +33,7 @@ return require('packer').startup(function()
         run = function() vim.fn["mkdp#util#install"]() end,
         ft = {'markdown'}
     }
-    use 'nvim-neorg/neorg'
+    -- use 'nvim-neorg/neorg'
 
     -- Snippets
     use 'SirVer/ultisnips'
@@ -56,6 +56,7 @@ return require('packer').startup(function()
     use 'christoomey/vim-tmux-navigator'
     use 'metakirby5/codi.vim' -- TODO ft python, codi zsh func
     use {'Olical/conjure', ft = 'scheme'}
+    use {'wlangstroth/vim-racket', ft = 'scheme'}
     use 'tweekmonster/startuptime.vim'
     use 'nvim-lua/plenary.nvim'
     use 'lewis6991/impatient.nvim'

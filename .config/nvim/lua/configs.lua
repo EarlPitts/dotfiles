@@ -13,7 +13,7 @@ require'nvim-treesitter.configs'.setup {
         enable = true,
     },
     indent = {
-        enable = true
+        -- enable = true
     },
 }
 
@@ -118,11 +118,11 @@ vim.g.tagbar_type_vimwiki = {
 --vim.g.vimwiki_folding = 'list'
 
 -- Neorg
-require('neorg').setup {
-    load = {
-        ["core.defaults"] = {}
-    }
-}
+-- require('neorg').setup {
+--     load = {
+--         ["core.defaults"] = {}
+--     }
+-- }
 
 -- Markdown Preview
 vim.g.mkdp_command_for_global = 1       -- Make it available for all formats
@@ -142,6 +142,7 @@ require'diffview'.setup {
 -- Conjure
 vim.g['conjure#filetype#scheme'] = 'conjure.client.guile.socket'
 vim.g['conjure#client#guile#socket#pipename'] = "/tmp/.guile-socket"
+vim.g['conjure#client#racket#stdio#command']  = "racket" -- -I pie"
 
 -- Tagbar Haskell
 vim.g.tagbar_type_haskell = {
