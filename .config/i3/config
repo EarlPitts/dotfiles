@@ -46,6 +46,9 @@ bindsym $mod+space exec ~/.local/bin/keylayout
 bindsym $mod+p exec ~/.local/bin/lock
 bindsym Mod1+p exec ~/.local/bin/winlock
 
+## Suspend
+bindsym $mod+Shift+Delete exec systemctl suspend
+
 ## VM
 bindsym $mod+Home exec remote-viewer -f spice://192.168.0.20:5900
 
@@ -169,6 +172,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 # Move ws to other screen
 bindsym $mod+Control+h exec i3-msg move workspace to output right
 bindsym $mod+Control+l exec i3-msg move workspace to output left
+bindsym $mod+Control+k exec i3-msg move workspace to output up
+bindsym $mod+Control+j exec i3-msg move workspace to output down
 
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
