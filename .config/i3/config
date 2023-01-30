@@ -49,6 +49,9 @@ bindsym Mod1+p exec ~/.local/bin/winlock
 ## Suspend
 bindsym $mod+Shift+Delete exec systemctl suspend
 
+## Monitoring
+bindsym Mod1+m exec $big_window btop"
+
 ## VM
 bindsym $mod+Home exec remote-viewer -f spice://192.168.0.20:5900
 
