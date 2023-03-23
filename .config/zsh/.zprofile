@@ -34,7 +34,7 @@ export AREAS="$PERSONAL/Areas"
 export INBOX="$PERSONAL/Inbox"
 
 # Path
-export PATH=$PATH:~/.local/bin
+export PATH=$PATH:~/.local/bin:~/.config/emacs/bin
 
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore --hidden --follow --glob '!**/.git/*' --glob '!.venv/*' --glob '!__pycache__/*'"
 
