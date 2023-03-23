@@ -37,8 +37,11 @@ https://notrelated.xyz/rss "Podcast"
 https://www.functionalgeekery.com/feed/mp3/ "Podcast"
 https://www.typetheoryforall.com/episodes.mp3.rss "Podcast"
 https://feeds.buzzsprout.com/1817535.rss "Podcast"
-https://us-rse.org/rse-stories/episodes.rss 'Podcast'
-https://feeds.buzzsprout.com/1326658.rss 'Podcast'
+https://us-rse.org/rse-stories/episodes.rss "Podcast"
+https://feeds.buzzsprout.com/1326658.rss "Podcast"
+https://feeds.feedburner.com/80000HoursPodcast "Podcast"
+https://feeds.megaphone.fm/intotheimpossible "Podcast"
+https://feeds.transistor.fm/thoughts-on-functional-programming-podcast-by-eric-normand "Podcast"
 
 # Blogs
 ## Uncategorized
