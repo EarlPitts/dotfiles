@@ -3,7 +3,6 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
 (setq user-full-name "Bendeguz Seres"
@@ -45,6 +44,8 @@
 (setq evil-snipe-override-evil-repeat-keys nil)
 (setq doom-localleader-key ",")
 
+(map! :localleader
+      :desc "Save file" "," #'save-buffer)
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
