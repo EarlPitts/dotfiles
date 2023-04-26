@@ -24,6 +24,8 @@ alias e='emacs -nw'
 alias yta='yt-dlp -f "ba" -x --audio-format mp3'
 alias ghci='stack ghci'
 alias hv='stack exec nvim'
+alias mpva='mpv --no-video --no-resume-playback --no-save-position-on-quit'
+alias emacs='doom run &'
 
 # rsync
 alias cpr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1'
