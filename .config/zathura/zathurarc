@@ -33,3 +33,5 @@ set recolor                     "true"
 set recolor-keephue             "false"
 
 set guioptions none
+
+set selection-notification      "false"
