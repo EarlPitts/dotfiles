@@ -1,6 +1,6 @@
 #!/bin/sh
 
-sounds="snow\nrain\nfire\nwind\nbinaural\nlofi"
+sounds="snow\nrain\nfire\nwind\nbinaural\nlofi\nleaves"
 
 sound=$(echo -e $sounds | fzf)
 
@@ -9,4 +9,5 @@ sound=$(echo -e $sounds | fzf)
 [ "$sound" = snow ] && mpv --no-save-position-on-quit --no-resume-playback --no-video https://www.youtube.com/watch?v=sGkh1W5cbH4
 [ "$sound" = fire ] && mpv --no-save-position-on-quit --no-resume-playback --no-video https://www.youtube.com/watch?v=jK3cMcH9e_c
 [ "$sound" = wind ] && mpv --no-save-position-on-quit --no-resume-playback --no-video https://www.youtube.com/watch?v=4KzFe50RQkQ
+[ "$sound" = leaves ] && mpv --no-save-position-on-quit --no-resume-playback --no-video https://www.youtube.com/watch?v=aT66uumZ0Zo
 [ "$sound" = binaural ] && mpv --no-save-position-on-quit --no-resume-playback --no-video 'https://archive.org/download/40-hz-gamma-pure-tone-binaural-beat-brains-operating-system/1hr%20Gamma%20Binaural%20Beat%20Session%20%2840hz%29%20~%20Pure.mp3'
