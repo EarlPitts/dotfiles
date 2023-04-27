@@ -90,7 +90,7 @@ filenum() {
 
 # Get cheat sheet of command from cheat.sh. h <cmd>
 h() {
-    curl cheat.sh/${@:-cheat}
+    curl -s cheat.sh/${@:-cheat}
 }
 
 # cfile <file> - Copy content of file to clipboard
