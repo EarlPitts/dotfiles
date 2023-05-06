@@ -6,17 +6,12 @@ if [[ -z "$STEP" ]] ; then
     STEP="${1:-5%}"
 fi
 
-# amixer_output=$(amixer -D $MIXER get $SCONTROL)
-pactl_output=$(pactl list sinks) # | grep -A20 RUNNING)
-# pactl_output="$(pactl list sinks | grep '^[[:space:]]Volume:' | \
-#    head -n $(( $SINK + 1 )) | tail -n 1 | sed -e 's,.* \([0-9][0-9]*\)%.*,\1,')"
+pactl_output=$(pactl list sinks)
 
-# line=$(echo "$amixer_output" | grep '%')
-# volume=$(echo $line | sed 's/.*\[\([0-9%]*\)\].*\[\([on|off]*\)\]/\1/')
-volume=$(echo "$pactl_output" | grep -P "\tVolume:" | cut -d/ -f2 | tr -d " ")
-# state=$(echo $line | sed 's/.*\[\([0-9%]*\)\].*\[\([on|off]*\)\]/\2/')
-state=$(echo "$pactl_output" | grep Mute | cut -d" " -f2)
-if [ "$state" = yes ]; then
+volume=$(echo "$pactl_output" | grep -A9 "State: RUNNING" | grep -P "\tVolume:" | cut -d/ -f2 | tr -d " ")
+muted=$(echo "$pactl_output" | grep Mute | cut -d" " -f2)
+
+if [ "$muted" = yes ]; then
     echo " ($volume)"
     echo " ($volume)"
     echo "#F2777A"
