@@ -6,7 +6,7 @@
 (use-modules (srfi srfi-19))
 (use-modules (json))
 
-(define FILE "/home/obabo/Personal/Statistics/didit.json")
+(define FILE (string-append (getenv "PERSONAL") "/Statistics/didit.json"))
 
 (define data
   (json->scm (open-input-file FILE)))
