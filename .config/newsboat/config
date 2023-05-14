@@ -30,7 +30,8 @@ html-renderer "w3m -dump -T text/html"
 # Podcasts config
 download-path "~/Media/Podcasts"
 player "mpv --no-audio-display --speed=1.3"
-podlist-format "%4i [%5p %%] %u %-15S"
+podlist-format "%4i [%5p %%] %b %-15S"
+download-filename-format "%t.%e"
 
 # ignore-article "*" "title =~ \"Sponsor\""
 # ignore-article "*" "title =~ \"Sponsored\""
