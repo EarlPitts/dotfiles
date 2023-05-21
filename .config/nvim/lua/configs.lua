@@ -22,6 +22,9 @@ vim.api.nvim_exec([[
     set foldexpr=nvim_treesitter#foldexpr()
 ]], true)
 
+-- Markdown preview
+vim.g.mkdp_theme = 'light'
+
 -- Comment.nvim
 require('Comment').setup()
 
