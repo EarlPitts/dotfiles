@@ -1,7 +1,7 @@
 #!/usr/bin/sh -x
 
-intern="eDP1"
-extern=$(xrandr | grep -E "^HDMI2 connected|^DP1 connected|^DP2-2 connected" | tail -n 1 | cut -f1 -d" ")
+intern="eDP-1"
+extern=$(xrandr | grep -E "^HDMI-2 connected|^DP-1 connected|^DP-2 connected" | tail -n 1 | cut -f1 -d" ")
 #extern=$(xrandr | grep "DP1 connected " | tail -n 1 | cut -f1 -d" ")
 [ -z "$extern" -a ! -e /tmp/monitorstate ] && exit 1
 
@@ -9,24 +9,28 @@ if [ ! -e /tmp/monitorstate ]; then
     echo "doubled" > /tmp/monitorstate
     xrandr --output "$extern" --auto --output "$intern" --auto
     # pactl set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo
+    pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
     feh --bg-fill ~/.local/share/wallpapers/background.jpg
     notify-send "Mirroring Screen"
 elif [ "$(cat /tmp/monitorstate)" = "doubled" ]; then
     echo "extended" > /tmp/monitorstate
     xrandr --output "$intern" --auto --output "$extern" --right-of $intern
     # pactl set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo
+    pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
     feh --bg-fill ~/.local/share/wallpapers/background.jpg
     notify-send "Extending Screen"
 elif [ "$(cat /tmp/monitorstate)" = "extended" ]; then
     echo "only" > /tmp/monitorstate
     xrandr --output "$intern" --off --output "$extern" --auto
     # pactl set-card-profile 0 output:hdmi-stereo-extra1+input:analog-stereo
+    pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
     feh --bg-fill ~/.local/share/wallpapers/background.jpg
     notify-send "Screen 2"
 elif [ "$(cat /tmp/monitorstate)" = "only" ]; then
     rm /tmp/monitorstate
     xrandr --output "$intern" --auto --output "$extern" --off
     # pactl set-card-profile 0 output:analog-stereo+input:analog-stereo
+    pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
     feh --bg-fill ~/.local/share/wallpapers/background.jpg
     notify-send "Screen 1"
 fi
