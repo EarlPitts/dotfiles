@@ -15,7 +15,7 @@ except KeyError:
 def weight(data):
     def handle(day):
         try:
-            return data_dict[day]['morning']['weight']
+            return data_dict[day]['weight']
         except:
             return 0
 
@@ -38,7 +38,7 @@ def weight(data):
 def eyesight(data):
     def handle(day):
         try:
-            return data_dict[day]['morning']['eye']['left']
+            return data_dict[day]['left_eye']
         except:
             return 0
 
