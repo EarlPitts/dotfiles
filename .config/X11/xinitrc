@@ -19,5 +19,4 @@ fi
 
 udiskie & # Auto mounting drives
 unclutter & # Hide mouse cursor
-easyeffects --gapplication-service & # Sound effects
 exec i3 # Start Window Manager
