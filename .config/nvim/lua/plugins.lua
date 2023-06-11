@@ -55,7 +55,7 @@ return require('packer').startup(function()
     -- Misc
     use 'christoomey/vim-tmux-navigator'
     use 'metakirby5/codi.vim' -- TODO ft python, codi zsh func
-    use {'Olical/conjure', ft = 'scheme'}
+    use {'Olical/conjure', ft = {'scheme', 'racket'}}
     use {'wlangstroth/vim-racket', ft = 'scheme'}
     use 'tweekmonster/startuptime.vim'
     use 'nvim-lua/plenary.nvim'
