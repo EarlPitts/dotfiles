@@ -9,7 +9,7 @@ width=$(echo "$resolution" | cut -d'x' -f1)
 pos_x=$(( width / 2 ))
 pos_y=$(( height / 2.5 ))
 
-FONT_COLOR=09050340 
+FONT_COLOR=09050390
 
 if [ "$resolution" = "1920x1080" ]; then
     wallpaper="/home/$USER/.local/share/wallpapers/lockScreen.jpg"
