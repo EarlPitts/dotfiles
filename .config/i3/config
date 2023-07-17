@@ -101,7 +101,7 @@ bindsym $mod+F12 exec rofi -show calc -modi calc -no-show-match -no-sort
 bindsym $mod+F8 exec ~/.local/bin/killprocess
 
 ## Set Screen
-bindsym XF86Display exec ~/.local/bin/screen
+bindsym XF86Display exec ~/.config/rofi/scripts/screen
 
 ## Brightness
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
