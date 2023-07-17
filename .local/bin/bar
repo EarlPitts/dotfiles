@@ -1,0 +1,11 @@
+#!/bin/env python
+
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+
+y = [ int(x) for x in input().split() ]
+x = range(len(y))
+
+ax.bar(x, y)
+plt.show()

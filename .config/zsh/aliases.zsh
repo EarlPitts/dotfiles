@@ -26,6 +26,7 @@ alias ghci='stack ghci'
 alias hv='stack exec nvim'
 alias mpva='mpv --no-video --no-resume-playback --no-save-position-on-quit'
 alias emacs='doom run &'
+alias streakplot='streak -p | bar'
 
 # rsync
 alias cpr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1'
