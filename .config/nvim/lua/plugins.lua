@@ -1,63 +1,72 @@
-return require('packer').startup(function()
-    -- Packer can manage itself
-    use 'wbthomason/packer.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
+require("lazy").setup({
     -- Navigation
-    use 'kyazdani42/nvim-tree.lua'
-    use 'majutsushi/tagbar'
-    use 'nvim-telescope/telescope.nvim'
+    'kyazdani42/nvim-tree.lua',
+    'majutsushi/tagbar',
+    'nvim-telescope/telescope.nvim',
 
     -- Editing
-    use 'numToStr/Comment.nvim'
-    use 'mbbill/undotree'
-    use 'tpope/vim-surround'
-    -- use 'editorconfig/editorconfig-vim'
+    'numToStr/Comment.nvim',
+    'mbbill/undotree',
+    'tpope/vim-surround',
+    -- 'editorconfig/editorconfig-vim,'
 
     -- Writing
-    use {'junegunn/goyo.vim', ft = 'markdown'}
-    use {'junegunn/limelight.vim', ft = 'markdown'}
+    {'junegunn/goyo.vim', ft = 'markdown'},
+    {'junegunn/limelight.vim', ft = 'markdown'},
 
     -- Analysis
-    use {'dense-analysis/ale', ft = {'bash', 'sh', 'zsh', 'c', 'tex', 'lua'}}
-    -- use {'Valloric/YouCompleteMe', 
+    {'dense-analysis/ale', ft = {'bash', 'sh', 'zsh', 'c', 'tex', 'lua'}},
+    -- {'Valloric/YouCompleteMe', 
     --     run = './install.py --clang-completer',
     --     ft = {'python', 'c'}
     -- }
-    use 'neovim/nvim-lspconfig'
-    use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-    use 'nvim-treesitter/playground'
+    'neovim/nvim-lspconfig',
+    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+    'nvim-treesitter/playground',
 
     -- Notes
-    use {'vimwiki/vimwiki', ft = 'markdown'}
-    use {'iamcco/markdown-preview.nvim', 
-        run = function() vim.fn["mkdp#util#install"]() end,
+    {'vimwiki/vimwiki', ft = 'markdown'},
+    {'iamcco/markdown-preview.nvim', 
+        build = function() vim.fn["mkdp#util#install"]() end,
         ft = {'markdown'}
-    }
-    -- use 'nvim-neorg/neorg'
+    },
+    -- 'nvim-neorg/neorg'
 
     -- Snippets
-    use 'SirVer/ultisnips'
-    use 'honza/vim-snippets'
+    'SirVer/ultisnips',
+    'honza/vim-snippets',
 
     -- Git TODO load these only if in git repo
-    use 'tpope/vim-fugitive'
-    use 'airblade/vim-gitgutter'
-    use 'tpope/vim-rhubarb'
-    use 'sindrets/diffview.nvim'
+    'tpope/vim-fugitive',
+    'airblade/vim-gitgutter',
+    'tpope/vim-rhubarb',
+    'sindrets/diffview.nvim',
 
     -- Looks
-    use 'chriskempson/base16-vim'
-    use 'hoob3rt/lualine.nvim'
-    -- use 'ryanoasis/vim-devicons'
-    -- use {'vim-airline/vim-airline', requires = 'vim-airline/vim-airline-themes'}
-    -- use 'RRethy/nvim-base16'
+    'chriskempson/base16-vim',
+    'hoob3rt/lualine.nvim',
+    -- 'ryanoasis/vim-devicons'
+    -- {'vim-airline/vim-airline', dependencies = 'vim-airline/vim-airline-themes'}
+    -- 'RRethy/nvim-base16'
 
     -- Misc
-    use 'christoomey/vim-tmux-navigator'
-    use 'metakirby5/codi.vim' -- TODO ft python, codi zsh func
-    use {'Olical/conjure', ft = {'scheme', 'racket'}}
-    use {'wlangstroth/vim-racket', ft = 'scheme'}
-    use 'tweekmonster/startuptime.vim'
-    use 'nvim-lua/plenary.nvim'
-    use 'lewis6991/impatient.nvim'
-end)
+    'christoomey/vim-tmux-navigator',
+    'metakirby5/codi.vim', -- TODO ft python, codi zsh func
+    {'Olical/conjure', ft = {'scheme', 'racket'}},
+    {'wlangstroth/vim-racket', ft = 'scheme'},
+    'tweekmonster/startuptime.vim',
+    'nvim-lua/plenary.nvim'
+})
