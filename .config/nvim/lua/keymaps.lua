@@ -44,18 +44,6 @@ map('v', '<C-c>', '"+y')
 map('i', '<C-v>', '<ESC>:.!xclip -selection clipboard -o<CR>') -- This is horrible, find some better way
 
 -- Window switching
-map('t', '<C-h>', '<C-\\><C-n><C-w>h')
-map('t', '<C-j>', '<C-\\><C-n><C-w>j')
-map('t', '<C-k>', '<C-\\><C-n><C-w>k')
-map('t', '<C-l>', '<C-\\><C-n><C-w>l')
-map('i', '<C-h>', '<C-\\><C-n><C-w>h')
-map('i', '<C-j>', '<C-\\><C-n><C-w>j')
-map('i', '<C-k>', '<C-\\><C-n><C-w>k')
-map('i', '<C-l>', '<C-\\><C-n><C-w>l')
-map('n', '<C-h>', '<C-w>h')
-map('n', '<C-j>', '<C-w>j')
-map('n', '<C-k>', '<C-w>k')
-map('n', '<C-l>', '<C-w>l')
 map('n', '<C-w>-', '5<C-w>-')
 map('n', '<C-w>+', '5<C-w>+')
 map('n', '<C-w>,', '10<C-w><')

@@ -63,7 +63,7 @@ require("lazy").setup({
     -- 'RRethy/nvim-base16'
 
     -- Misc
-    'christoomey/vim-tmux-navigator',
+    {'aserowy/tmux.nvim', config = true},
     'metakirby5/codi.vim', -- TODO ft python, codi zsh func
     {'Olical/conjure', ft = {'scheme', 'racket'}},
     {'wlangstroth/vim-racket', ft = 'scheme'},
