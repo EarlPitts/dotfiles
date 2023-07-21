@@ -4,7 +4,7 @@ local map = vim.api.nvim_set_keymap
 local noremap = {noremap = true}
 
 -- Lower startup time
-require 'impatient'
+vim.loader.enable()
 
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
