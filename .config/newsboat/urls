@@ -1,7 +1,7 @@
 # Queries
 "query:→ Podcasts:tags # \"Podcast\"" "Podcast"
 "query:→ Blogs:tags # \"Blog\"" "Blog"
-# "query:→ Unread Articles:unread = \"yes\""
+"query:→ Unread Articles:(unread = \"yes\") and (tags # \"Blog\")" "Blog"
 # "query:→ Bookmarked Articles:flags # \"s\"" "Starred"
 # "query:→ YouTube:tags # \"YouTube\"" "YouTube"
 # "query:→ Browsers:tags # \"Browsers\"" "Browsers"
