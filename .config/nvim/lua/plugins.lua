@@ -38,7 +38,7 @@ require("lazy").setup({
     'nvim-treesitter/playground',
 
     -- Notes
-    {'vimwiki/vimwiki', ft = 'markdown'},
+    {'vimwiki/vimwiki'},
     {'iamcco/markdown-preview.nvim', 
         build = function() vim.fn["mkdp#util#install"]() end,
         ft = {'markdown'}
