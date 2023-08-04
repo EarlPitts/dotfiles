@@ -1,13 +1,6 @@
-#!/usr/bin/zsh
-
-# TODO Maybe use something like bc for floats to make it posix compliant?
+#!/usr/bin/sh
 
 resolution=$(xdpyinfo | grep dimensions | awk '{print $2}')
-height=$(echo "$resolution" | cut -d'x' -f2)
-width=$(echo "$resolution" | cut -d'x' -f1)
-
-pos_x=$(( width / 2 ))
-pos_y=$(( height / 2.5 ))
 
 FONT_COLOR=09050390
 
@@ -20,6 +13,6 @@ fi
 i3lock -u -k -e \
     --time-str="%H:%M" --time-color=$FONT_COLOR --time-size=45 \
     --date-str="%B %d, %A" --date-color=$FONT_COLOR \
-    --greeter-text="Hi, I'm a computer." --greeter-color=$FONT_COLOR --greeter-pos="${pos_x}:${pos_y}" --greeter-size=40 \
+    --greeter-text="Hi, I'm a computer." --greeter-color=$FONT_COLOR --greeter-pos="ix:h/2.3" --greeter-size=40 \
     -i "$wallpaper" \
     --pass-media-keys
