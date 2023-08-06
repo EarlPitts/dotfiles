@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+
+papers=$(find . -maxdepth 1 -name "*.pdf")
+
+for paper in $papers; do
+    filename=$(basename --suffix ".pdf" "$paper")
+    if echo "$filename" | grep -q "#"; then
+        title=$(echo "$filename" | cut -d"#" -f1 | tr '_' ' ') 
+        author=$(echo "$filename" | cut -d"#" -f2 | tr '_' ' ') 
+        exiftool -Title="$title" -Author="$author" "$paper"
+    else
+        title=$(echo "$filename" | tr '_' ' ') 
+        exiftool -Title="$title" "$paper"
+    fi
+done
+
+rm ./*_original
