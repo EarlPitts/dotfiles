@@ -13,6 +13,6 @@ fi
 i3lock -u -k -e \
     --time-str="%H:%M" --time-color=$FONT_COLOR --time-size=45 \
     --date-str="%B %d, %A" --date-color=$FONT_COLOR \
-    --greeter-text="Hi, I'm a computer." --greeter-color=$FONT_COLOR --greeter-pos="ix:h/2.3" --greeter-size=40 \
+    --greeter-text="Hi, I'm a computer." --greeter-color=$FONT_COLOR --greeter-pos="ix:h/2.4" --greeter-size=40 \
     -i "$wallpaper" \
     --pass-media-keys
