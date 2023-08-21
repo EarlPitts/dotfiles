@@ -64,9 +64,6 @@ bindsym $mod+End exec $big_window curl wttr.in && read"
 ### Calendar
 bindsym $mod+b exec $small_window calcurse"
 
-### Mail
-bindsym $mod+m exec $big_window neomutt"
-
 ### RSS Reader
 #bindsym Shift+$mod+n exec i3-sensible-terminal -t bigger_window sh -c "source ~/.config/zsh/base16.zsh && newsboat"
 bindsym Shift+$mod+n exec $big_window newsboat"
