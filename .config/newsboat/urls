@@ -44,6 +44,9 @@ https://feeds.megaphone.fm/intotheimpossible "Podcast"
 https://feeds.transistor.fm/thoughts-on-functional-programming-podcast-by-eric-normand "Podcast"
 https://feeds.simplecast.com/L9810DOa "Podcast"
 https://omny.fm/shows/future-of-coding/playlists/podcast.rss "Podcast"
+https://feeds.transistor.fm/oxide-and-friends "Podcast"
+https://feeds.transistor.fm/on-the-metal-0294649e-ec23-4eab-975a-9eb13fd94e06 "Podcast"
+https://arraycast.com/episodes?format=rss "Podcast"
 
 # Blogs
 ## Uncategorized
@@ -105,6 +108,11 @@ https://bartoszmilewski.com/rss "Blog"
 https://www.haskellforall.com/feeds/posts/default "Blog"
 https://morepablo.com/feeds/all.rss.xml "Blog"
 https://computer.rip/rss.xml "Blog"
+http://goodmath.org/blog/?feed=rss2 "Blog"
+
+## FP
+https://lexi-lambda.github.io/ "Blog"
+https://byorgey.wordpress.com/feed/ "Blog"
 
 ## Productivity
 https://vasilishynkarenka.com/rss/ "Blog"
