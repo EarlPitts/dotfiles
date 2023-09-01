@@ -9,7 +9,6 @@ set.softtabstop = 4                         -- Number of columns when you hit ta
 
 -- Text Rendering
 set.linebreak = true                        -- Wrap long lines between words
-vim.cmd 'syntax enable'                     -- Enable syntax
 
 -- Search
 set.ignorecase = true                       -- Case insensitive search
@@ -38,7 +37,7 @@ set.foldlevelstart = 5                      -- Open most folds by default
 
 -- Colors
 vim.g.base16colorspace = 256
-vim.cmd 'colorscheme base16-tomorrow-night-eighties'
+vim.cmd.colorscheme 'base16-tomorrow-night-eighties'
 
 -- Misc
 set.clipboard = 'unnamed'                   -- System clipboard TODO
