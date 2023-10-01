@@ -1,5 +1,6 @@
 (use-modules (gnu))
 (use-modules (gnu packages shells))
+(use-modules (gnu services networking))
 (use-modules (nongnu system linux-initrd))
 (use-modules (nongnu packages linux))
 (use-service-modules syncthing ssh desktop)
@@ -13,36 +14,49 @@
 (operating-system
   (kernel linux)
   (firmware (list linux-firmware))
+  (initrd microcode-initrd)
   (host-name "guix")
   (timezone "Europe/Budapest")
   (locale "en_US.utf8")
+  (keyboard-layout (keyboard-layout "us"))
 
   (bootloader (bootloader-configuration
                 (bootloader grub-bootloader)
+                (keyboard-layout keyboard-layout)
                 (targets '("/dev/sda"))))
-  (file-systems (cons (file-system
-                        (device (file-system-label "root"))
-                        (mount-point "/")
-                        (type "ext4"))
-                      %base-file-systems))
 
-  ;; This is where user accounts are specified.  The "root"
-  ;; account is implicit, and is initially created with the
-  ;; empty password.
+  (file-systems
+    (cons (file-system
+            (device "/dev/sda1")
+            (mount-point "/")
+            (type "ext4"))
+          %base-file-systems))
+
   (users (cons (user-account
-                (name "obabo")
-                (group "users")
-		(shell (file-append zsh "/bin/zsh"))
-                (supplementary-groups
-		  '("wheel" "audio" "video")))
-	       %base-user-accounts))
+                 (name "obabo")
+                 (group "users")
+                 (home-directory "/home/obabo")
+                 (shell (file-append zsh "/bin/zsh"))
+                 (supplementary-groups
+                   '("wheel" "netdev" "audio" "video")))
+               %base-user-accounts))
 
   (packages
-    (cons* i3-wm i3status dmenu emacs st nss-certs borg %base-packages))
+    (append
+      (map (compose list specification->package+output)
+	   '("rsync" "nss-certs"))
+      %base-packages))
+
+  ;; (packages
+  ;;   (cons* i3-wm i3status dmenu emacs st nss-certs borg %base-packages))
 
   (services
-    (append (list (service openssh-service-type
-			   (openssh-configuration
+    (cons*
+      (service connman-service-type
+               (connman-configuration
+                  (disable-vpn? #t)))
+      (service openssh-service-type
+               (openssh-configuration
                  (permit-root-login 'without-password)
                  (password-authentication? #f)
                  (authorized-keys
@@ -50,6 +64,13 @@
                                           %my-ssh-public-keys))
                      ("obabo", (plain-file "authorized_keys"
                                            %my-ssh-public-keys))))))
-		  (service syncthing-service-type
-			   (syncthing-configuration (user "obabo"))))
-	    %desktop-services)))
+      (modify-services %base-services
+                       (guix-service-type config =>
+                                          (guix-configuration
+                                            (inherit config)
+                                            (substitute-urls
+                                              (append (list "https://substitutes.nonguix.org")
+                                                      %default-substitute-urls))
+                                            (authorized-keys
+                                              (append (list (local-file "./signing-key.pub"))
+                                                      %default-authorized-guix-keys))))))))
