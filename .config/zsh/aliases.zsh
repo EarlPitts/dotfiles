@@ -1,5 +1,5 @@
 alias mixer='alsamixer'                                             
-alias ls='exa -l'
+alias ls='eza -l'
 alias scan='sudo iw dev wlp3s0 scan | egrep "signal|SSID" | sed -e "s/\tsigna    l: //" -e "s/\tSSID: //" | awk '\''{ORS = (NR % 2 == 0)? "\n" : " "; print}    '\'' | sort'
 alias weather='curl wttr.in/Budapest'
 alias cat='bat'
