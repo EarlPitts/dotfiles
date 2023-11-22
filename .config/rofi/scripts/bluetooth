@@ -1,5 +1,7 @@
 #!/bin/sh
 
+[ "$(bluetooth)" != "bluetooth = on" ] && notify-send "Bluetooth is off" && exit 1
+
 device="$(bluetoothctl devices Paired | cut -d\  -f2- | rofi -dmenu -i | awk '{print $1}')"
 connected="$(bluetoothctl devices Connected | cut -d\  -f2)"
 
