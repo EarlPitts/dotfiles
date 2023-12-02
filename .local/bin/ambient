@@ -2,7 +2,7 @@
 
 sounds="snow\nrain\nfire\nwind\nbinaural\nlofi\nleaves"
 
-sound=$(echo -e $sounds | fzf)
+sound=$(printf "$sounds" | fzf)
 
 play="mpv --no-resume-playback --no-video"
 
