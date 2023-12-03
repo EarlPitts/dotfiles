@@ -254,6 +254,3 @@ bindsym Shift+$mod+m bar mode toggle
 
 # Set Background
 exec --no-startup-id feh --no-fehbg --bg-fill ~/.local/share/wallpapers/background.jpg
-
- # Faster key repeating
-exec xset r rate 200 30
