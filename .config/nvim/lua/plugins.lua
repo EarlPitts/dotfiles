@@ -28,7 +28,7 @@ require("lazy").setup({
     {'junegunn/limelight.vim', ft = 'markdown'},
 
     -- Analysis
-    {'dense-analysis/ale', ft = {'bash', 'sh', 'zsh', 'c', 'tex', 'lua'}},
+    {'dense-analysis/ale', ft = {'bash', 'sh', 'zsh', 'c', 'tex', 'lua', 'markdown'}},
     -- {'Valloric/YouCompleteMe', 
     --     run = './install.py --clang-completer',
     --     ft = {'python', 'c'}
@@ -36,6 +36,8 @@ require("lazy").setup({
     'neovim/nvim-lspconfig',
     {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
     'nvim-treesitter/playground',
+    {'scalameta/nvim-metals', dependencies = { "nvim-lua/plenary.nvim" }},
+    -- 'mfussenegger/nvim-dap',
 
     -- Notes
     {'vimwiki/vimwiki'},
@@ -43,7 +45,11 @@ require("lazy").setup({
         build = function() vim.fn["mkdp#util#install"]() end,
         ft = {'markdown'}
     },
-    -- 'nvim-neorg/neorg'
+
+    -- { "nvim-neorg/neorg",
+    --     build = ":Neorg sync-parsers",
+    --     dependencies = { "nvim-lua/plenary.nvim" },
+    -- },
 
     -- Snippets
     'SirVer/ultisnips',
@@ -65,7 +71,7 @@ require("lazy").setup({
     -- Misc
     {'aserowy/tmux.nvim', config = true},
     'metakirby5/codi.vim', -- TODO ft python, codi zsh func
-    {'Olical/conjure', ft = {'scheme', 'racket'}},
+    {'Olical/conjure', ft = {'scheme', 'racket', 'python'}},
     {'wlangstroth/vim-racket', ft = 'scheme'},
     'tweekmonster/startuptime.vim',
     'nvim-lua/plenary.nvim'
