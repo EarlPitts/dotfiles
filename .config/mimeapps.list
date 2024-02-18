@@ -19,6 +19,7 @@ application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
 x-scheme-handler/msteams=teams-for-linux.desktop
+x-scheme-handler/slack=slack.desktop
 
 [Added Associations]
 x-scheme-handler/tg=userapp-Telegram Desktop-2W5IW0.desktop;userapp-Telegram Desktop-B01MO1.desktop;org.telegram.desktop.desktop;
@@ -34,3 +35,4 @@ application/xhtml+xml=firefox.desktop;
 application/x-extension-xhtml=firefox.desktop;
 application/x-extension-xht=firefox.desktop;
 application/octet-stream=mpv.desktop;feh.desktop;
+x-scheme-handler/slack=slack.desktop;Slack.desktop;
