@@ -8,6 +8,7 @@ map('n', ';', ':')
 map('n', '<leader>,', ':w<CR>')
 map('n', '<leader>.', ':Tagbar<CR>')
 map('n', '<F2>', ':UndotreeToggle<CR>')
+map('n', '<F3>', ':DiffviewOpen<CR>')
 map('n', '<F12>', ':tabnew wiki/index.md<CR>:Tagbar<CR>')
 map('n', '<leader>j', ':%!python -m json.tool<CR>')         -- Format JSON
 map('', '<F1>', ':!./%<CR>')
