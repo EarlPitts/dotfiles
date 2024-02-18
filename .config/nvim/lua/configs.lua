@@ -121,10 +121,18 @@ vim.g.tagbar_type_vimwiki = {
 --vim.g.vimwiki_folding = 'list'
 
 -- Neorg
--- require('neorg').setup {
+-- require("neorg").setup {
 --     load = {
---         ["core.defaults"] = {}
---     }
+--     ["core.defaults"] = {}, -- Loads default behaviour
+--     ["core.concealer"] = {}, -- Adds pretty icons to your documents
+--     ["core.dirman"] = { -- Manages Neorg workspaces
+--         config = {
+--         workspaces = {
+--             notes = "~/Projects/active/neorg/notes",
+--         },
+--         },
+--     },
+--     },
 -- }
 
 -- Markdown Preview
