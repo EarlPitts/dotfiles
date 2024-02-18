@@ -72,7 +72,7 @@ color listnormal_unread     white default
 color listfocus             black yellow
 color listfocus_unread      black yellow
 # color background        white cyan
-#color article color244 color234
+# color article color244 color234
 
 # Macros
 ## Note: macro prefix key ( default: , )
@@ -88,4 +88,4 @@ macro e pipe-to "grep -o 'http.*mp3' | xargs -n1 mpv" ; toggle-article-read "rea
 macro r set browser "tmux split-window && tmux send-keys 'tuir -l %u && tmux kill-pane\n'"; open-in-browser ; set browser "$BROWSER %u"
 
 # copy url to clipboard "yank"
-macro y set browser "echo %u | pbcopy"; open-in-browser ; set browser "$BROWSER %u"
+macro y set browser "echo %u | xclip"; open-in-browser ; set browser "$BROWSER %u"
