@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 item=$(echo \
         $(find "$PROJECTS" -maxdepth 2 -type d -not -path "$PROJECTS" -not -path "$PROJECTS/active" -not -path "$PROJECTS/inactive" | cut -d/ -f4-) \
