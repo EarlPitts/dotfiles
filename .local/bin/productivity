@@ -12,7 +12,7 @@ if [ "$(echo "$item" | cut -d/ -f1)" = "Projects" ]; then
     # Selected project's name
     project=$(echo "$item" | cut -d/ -f3)
     # Session for project already exists
-    if tmux has-session -t "$project"; then
+    if tmux has-session -t="$project"; then
         tmux switch -t "$project"
     else
         tmux new -s "$project" -c "$HOME/$item" -d && tmux switch -t "$project"
