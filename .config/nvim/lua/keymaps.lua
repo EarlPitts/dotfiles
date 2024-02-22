@@ -11,6 +11,7 @@ map('n', '<F2>', ':UndotreeToggle<CR>')
 map('n', '<F3>', ':DiffviewOpen<CR>')
 map('n', '<F12>', ':tabnew wiki/index.md<CR>:Tagbar<CR>')
 map('n', '<leader>j', ':%!python -m json.tool<CR>')         -- Format JSON
+map('n', '<leader>f', ':NvimTreeFindFile<CR>')
 map('', '<F1>', ':!./%<CR>')
 map('n', '<leader>md', ':MarkdownPreview<CR>')
 map('n', '<leader>sr', ':ConjureEval (RESTART 1)<CR>')      -- Restart Scheme
