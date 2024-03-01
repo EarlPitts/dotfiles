@@ -114,7 +114,7 @@ clone() {
 d() {
     cd ~
     local dotfile=$(git ls-files | fzf-tmux -r --reverse)
-    [ -n "$dotfile" ] && nvim $dotfile
+    [ -n "$dotfile" ] && nvim "$dotfile"
     cd -
 }
 
