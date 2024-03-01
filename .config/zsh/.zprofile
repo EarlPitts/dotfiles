@@ -44,7 +44,17 @@ export MANPAGER="bat --style snip"
 export KEYTIMEOUT=1
 export TERM=xterm-256color # for tmux
 
-# Start x server if it's not already running
-if systemctl -q is-active graphical.target && [[ ! $TMUX && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-    exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
+if [ $(uname -s) != Darwin ]; then
+    # Start x server if it's not already running
+    if systemctl -q is-active graphical.target && [[ ! $TMUX && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+        exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
+    fi
+else
+    # MacOS stuff
+    export PATH="$PATH:/Users/i348749/.local/bin:~/.config/emacs/bin:/Users/i348749/Library/Application Support/Coursier/bin"
+
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+
+    export NVM_DIR="$HOME/.config/nvm"
+    [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
 fi
