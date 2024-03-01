@@ -1,0 +1,6 @@
+[user]
+	name = Bendeguz Seres
+	email = bendeguz.seres@emarsys.com
+    signingkey = 581DC58CC2410B85AF591F2C11461E8BDB50E738
+[commit]
+    template = ~/.config/git/message

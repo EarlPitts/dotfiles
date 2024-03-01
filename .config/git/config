@@ -1,7 +1,7 @@
-[user]
-	name = Bendeguz Seres
-	email = grafitpor@gmail.com
-    signingkey = 24B949522D8D1DD49163BD5B10C5FAFA8FF44598
+[includeIf "gitdir:/Users/I348749/"]
+    path = ~/.config/git/work
+[includeIf "gitdir:/home/"]
+    path = ~/.config/git/personal
 [credential]
 	helper = store
 [core]
