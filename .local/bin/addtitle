@@ -1,8 +1,10 @@
 #!/usr/bin/sh
+#
+set -euo pipefail
 
-papers=$(find . -maxdepth 1 -name "*.pdf")
+# papers=$(find . -maxdepth 1 -name "*.pdf")
 
-for paper in $papers; do
+for paper; do
     filename=$(basename --suffix ".pdf" "$paper")
     if echo "$filename" | grep -q "#"; then
         title=$(echo "$filename" | cut -d"#" -f1 | tr '_' ' ') 
