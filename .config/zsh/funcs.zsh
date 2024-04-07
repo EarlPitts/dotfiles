@@ -21,6 +21,8 @@ update() {
     git submodule update --recursive --remote
     # Update neovim plugins
     nvim --headless "+Lazy! sync" +qa
+    # System update
+    yay -Syy --noconfirm
 }
 
 tunnel() {
