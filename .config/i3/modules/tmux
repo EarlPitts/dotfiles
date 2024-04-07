@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+num_of_sessions="$(tmux list-sessions | wc -l)"
+
+if [ $num_of_sessions -eq 0 ]; then
+    exit
+else
+    echo "Tmux: $num_of_sessions"
+fi
