@@ -22,7 +22,7 @@ update() {
     # Update neovim plugins
     nvim --headless "+Lazy! sync" +qa
     # System update
-    yay -Syy --noconfirm
+    yay --noconfirm
 }
 
 tunnel() {
