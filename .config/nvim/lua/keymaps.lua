@@ -29,6 +29,7 @@ map('n', '<leader>g', ':Git<CR>')
 map('n', '<C-b>', ':Telescope buffers<CR>')
 map('n', '<C-g>', ':Telescope live_grep<CR>')
 map('n', '<C-t>', ':Telescope tags<CR>')
+map('n', '<leader><C-p>', ':Telescope find_files<CR>')
 map('n', '<C-s>', ':lua require"telescope.builtin".find_files({cwd = "~/References/Snippets"})<CR>')
 -- git awareness for file picker
 if vim.fn.isdirectory(".git") == 1 then
