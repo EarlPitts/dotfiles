@@ -1,0 +1,17 @@
+#!/usr/bin/sh
+
+# main="$(free -h -w | grep Mem | awk -F '[[:space:]]+' '{print $8}')"
+# swap=
+all="$(free -thw | grep Total | awk -F '[[:space:]]+' '{print $4}')"
+
+# full text
+echo "$all"
+
+# short text
+echo "$all"
+
+# color if load is too high
+# if [ $(echo "$all" | head -c1) -lt 5 ]; then
+#     print "#F2777A";
+#     exit 33;
+# fi
