@@ -54,6 +54,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
 local metals_config = require("metals").bare_config()
 metals_config.init_options.statusBarProvider = "on"
+metals_config.settings = {
+    showImplicitArguments = true,
+    showImplicitConversionsAndClasses = true,
+    showInferredType = true,
+    enableSemanticHighlighting = true,
+    -- serverProperties = { "-Xmx8g" },
+    -- for testing only
+    -- serverVersion = "0.11.10-SNAPSHOT",
+}
 
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
