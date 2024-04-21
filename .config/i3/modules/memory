@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 # main="$(free -h -w | grep Mem | awk -F '[[:space:]]+' '{print $8}')"
 # swap=

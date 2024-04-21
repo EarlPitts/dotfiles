@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 note=$(rofi -dmenu -p "Note" -l 0)
 [ -n "$note" ] && echo "- $note" >> $INBOX/index.md

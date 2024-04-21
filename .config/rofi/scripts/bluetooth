@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
 [ "$(bluetooth)" != "bluetooth = on" ] && notify-send "Bluetooth is off" && exit 1
 

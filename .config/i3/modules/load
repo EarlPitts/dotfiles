@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 load="$(cut -d ' ' -f1 /proc/loadavg)"
 cpus="$(nproc)"

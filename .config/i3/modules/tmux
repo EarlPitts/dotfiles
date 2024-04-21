@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 num_of_sessions="$(tmux list-sessions | wc -l)"
 

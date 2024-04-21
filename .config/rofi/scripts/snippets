@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 if [ $# = 0 ]; then
     find $SNIPPETS -type f | cut -sd / -f 6-
