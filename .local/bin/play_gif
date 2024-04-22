@@ -1,7 +1,9 @@
-#!/usr/bin/sh
-
-killall mpv
+#!/usr/bin/env sh
 
 file="$(find "$1" -type f | shuf | head -n1)"
 
-mpv --alpha=yes --loop --no-audio "$file"
+if [ "$2" = start ]; then
+    mpv --input-ipc-server=/tmp/mpvsocket --alpha=yes --loop --no-audio --loop "$file"
+elif [ "$2" = switch ]; then
+    echo "{ \"command\": [\"loadfile\", \"$file\"] }" | socat - /tmp/mpvsocket
+fi
