@@ -5,5 +5,6 @@ file="$(find "$1" -type f | shuf | head -n1)"
 if [ "$2" = start ]; then
     mpv --input-ipc-server=/tmp/mpvsocket --alpha=yes --loop --no-audio --loop "$file" &
 elif [ "$2" = switch ]; then
+    echo "Switching to $file"
     echo "{ \"command\": [\"loadfile\", \"$file\"] }" | socat - /tmp/mpvsocket
 fi
