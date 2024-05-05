@@ -50,6 +50,8 @@ require("lazy").setup({
     --     build = ":Neorg sync-parsers",
     --     dependencies = { "nvim-lua/plenary.nvim" },
     -- },
+    
+    { "purescript-contrib/purescript-vim" },
 
     -- Snippets
     'SirVer/ultisnips',
