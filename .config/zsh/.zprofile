@@ -44,6 +44,9 @@ export MANPAGER="bat --style snip"
 export KEYTIMEOUT=1
 export TERM=xterm-256color # for tmux
 
+# virsh connects to qemu:///session by default
+export LIBVIRT_DEFAULT_URI=qemu:///system
+
 if [ $(uname -s) != Darwin ]; then
     # Start x server if it's not already running
     if systemctl -q is-active graphical.target && [[ ! $TMUX && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
