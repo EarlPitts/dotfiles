@@ -30,6 +30,7 @@ alias streakplot='streak -p | bar'
 alias cam='mpv av://v4l2:/dev/video0 --profile=low-latency --untimed'
 alias cam2='mpv av://v4l2:/dev/video2 --profile=low-latency --untimed'
 alias rec='ffmpeg -f x11grab -video_size 1920x1080 -framerate 25 -i $DISPLAY -f pulse -i alsa_output.pci-0000_00_1f.3.analog-stereo.monitor -c:v libx264 -preset ultrafast -c:a aac ~/Media/Videos/$(date +%m-%d-%M).mp4'
+alias socks='ssh -D localhost:9050 ben'
 
 # rsync
 alias cpr='rsync --archive -hh --partial --info=stats1,progress2 --modify-window=1'
