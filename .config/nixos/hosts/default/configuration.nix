@@ -137,14 +137,6 @@
           i3lock-color
         ];
       };
-
-      #windowManager.xmonad = {
-      #  enable = true;
-      #  enableContribAndExtras = true;
-      #  extraPackages = hPkgs: [ hPkgs.xmobar ];
-      #};
-
-      # xkbOptions = "caps:ctrl_modifier";
     };
 
     interception-tools = {
