@@ -1,6 +1,5 @@
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","                                  -- Needed for conjure
-vim.opt.pastetoggle = '<leader>p'
 
 local map = vim.keymap.set
 
