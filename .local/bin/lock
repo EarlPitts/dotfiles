@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 resolution=$(xdpyinfo | grep dimensions | awk '{print $2}')
 
