@@ -15,10 +15,13 @@
   # release notes.
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  services.gpg-agent.pinentryPackage = pkgs.pinentry-rofi;
+  #services.gpg-agent.pinentryPackage = pkgs.pinentry-rofi;
+
+  services.syncthing.enable = true;
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
     # # It is sometimes useful to fine-tune packages, for example, by applying
     # # overrides. You can do that directly here, just don't forget the
@@ -41,6 +44,17 @@
     fzf
     rofi
     nnn
+    ranger
+    ueberzugpp
+    acpi
+    calcurse
+    w3m
+    doggo
+
+    # Monitoring
+    btop
+    htop
+    bmon
 
     # Devtools
     neovim
@@ -52,7 +66,21 @@
     feh
     sxiv
     unclutter-xfixes
+    calibre
+    xorg.xdpyinfo
+    tor-browser
+    anki
+    slack
 
+    mpv
+    zathura
+    yt-dlp
+    pass
+    bottles
+    unzip
+    rofi-pass
+    neomutt
+    isync
     tmux
     firefox
     gcc
@@ -62,6 +90,11 @@
     iw # i3blocks
     pulseaudio # For pactl (i3blocks)
     udiskie
+
+    # Langs
+    python3
+    guile
+    guile-json
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

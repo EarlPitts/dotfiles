@@ -46,6 +46,12 @@
   main-user.enable = true;
   main-user.userName = "obabo";
 
+  users.users.obabo.extraGroups = [ "libvirtd" "video" ];
+  security.sudo.wheelNeedsPassword = false;
+
+  hardware.bluetooth.enable = true; # enables support for Bluetooth
+  hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
@@ -82,6 +88,7 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
+    throttled
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
@@ -92,6 +99,29 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
+
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
+  services.thermald.enable = true;
+  services.tlp = {
+      enable = true;
+      settings = {
+        CPU_SCALING_GOVERNOR_ON_AC = "performance";
+        CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
+
+        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+
+        CPU_MIN_PERF_ON_AC = 0;
+        CPU_MAX_PERF_ON_AC = 100;
+        CPU_MIN_PERF_ON_BAT = 0;
+        CPU_MAX_PERF_ON_BAT = 20;
+
+       START_CHARGE_THRESH_BAT0 = 75;
+       STOP_CHARGE_THRESH_BAT0 = 80;
+      };
+  };
 
   
   fonts.packages = with pkgs; [
