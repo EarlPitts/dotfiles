@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 if [ "$(setxkbmap -query | grep layout | cut -d: -f2 | tr -d ' ')" = "us" ]; then
         setxkbmap hu
