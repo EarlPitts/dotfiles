@@ -32,7 +32,7 @@ require('Comment').setup()
 require('lualine').setup {
     options = {
         icons_enabled = false,
-        theme = 'seoul256',
+        theme = 'base16',
     },
 }
 

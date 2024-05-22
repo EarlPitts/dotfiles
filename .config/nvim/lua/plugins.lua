@@ -64,7 +64,7 @@ require("lazy").setup({
     'sindrets/diffview.nvim',
 
     -- Looks
-    'chriskempson/base16-vim',
+    'RRethy/base16-nvim',
     'hoob3rt/lualine.nvim',
     -- 'ryanoasis/vim-devicons'
     -- {'vim-airline/vim-airline', dependencies = 'vim-airline/vim-airline-themes'}

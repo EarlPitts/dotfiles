@@ -36,8 +36,9 @@ set.foldnestmax = 5                         -- 5 nested fold max
 set.foldlevelstart = 5                      -- Open most folds by default
 
 -- Colors
+vim.opt.termguicolors = true
 vim.g.base16colorspace = 256
-vim.cmd.colorscheme 'base16-tomorrow-night-eighties'
+vim.cmd.colorscheme 'base16-eighties'
 
 -- Misc
 set.clipboard = 'unnamed'                   -- System clipboard TODO
