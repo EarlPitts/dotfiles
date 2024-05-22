@@ -19,4 +19,5 @@ fi
 
 udiskie & # Auto mounting drives
 unclutter & # Hide mouse cursor
+grobi watch &
 exec i3 # Start Window Manager
