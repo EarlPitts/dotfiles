@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/env sh
 
 FILENAME="$INBOX/$(date +%F_%H%M%S).png"
 NOTE_FILENAME="$WIKI/pics/$(date +%F_%H%M%S).png"
