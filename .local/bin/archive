@@ -1,7 +1,7 @@
-#!/usr/bin/bash
+#!/usr/bin/env sh
 
 # Send to the server for archiving
-if [ -d "$1" ]; then 
+if [ -d "$1" ]; then
     tar cf "$1".tar "$1"
     rsync -avz "$1".tar ben:Archive
 else
