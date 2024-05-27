@@ -19,6 +19,15 @@
 
   services.syncthing.enable = true;
 
+  # services.dunst = {
+  #   enable = true;
+  #   configFile = "~/.config/dunst/dunstrc";
+  # };
+
+  # services.autorandr = {
+  #   enable = true;
+  # };
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   nixpkgs.config.allowUnfree = true;
@@ -50,6 +59,11 @@
     calcurse
     w3m
     doggo
+    newsboat
+    pulsemixer
+    fastfetch
+    killall
+    genpass
 
     # Monitoring
     btop
@@ -60,6 +74,7 @@
     neovim
     git
     direnv
+    difftastic
 
     # GUI
     gnome.adwaita-icon-theme
@@ -68,10 +83,22 @@
     unclutter-xfixes
     calibre
     xorg.xdpyinfo
+    xclip
     tor-browser
     anki
     slack
+    grobi
+    dunst
+    libnotify
+    scrot
+    poppler_utils # For zathura preview
+    qbittorrent
 
+    borgbackup
+    nmap
+    sshfs
+    playerctl
+    bleachbit
     mpv
     zathura
     yt-dlp
@@ -90,11 +117,17 @@
     iw # i3blocks
     pulseaudio # For pactl (i3blocks)
     udiskie
+    smartmontools
 
     # Langs
-    python3
+    (python3.withPackages(ps: [
+        ps.python-lsp-server #ps.pyls-mypy ps.pyls-isort ps.pyls-black
+    ]))
+
     guile
     guile-json
+    coursier
+    shellcheck
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
