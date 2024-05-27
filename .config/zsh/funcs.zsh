@@ -22,7 +22,8 @@ update() {
     # Update neovim plugins
     nvim --headless "+Lazy! sync" +qa
     # System update
-    yay --noconfirm
+    nix flake update ~/.config/nixos
+    nixos-rebuild switch --flake ~/.config/nixos#default --use-remote-sudo
 }
 
 tunnel() {
