@@ -103,23 +103,64 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
 
-  services.thermald.enable = true;
+  services.throttled = {
+    enable = true;
+    extraConfig = ''
+    [GENERAL]
+    Enabled: True
+    Sysfs_Power_Path: /sys/class/power_supply/AC*/online
+    Autoreload: True
+
+    [BATTERY]
+    Update_Rate_s: 30
+    PL1_Tdp_W: 29
+    PL1_Duration_s: 28
+    PL2_Tdp_W: 44
+    PL2_Duration_S: 0.002
+    Trip_Temp_C: 85
+    cTDP: 0
+    Disable_BDPROCHOT: False
+
+    [AC]
+    Update_Rate_s: 5
+    PL1_Tdp_W: 44
+    PL1_Duration_s: 28
+    PL2_Tdp_W: 44
+    PL2_Duration_S: 0.002
+    Trip_Temp_C: 95
+    cTDP: 0
+    Disable_BDPROCHOT: False
+
+    [UNDERVOLT.BATTERY]
+    CORE: -85
+    GPU: -85
+    CACHE: -85
+    UNCORE: -85
+    ANALOGIO: 0
+
+    [UNDERVOLT.AC]
+    CORE: 0
+    GPU: 0
+    CACHE: 0
+    UNCORE: 0
+    ANALOGIO: 0
+    '';
+  };
   services.tlp = {
       enable = true;
       settings = {
         CPU_SCALING_GOVERNOR_ON_AC = "performance";
         CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-        CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
-        CPU_ENERGY_PERF_POLICY_ON_BAT = "power";
+        CPU_ENERGY_PERF_POLICY_ON_AC = ""; # Needed for throttled
 
         CPU_MIN_PERF_ON_AC = 0;
         CPU_MAX_PERF_ON_AC = 100;
         CPU_MIN_PERF_ON_BAT = 0;
-        CPU_MAX_PERF_ON_BAT = 20;
+        CPU_MAX_PERF_ON_BAT = 40;
 
-       START_CHARGE_THRESH_BAT0 = 75;
-       STOP_CHARGE_THRESH_BAT0 = 80;
+       START_CHARGE_THRESH_BAT1 = 75;
+       STOP_CHARGE_THRESH_BAT1 = 80;
       };
   };
 
