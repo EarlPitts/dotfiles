@@ -26,7 +26,7 @@ default_floating_border none
 ## Adjust volume with amixer and send signal to i3blocks
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks 
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks 
-bindsym XF86AudioMute exec amixer -q -D pipewire sset Master toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute        exec pactl set-sink-mute @DEFAULT_SINK@ toggle && pkill -RTMIN+10 i3blocks 
 
 ## Music player
 bindsym $mod+Left exec playerctl -i firefox previous
