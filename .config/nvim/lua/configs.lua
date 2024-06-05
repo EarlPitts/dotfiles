@@ -1,6 +1,6 @@
 -- Plugin Configs
 
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local noremap = {noremap = true}
 
 -- Lower startup time
@@ -14,7 +14,7 @@ require'nvim-treesitter.configs'.setup {
     },
     indent = {
         -- enable = true
-    },
+    }
 }
 
 vim.api.nvim_exec([[
@@ -68,6 +68,15 @@ vim.api.nvim_create_autocmd('BufEnter', {                                   -- C
     command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
     nested = true,
 })
+
+-- Remove some default keymaps
+local function my_on_attach(bufnr)
+    local api = require('nvim-tree.api')
+    api.config.mappings.default_on_attach(bufnr)
+    vim.keymap.del('n', '<C-e>', { buffer = bufnr })
+    vim.keymap.del('n', '<C-k>', { buffer = bufnr })
+end
+
 require'nvim-tree'.setup {
     filters = {custom = {'.git', '__pycache__', '.pytest_cache'}},
     renderer = {
@@ -81,7 +90,8 @@ require'nvim-tree'.setup {
             }
         },
         add_trailing = true                                                 -- Append slash to folder names
-    }
+    },
+    on_attach = my_on_attach
 }
 
 -- Ale
