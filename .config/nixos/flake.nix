@@ -24,6 +24,7 @@
       ];
     };
     darwinConfigurations."FYPYG0PQFC" = nix-darwin.lib.darwinSystem {
+      specialArgs = {inherit inputs;};
       system = "aarch64-darwin";
       modules = [
       ./hosts/darwin/configuration.nix
