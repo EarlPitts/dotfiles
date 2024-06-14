@@ -94,6 +94,7 @@ alias ga='git add'
 alias gg='git push'
 alias glp='git pull && git push'
 alias grao='git remote add origin'
+alias gps='git pull --autostash'
 
 alias greset='git reset --soft HEAD^' # Undo last commit, but don't throw away your changes
 
