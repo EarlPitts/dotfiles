@@ -28,7 +28,7 @@ require("lazy").setup({
     {'junegunn/limelight.vim', ft = 'markdown'},
 
     -- Analysis
-    {'dense-analysis/ale', ft = {'bash', 'sh', 'zsh', 'c', 'tex', 'lua', 'markdown'}},
+    -- {'dense-analysis/ale', ft = {'bash', 'sh', 'zsh', 'c', 'tex', 'lua', 'markdown'}},
     -- {'Valloric/YouCompleteMe', 
     --     run = './install.py --clang-completer',
     --     ft = {'python', 'c'}
