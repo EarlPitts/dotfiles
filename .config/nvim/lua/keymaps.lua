@@ -30,8 +30,7 @@ map('n', '<C-g>', ':Telescope live_grep<CR>')
 map('n', '<C-t>', ':Telescope tags<CR>')
 map('n', '<leader><C-p>', ':Telescope find_files<CR>')
 map('n', '<C-s>', ':lua require"telescope.builtin".find_files({cwd = "~/References/Snippets"})<CR>')
-map('n', '<space>t', require("telescope").extensions.metals.commands)
-map("n", "<space><C-s>",  require("telescope.builtin").lsp_dynamic_workspace_symbols)
+
 -- git awareness for file picker
 if vim.fn.isdirectory(".git") == 1 then
     map('n', '<C-p>', ':Telescope git_files<CR>')

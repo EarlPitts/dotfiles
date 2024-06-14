@@ -1,17 +1,20 @@
 --LSP Config
-
 local lspconfig = require('lspconfig')
 
-lspconfig.pyright.setup {
+local map = vim.keymap.set
+
+lspconfig.pylsp.setup {
         root_dir = function(fname)
             return lspconfig.util.path.dirname(fname)
         end
 }
+
 lspconfig.hls.setup {
         root_dir = function(fname)
             return lspconfig.util.path.dirname(fname)
         end
 }
+
 lspconfig.erlangls.setup {}
 
 lspconfig.purescriptls.setup {
@@ -20,6 +23,12 @@ lspconfig.purescriptls.setup {
             formatter = "purs-tidy",
         }
     }
+}
+
+lspconfig.bashls.setup{
+        root_dir = function(fname)
+            return lspconfig.util.path.dirname(fname)
+        end
 }
 
 -- Global mappings.
@@ -65,11 +74,7 @@ metals_config.init_options.statusBarProvider = "on"
 metals_config.settings = {
     showImplicitArguments = true,
     showImplicitConversionsAndClasses = true,
-    showInferredType = true,
-    enableSemanticHighlighting = true,
-    -- serverProperties = { "-Xmx8g" },
-    -- for testing only
-    -- serverVersion = "0.11.10-SNAPSHOT",
+    showInferredType = true
 }
 
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
@@ -81,6 +86,11 @@ vim.api.nvim_create_autocmd("FileType", {
     group = nvim_metals_group,
 })
 
--- metals_config.on_attach = function(client, bufnr)
---     require("metals").setup_dap()
--- end
+metals_config.on_attach = function(client, bufnr)
+    map("v", "K", require("metals").type_of_range)
+    map('n', '<space>t', require("telescope").extensions.metals.commands)
+    map("n", "<space><C-g>",  require("telescope.builtin").lsp_dynamic_workspace_symbols)
+    map('n', '<space>n', require("metals.tvp").toggle_tree_view)
+    map('n', '<space>gn', require("metals.tvp").reveal_in_tree)
+    -- require("metals").setup_dap()
+end
