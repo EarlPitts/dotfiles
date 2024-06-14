@@ -1,5 +1,4 @@
-#!/usr/bin/env guile
--e main -s
+#!/usr/bin/env -S guile -e main -s
 !#
 
 (use-modules (srfi srfi-1))
