@@ -46,11 +46,34 @@
   main-user.enable = true;
   main-user.userName = "obabo";
 
-  users.users.obabo.extraGroups = [ "libvirtd" "video" ];
+  users.users.obabo.extraGroups = [ "libvirtd" "video" "docker" ];
   security.sudo.wheelNeedsPassword = false;
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+  # powerManagement = {
+  #   enable = true;
+  #   resumeCommands = ''
+  #       resolution=$(xdpyinfo | grep dimensions | awk '{print $2}')
+  #
+  #       FONT_COLOR=09050390
+  #
+  #       if [ "$resolution" = "1920x1080" ]; then
+  #           wallpaper="/home/$USER/.local/share/wallpapers/lockScreen.jpg"
+  #       else
+  #           wallpaper="/home/$USER/.local/share/wallpapers/lockScreenSmall.jpg"
+  #       fi
+  #
+  #       i3lock -u -k -e \
+  #           --time-str="%H:%M" --time-color=$FONT_COLOR --time-size=45 \
+  #           --date-str="%B %d, %A" --date-color=$FONT_COLOR \
+  #           --greeter-text="Hi, I'm a computer." --greeter-color=$FONT_COLOR --greeter-pos="ix:h/2.4"
+  #       --greeter-size=40 \
+  #           -i "$wallpaper" \
+  #           --pass-media-keys
+  #   '';
+  # };
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
@@ -102,6 +125,8 @@
   # };
 
   virtualisation.libvirtd.enable = true;
+  virtualisation.docker.enable = true;
+
   programs.virt-manager.enable = true;
 
   services.throttled = {
@@ -175,6 +200,92 @@
 
   environment.pathsToLink = [ "/libexec" ];
 
+  # Lowbat suspend and lock
+  services.udev.extraRules = ''
+    SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="${pkgs.systemd}/bin/systemctl suspend"
+  '';
+
+  # TODO Hard coded user, use coreutils instead of bash/gawk?
+  systemd.services.wakelock = {
+    enable = true;
+    description = "Lock the screen on resume from suspend";
+    path = [ pkgs.bash pkgs.i3lock-color pkgs.gawk pkgs.xorg.xdpyinfo ];
+    unitConfig = {
+      Before= [ "suspend.target" "sleep.target" ];
+    };
+    serviceConfig = {
+      ExecStart = "/home/obabo/.local/bin/lock";
+      Type = "forking";
+      User = "obabo";
+      Environment="DISPLAY=:0";
+    };
+    wantedBy = [ "suspend.target" "sleep.target" ];
+  };
+
+  systemd.timers."mail" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "5m";
+        OnUnitActiveSec = "5m";
+        Unit = "mail.service";
+    };
+  };
+
+  systemd.services."mail" = {
+    path = [ pkgs.gnupg pkgs.rofi pkgs.rofi-pass ];
+    script = ''
+      set -eu
+      ${pkgs.isync}/bin/mbsync -a
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "obabo";
+      Environment="DISPLAY=:0";
+    };
+  };
+
+  systemd.timers."rss" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnBootSec = "1h";
+        OnUnitActiveSec = "1h";
+        Unit = "rss.service";
+    };
+  };
+
+  systemd.services."rss" = {
+    script = ''
+      set -eu
+      ${pkgs.newsboat}/bin/newsboat -x reload
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "obabo";
+    };
+  };
+
+  systemd.timers."notify" = {
+    wantedBy = [ "timers.target" ];
+      timerConfig = {
+        OnCalendar="*-*-* 06:30:00";
+        Unit = "notify.service";
+    };
+  };
+
+  systemd.services."notify" = {
+    path = [ pkgs.dbus ];
+    script = ''
+      set -eu
+      ${pkgs.libnotify}/bin/notify-send "Record statistics"
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+      User = "obabo";
+      Environment= [ "DISPLAY=:0" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"];
+    };
+  };
+
+
   # List services that you want to enable:
   services = {
 
@@ -227,10 +338,10 @@
 
 
   # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedTCPPorts = [ 9090 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # Copy the NixOS configuration file and link it from the resulting system
   # (/run/current-system/configuration.nix). This is useful in case you
