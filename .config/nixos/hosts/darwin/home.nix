@@ -27,6 +27,7 @@
   home.packages = with pkgs; [
     yabai
     jq
+    fzf
     # tree
     # eza
     # bat
