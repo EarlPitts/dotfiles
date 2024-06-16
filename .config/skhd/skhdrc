@@ -82,4 +82,4 @@ alt - return : open -n /Applications/Alacritty.app
 # Ranger
 cmd - e : open -n /Applications/Alacritty.app --args -e sh -c "source ~/.config/zsh/base16.zsh && ranger"
 
-alt - o : "/Users/I348749/Projects/active/choose-scripts/chooseit.sh"
+alt - o : /Users/I348749/Projects/active/mac/choose-scripts/chooseit.sh 2> /Users/I348749/Projects/active/mac/sajt
