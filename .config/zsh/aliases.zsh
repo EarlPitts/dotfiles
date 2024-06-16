@@ -108,3 +108,7 @@ alias gs='git status --short'
 alias gss='git show --word-diff=color' # See changes made
 
 alias gist='hub gist create --copy'
+
+if [ $(uname -s) = Darwin ]; then
+    unalias open
+fi
