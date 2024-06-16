@@ -19,6 +19,12 @@
 
   services.syncthing.enable = true;
 
+  home.file.".gnupg/gpg-agent.conf".text = ''
+    pinentry-program /usr/bin/pinentry-rofi
+    max-cache-ttl 60480000
+    default-cache-ttl 60480000
+  '';
+
   # services.dunst = {
   #   enable = true;
   #   configFile = "~/.config/dunst/dunstrc";
