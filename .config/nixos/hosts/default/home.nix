@@ -70,6 +70,12 @@
     fastfetch
     killall
     genpass
+    curlie
+    jq
+    visidata
+    universal-ctags
+    pandoc
+    imagemagick
 
     # Monitoring
     btop
@@ -79,7 +85,6 @@
     # Devtools
     neovim
     git
-    direnv
     difftastic
 
     # GUI
@@ -88,6 +93,7 @@
     sxiv
     unclutter-xfixes
     calibre
+    koreader
     xorg.xdpyinfo
     xclip
     tor-browser
@@ -99,7 +105,11 @@
     scrot
     poppler_utils # For zathura preview
     qbittorrent
+    telegram-desktop
+    darktable
+    spotify
 
+    docker-compose
     borgbackup
     nmap
     sshfs
@@ -124,16 +134,24 @@
     pulseaudio # For pactl (i3blocks)
     udiskie
     smartmontools
+    ncspot
 
     # Langs
     (python3.withPackages(ps: [
         ps.python-lsp-server #ps.pyls-mypy ps.pyls-isort ps.pyls-black
+        ps.matplotlib
+        ps.numpy
     ]))
 
     guile
-    guile-json
+    sbt
     coursier
+    graalvm-ce
+    ghc
+    cabal-install
+    haskell-language-server
     shellcheck
+    nodePackages.bash-language-server
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
