@@ -12,8 +12,8 @@ source ~/.local/share/zsh/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source ~/.local/share/zsh/zsh-completions/zsh-completions.plugin.zsh
 source ~/.local/share/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 # These two are installed by the fzf package
-source /usr/share/fzf/completion.zsh
-source /usr/share/fzf/key-bindings.zsh
+source $(fzf-share)/completion.zsh
+source $(fzf-share)/key-bindings.zsh
 
 # Imports
 source ~/.config/zsh/aliases.zsh
