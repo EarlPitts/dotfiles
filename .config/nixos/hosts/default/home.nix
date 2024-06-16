@@ -20,7 +20,7 @@
   services.syncthing.enable = true;
 
   home.file.".gnupg/gpg-agent.conf".text = ''
-    pinentry-program /usr/bin/pinentry-rofi
+    pinentry-program /home/obabo/.nix-profile/bin/pinentry-rofi
     max-cache-ttl 60480000
     default-cache-ttl 60480000
   '';
