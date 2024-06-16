@@ -28,6 +28,7 @@
     yabai
     jq
     fzf
+    ranger
     # tree
     # eza
     # bat
