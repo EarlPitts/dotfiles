@@ -8,3 +8,4 @@ venv
 wiki
 *.swp
 stuff
+.direnv
