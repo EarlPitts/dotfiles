@@ -25,6 +25,8 @@ lspconfig.purescriptls.setup {
     }
 }
 
+lspconfig.phpactor.setup{}
+
 lspconfig.bashls.setup{
         root_dir = function(fname)
             return lspconfig.util.path.dirname(fname)
@@ -79,7 +81,7 @@ metals_config.settings = {
 
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "scala", "sbt", "java" },
+    pattern = { "scala", "sbt", "java", "sc" },
     callback = function()
         require("metals").initialize_or_attach(metals_config)
     end,
@@ -88,6 +90,7 @@ vim.api.nvim_create_autocmd("FileType", {
 
 metals_config.on_attach = function(client, bufnr)
     map("v", "K", require("metals").type_of_range)
+    map("n", "<leader>er", require("metals").hover_worksheet)
     map('n', '<space>t', require("telescope").extensions.metals.commands)
     map("n", "<space><C-g>",  require("telescope.builtin").lsp_dynamic_workspace_symbols)
     map('n', '<space>n', require("metals.tvp").toggle_tree_view)
