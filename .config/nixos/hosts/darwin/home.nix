@@ -29,6 +29,7 @@
     jq
     fzf
     ranger
+    phpactor
     # tree
     # eza
     # bat
