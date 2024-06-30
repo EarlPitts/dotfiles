@@ -76,6 +76,7 @@
     universal-ctags
     pandoc
     imagemagick
+    lsof
 
     # Monitoring
     btop
@@ -118,7 +119,9 @@
     mpv
     zathura
     yt-dlp
-    pass
+    (pass.withExtensions (exts: [
+        passExtensions.pass-otp
+    ]))
     bottles
     unzip
     rofi-pass
