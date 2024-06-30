@@ -76,5 +76,6 @@ require("lazy").setup({
     {'Olical/conjure', ft = {'scheme', 'racket', 'python'}},
     {'wlangstroth/vim-racket', ft = 'scheme'},
     'tweekmonster/startuptime.vim',
-    'nvim-lua/plenary.nvim'
+    'chrisbra/Recover.vim',
+    -- 'nvim-lua/plenary.nvim',
 })
