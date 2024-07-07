@@ -89,7 +89,7 @@
     difftastic
 
     # GUI
-    gnome.adwaita-icon-theme
+    adwaita-icon-theme
     feh
     sxiv
     unclutter-xfixes
