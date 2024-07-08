@@ -30,19 +30,21 @@
     fzf
     ranger
     phpactor
-    # tree
-    # eza
-    # bat
-    # ripgrep
-    # fd
+
+    eza
+    bat
+    ripgrep
+    fd
+    curlie
+    difftastic
+    slides
+    gh
+
     # fzf
-    # rofi
     # nnn
-    # ranger
     # ueberzugpp
-    # acpi
-    # calcurse
-    # w3m
+    calcurse
+    w3m
     # doggo
     # newsboat
     # pulsemixer
@@ -51,7 +53,7 @@
     # genpass
     #
     # # Monitoring
-    # btop
+    btop
     # htop
     # bmon
     #
@@ -121,4 +123,11 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+  programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+  };
 }
