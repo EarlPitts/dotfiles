@@ -40,7 +40,6 @@
     slides
     gh
 
-    # fzf
     # nnn
     # ueberzugpp
     calcurse
@@ -58,10 +57,9 @@
     # bmon
     #
     # # Devtools
-    # neovim
-    # git
-    # direnv
-    # difftastic
+    neovim
+    git
+    difftastic
     #
     # # GUI
     # gnome.adwaita-icon-theme
@@ -87,15 +85,15 @@
     # playerctl
     # bleachbit
     # mpv
-    # zathura
+    zathura
     # yt-dlp
-    # pass
+    pass
     # bottles
     # unzip
     # rofi-pass
     # neomutt
     # isync
-    # tmux
+    tmux
     # firefox
     # gcc
     # gnupg
@@ -113,8 +111,9 @@
     #
     # guile
     # guile-json
-    # coursier
-    # shellcheck
+    sbt
+    coursier
+    shellcheck
   ];
 
   home.sessionVariables = {
