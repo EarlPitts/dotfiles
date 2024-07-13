@@ -53,7 +53,7 @@ if [ $(uname -s) != Darwin ]; then
     fi
 else
     # MacOS stuff
-    export PATH="$PATH:/Users/i348749/.local/bin:~/.config/emacs/bin:/Users/i348749/Library/Application Support/Coursier/bin"
+    export PATH="$PATH:/Users/i348749/.local/bin:~/.config/emacs/bin:/Users/i348749/Library/Application Support/Coursier/bin:/Users/i348749/Projects/active/opstools"
     export CLOUD_SQL_IAM_USER=segmentation-sql-proxy@sap-segmentationduahubxzpsxccc.iam
     export TERM=alacritty # for tmux
 
