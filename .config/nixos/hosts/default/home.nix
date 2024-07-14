@@ -87,6 +87,7 @@
     neovim
     git
     difftastic
+    gnumake
 
     # GUI
     adwaita-icon-theme
@@ -116,7 +117,7 @@
     sshfs
     playerctl
     bleachbit
-    mpv
+    (mpv.override {scripts = [ mpvScripts.mpris ];})
     zathura
     yt-dlp
     (pass.withExtensions (exts: [
