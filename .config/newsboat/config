@@ -9,7 +9,7 @@ notify-always yes
 notify-screen yes
 prepopulate-query-feeds yes
 refresh-on-startup no
-reload-threads 3
+reload-threads 8
 reload-time 120
 save-path "~/Sync/saved-articles"
 bookmark-cmd ~/.config/newsboat/bookmark.sh
