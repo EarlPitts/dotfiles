@@ -9,3 +9,5 @@ wiki
 *.swp
 stuff
 .direnv
+.metals
+.scala-build
