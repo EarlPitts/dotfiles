@@ -54,6 +54,8 @@
     tree
     eza
     bat
+    slides
+    gh
     ripgrep
     fd
     fzf
