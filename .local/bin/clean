@@ -20,3 +20,4 @@ echo "deepscan.ds_store
     thumbnails.cache" | \
 xargs bleachbit --clean
 nix-collect-garbage -d
+nix-store --optimise
