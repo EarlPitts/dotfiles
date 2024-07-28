@@ -79,6 +79,8 @@
     pandoc
     imagemagick
     lsof
+    exiftool
+    figlet
 
     # Monitoring
     btop
@@ -150,6 +152,7 @@
     ]))
 
     guile
+    guile-json
     sbt
     coursier
     graalvm-ce
