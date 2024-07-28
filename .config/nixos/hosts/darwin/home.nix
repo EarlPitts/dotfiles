@@ -6,7 +6,7 @@
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  # services.syncthing.enable = true;
+  services.syncthing.enable = true;
 
   # services.dunst = {
   #   enable = true;
@@ -44,6 +44,9 @@
     # ueberzugpp
     calcurse
     w3m
+    k9s
+    jless
+    darwin.iproute2mac
     # doggo
     # newsboat
     # pulsemixer
@@ -53,6 +56,7 @@
     #
     # # Monitoring
     btop
+    gnupg
     # htop
     # bmon
     #
@@ -87,7 +91,9 @@
     # mpv
     zathura
     # yt-dlp
-    pass
+    (pass.withExtensions (exts: [
+        passExtensions.pass-otp
+    ]))
     # bottles
     # unzip
     # rofi-pass
@@ -114,6 +120,7 @@
     sbt
     coursier
     shellcheck
+    nodePackages.bash-language-server
   ];
 
   home.sessionVariables = {

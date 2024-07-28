@@ -31,7 +31,7 @@
     casks = [
       # "aerospace"
       "alacritty"
-      "anki"
+      # "anki"
       "chromium"
       "docker"
       "firefox"
@@ -48,7 +48,7 @@
       "microsoft-auto-update"
       "microsoft-teams"
       "phpstorm"
-      "psst"
+      # "psst"
       "slack"
       "temurin21"
       # "visual-studio-code"
