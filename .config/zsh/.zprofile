@@ -35,6 +35,7 @@ export INBOX="$PERSONAL/Inbox"
 
 # Path
 export PATH=$PATH:~/.local/bin:~/.config/emacs/bin
+export GUILE_LOAD_PATH=~/.nix-profile/share/guile/site/3.0
 
 export FZF_DEFAULT_COMMAND="rg --files --no-ignore --hidden --follow --glob '!**/.git/*' --glob '!.venv/*' --glob '!__pycache__/*'"
 
