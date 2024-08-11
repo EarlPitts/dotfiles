@@ -60,6 +60,9 @@
     fd
     fzf
     rofi
+    pinentry-rofi
+    rofi-pass
+    rofi-calc
     nnn
     ranger
     ueberzugpp
@@ -102,7 +105,6 @@
     koreader
     xorg.xdpyinfo
     xclip
-    tor-browser
     anki
     slack
     grobi
@@ -129,14 +131,12 @@
     ]))
     bottles
     unzip
-    rofi-pass
     neomutt
     isync
     tmux
     firefox
     gcc
     gnupg
-    pinentry-rofi
     polkit
     iw # i3blocks
     pulseaudio # For pactl (i3blocks)
