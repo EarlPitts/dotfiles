@@ -1,22 +1,25 @@
 #!/usr/bin/env sh
 
+set -x
+
 intern="eDP-1"
 extern=$(xrandr | grep -E "^HDMI-2 connected|^DP-1 connected|^DP-2 connected" | tail -n 1 | cut -f1 -d" ")
+gamma="0.9"
 
 if [ "$1" = "double" ]; then
-    xrandr --output "$extern" --auto --output "$intern" --auto
+    xrandr --output "$extern" --gamma $gamma --auto --output "$intern" --auto --gamma $gamma
     pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
     notify-send "Mirroring Screen"
 elif [ "$1" = "extended" ]; then
-    xrandr --output "$intern" --auto --output "$extern" --above $intern
+    xrandr --output "$intern" --gamma $gamma --auto --output "$extern" --above $intern --gamma $gamma
     pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
     notify-send "Extending Screen"
 elif [ "$1" = "second" ]; then
-    xrandr --output "$intern" --off --output "$extern" --auto
+    xrandr --output "$intern" --off --output "$extern" --auto --gamma $gamma
     pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:hdmi-stereo+input:analog-stereo
     notify-send "Screen 2"
 elif [ "$1" = "first" ]; then
-    xrandr --output "$intern" --auto --output "$extern" --off
+    xrandr --output "$intern" --gamma $gamma --auto --output "$extern" --off
     pactl set-card-profile alsa_card.pci-0000_00_1f.3 output:analog-stereo+input:analog-stereo
     notify-send "Screen 1"
 fi
