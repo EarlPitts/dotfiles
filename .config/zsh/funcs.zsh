@@ -22,8 +22,12 @@ update() {
     # Update neovim plugins
     nvim --headless "+Lazy! sync" +qa
     # System update
-    nix flake update ~/.config/nixos
-    nixos-rebuild switch --flake ~/.config/nixos#default --use-remote-sudo
+    if [ $(uname -s) != Darwin ]; then
+        nix flake update ~/.config/nixos
+        nixos-rebuild switch --flake ~/.config/nixos#default --use-remote-sudo
+    else
+        darwin-rebuild switch --flake ~/.config/nixos/
+    fi
 }
 
 tunnel() {
