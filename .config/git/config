@@ -25,3 +25,5 @@
 [diff]
     tool = nvimdiff
     external = difft
+[merge]
+	conflictstyle = diff3
