@@ -11,3 +11,4 @@ stuff
 .direnv
 .metals
 .scala-build
+shell.nix
