@@ -1,0 +1,38 @@
+#!/usr/bin/env python
+
+import json
+import os
+from datetime import datetime
+
+DIDITFILE = os.environ['PERSONAL'] + 'Statistics/didit.json'
+
+def load(filename):
+    """Loads the data from the JSON file."""
+    try:
+        with open(filename, 'r') as f:
+            return json.loads(f.read())
+    except FileNotFoundError:
+        return []
+
+def write(data, filename):
+    """Writes pretty printed, sorted output."""
+    with open(filename, 'w') as f:
+        f.write(json.dumps(data, indent=4, sort_keys=True))
+
+def read_input():
+    """Reads user input."""
+    usr_input = input('Really did it? (y/n): ')
+    return True if usr_input == 'y' else False if usr_input == 'n' else read_input()
+
+
+def add_record(data):
+    """Adds a single record to the "database"."""
+    curr_date = datetime.now().strftime("%Y-%m-%d")
+
+    if read_input():
+        data.append(curr_date)
+
+
+data = load(DIDITFILE)
+add_record(data)
+write(data, DIDITFILE)
