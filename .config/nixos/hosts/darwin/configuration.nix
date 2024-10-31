@@ -2,6 +2,8 @@
 { pkgs, inputs, ... }:
 {
 
+  system.stateVersion = 5;
+
   users.users."I348749" = {
     home = "/Users/I348749";
     shell = pkgs.zsh;
@@ -28,6 +30,7 @@
       upgrade = false;
       cleanup = "zap";
     };
+    brews = [ "pinentry-mac" ];
     casks = [
       # "aerospace"
       "alacritty"
@@ -39,7 +42,7 @@
       "font-fira-code"
       "font-fontawesome"
       "google-cloud-sdk"
-      "graalvm-jdk@17"
+      # "graalvm-jdk@17"
       "insomnia"
       "intellij-idea-ce"
       "karabiner-elements"
@@ -50,7 +53,7 @@
       "phpstorm"
       # "psst"
       "slack"
-      "temurin21"
+      # "temurin21"
       # "visual-studio-code"
       "vscodium"
       "wireshark"

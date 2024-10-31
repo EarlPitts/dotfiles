@@ -30,6 +30,7 @@
     fzf
     ranger
     phpactor
+    postgresql
 
     eza
     bat
@@ -117,6 +118,7 @@
     #
     # guile
     # guile-json
+    graalvm-ce
     sbt
     coursier
     shellcheck
