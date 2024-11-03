@@ -3,8 +3,8 @@
 {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "obabo";
-  home.homeDirectory = "/home/obabo";
+  home.username = "ben";
+  home.homeDirectory = "/home/ben";
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -20,7 +20,7 @@
   services.syncthing.enable = true;
 
   home.file.".gnupg/gpg-agent.conf".text = ''
-    pinentry-program /home/obabo/.nix-profile/bin/pinentry-rofi
+    pinentry-program /home/ben/.nix-profile/bin/pinentry-rofi
     max-cache-ttl 60480000
     default-cache-ttl 60480000
   '';
@@ -192,7 +192,7 @@
   #
   # or
   #
-  #  /etc/profiles/per-user/obabo/etc/profile.d/hm-session-vars.sh
+  #  /etc/profiles/per-user/ben/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
     # EDITOR = "emacs";

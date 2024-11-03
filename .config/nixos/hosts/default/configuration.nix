@@ -12,15 +12,11 @@
       inputs.home-manager.nixosModules.default
     ];
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Define on which hard drive you want to install Grub.
-  boot.loader.grub.device = "/dev/sdb"; # or "nodev" for efi only
+  # Bootloader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  # networking.hostName = "nixos"; # Define your hostname.
+  networking.hostName = "T480"; # Define your hostname.
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
   # networking.networkmanager.enable = true;  # Easiest to use and most distros use this by default.
@@ -44,13 +40,15 @@
   # };
 
   main-user.enable = true;
-  main-user.userName = "obabo";
+  main-user.userName = "ben";
 
-  users.users.obabo.extraGroups = [ "libvirtd" "video" "docker" ];
+  users.users.ben.extraGroups = [ "libvirtd" "video" "docker" ];
   security.sudo.wheelNeedsPassword = false;
 
   hardware.bluetooth.enable = true; # enables support for Bluetooth
   hardware.bluetooth.powerOnBoot = true; # powers up the default Bluetooth controller on boot
+
+  services.fwupd.enable = true;
 
   # powerManagement = {
   #   enable = true;
@@ -78,7 +76,7 @@
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = {
-      "obabo" = import ./home.nix;
+      "ben" = import ./home.nix;
     };
   };
 
@@ -214,9 +212,9 @@
       Before= [ "suspend.target" "sleep.target" ];
     };
     serviceConfig = {
-      ExecStart = "/home/obabo/.local/bin/lock";
+      ExecStart = "/home/ben/.local/bin/lock";
       Type = "forking";
-      User = "obabo";
+      User = "ben";
       Environment="DISPLAY=:0";
     };
     wantedBy = [ "suspend.target" "sleep.target" ];
@@ -239,7 +237,7 @@
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "obabo";
+      User = "ben";
       Environment="DISPLAY=:0";
     };
   };
@@ -260,7 +258,7 @@
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "obabo";
+      User = "ben";
     };
   };
 
@@ -280,7 +278,7 @@
     '';
     serviceConfig = {
       Type = "oneshot";
-      User = "obabo";
+      User = "ben";
       Environment= [ "DISPLAY=:0" "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus"];
     };
   };
@@ -364,7 +362,7 @@
   # and migrated your data accordingly.
   #
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system.stateVersion = "24.05"; # Did you read the comment?
 
 }
 

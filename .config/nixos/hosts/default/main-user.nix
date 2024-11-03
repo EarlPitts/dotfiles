@@ -9,7 +9,7 @@ in
       = lib.mkEnableOption "enable user module";
 
     main-user.userName = lib.mkOption {
-      default = "obabo";
+      default = "ben";
       description = ''
         username
       '';
