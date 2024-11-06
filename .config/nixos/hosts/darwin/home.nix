@@ -17,6 +17,8 @@
   #   enable = true;
   # };
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   home.file.".gnupg/gpg-agent.conf".text = ''
     pinentry-program /opt/homebrew/bin/pinentry-mac
     max-cache-ttl 60480000
