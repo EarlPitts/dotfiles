@@ -23,7 +23,7 @@ update() {
     nvim --headless "+Lazy! sync" +qa
     # System update
     if [ $(uname -s) != Darwin ]; then
-        nix flake update ~/.config/nixos
+        nix flake update --flake ~/.config/nixos
         nixos-rebuild switch --flake ~/.config/nixos#default --use-remote-sudo
     else
         darwin-rebuild switch --flake ~/.config/nixos/
