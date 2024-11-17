@@ -4,7 +4,7 @@ import json
 import os
 from datetime import datetime
 
-DIDITFILE = os.environ['PERSONAL'] + 'Statistics/didit.json'
+DIDITFILE = os.environ['PERSONAL'] + '/Statistics/didit.json'
 
 def load(filename):
     """Loads the data from the JSON file."""
