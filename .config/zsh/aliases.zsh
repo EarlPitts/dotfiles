@@ -112,3 +112,6 @@ alias gist='hub gist create --copy'
 if [ $(uname -s) = Darwin ]; then
     unalias open
 fi
+
+# NixOS
+alias generations='nix profile history --profile /nix/var/nix/profiles/system'
