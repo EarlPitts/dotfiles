@@ -120,11 +120,14 @@
     #
     # guile
     # guile-json
+    ghc
+    haskell-language-server
     graalvm-ce
     sbt
     coursier
     shellcheck
     nodePackages.bash-language-server
+    bruno
   ];
 
   home.sessionVariables = {
