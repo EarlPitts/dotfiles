@@ -1,12 +1,9 @@
 { lib, config, pkgs, ... }:
 
-let
-  cfg = config.main-user;
-in
-{
+let cfg = config.main-user;
+in {
   options = {
-    main-user.enable
-      = lib.mkEnableOption "enable user module";
+    main-user.enable = lib.mkEnableOption "enable user module";
 
     main-user.userName = lib.mkOption {
       default = "ben";
@@ -26,5 +23,4 @@ in
     };
   };
 }
-
 

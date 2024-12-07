@@ -1,6 +1,5 @@
 # hosts/YourHostName/default.nix
-{ pkgs, inputs, ... }:
-{
+{ pkgs, inputs, ... }: {
 
   system.stateVersion = 5;
 
@@ -19,9 +18,7 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = {
-      "I348749" = import ./home.nix;
-    };
+    users = { "I348749" = import ./home.nix; };
   };
 
   homebrew = {
@@ -61,7 +58,7 @@
       "zoom"
     ];
   };
-  
+
   # if you use zsh (the default on new macOS installations),
   # you'll need to enable this so nix-darwin creates a zshrc sourcing needed environment changes
   programs.zsh = {

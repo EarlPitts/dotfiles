@@ -123,12 +123,10 @@
     sshfs
     playerctl
     bleachbit
-    (mpv.override {scripts = [ mpvScripts.mpris ];})
+    (mpv.override { scripts = [ mpvScripts.mpris ]; })
     zathura
     yt-dlp
-    (pass.withExtensions (exts: [
-        passExtensions.pass-otp
-    ]))
+    (pass.withExtensions (exts: [ passExtensions.pass-otp ]))
     bottles
     unzip
     neomutt
@@ -145,10 +143,10 @@
     ncspot
 
     # Langs
-    (python3.withPackages(ps: [
-        ps.python-lsp-server #ps.pyls-mypy ps.pyls-isort ps.pyls-black
-        ps.matplotlib
-        ps.numpy
+    (python3.withPackages (ps: [
+      ps.python-lsp-server # ps.pyls-mypy ps.pyls-isort ps.pyls-black
+      ps.matplotlib
+      ps.numpy
     ]))
 
     guile

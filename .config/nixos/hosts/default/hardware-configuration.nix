@@ -4,33 +4,32 @@
 { config, lib, pkgs, modulesPath, ... }:
 
 {
-  imports =
-    [ (modulesPath + "/installer/scan/not-detected.nix")
-    ];
+  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "usb_storage" "usbhid" "uas" "sd_mod" ];
+  boot.initrd.availableKernelModules =
+    [ "xhci_pci" "ahci" "usb_storage" "usbhid" "uas" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/" =
-    { device = "/dev/disk/by-uuid/fe31572f-5282-474a-a7a7-96471ca10d91";
-      fsType = "ext4";
-    };
+  fileSystems."/" = {
+    device = "/dev/disk/by-uuid/fe31572f-5282-474a-a7a7-96471ca10d91";
+    fsType = "ext4";
+  };
 
-  boot.initrd.luks.devices."luks-e62804ca-1d86-41db-8a99-32ad07af7a6a".device = "/dev/disk/by-uuid/e62804ca-1d86-41db-8a99-32ad07af7a6a";
+  boot.initrd.luks.devices."luks-e62804ca-1d86-41db-8a99-32ad07af7a6a".device =
+    "/dev/disk/by-uuid/e62804ca-1d86-41db-8a99-32ad07af7a6a";
 
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/BD65-7BD0";
-      fsType = "vfat";
-      options = [ "fmask=0077" "dmask=0077" ];
-    };
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/BD65-7BD0";
+    fsType = "vfat";
+    options = [ "fmask=0077" "dmask=0077" ];
+  };
 
-   swapDevices = [ {
+  swapDevices = [{
     device = "/var/lib/swapfile";
-    size = 10*1024;
-    } ];
-
+    size = 10 * 1024;
+  }];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
   # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -41,7 +40,8 @@
   # networking.interfaces.wlp3s0.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.intel.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   hardware.acpilight.enable = true;
 }

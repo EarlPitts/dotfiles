@@ -17,18 +17,16 @@
 
   outputs = { self, nixpkgs, nix-darwin, home-manager, ... }@inputs: {
     nixosConfigurations.default = nixpkgs.lib.nixosSystem {
-      specialArgs = {inherit inputs;};
-      modules = [
-        ./hosts/default/configuration.nix
-        home-manager.nixosModules.default
-      ];
+      specialArgs = { inherit inputs; };
+      modules =
+        [ ./hosts/default/configuration.nix home-manager.nixosModules.default ];
     };
     darwinConfigurations."FYPYG0PQFC" = nix-darwin.lib.darwinSystem {
-      specialArgs = {inherit inputs;};
+      specialArgs = { inherit inputs; };
       system = "aarch64-darwin";
       modules = [
-      ./hosts/darwin/configuration.nix
-       home-manager.darwinModules.home-manager
+        ./hosts/darwin/configuration.nix
+        home-manager.darwinModules.home-manager
       ];
     };
   };

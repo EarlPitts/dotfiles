@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{ pkgs, ... }:
 
 {
   home.username = "I348749";
@@ -94,9 +94,7 @@
     # mpv
     zathura
     # yt-dlp
-    (pass.withExtensions (exts: [
-        passExtensions.pass-otp
-    ]))
+    (pass.withExtensions (exts: [ passExtensions.pass-otp ]))
     # bottles
     # unzip
     # rofi-pass
@@ -129,11 +127,10 @@
     nodePackages.bash-language-server
     bruno
     nixd
+    nixfmt
   ];
 
-  home.sessionVariables = {
-    EDITOR = "nvim";
-  };
+  home.sessionVariables = { EDITOR = "nvim"; };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
