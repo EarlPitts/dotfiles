@@ -17,6 +17,8 @@ lspconfig.hls.setup {
 
 lspconfig.erlangls.setup {}
 
+lspconfig.nixd.setup{}
+
 lspconfig.purescriptls.setup {
     settings = {
         purescript = {

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{  pkgs, ... }:
 
 {
   home.username = "I348749";
@@ -128,6 +128,7 @@
     shellcheck
     nodePackages.bash-language-server
     bruno
+    nixd
   ];
 
   home.sessionVariables = {

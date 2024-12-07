@@ -22,7 +22,7 @@ require'nvim-treesitter.configs'.setup {
         'regex',
         'markdown',
         'markdown_inline',
-        'vimdoc'
+        'vimdoc',
         'nix'
     },
     highlight = {
