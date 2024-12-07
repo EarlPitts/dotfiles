@@ -58,11 +58,13 @@ else
     export CLOUD_SQL_IAM_USER=segmentation-sql-proxy@sap-segmentationduahubxzpsxccc.iam
     export TERM=alacritty # for tmux
 
-    source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-    source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+    # source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+    # source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
-    export NVM_DIR="$HOME/.config/nvm"
-    [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
+    # export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+    # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+    # export NVM_DIR="$HOME/.config/nvm"
+    # [ -s "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" ] && \. "$HOMEBREW_PREFIX/opt/nvm/nvm.sh" # This loads nvm
 fi
