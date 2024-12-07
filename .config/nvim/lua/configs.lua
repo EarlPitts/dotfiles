@@ -8,7 +8,23 @@ vim.loader.enable()
 
 -- Treesitter
 require'nvim-treesitter.configs'.setup {
-    ensure_installed = {'c', 'bash', 'lua', 'python', 'scheme', 'comment', 'make', 'norg', 'haskell', 'erlang', 'regex', 'markdown', 'markdown_inline', 'vimdoc'},
+    ensure_installed = {
+        'c',
+        'bash',
+        'lua',
+        'python',
+        'scheme',
+        'comment',
+        'make',
+        'norg',
+        'haskell',
+        'erlang',
+        'regex',
+        'markdown',
+        'markdown_inline',
+        'vimdoc'
+        'nix'
+    },
     highlight = {
         enable = true,
     },
