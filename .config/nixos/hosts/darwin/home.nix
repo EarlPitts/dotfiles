@@ -128,6 +128,7 @@
     bruno
     nixd
     nixfmt
+    entr
   ];
 
   home.sessionVariables = { EDITOR = "nvim"; };
