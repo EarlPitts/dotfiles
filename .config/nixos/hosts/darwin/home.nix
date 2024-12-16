@@ -128,6 +128,7 @@
     nixd
     nixfmt
     entr
+    nodejs
   ];
 
   home.sessionVariables = { EDITOR = "nvim"; };
