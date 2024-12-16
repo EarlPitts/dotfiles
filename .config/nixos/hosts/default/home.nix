@@ -122,7 +122,6 @@
     nmap
     sshfs
     playerctl
-    bleachbit
     (mpv.override { scripts = [ mpvScripts.mpris ]; })
     zathura
     yt-dlp

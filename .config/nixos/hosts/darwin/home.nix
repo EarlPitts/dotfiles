@@ -90,7 +90,6 @@
     # nmap
     # sshfs
     # playerctl
-    # bleachbit
     # mpv
     zathura
     # yt-dlp

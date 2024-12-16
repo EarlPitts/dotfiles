@@ -3,22 +3,5 @@
 set -e
 
 sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 14d
-echo "deepscan.ds_store
-    deepscan.backup
-    deepscan.thumbs_db
-    deepscan.tmp
-    firefox.cache
-    firefox.crash_reports
-    firefox.vacuum
-    slack.cache
-    slack.vacuum
-    system.desktop_entry
-    system.cache
-    system.clipboard
-    system.trash
-    system.tmp
-    system.rotated_logs
-    thumbnails.cache" | \
-xargs bleachbit --clean
 nix-collect-garbage -d
 nix-store --optimise
