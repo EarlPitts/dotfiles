@@ -78,7 +78,8 @@ metals_config.init_options.statusBarProvider = "on"
 metals_config.settings = {
     showImplicitArguments = true,
     showImplicitConversionsAndClasses = true,
-    showInferredType = true
+    showInferredType = true,
+    defaultBspToBuildTool = true
 }
 
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
