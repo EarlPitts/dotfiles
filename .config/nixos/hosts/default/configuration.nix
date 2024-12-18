@@ -64,11 +64,14 @@
     };
 
     # services.xserver.xkb.options = "eurosign:e,caps:escape";
-    interception-tools = {
+    interception-tools = let
+      toolsFolder = pkgs.interception-tools;
+      pluginsFolder = pkgs.interception-tools-plugins.caps2esc;
+    in {
       enable = true;
       plugins = with pkgs; [ interception-tools-plugins.caps2esc ];
       udevmonConfig = ''
-        - JOB: "${pkgs.interception-tools}/bin/intercept -g $DEVNODE | ${pkgs.interception-tools-plugins.caps2esc}/bin/caps2esc | ${pkgs.interception-tools}/bin/uinput -d $DEVNODE"
+        - JOB: "${toolsFolder}/bin/intercept -g $DEVNODE | ${pluginsFolder}/bin/caps2esc | ${toolsFolder}/bin/uinput -d $DEVNODE"
           DEVICE:
             EVENTS:
               EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
@@ -96,7 +99,6 @@
     enableCompletion = false;
     enable = true;
   };
-  # programs.mtr.enable = true;
   # programs.gnupg.agent = {
   #   enable = true;
   #   enableSSHSupport = true;
