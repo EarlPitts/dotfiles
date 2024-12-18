@@ -1,6 +1,18 @@
 { pkgs, ... }:
 
 {
+  home.sessionVariables = { EDITOR = "nvim"; };
+
+  # Let Home Manager install and manage itself.
+  programs.home-manager.enable = true;
+  programs = {
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+  };
+
   services.syncthing.enable = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -25,6 +37,7 @@
     genpass
     curlie
     jq
+    jless
     visidata
     pandoc
     imagemagick
@@ -67,16 +80,4 @@
     nixd
     nixfmt
   ];
-
-  home.sessionVariables = { EDITOR = "nvim"; };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
-  programs = {
-    direnv = {
-      enable = true;
-      enableZshIntegration = true;
-      nix-direnv.enable = true;
-    };
-  };
 }
