@@ -42,8 +42,10 @@ map('i', '<C-n>', '<C-x><C-o>' )                            -- Remap omnicomplet
 -- map('n', '<Space>', 'za')                                -- Folding
 
 -- Copy to/from clipboard
-map('n', '<C-c>', '"+yy')
-map('v', '<C-c>', '"+y')
+-- map('n', '<C-c>', '"+yy')
+-- map('v', '<C-c>', '"+y')
+map('n', '<C-c>', ':w !xclip -selection clipboard<CR><CR>')
+map('v', '<C-c>', ':w !xclip -selection clipboard<CR><CR>')
 map('i', '<C-v>', '<ESC>:.!xclip -selection clipboard -o<CR>') -- This is horrible, find some better way
 
 -- Window switching
