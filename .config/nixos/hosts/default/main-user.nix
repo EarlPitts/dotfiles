@@ -18,7 +18,7 @@ in {
       isNormalUser = true;
       initialPassword = "unix";
       description = "My user";
-      extraGroups = [ "wheel" "power" ];
+      extraGroups = [ "wheel" "power" "libvirtd" "video" "docker" ];
       shell = pkgs.zsh;
     };
   };

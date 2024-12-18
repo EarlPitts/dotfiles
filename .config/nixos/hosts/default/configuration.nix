@@ -41,12 +41,7 @@
   main-user.enable = true;
   main-user.userName = "ben";
 
-  users.users.ben.extraGroups = [ "libvirtd" "video" "docker" ];
   security.sudo.wheelNeedsPassword = false;
-
-  hardware.bluetooth.enable = true; # enables support for Bluetooth
-  hardware.bluetooth.powerOnBoot =
-    true; # powers up the default Bluetooth controller on boot
 
   services.fwupd.enable = true;
 
@@ -77,8 +72,6 @@
     extraSpecialArgs = { inherit inputs; };
     users = { "ben" = import ./home.nix; };
   };
-
-  nixpkgs.config.allowUnfree = true;
 
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
