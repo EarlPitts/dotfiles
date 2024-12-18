@@ -1,4 +1,3 @@
-# hosts/YourHostName/default.nix
 { pkgs, inputs, ... }: {
 
   system.stateVersion = 5;
@@ -18,6 +17,13 @@
     users = { "I348749" = import ./home.nix; };
   };
 
+  fonts.packages = with pkgs; [
+    noto-fonts
+    fira-code
+    fira-code-symbols
+    font-awesome
+  ];
+
   homebrew = {
     enable = true;
     onActivation = {
@@ -32,9 +38,6 @@
       "chromium"
       "docker"
       "firefox"
-      "font-awesome-terminal-fonts"
-      "font-fira-code"
-      "font-fontawesome"
       "google-cloud-sdk"
       "insomnia"
       "intellij-idea-ce"
