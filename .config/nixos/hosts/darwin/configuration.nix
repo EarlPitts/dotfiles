@@ -9,9 +9,6 @@
 
   services.nix-daemon.enable = true;
 
-  services.skhd.enable = true;
-  services.yabai.enable = true;
-
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { "I348749" = import ./home.nix; };
@@ -31,8 +28,9 @@
       cleanup = "zap";
     };
     brews = [ "pinentry-mac" "nvm" ];
+    taps = [ "nikitabobko/tap" ];
     casks = [
-      # "aerospace"
+      "aerospace"
       "alacritty"
       # "anki"
       "chromium"
