@@ -24,10 +24,13 @@
     iproute2mac
     postgresql
     zathura
-    bruno
+    bruno-cli
+
+    google-cloud-sdk
 
     # Langs
     nodejs
     phpactor
+    python3
   ];
 }
