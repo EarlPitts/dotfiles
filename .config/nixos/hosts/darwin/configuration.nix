@@ -40,7 +40,6 @@
       "insomnia"
       "intellij-idea-ce"
       "karabiner-elements"
-      "keepassxc"
       "libreoffice"
       "microsoft-auto-update"
       "microsoft-teams"
