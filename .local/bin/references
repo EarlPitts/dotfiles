@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 
-if [ -n "$DISPLAY" ]; then
+set -x
+
+if [ -n "$DISPLAY" ] || [ "$(uname -s)" = "Darwin" ]; then
     # If has a wm, display other docs too
     ref=$(find "$WIKI" "$SNIPPETS" "$BOOKS" "$PAPERS" "$CHEATSHEETS" -type f | cut -d/ -f4- | fzf)
 else
@@ -18,7 +20,15 @@ if [ "$(echo "$ref" | cut -d/ -f2)" = "Snippets" ]; then
     cd "$HOME/$folder" || exit
     tmux new-window "$EDITOR" +Codi "$file"
 elif [ "$(echo "$ref" | cut -d/ -f1)" = "References" ]; then
-    i3 exec "xdg-open $HOME/$folder/$file" > /dev/null
+    if [ "$(uname -s)" = "Darwin" ]; then
+        if echo "$file" | grep -Eq ".pdf|.djvu|.epub"; then
+            tmux new-session -d "zathura $HOME/$folder/$file"
+        else
+            open "$HOME/$folder/$file"
+        fi
+    else
+        i3 exec "xdg-open $HOME/$folder/$file" > /dev/null
+    fi
 else
     cd "$HOME/$folder" || exit
     tmux new-window "$EDITOR" "$file"
