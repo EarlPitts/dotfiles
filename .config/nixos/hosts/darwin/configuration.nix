@@ -1,6 +1,5 @@
 { pkgs, inputs, ... }: {
 
-  system.stateVersion = 5;
 
   users.users."I348749" = {
     home = "/Users/I348749";
@@ -54,6 +53,44 @@
   programs.zsh = {
     enable = true;
     enableCompletion = false;
+  };
+
+  system = {
+    stateVersion = 5;
+
+    startup.chime = false;
+
+    defaults = {
+      NSGlobalDomain = {
+        KeyRepeat = 120;
+        ApplePressAndHoldEnabled = false;
+        NSAutomaticCapitalizationEnabled = false;
+        NSAutomaticDashSubstitutionEnabled = false;
+        NSAutomaticPeriodSubstitutionEnabled = false;
+        NSAutomaticQuoteSubstitutionEnabled = false;
+        NSAutomaticSpellingCorrectionEnabled = false;
+      };
+      dock = {
+        autohide = true;
+        tilesize = 40;
+        show-recents = false;
+        launchanim = false;
+      };
+
+      finder = {
+        AppleShowAllExtensions = true;
+        AppleShowAllFiles = true;
+        CreateDesktop = false;
+      };
+
+      loginwindow.LoginwindowText = "Hi, I'm a computer";
+
+      trackpad = {
+        Clicking = true;
+        TrackpadThreeFingerTapGesture = 0;
+
+      };
+    };
   };
 
 }
