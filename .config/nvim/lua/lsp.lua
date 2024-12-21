@@ -19,6 +19,24 @@ lspconfig.erlangls.setup {}
 
 lspconfig.nixd.setup{}
 
+lspconfig.volar.setup{}
+lspconfig.ts_ls.setup{
+  init_options = {
+    plugins = {
+      {
+        name = "@vue/typescript-plugin",
+        location = "", -- It will default to the local package
+        languages = {"javascript", "typescript", "vue"},
+      },
+    },
+  },
+  filetypes = {
+    "javascript",
+    "typescript",
+    "vue",
+  },
+}
+
 lspconfig.purescriptls.setup {
     settings = {
         purescript = {
