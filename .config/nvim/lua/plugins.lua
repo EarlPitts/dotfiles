@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -24,33 +24,34 @@ require("lazy").setup({
     -- 'editorconfig/editorconfig-vim,'
 
     -- Writing
-    {'junegunn/goyo.vim', ft = 'markdown'},
-    {'junegunn/limelight.vim', ft = 'markdown'},
+    { 'junegunn/goyo.vim',      ft = 'markdown' },
+    { 'junegunn/limelight.vim', ft = 'markdown' },
 
     -- Analysis
     -- {'dense-analysis/ale', ft = {'bash', 'sh', 'zsh', 'c', 'tex', 'lua', 'markdown'}},
-    -- {'Valloric/YouCompleteMe', 
+    -- {'Valloric/YouCompleteMe',
     --     run = './install.py --clang-completer',
     --     ft = {'python', 'c'}
     -- }
     'neovim/nvim-lspconfig',
-    {'nvim-treesitter/nvim-treesitter', build = ':TSUpdate'},
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     'nvim-treesitter/playground',
-    {'scalameta/nvim-metals', dependencies = { "nvim-lua/plenary.nvim" }},
+    { 'scalameta/nvim-metals',           dependencies = { "nvim-lua/plenary.nvim" } },
     -- 'mfussenegger/nvim-dap',
 
     -- Notes
-    {'vimwiki/vimwiki'},
-    {'iamcco/markdown-preview.nvim', 
+    { 'vimwiki/vimwiki' },
+    {
+        'iamcco/markdown-preview.nvim',
         build = function() vim.fn["mkdp#util#install"]() end,
-        ft = {'markdown'}
+        ft = { 'markdown' }
     },
 
     -- { "nvim-neorg/neorg",
     --     build = ":Neorg sync-parsers",
     --     dependencies = { "nvim-lua/plenary.nvim" },
     -- },
-    
+
     { "purescript-contrib/purescript-vim" },
 
     -- Snippets
@@ -71,10 +72,10 @@ require("lazy").setup({
     -- 'RRethy/nvim-base16'
 
     -- Misc
-    {'aserowy/tmux.nvim', config = true},
+    { 'aserowy/tmux.nvim',                config = true },
     'metakirby5/codi.vim', -- TODO ft python, codi zsh func
-    {'Olical/conjure', ft = {'scheme', 'racket', 'python'}},
-    {'wlangstroth/vim-racket', ft = 'scheme'},
+    { 'Olical/conjure',         ft = { 'scheme', 'racket', 'python' } },
+    { 'wlangstroth/vim-racket', ft = 'scheme' },
     'tweekmonster/startuptime.vim',
     'chrisbra/Recover.vim',
     -- 'nvim-lua/plenary.nvim',

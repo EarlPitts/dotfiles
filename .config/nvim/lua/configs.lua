@@ -1,13 +1,13 @@
 -- Plugin Configs
 
 local map = vim.keymap.set
-local noremap = {noremap = true}
+local noremap = { noremap = true }
 
 -- Lower startup time
 vim.loader.enable()
 
 -- Treesitter
-require'nvim-treesitter.configs'.setup {
+require 'nvim-treesitter.configs'.setup {
     ensure_installed = {
         'c',
         'bash',
@@ -53,7 +53,7 @@ require('lualine').setup {
 }
 
 -- Telescope
-require('telescope').setup{
+require('telescope').setup {
     defaults = {
         mappings = {
             i = {
@@ -73,14 +73,14 @@ require('telescope').setup{
 vim.g.UltiSnipsExpandTrigger = '<tab>'
 vim.g.UltiSnipsJumpForwardTrigger = '<tab>'
 --let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-vim.g.UltiSnipsSnippetDirectories = {'UltiSnips', 'my_snippets'}
+vim.g.UltiSnipsSnippetDirectories = { 'UltiSnips', 'my_snippets' }
 
 -- NvimTree
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 map('n', '<C-n>', ':NvimTreeToggle<CR>', noremap)
-vim.api.nvim_create_autocmd('BufEnter', {                                   -- Close nvim-tree is last buffer
+vim.api.nvim_create_autocmd('BufEnter', { -- Close nvim-tree is last buffer
     command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
     nested = true,
 })
@@ -93,8 +93,10 @@ local function my_on_attach(bufnr)
     vim.keymap.del('n', '<C-k>', { buffer = bufnr })
 end
 
-require'nvim-tree'.setup {
-    filters = {custom = {'.git', '__pycache__', '.pytest_cache'}},
+require 'nvim-tree'.setup {
+    filters = { custom = { '.git', '__pycache__', '.pytest_cache' } },
+    git = { enable = false
+    },
     renderer = {
         icons = {
             symlink_arrow = ' -> ',
@@ -105,13 +107,13 @@ require'nvim-tree'.setup {
                 git = false
             }
         },
-        add_trailing = true                                                 -- Append slash to folder names
+        add_trailing = true -- Append slash to folder names
     },
     on_attach = my_on_attach
 }
 
 -- Ale
-vim.g.ale_set_highlights = 0        -- Disable highlights
+vim.g.ale_set_highlights = 0 -- Disable highlights
 
 -- YouCompleteMe
 -- map('n', 'gd', ':YcmCompleter GoToDefinition<CR>', noremap)
@@ -125,7 +127,7 @@ vim.g.ale_set_highlights = 0        -- Disable highlights
 -- vim.g.ycm_key_list_previous_completion = '[]'
 
 -- VimWiki
-vim.g.vimwiki_list = {{
+vim.g.vimwiki_list = { {
     path = '~/Personal/Wiki',
     template_path = '~/Personal/Notes/templates/',
     template_default = 'default',
@@ -137,12 +139,12 @@ vim.g.vimwiki_list = {{
     links_space_char = '-',
     template_ext = '.tpl'
     --    \ 'auto_export': 1}]
-}}
+} }
 vim.g.tagbar_type_vimwiki = {
-    ctagstype ='vimwiki',
-    kinds = {'h:header'},
+    ctagstype = 'vimwiki',
+    kinds = { 'h:header' },
     sro = '&&&',
-    kind2scope = {h ='header'},
+    kind2scope = { h = 'header' },
     sort = 0,
     ctagsbin = '~/.config/nvim/vwtags.py',
     ctagsargs = 'markdown',
@@ -165,7 +167,7 @@ vim.g.tagbar_type_vimwiki = {
 -- }
 
 -- Markdown Preview
-vim.g.mkdp_command_for_global = 1       -- Make it available for all formats
+vim.g.mkdp_command_for_global = 1 -- Make it available for all formats
 
 -- Syntastic
 vim.g.syntastic_always_populate_loc_list = 1
@@ -174,18 +176,18 @@ vim.g.syntastic_check_on_open = 1
 vim.g.syntastic_check_on_wq = 0
 
 -- Diffview
-local cb = require'diffview.config'.diffview_callback
-require'diffview'.setup {
+local cb = require 'diffview.config'.diffview_callback
+require 'diffview'.setup {
     use_icons = false
 }
 
 -- Conjure
-vim.g['conjure#filetype#scheme'] = 'conjure.client.guile.socket'
+vim.g['conjure#filetype#scheme']              = 'conjure.client.guile.socket'
 vim.g['conjure#client#guile#socket#pipename'] = "/tmp/.guile-socket"
 vim.g['conjure#client#racket#stdio#command']  = "racket" -- -I pie"
 
 -- Tagbar Haskell
-vim.g.tagbar_type_haskell = {
+vim.g.tagbar_type_haskell                     = {
     ctagsbin = 'hasktags',
     ctagsargs = '-x -c -o-',
     kinds = {
@@ -221,9 +223,9 @@ vim.g.tagbar_type_haskell = {
 }
 
 -- Tagbar Scala Support
-vim.g.tagbar_type_scala = {
+vim.g.tagbar_type_scala                       = {
     ctagstype = 'scala',
-    kinds =     {
+    kinds = {
         'p:packages:1',
         'V:values',
         'v:variables',

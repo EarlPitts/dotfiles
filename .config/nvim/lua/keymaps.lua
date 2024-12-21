@@ -1,5 +1,5 @@
 vim.g.mapleader = ","
-vim.g.maplocalleader = ","                                  -- Needed for conjure
+vim.g.maplocalleader = "," -- Needed for conjure
 
 local map = vim.keymap.set
 
@@ -9,11 +9,11 @@ map('n', '<leader>.', ':Tagbar<CR>')
 map('n', '<F2>', ':UndotreeToggle<CR>')
 map('n', '<F3>', ':DiffviewOpen<CR>')
 map('n', '<F12>', ':tabnew wiki/index.md<CR>:Tagbar<CR>')
-map('n', '<leader>j', ':%!jq<CR>')                          -- Format JSON
+map('n', '<leader>j', ':%!jq<CR>') -- Format JSON
 map('n', '<leader>f', ':NvimTreeFindFile<CR>')
 map('', '<F1>', ':!./%<CR>')
 map('n', '<leader>md', ':MarkdownPreview<CR>')
-map('n', '<leader>sr', ':ConjureEval (RESTART 1)<CR>')      -- Restart Scheme
+map('n', '<leader>sr', ':ConjureEval (RESTART 1)<CR>') -- Restart Scheme
 
 -- Make
 map('', '<F5>', ':make!<CR>')
@@ -38,7 +38,7 @@ else
     map('n', '<C-p>', ':Telescope find_files<CR>')
 end
 
-map('i', '<C-n>', '<C-x><C-o>' )                            -- Remap omnicomplete
+map('i', '<C-n>', '<C-x><C-o>')  -- Remap omnicomplete
 -- map('n', '<Space>', 'za')                                -- Folding
 
 -- Copy to/from clipboard
