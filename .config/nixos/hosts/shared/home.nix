@@ -80,5 +80,7 @@
     ## Nix
     nixd
     nixfmt
+    ## Lua
+    lua-language-server
   ];
 }
