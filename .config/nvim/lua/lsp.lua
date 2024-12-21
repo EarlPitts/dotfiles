@@ -45,8 +45,6 @@ lspconfig.purescriptls.setup {
     }
 }
 
-lspconfig.phpactor.setup{}
-
 lspconfig.bashls.setup{
         root_dir = function(fname)
             return lspconfig.util.path.dirname(fname)
