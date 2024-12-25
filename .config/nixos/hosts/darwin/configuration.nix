@@ -62,7 +62,8 @@
 
     defaults = {
       NSGlobalDomain = {
-        KeyRepeat = 120;
+        KeyRepeat = 2;
+        InitialKeyRepeat = 15;
         ApplePressAndHoldEnabled = false;
         NSAutomaticCapitalizationEnabled = false;
         NSAutomaticDashSubstitutionEnabled = false;
