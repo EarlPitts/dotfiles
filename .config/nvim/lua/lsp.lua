@@ -3,7 +3,7 @@ local lspconfig = require('lspconfig')
 
 local map = vim.keymap.set
 
-lspconfig.pylsp.setup {
+lspconfig.pyright.setup {
     root_dir = function(fname)
         return lspconfig.util.path.dirname(fname)
     end

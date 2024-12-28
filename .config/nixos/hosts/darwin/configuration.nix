@@ -1,6 +1,5 @@
 { pkgs, inputs, ... }: {
 
-
   users.users."I348749" = {
     home = "/Users/I348749";
     shell = pkgs.zsh;
@@ -32,7 +31,7 @@
       "aerospace"
       "alacritty"
       # "anki"
-      "chromium"
+      "google-chrome"
       "docker"
       "firefox"
       "insomnia"
@@ -71,6 +70,7 @@
         NSAutomaticQuoteSubstitutionEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
       };
+
       dock = {
         autohide = true;
         tilesize = 40;
@@ -84,12 +84,13 @@
         CreateDesktop = false;
       };
 
+      screencapture.location = "~/Pictures/";
+
       loginwindow.LoginwindowText = "Hi, I'm a computer";
 
       trackpad = {
         Clicking = true;
         TrackpadThreeFingerTapGesture = 0;
-
       };
     };
   };

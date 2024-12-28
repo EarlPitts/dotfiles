@@ -9,6 +9,7 @@ start-at-login = true
 
 [mode.main.binding]
 alt-enter = 'exec-and-forget open -n /Applications/Alacritty.app'
+cmd-e     = 'exec-and-forget open -n /Applications/Alacritty.app --args -e zsh -ic ranger'
 
 alt-j = 'focus down'
 alt-k = 'focus up'

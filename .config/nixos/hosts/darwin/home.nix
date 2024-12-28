@@ -44,5 +44,6 @@
     nodejs
     phpactor
     python3
+    pyright
   ];
 }
