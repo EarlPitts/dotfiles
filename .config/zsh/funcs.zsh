@@ -24,7 +24,7 @@ update() {
     # System update
     if [ $(uname -s) != Darwin ]; then
         nix flake update --flake ~/.config/nixos
-        nixos-rebuild switch --flake ~/.config/nixos#default --use-remote-sudo
+        nixos-rebuild switch --flake ~/.config/nixos --use-remote-sudo
     else
         darwin-rebuild switch --flake ~/.config/nixos/
     fi
