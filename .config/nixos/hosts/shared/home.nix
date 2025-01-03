@@ -26,6 +26,7 @@
     slides
     gh
     ripgrep
+    ripgrep-all
     fd
     fzf
     nnn
@@ -82,5 +83,7 @@
     nixfmt
     ## Lua
     lua-language-server
+    ## Python
+    pyright
   ];
 }
