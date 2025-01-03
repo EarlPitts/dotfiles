@@ -2,6 +2,8 @@
 
 set -e
 
+# nix store gc --debug
 sudo nix profile wipe-history --profile /nix/var/nix/profiles/system --older-than 14d
-nix-collect-garbage -d
+sudo nix-collect-garbage --delete-old
+nix-collect-garbage --delete-old
 nix store optimise
