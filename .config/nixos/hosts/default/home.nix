@@ -9,19 +9,18 @@
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
   services = {
-    # gpg-agent.pinentryPackage = pkgs.pinentry-rofi;
+    gpg-agent = {
+      enable = true;
+      pinentryPackage = pkgs.pinentry-rofi;
+      maxCacheTtl = 60480000;
+      defaultCacheTtl = 60480000;
+    };
 
     # dunst = {
     #   enable = true;
     #   configFile = "~/.config/dunst/dunstrc";
     # };
   };
-
-  home.file.".gnupg/gpg-agent.conf".text = ''
-    pinentry-program /home/ben/.nix-profile/bin/pinentry-rofi
-    max-cache-ttl 60480000
-    default-cache-ttl 60480000
-  '';
 
   home.packages = with pkgs; [
 
@@ -46,7 +45,6 @@
 
     # GUI
     rofi
-    pinentry-rofi
     rofi-pass
     rofi-calc
     ueberzugpp
