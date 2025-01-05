@@ -22,12 +22,18 @@ lspconfig.erlangls.setup {}
 lspconfig.nixd.setup {}
 
 lspconfig.volar.setup {}
+local plugin_loc = function()
+    local handle = io.popen("npm root -g")
+    local dir = handle:read("*a")
+    handle:close()
+    return dir .. "@vue/typescript-plugin" -- It will default to the local packag
+end
 lspconfig.ts_ls.setup {
     init_options = {
         plugins = {
             {
                 name = "@vue/typescript-plugin",
-                location = "", -- It will default to the local package
+                location = plugin_loc(),
                 languages = { "javascript", "typescript", "vue" },
             },
         },
