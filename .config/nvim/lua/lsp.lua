@@ -24,10 +24,7 @@ lspconfig.nixd.setup {}
 lspconfig.volar.setup {}
 local plugin_loc = function()
     if os.execute("command -v npm") == 0 then
-        local handle = io.popen("npm root -g")
-        local dir = handle:read("*a")
-        handle:close()
-        return dir .. "@vue/typescript-plugin"
+        return vim.fn.system({ "npm", "root", "-g" }) .. "@vue/typescript-plugin"
     else
         return ""
     end
