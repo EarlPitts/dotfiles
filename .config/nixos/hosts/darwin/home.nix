@@ -1,21 +1,17 @@
 { pkgs, ... }:
 
 {
-  imports = [
-    ../shared/home.nix
-    ./aerospace.nix
-  ];
+  imports = [ ../shared/home.nix ./aerospace.nix ];
 
   home.username = "I348749";
   home.homeDirectory = "/Users/I348749";
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
-  home.file.".gnupg/gpg-agent.conf".text = ''
-    pinentry-program /opt/homebrew/bin/pinentry-mac
-    max-cache-ttl 60480000
-    default-cache-ttl 60480000
-  '';
+  services.gpg-agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry_mac;
+  };
 
   services.aerospace.enable = true;
 
@@ -27,21 +23,21 @@
     bruno-cli
     openvpn
 
-    (google-cloud-sdk.withExtraComponents
-      (with google-cloud-sdk.components; [
-        gke-gcloud-auth-plugin
-        gcloud-man-pages
-        gsutil
-        bq
-        core
-        kubectl
-        alpha
-        beta
-      ])
-    )
+    (google-cloud-sdk.withExtraComponents (with google-cloud-sdk.components; [
+      gke-gcloud-auth-plugin
+      gcloud-man-pages
+      gsutil
+      bq
+      core
+      kubectl
+      alpha
+      beta
+    ]))
 
     # Langs
     nodejs
+    vue-language-server
+    typescript-language-server
     python3
   ];
 }

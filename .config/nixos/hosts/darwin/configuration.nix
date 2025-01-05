@@ -25,7 +25,7 @@
       upgrade = false;
       cleanup = "zap";
     };
-    brews = [ "pinentry-mac" "nvm" ];
+    brews = [ "nvm" ];
     taps = [ "nikitabobko/tap" ];
     casks = [
       "aerospace"

@@ -10,6 +10,7 @@
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
+    gpg = { enable = true; };
   };
 
   services.syncthing.enable = true;
@@ -49,7 +50,6 @@
     tmux
     unzip
     nmap
-    gnupg
     (pass.withExtensions (exts: [ passExtensions.pass-otp ]))
 
     # Monitoring
