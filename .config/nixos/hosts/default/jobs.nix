@@ -15,6 +15,7 @@
       ${pkgs.isync}/bin/mbsync -a
     '';
     after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
     serviceConfig = {
       Type = "oneshot";
       User = "ben";
