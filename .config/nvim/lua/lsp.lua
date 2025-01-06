@@ -22,19 +22,12 @@ lspconfig.erlangls.setup {}
 lspconfig.nixd.setup {}
 
 lspconfig.volar.setup {}
-local plugin_loc = function()
-    if os.execute("command -v npm") == 0 then
-        return vim.fn.system({ "npm", "root", "-g" }) .. "@vue/typescript-plugin"
-    else
-        return ""
-    end
-end
 lspconfig.ts_ls.setup {
     init_options = {
         plugins = {
             {
                 name = "@vue/typescript-plugin",
-                location = plugin_loc(),
+                location = vim.fn.expand("$NODE") .. "/lib/node_modules/@vue/typescript-plugin",
                 languages = { "javascript", "typescript", "vue" },
             },
         },
