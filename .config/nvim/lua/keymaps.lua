@@ -14,6 +14,7 @@ map('n', '<leader>f', ':NvimTreeFindFile<CR>')
 map('', '<F1>', ':!./%<CR>')
 map('n', '<leader>md', ':MarkdownPreview<CR>')
 map('n', '<leader>sr', ':ConjureEval (RESTART 1)<CR>') -- Restart Scheme
+map('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Clear highlight
 
 -- Make
 map('', '<F5>', ':make!<CR>')
