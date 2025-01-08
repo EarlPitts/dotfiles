@@ -14,7 +14,7 @@ map('n', '<leader>f', ':NvimTreeFindFile<CR>')
 map('', '<F1>', ':!./%<CR>')
 map('n', '<leader>md', ':MarkdownPreview<CR>')
 map('n', '<leader>sr', ':ConjureEval (RESTART 1)<CR>') -- Restart Scheme
-map('n', '<Esc>', '<cmd>nohlsearch<CR>') -- Clear highlight
+map('n', '<Esc>', '<cmd>nohlsearch<CR>')               -- Clear highlight
 
 -- Make
 map('', '<F5>', ':make!<CR>')
@@ -34,12 +34,12 @@ map('n', '<C-s>', ':lua require"telescope.builtin".find_files({cwd = "~/Referenc
 
 -- git awareness for file picker
 if vim.fn.isdirectory(".git") == 1 then
-    map('n', '<C-p>', ':Telescope git_files<CR>')
+  map('n', '<C-p>', ':Telescope git_files<CR>')
 else
-    map('n', '<C-p>', ':Telescope find_files<CR>')
+  map('n', '<C-p>', ':Telescope find_files<CR>')
 end
 
-map('i', '<C-n>', '<C-x><C-o>')  -- Remap omnicomplete
+map('i', '<C-n>', '<C-x><C-o>') -- Remap omnicomplete
 -- map('n', '<Space>', 'za')                                -- Folding
 
 -- Copy to/from clipboard

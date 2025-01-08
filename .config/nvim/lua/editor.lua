@@ -3,9 +3,9 @@ local set = vim.opt
 -- Indentation
 set.expandtab = true  -- Use spaces instead of tabs
 set.shiftround = true -- Round indent to multiple of shiftwidth
-set.shiftwidth = 4    -- Indent size
-set.tabstop = 4       -- How many columns a tab counts for
-set.softtabstop = 4   -- Number of columns when you hit tab
+set.shiftwidth = 2    -- Indent size
+set.tabstop = 2       -- How many columns a tab counts for
+set.softtabstop = 2   -- Number of columns when you hit tab
 
 -- Text Rendering
 set.linebreak = true -- Wrap long lines between words
@@ -44,7 +44,7 @@ vim.cmd.colorscheme 'base16-eighties'
 
 -- Misc
 vim.schedule(function()
-    vim.opt.clipboard = 'unnamed' -- System clipboard
+  vim.opt.clipboard = 'unnamed'   -- System clipboard
 end)
-set.mouse = ''                      -- Disable mouse
+set.mouse = ''                    -- Disable mouse
 -- set.omnifunc = 'syntaxcomplete#Complete'    -- TODO what's this? :D
