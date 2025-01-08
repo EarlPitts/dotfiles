@@ -55,6 +55,9 @@ require('lualine').setup {
 -- Telescope
 require('telescope').setup {
   defaults = {
+    wrap_results = true,
+    layout_strategy = 'vertical',
+    layout_config = { height = 0.95 },
     mappings = {
       i = {
         ["<esc>"] = require('telescope.actions').close,
@@ -63,7 +66,7 @@ require('telescope').setup {
   },
   pickers = {
     git_files = {
-      show_untracked = false,
+      show_untracked = true,
       follow = true       -- TODO seems to have no effect
     }
   }
