@@ -7,6 +7,8 @@
 
   services.nix-daemon.enable = true;
 
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
     users = { "I348749" = import ./home.nix; };

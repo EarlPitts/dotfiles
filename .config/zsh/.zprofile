@@ -65,6 +65,8 @@ else
     export CLOUD_SQL_IAM_USER=segmentation-sql-proxy@sap-segmentationduahubxzpsxccc.iam
     export TERM=alacritty # for tmux
 
+    source ~/Work/secrets
+
     # Brew
     eval "$(/opt/homebrew/bin/brew shellenv)"
 
