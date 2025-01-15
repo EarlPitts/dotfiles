@@ -22,8 +22,12 @@ map('', '<F5>', ':make!<CR>')
 map('', '<F6>', ':make test<CR>')
 
 -- Version Control
-map('n', '<F10>', ':Gdiffsplit<CR>')
 map('n', '<leader>g', ':Git<CR>')
+map('n', '<space>gd', '<cmd>Gdiffsplit<CR>')
+map('n', '<space>gb', '<cmd>Gitsigns blame_line<CR>')
+map('n', '<space>ga', '<cmd>Gitsigns stage_hunk<CR>')
+map('n', '<space>gu', '<cmd>Gitsigns undo_stage_hunk<CR>')
+map('n', '<space>gr', '<cmd>Gitsigns reset_hunk<CR>')
 
 -- Telescope
 map('n', '<C-b>', ':Telescope buffers<CR>')

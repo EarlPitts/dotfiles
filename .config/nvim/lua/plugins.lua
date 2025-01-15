@@ -63,7 +63,8 @@ require("lazy").setup({
 
   -- Git TODO load these only if in git repo
   'tpope/vim-fugitive',
-  'airblade/vim-gitgutter',
+  -- 'airblade/vim-gitgutter',
+  'lewis6991/gitsigns.nvim',
   'tpope/vim-rhubarb',
   'sindrets/diffview.nvim',
 

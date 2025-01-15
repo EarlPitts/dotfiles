@@ -44,6 +44,36 @@ vim.g.mkdp_theme = 'light'
 -- Comment.nvim
 require('Comment').setup()
 
+-- Gitsigns
+require('gitsigns').setup {
+  on_attach = function(bufnr)
+    local gitsigns = require('gitsigns')
+
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
+    end
+
+    -- Navigation
+    map('n', ']c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({ ']c', bang = true })
+      else
+        gitsigns.nav_hunk('next')
+      end
+    end)
+
+    map('n', '[c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({ '[c', bang = true })
+      else
+        gitsigns.nav_hunk('prev')
+      end
+    end)
+  end
+}
+
 -- Lualine
 require('lualine').setup {
   options = {
@@ -67,7 +97,7 @@ require('telescope').setup {
   pickers = {
     git_files = {
       show_untracked = true,
-      follow = true       -- TODO seems to have no effect
+      follow = true -- TODO seems to have no effect
     }
   }
 }
@@ -96,10 +126,9 @@ local function my_on_attach(bufnr)
   vim.keymap.del('n', '<C-k>', { buffer = bufnr })
 end
 
-require 'nvim-tree'.setup {
-  filters = { custom = { '.git', '__pycache__', '.pytest_cache' } },
-  git = { enable = false
-  },
+require('nvim-tree').setup {
+  filters = { custom = { '__pycache__', '.pytest_cache' } },
+  git = { enable = false },
   renderer = {
     icons = {
       symlink_arrow = ' -> ',
