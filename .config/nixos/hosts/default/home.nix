@@ -69,7 +69,7 @@
     discord
     zathura
     firefox
-    # bottles
+    bottles
     (mpv.override { scripts = [ mpvScripts.mpris ]; })
 
     polkit
