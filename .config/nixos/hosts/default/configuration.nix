@@ -63,19 +63,14 @@
       };
     };
 
-    # services.xserver.xkb.options = "eurosign:e,caps:escape";
-    interception-tools = let
-      toolsFolder = pkgs.interception-tools;
-      pluginsFolder = pkgs.interception-tools-plugins.caps2esc;
-    in {
+    keyd = {
       enable = true;
-      plugins = with pkgs; [ interception-tools-plugins.caps2esc ];
-      udevmonConfig = ''
-        - JOB: "${toolsFolder}/bin/intercept -g $DEVNODE | ${pluginsFolder}/bin/caps2esc | ${toolsFolder}/bin/uinput -d $DEVNODE"
-          DEVICE:
-            EVENTS:
-              EV_KEY: [KEY_CAPSLOCK, KEY_ESC]
-      '';
+      keyboards = {
+        default = {
+          ids = [ "*" ];
+          settings = { main = { capslock = "overload(control, esc)"; }; };
+        };
+      };
     };
   };
 
