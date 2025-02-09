@@ -23,6 +23,7 @@ map('', '<F6>', ':make test<CR>')
 
 -- Version Control
 map('n', '<leader>g', ':Git<CR>')
+map('n', '<space>gl', ':G pull --autostash<CR>')
 map('n', '<space>gd', '<cmd>Gdiffsplit<CR>')
 map('n', '<space>gb', '<cmd>Gitsigns blame_line<CR>')
 map('n', '<space>ga', '<cmd>Gitsigns stage_hunk<CR>')
