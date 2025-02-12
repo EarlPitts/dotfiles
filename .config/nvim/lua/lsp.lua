@@ -97,7 +97,8 @@ metals_config.settings = {
   showImplicitArguments = true,
   showImplicitConversionsAndClasses = true,
   showInferredType = true,
-  defaultBspToBuildTool = true
+  defaultBspToBuildTool = true,
+  serverVersion = "1.4.2" -- (Hopefully) temporary fix for worksheets
 }
 
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
