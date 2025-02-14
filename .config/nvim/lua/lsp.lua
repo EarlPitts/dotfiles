@@ -65,6 +65,12 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist)
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
+    -- Enable inline hints
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    if client.server_capabilities.inlayHintProvider then
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    end
+
     -- Enable completion triggered by <c-x><c-o>
     vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
 
@@ -87,6 +93,9 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }
     end, opts)
+    vim.keymap.set("n", "<m-k>", function()
+      vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+    end, buf_opts)
   end,
 })
 
@@ -94,6 +103,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
 local metals_config = require("metals").bare_config()
 metals_config.init_options.statusBarProvider = "on"
 metals_config.settings = {
+  inlayHints = {
+    hintsInPatternMatch = { enable = true },
+    implicitArguments = { enable = true },
+    implicitConversions = { enable = true },
+    inferredTypes = { enable = true },
+    typeParameters = { enable = true },
+  },
   showImplicitArguments = true,
   showImplicitConversionsAndClasses = true,
   showInferredType = true,

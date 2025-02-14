@@ -77,7 +77,7 @@ require("lazy").setup({
 
   -- Misc
   { 'aserowy/tmux.nvim',                config = true },
-  'metakirby5/codi.vim',   -- TODO ft python, codi zsh func
+  'metakirby5/codi.vim', -- TODO ft python, codi zsh func
   { 'Olical/conjure',         ft = { 'scheme', 'racket', 'python' } },
   { 'wlangstroth/vim-racket', ft = 'scheme' },
   'tweekmonster/startuptime.vim',
