@@ -148,26 +148,25 @@
     '';
   };
 
-  services.tlp = {
-    enable = true;
-    settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
-      CPU_SCALING_GOVERNOR_ON_BAT = "performance";
-
-      CPU_ENERGY_PERF_POLICY_ON_AC = ""; # Needed for throttled
-
-      CPU_MIN_PERF_ON_AC = 0;
-      CPU_MAX_PERF_ON_AC = 100;
-      CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 40;
-
-      START_CHARGE_THRESH_BAT1 = 75;
-      STOP_CHARGE_THRESH_BAT1 = 80;
+  # services.thermald.enable = true;
+  services.auto-cpufreq.enable = true;
+  services.auto-cpufreq.settings = {
+    charger = {
+      governor = "performance";
+      turbo = "auto";
+    };
+    battery = {
+      governor = "powersave";
+      turbo = "never";
+      enable_thresholds = true;
+      start_threshold = 75;
+      stop_threshold = 80;
     };
   };
 
   environment.pathsToLink = [ "/libexec" ];
 
+  # TODO Use upower and powerManagement.resumeCommands?
   # Lowbat suspend and lock
   services.udev.extraRules = ''
     SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="${pkgs.systemd}/bin/systemctl suspend"
