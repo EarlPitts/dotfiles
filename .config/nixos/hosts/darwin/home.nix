@@ -22,7 +22,6 @@
     iproute2mac
     postgresql
     zathura
-    bruno-cli
     openvpn
 
     (google-cloud-sdk.withExtraComponents (with google-cloud-sdk.components; [

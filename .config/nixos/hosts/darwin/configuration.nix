@@ -73,7 +73,7 @@
         NSAutomaticSpellingCorrectionEnabled = false;
         "com.apple.sound.beep.volume" = 0.000;
         "com.apple.sound.beep.feedback" = 0;
-        "com.apple.keyboard.fnState" = false;
+        "com.apple.keyboard.fnState" = true;
       };
 
       dock = {
