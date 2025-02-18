@@ -21,8 +21,26 @@ lspconfig.erlangls.setup {}
 
 lspconfig.nixd.setup {}
 
+local inlayHints = {
+  includeInlayParameterNameHints = "all",
+  includeInlayParameterNameHintsWhenArgumentMatchesName = false,
+  includeInlayFunctionParameterTypeHints = true,
+  includeInlayVariableTypeHints = true,
+  includeInlayVariableTypeHintsWhenTypeMatchesName = false,
+  includeInlayPropertyDeclarationTypeHints = true,
+  includeInlayFunctionLikeReturnTypeHints = true,
+  includeInlayEnumMemberValueHints = true,
+}
 lspconfig.volar.setup {}
 lspconfig.ts_ls.setup {
+  settings = {
+    typescript = {
+      inlayHints = inlayHints,
+    },
+    javascript = {
+      inlayHints = inlayHints,
+    },
+  },
   init_options = {
     plugins = {
       {
@@ -93,7 +111,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', '<space>f', function()
       vim.lsp.buf.format { async = true }
     end, opts)
-    vim.keymap.set("n", "<m-k>", function()
+    vim.keymap.set("n", "<space>K", function()
       vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end, buf_opts)
   end,
