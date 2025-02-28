@@ -63,7 +63,7 @@ else
 
     export PATH="$PATH:/Users/i348749/Projects/active/opstools"
     export CLOUD_SQL_IAM_USER=segmentation-sql-proxy@sap-segmentationduahubxzpsxccc.iam
-    export TERM=alacritty # for tmux
+    # export TERM=alacritty # for tmux
 
     source ~/Work/secrets
 

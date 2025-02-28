@@ -31,7 +31,7 @@
     taps = [ "nikitabobko/tap" ];
     casks = [
       "aerospace"
-      "alacritty"
+      "ghostty"
       # "anki"
       "google-chrome"
       "docker"

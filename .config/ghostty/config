@@ -1,0 +1,10 @@
+font-family = "Fira Code"
+font-style = Medium
+font-size = 14
+cursor-style = block
+cursor-style-blink = false
+macos-titlebar-style = hidden
+shell-integration-features = no-cursor
+confirm-close-surface = false
+macos-secure-input-indication = false
+quit-after-last-window-closed = true
