@@ -3,42 +3,48 @@
 {
   imports = [ ../shared/home.nix ./aerospace.nix ];
 
-  home.username = "I348749";
-  home.homeDirectory = "/Users/I348749";
+  home = {
+    username = "I348749";
+    homeDirectory = "/Users/I348749";
 
-  home.stateVersion = "23.11"; # Please read the comment before changing.
+    stateVersion = "23.11"; # Please read the comment before changing.
+    file.".hushlogin".text = ""; # Disable login message
 
-  services.gpg-agent = {
-    enable = true;
-    pinentryPackage = pkgs.pinentry_mac;
-      maxCacheTtl = 60480000;
-      defaultCacheTtl = 60480000;
+    packages = with pkgs; [
+      k9s
+      iproute2mac
+      postgresql
+      zathura
+      openvpn
+
+      (google-cloud-sdk.withExtraComponents (with google-cloud-sdk.components; [
+        gke-gcloud-auth-plugin
+        gcloud-man-pages
+        gsutil
+        bq
+        core
+        kubectl
+        alpha
+        beta
+      ]))
+
+      # Langs
+      nodejs
+      vue-language-server
+      typescript-language-server
+      python3
+    ];
   };
 
-  services.aerospace.enable = true;
+  services = {
+    gpg-agent = {
+      enable = true;
+      pinentryPackage = pkgs.pinentry_mac;
+      maxCacheTtl = 60480000;
+      defaultCacheTtl = 60480000;
+    };
 
-  home.packages = with pkgs; [
-    k9s
-    iproute2mac
-    postgresql
-    zathura
-    openvpn
+    aerospace.enable = true;
+  };
 
-    (google-cloud-sdk.withExtraComponents (with google-cloud-sdk.components; [
-      gke-gcloud-auth-plugin
-      gcloud-man-pages
-      gsutil
-      bq
-      core
-      kubectl
-      alpha
-      beta
-    ]))
-
-    # Langs
-    nodejs
-    vue-language-server
-    typescript-language-server
-    python3
-  ];
 }
