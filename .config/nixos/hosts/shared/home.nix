@@ -49,6 +49,7 @@
     entr
     tmux
     unzip
+    p7zip
     nmap
     (pass.withExtensions (exts: [ passExtensions.pass-otp ]))
 
