@@ -4,26 +4,26 @@ vim.g.maplocalleader = "," -- Needed for conjure
 local map = vim.keymap.set
 
 map('n', ';', ':')
-map('n', '<leader>,', ':w<CR>')
-map('n', '<leader>.', ':Tagbar<CR>')
-map('n', '<F2>', ':UndotreeToggle<CR>')
-map('n', '<F3>', ':DiffviewOpen<CR>')
-map('n', '<F12>', ':tabnew wiki/index.md<CR>:Tagbar<CR>')
-map('n', '<leader>j', ':%!jq<CR>') -- Format JSON
-map('n', '<leader>f', ':NvimTreeFindFile<CR>')
-map('', '<F1>', ':!./%<CR>')
-map('n', '<leader>md', ':MarkdownPreview<CR>')
-map('n', '<leader>sr', ':ConjureEval (RESTART 1)<CR>') -- Restart Scheme
+map('n', '<leader>,', '<cmd>w<CR>')
+map('n', '<leader>.', '<cmd>Tagbar<CR>')
+map('n', '<F2>', '<cmd>UndotreeToggle<CR>')
+map('n', '<F3>', '<cmd>DiffviewOpen<CR>')
+map('n', '<F12>', '<cmd>tabnew wiki/index.md<CR>:Tagbar<CR>')
+map('n', '<leader>j', '<cmd>%!jq<CR>') -- Format JSON
+map('n', '<leader>f', '<cmd>NvimTreeFindFile<CR>')
+map('', '<F1>', '<cmd>!./%<CR>')
+map('n', '<leader>md', '<cmd>MarkdownPreview<CR>')
+map('n', '<leader>sr', '<cmd>ConjureEval (RESTART 1)<CR>') -- Restart Scheme
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')               -- Clear highlight
 
 -- Make
-map('', '<F5>', ':make!<CR>')
--- map('', '<F5>', ':!~/.scripts/compile.sh %:p<CR>')
-map('', '<F6>', ':make test<CR>')
+map('', '<F5>', '<cmd>make!<CR>')
+-- map('', '<F5>', '<cmd>!~/.scripts/compile.sh %:p<CR>')
+map('', '<F6>', '<cmd>make test<CR>')
 
 -- Version Control
-map('n', '<leader>g', ':Git<CR>')
-map('n', '<space>gl', ':G pull --autostash<CR>')
+map('n', '<leader>g', '<cmd>Git<CR>')
+map('n', '<space>gl', '<cmd>G pull --autostash<CR>')
 map('n', '<space>gd', '<cmd>Gdiffsplit<CR>')
 map('n', '<space>gb', '<cmd>Gitsigns blame_line<CR>')
 map('n', '<space>ga', '<cmd>Gitsigns stage_hunk<CR>')
@@ -31,17 +31,17 @@ map('n', '<space>gu', '<cmd>Gitsigns undo_stage_hunk<CR>')
 map('n', '<space>gr', '<cmd>Gitsigns reset_hunk<CR>')
 
 -- Telescope
-map('n', '<C-b>', ':Telescope buffers<CR>')
-map('n', '<C-g>', ':Telescope live_grep<CR>')
-map('n', '<C-t>', ':Telescope tags<CR>')
-map('n', '<leader><C-p>', ':Telescope find_files<CR>')
-map('n', '<C-s>', ':lua require"telescope.builtin".find_files({cwd = "~/References/Snippets"})<CR>')
+map('n', '<C-b>', '<cmd>Telescope buffers<CR>')
+map('n', '<C-g>', '<cmd>Telescope live_grep<CR>')
+map('n', '<C-t>', '<cmd>Telescope tags<CR>')
+map('n', '<leader><C-p>', '<cmd>Telescope find_files<CR>')
+map('n', '<C-s>', '<cmd>lua require"telescope.builtin".find_files({cwd = "~/References/Snippets"})<CR>')
 
 -- git awareness for file picker
 if vim.fn.isdirectory(".git") == 1 then
-  map('n', '<C-p>', ':Telescope git_files<CR>')
+  map('n', '<C-p>', '<cmd>Telescope git_files<CR>')
 else
-  map('n', '<C-p>', ':Telescope find_files<CR>')
+  map('n', '<C-p>', '<cmd>Telescope find_files<CR>')
 end
 
 map('i', '<C-n>', '<C-x><C-o>') -- Remap omnicomplete

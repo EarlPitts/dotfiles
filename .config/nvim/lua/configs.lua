@@ -112,7 +112,7 @@ vim.g.UltiSnipsSnippetDirectories = { 'UltiSnips', 'my_snippets' }
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-map('n', '<C-n>', ':NvimTreeToggle<CR>', noremap)
+map('n', '<C-n>', '<cmd>NvimTreeToggle<CR>', noremap)
 vim.api.nvim_create_autocmd('BufEnter', { -- Close nvim-tree is last buffer
   command = "if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif",
   nested = true,
