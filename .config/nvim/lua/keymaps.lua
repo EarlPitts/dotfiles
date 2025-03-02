@@ -29,6 +29,7 @@ map('n', '<space>gb', '<cmd>Gitsigns blame_line<CR>')
 map('n', '<space>ga', '<cmd>Gitsigns stage_hunk<CR>')
 map('n', '<space>gu', '<cmd>Gitsigns undo_stage_hunk<CR>')
 map('n', '<space>gr', '<cmd>Gitsigns reset_hunk<CR>')
+map('n', '<space>gt', ':DiffviewFileHistory --reverse --grep=')
 
 -- Telescope
 map('n', '<C-b>', '<cmd>Telescope buffers<CR>')
