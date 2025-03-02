@@ -160,8 +160,8 @@
       turbo = "auto";
     };
     battery = {
-      governor = "powersave";
-      turbo = "never";
+      governor = "performance";
+      turbo = "auto";
       enable_thresholds = true;
       start_threshold = 75;
       stop_threshold = 80;
