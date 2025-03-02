@@ -10,9 +10,13 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot = {
+    # Bootloader.
+    loader.systemd-boot.enable = true;
+    loader.efi.canTouchEfiVariables = true;
+
+    kernel.sysctl."kernel.sysrq" = 1; # Enable sysrq keys
+  };
 
   networking.hostName = "T480"; # Define your hostname.
   networking.wireless.iwd.enable = true;
