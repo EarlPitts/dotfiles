@@ -139,7 +139,7 @@ require('nvim-tree').setup {
         git = false
       }
     },
-    add_trailing = true     -- Append slash to folder names
+    add_trailing = true -- Append slash to folder names
   },
   on_attach = my_on_attach
 }
