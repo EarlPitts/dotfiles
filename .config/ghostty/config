@@ -9,3 +9,4 @@ shell-integration-features = no-cursor
 confirm-close-surface = false
 macos-secure-input-indication = false
 quit-after-last-window-closed = true
+resize-overlay = never
