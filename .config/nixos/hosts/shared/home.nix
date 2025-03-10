@@ -52,6 +52,7 @@
     p7zip
     nmap
     (pass.withExtensions (exts: [ passExtensions.pass-otp ]))
+    miniserve
 
     # Monitoring
     btop
