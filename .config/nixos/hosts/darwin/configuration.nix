@@ -25,7 +25,7 @@
       upgrade = false;
       cleanup = "zap";
     };
-    brews = [ "nvm" ];
+    brews = [ "nvm" "edosrecki/tools/google-cloud-redis" ];
     taps = [ "nikitabobko/tap" ];
     casks = [
       "aerospace"
