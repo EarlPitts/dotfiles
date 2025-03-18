@@ -12,3 +12,4 @@ quit-after-last-window-closed = true
 resize-overlay = never
 
 keybind = cmd+w=ignore
+keybind = cmd+t=ignore
