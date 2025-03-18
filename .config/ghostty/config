@@ -4,9 +4,11 @@ font-size = 14
 cursor-style = block
 cursor-style-blink = false
 theme = "Tomorrow Night Eighties"
-window-decoration = none
+macos-titlebar-style = hidden
 shell-integration-features = no-cursor
 confirm-close-surface = false
 macos-secure-input-indication = false
 quit-after-last-window-closed = true
 resize-overlay = never
+
+keybind = cmd+w=ignore
