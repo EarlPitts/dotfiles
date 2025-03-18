@@ -60,6 +60,9 @@
     startup.chime = false;
 
     defaults = {
+      ".GlobalPreferences" = {
+        "com.apple.mouse.scaling" = -1.0;
+      };
       NSGlobalDomain = {
         KeyRepeat = 2;
         InitialKeyRepeat = 15;
@@ -69,9 +72,11 @@
         NSAutomaticPeriodSubstitutionEnabled = false;
         NSAutomaticQuoteSubstitutionEnabled = false;
         NSAutomaticSpellingCorrectionEnabled = false;
+        NSScrollAnimationEnabled = false;
         "com.apple.sound.beep.volume" = 0.000;
         "com.apple.sound.beep.feedback" = 0;
         "com.apple.keyboard.fnState" = true;
+        "com.apple.swipescrolldirection" = false;
       };
 
       dock = {
