@@ -72,6 +72,8 @@ lspconfig.bashls.setup {
   end
 }
 
+vim.diagnostic.config({ virtual_text = true })
+
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float)
@@ -117,17 +119,13 @@ local metals_config = require("metals").bare_config()
 metals_config.init_options.statusBarProvider = "on"
 metals_config.settings = {
   inlayHints = {
-    hintsInPatternMatch = { enable = true },
+    hintsInPatternMatch = { enable = false },
     implicitArguments = { enable = true },
-    implicitConversions = { enable = true },
-    inferredTypes = { enable = true },
-    typeParameters = { enable = true },
+    implicitConversions = { enable = false },
+    inferredTypes = { enable = false },
+    typeParameters = { enable = false },
   },
-  showImplicitArguments = true,
-  showImplicitConversionsAndClasses = true,
-  showInferredType = true,
   defaultBspToBuildTool = true,
-  serverVersion = "1.4.2" -- (Hopefully) temporary fix for worksheets
 }
 
 local nvim_metals_group = vim.api.nvim_create_augroup("nvim-metals", { clear = true })
@@ -141,10 +139,18 @@ vim.api.nvim_create_autocmd("FileType", {
 
 metals_config.on_attach = function(client, bufnr)
   map("v", "K", require("metals").type_of_range)
-  map("n", "<leader>er", require("metals").hover_worksheet)
+  map("n", "<leader>er", function() require("metals").hover_worksheet({ border = "single" }) end)
   map('n', '<space>t', require("telescope").extensions.metals.commands)
   map("n", "<space><C-g>", require("telescope.builtin").lsp_dynamic_workspace_symbols)
   map('n', '<space>n', require("metals.tvp").toggle_tree_view)
   map('n', '<space>gn', require("metals.tvp").reveal_in_tree)
   -- require("metals").setup_dap()
+
+  vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = { "*.worksheet.sc" },
+    callback = function()
+      vim.lsp.inlay_hint.enable(true)
+    end,
+    group = nvim_metals_group,
+  })
 end
