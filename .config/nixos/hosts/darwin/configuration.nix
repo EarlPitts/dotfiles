@@ -60,9 +60,7 @@
     startup.chime = false;
 
     defaults = {
-      ".GlobalPreferences" = {
-        "com.apple.mouse.scaling" = -1.0;
-      };
+      ".GlobalPreferences"."com.apple.mouse.scaling" = 3.0;
       NSGlobalDomain = {
         KeyRepeat = 2;
         InitialKeyRepeat = 15;
