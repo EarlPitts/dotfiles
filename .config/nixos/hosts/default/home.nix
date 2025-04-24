@@ -81,6 +81,8 @@
     ## Guile
     guile
     guile-json
+    ## Racket
+    racket-minimal
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
