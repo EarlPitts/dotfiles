@@ -216,7 +216,6 @@ require 'diffview'.setup {
 -- Conjure
 vim.g['conjure#filetype#scheme']              = 'conjure.client.guile.socket'
 vim.g['conjure#client#guile#socket#pipename'] = "/tmp/.guile-socket"
-vim.g['conjure#client#racket#stdio#command']  = "racket --no-init-file" -- -I pie"
 
 -- Tagbar Haskell
 vim.g.tagbar_type_haskell                     = {
