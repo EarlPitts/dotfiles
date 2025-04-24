@@ -77,6 +77,8 @@
     ghc
     cabal-install
     haskell-language-server
+    ## Racket
+    racket-minimal
     ## Shell
     shellcheck
     nodePackages.bash-language-server
