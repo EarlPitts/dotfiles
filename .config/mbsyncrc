@@ -12,8 +12,8 @@ Inbox ~/.mail/gmail/INBOX
 Subfolders Verbatim
 
 Channel gmail
-Master :gmail-remote:
-Slave :gmail-local:
+Far :gmail-remote:
+Near :gmail-local:
 Create Both
 Expunge Both
 Patterns *
