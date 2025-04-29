@@ -53,6 +53,7 @@
     nmap
     (pass.withExtensions (exts: [ passExtensions.pass-otp ]))
     miniserve
+    rlwrap
 
     # Monitoring
     btop
