@@ -1,7 +1,7 @@
 [includeIf "gitdir:/Users/I348749/"]
-    path = ~/.config/git/work
+	path = ~/.config/git/work
 [includeIf "gitdir:/home/"]
-    path = ~/.config/git/personal
+	path = ~/.config/git/personal
 [credential]
 	helper = store
 [core]
@@ -9,9 +9,7 @@
 	excludesfile = ~/.config/git/ignore
 	pager = less
 [help]
-	autocorrect = 1
-[alias]
-	st = status
+	autocorrect = prompt
 [github]
 	user = earlpitts
 [receive]
@@ -23,7 +21,32 @@
 [commit]
 	gpgsign = true
 [diff]
-    tool = nvimdiff
-    external = difft
+	tool = nvimdiff
+	external = difft
+	algorithm = histogram
+	colorMoved = plain
+	renames = true
+	mnemonicPrefix = true
 [merge]
-	conflictstyle = diff3
+	conflictstyle = zdiff3
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[push]
+	autoSetupRemote = true
+	followTags = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
+[rerere]
+	enabled = true
+	autoupdate = true
+[rebase]
+	updateRefs = true
+	autoStash = true
+[alias]
+	st = status
