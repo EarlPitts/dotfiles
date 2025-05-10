@@ -48,3 +48,13 @@ vim.schedule(function()
 end)
 set.mouse = ''                    -- Disable mouse
 -- set.omnifunc = 'syntaxcomplete#Complete'    -- TODO what's this? :D
+
+local colors = require('base16-colorscheme').colors
+
+-- Diff colors
+vim.api.nvim_set_hl(0, 'DiffAdd', { bg = '#424c3f' })
+vim.api.nvim_set_hl(0, 'DiffDelete', { bg = '#462F2F' })
+vim.api.nvim_set_hl(0, 'DiffChange', { bg = '#222f33' })
+vim.api.nvim_set_hl(0, 'DiffText', { bg = '#2F4146' })
+
+vim.opt.fillchars:append("diff:╱")
