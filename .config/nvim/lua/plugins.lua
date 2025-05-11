@@ -92,7 +92,6 @@ require("lazy").setup({
         model = "claude-3.5-sonnet",
         mappings = { reset = { normal = "", }, }
       },
-      -- See Commands section for default commands if you want to lazy load on them
     },
   }
 })
