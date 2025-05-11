@@ -69,6 +69,8 @@
     discord
     zathura
     firefox
+    tor-browser
+    wireshark
     bottles
     (mpv.override { scripts = [ mpvScripts.mpris ]; })
 
