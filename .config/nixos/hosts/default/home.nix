@@ -15,6 +15,7 @@
       maxCacheTtl = 60480000;
       defaultCacheTtl = 60480000;
     };
+    mpris-proxy.enable = true;
 
     # dunst = {
     #   enable = true;
