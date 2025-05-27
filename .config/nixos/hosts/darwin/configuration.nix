@@ -55,6 +55,7 @@
   };
 
   system = {
+    primaryUser = "I348749";
     stateVersion = 5;
 
     startup.chime = false;
