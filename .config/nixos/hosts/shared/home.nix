@@ -62,6 +62,7 @@
 
     # Devtools
     neovim
+    emacs
     git
     difftastic
     gnumake
@@ -78,6 +79,7 @@
     ghc
     cabal-install
     haskell-language-server
+    (agda.withPackages (ps: [ps.standard-library]))
     ## Shell
     shellcheck
     nodePackages.bash-language-server
