@@ -56,6 +56,7 @@ lspconfig.ts_ls.setup {
     "vue",
   },
 }
+lspconfig.angularls.setup {};
 lspconfig.eslint.setup {};
 
 lspconfig.purescriptls.setup {
