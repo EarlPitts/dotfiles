@@ -9,6 +9,7 @@ start-at-login = true
 
 [mode.main.binding]
 alt-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
+alt-shift-enter = 'exec-and-forget open -n /Applications/Ghostty.app --args -e ssh ben'
 cmd-e     = 'exec-and-forget open -n /Applications/Ghostty.app --args -e zsh -ic ranger'
 
 alt-j = 'focus down'
