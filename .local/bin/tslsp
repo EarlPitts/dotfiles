@@ -1,0 +1,11 @@
+if [ -f $HOME/.nvm/nvm.sh ]; then
+  type nvm >/dev/null 2>&1 || . $HOME/.nvm/nvm.sh
+  nvm use $(< .nvmrc)
+fi
+
+export NODE=$(dirname "$(dirname "$(nvm which | tail -n1)")")
+
+# Install LSP stuff if needed
+command -v vscode-eslint-language-server || npm install -g vscode-langservers-extracted
+command -v typescript-language-server || npm install -g typescript-language-server @vue/typescript-plugin
+command -v ngserver || npm install -g @angular/language-server
