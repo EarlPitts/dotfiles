@@ -26,7 +26,7 @@ update() {
         nix flake update --flake ~/.config/nixos
         nixos-rebuild switch --flake ~/.config/nixos --sudo
     else
-        darwin-rebuild switch --flake ~/.config/nixos/
+        sudo darwin-rebuild switch --flake ~/.config/nixos/
     fi
 }
 
