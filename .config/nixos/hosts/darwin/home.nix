@@ -1,7 +1,10 @@
 { pkgs, ... }:
 
 {
-  imports = [ ../shared/home.nix ./aerospace.nix ];
+  imports = [
+    ../shared/home.nix
+    ./aerospace.nix
+  ];
 
   home = {
     username = "I348749";
@@ -12,22 +15,28 @@
 
     packages = with pkgs; [
       k9s
+      colima
+      docker
+      docker-compose
       iproute2mac
       postgresql
       zathura
       openvpn
       redis
 
-      (google-cloud-sdk.withExtraComponents (with google-cloud-sdk.components; [
-        gke-gcloud-auth-plugin
-        gcloud-man-pages
-        gsutil
-        bq
-        core
-        kubectl
-        alpha
-        beta
-      ]))
+      (google-cloud-sdk.withExtraComponents (
+        with google-cloud-sdk.components;
+        [
+          gke-gcloud-auth-plugin
+          gcloud-man-pages
+          gsutil
+          bq
+          core
+          kubectl
+          alpha
+          beta
+        ]
+      ))
 
       # Langs
       nodejs

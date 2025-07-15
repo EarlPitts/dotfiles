@@ -1,15 +1,21 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, inputs, ... }:
+{
 
   users.users."I348749" = {
     home = "/Users/I348749";
     shell = pkgs.zsh;
   };
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = { "I348749" = import ./home.nix; };
+    users = {
+      "I348749" = import ./home.nix;
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -19,20 +25,35 @@
     font-awesome
   ];
 
+  launchd.user.agents.colima = {
+    serviceConfig = {
+      ProgramArguments = [
+        "${pkgs.colima}/bin/colima"
+        "start"
+      ];
+      RunAtLoad = true;
+      KeepAlive = true;
+      StandardErrorPath = "/tmp/colima.err";
+      StandardOutPath = "/tmp/colima.out";
+    };
+  };
+
   homebrew = {
     enable = true;
     onActivation = {
       upgrade = false;
       cleanup = "zap";
     };
-    brews = [ "nvm" "edosrecki/tools/google-cloud-redis" ];
+    brews = [
+      "nvm"
+      "edosrecki/tools/google-cloud-redis"
+    ];
     taps = [ "nikitabobko/tap" ];
     casks = [
       "aerospace"
       "ghostty"
       # "anki"
       "google-chrome"
-      "docker"
       "firefox"
       "insomnia"
       "intellij-idea"

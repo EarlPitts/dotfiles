@@ -77,6 +77,7 @@
     graalvm-ce
     ## Haskell
     ghc
+    stack
     cabal-install
     haskell-language-server
     (agda.withPackages (ps: [ps.standard-library]))
