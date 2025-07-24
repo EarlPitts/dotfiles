@@ -25,6 +25,11 @@
     font-awesome
   ];
 
+  environment.systemPackages = with pkgs; [
+    docker
+    colima
+  ];
+
   launchd.user.agents.colima = {
     serviceConfig = {
       ProgramArguments = [
@@ -33,8 +38,10 @@
       ];
       RunAtLoad = true;
       KeepAlive = true;
-      StandardErrorPath = "/tmp/colima.err";
-      StandardOutPath = "/tmp/colima.out";
+      WorkingDirectory = "/Users/I348749";
+      EnvironmentVariables = {
+        PATH = "${pkgs.docker}/bin:/usr/bin:/bin:/usr/sbin:/sbin";
+      };
     };
   };
 

@@ -49,7 +49,7 @@
   services = {
     gpg-agent = {
       enable = true;
-      pinentryPackage = pkgs.pinentry_mac;
+      pinentry.package = pkgs.pinentry_mac;
       maxCacheTtl = 60480000;
       defaultCacheTtl = 60480000;
     };
