@@ -89,7 +89,6 @@ require("lazy").setup({
       },
       build = "make tiktoken",
       opts = {
-        model = "claude-3.5-sonnet",
         mappings = { reset = { normal = "", }, }
       },
     },
