@@ -74,7 +74,7 @@ require("lazy").setup({
   -- 'RRethy/nvim-base16'
 
   -- Misc
-  { 'aserowy/tmux.nvim', config = true },
+  { 'aserowy/tmux.nvim',      config = true },
   'metakirby5/codi.vim', -- TODO ft python, codi zsh func
   { 'Olical/conjure',         ft = { 'scheme', 'racket', 'python' } },
   { 'wlangstroth/vim-racket', ft = 'scheme' },
@@ -89,7 +89,13 @@ require("lazy").setup({
       },
       build = "make tiktoken",
       opts = {
-        mappings = { reset = { normal = "", }, }
+        mappings = {
+          reset = { normal = "", },
+          accept_diff = {
+            normal = "",
+            insert = "",
+          },
+        }
       },
     },
   }

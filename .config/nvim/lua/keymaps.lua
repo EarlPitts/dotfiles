@@ -15,6 +15,7 @@ map('', '<F1>', '<cmd>!./%<CR>')
 map('n', '<leader>md', '<cmd>MarkdownPreview<CR>')
 map('n', '<leader>sr', '<cmd>ConjureEval (RESTART 1)<CR>') -- Restart Scheme
 map('n', '<Esc>', '<cmd>nohlsearch<CR>')               -- Clear highlight
+map('n', '<leader>bo', '<cmd>%bd|e#<CR>') -- Delete buffers
 
 -- Make
 map('', '<F5>', '<cmd>make!<CR>')
@@ -30,6 +31,13 @@ map('n', '<space>ga', '<cmd>Gitsigns stage_hunk<CR>')
 map('n', '<space>gu', '<cmd>Gitsigns undo_stage_hunk<CR>')
 map('n', '<space>gr', '<cmd>Gitsigns reset_hunk<CR>')
 map('n', '<space>gt', ':DiffviewFileHistory --reverse --grep=')
+
+-- Copilot
+map('n', '<leader>cc', '<cmd>CopilotChatToggle<CR>')
+map('n', '<leader>cr', '<cmd>CopilotChatReset<CR>')
+map('n', '<leader>ce', '<cmd>CopilotChatExplain<CR>')
+map('n', '<leader>cf', '<cmd>CopilotChatFix<CR>')
+map('n', '<leader>ct', '<cmd>CopilotChatTests<CR>')
 
 -- Telescope
 map('n', '<C-b>', '<cmd>Telescope buffers<CR>')
