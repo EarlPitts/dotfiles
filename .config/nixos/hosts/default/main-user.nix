@@ -1,7 +1,14 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 
-let cfg = config.main-user;
-in {
+let
+  cfg = config.main-user;
+in
+{
   options = {
     main-user.enable = lib.mkEnableOption "enable user module";
 
@@ -18,9 +25,14 @@ in {
       isNormalUser = true;
       initialPassword = "unix";
       description = "My user";
-      extraGroups = [ "wheel" "power" "libvirtd" "video" "docker" ];
+      extraGroups = [
+        "wheel"
+        "power"
+        "libvirtd"
+        "video"
+        "docker"
+      ];
       shell = pkgs.zsh;
     };
   };
 }
-

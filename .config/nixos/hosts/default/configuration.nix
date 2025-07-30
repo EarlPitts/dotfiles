@@ -1,7 +1,15 @@
-{ config, lib, pkgs, callPackage, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  callPackage,
+  inputs,
+  ...
+}:
 
 {
-  imports = [ # Include the results of the hardware scan.
+  imports = [
+    # Include the results of the hardware scan.
     ./hardware-configuration.nix
     ./main-user.nix
     ./jobs.nix
@@ -9,10 +17,10 @@
   ];
 
   nixpkgs.config.packageOverrides = pkgs: {
-    intel-vaapi-driver =
-      pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
+    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
   };
-  hardware.graphics = { # hardware.graphics since NixOS 24.11
+  hardware.graphics = {
+    # hardware.graphics since NixOS 24.11
     enable32Bit = true;
     enable = true;
     extraPackages = with pkgs; [
@@ -25,7 +33,10 @@
     LIBVA_DRIVER_NAME = "iHD";
   }; # Force intel-media-driver
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   boot = {
     # Bootloader.
@@ -51,6 +62,7 @@
 
   security.sudo.wheelNeedsPassword = false;
   security.rtkit.enable = true; # Needed for sound?
+  security.pam.services.i3lock.enable = true;
 
   services = {
     fwupd.enable = true;
@@ -71,16 +83,22 @@
       xkb.layout = "us";
       autoRepeatDelay = 250;
       autoRepeatInterval = 30;
-      resolutions = [{
-        x = 1920;
-        y = 1080;
-      }];
+      resolutions = [
+        {
+          x = 1920;
+          y = 1080;
+        }
+      ];
 
       displayManager.startx.enable = true;
 
       windowManager.i3 = {
         enable = true;
-        extraPackages = with pkgs; [ rofi i3blocks i3lock-color ];
+        extraPackages = with pkgs; [
+          rofi
+          i3blocks
+          i3lock-color
+        ];
       };
     };
 
@@ -89,7 +107,11 @@
       keyboards = {
         default = {
           ids = [ "*" ];
-          settings = { main = { capslock = "overload(control, esc)"; }; };
+          settings = {
+            main = {
+              capslock = "overload(control, esc)";
+            };
+          };
         };
       };
     };
@@ -97,7 +119,9 @@
 
   home-manager = {
     extraSpecialArgs = { inherit inputs; };
-    users = { "ben" = import ./home.nix; };
+    users = {
+      "ben" = import ./home.nix;
+    };
   };
 
   fonts.packages = with pkgs; [
@@ -107,7 +131,10 @@
     font-awesome
   ];
 
-  environment.systemPackages = with pkgs; [ vim wget ];
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -202,15 +229,28 @@
   systemd.services.wakelock = {
     enable = true;
     description = "Lock the screen on resume from suspend";
-    path = [ pkgs.bash pkgs.i3lock-color pkgs.gawk pkgs.xorg.xdpyinfo ];
-    unitConfig = { Before = [ "suspend.target" "sleep.target" ]; };
+    path = [
+      pkgs.bash
+      pkgs.i3lock-color
+      pkgs.gawk
+      pkgs.xorg.xdpyinfo
+    ];
+    unitConfig = {
+      Before = [
+        "suspend.target"
+        "sleep.target"
+      ];
+    };
     serviceConfig = {
       ExecStart = "/home/ben/.local/bin/lock";
       Type = "forking";
       User = "ben";
       Environment = "DISPLAY=:0";
     };
-    wantedBy = [ "suspend.target" "sleep.target" ];
+    wantedBy = [
+      "suspend.target"
+      "sleep.target"
+    ];
   };
 
   # Select internationalisation properties.

@@ -1,7 +1,9 @@
 { pkgs, ... }:
 
 {
-  home.sessionVariables = { EDITOR = "nvim"; };
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
 
   programs = {
     home-manager.enable = true;
@@ -10,12 +12,17 @@
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
-    gpg = { enable = true; };
+    gpg = {
+      enable = true;
+    };
   };
 
   services.syncthing.enable = true;
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [

@@ -1,4 +1,5 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+{
   systemd.timers."mail" = {
     wantedBy = [ "timers.target" ];
     timerConfig = {
@@ -9,7 +10,11 @@
   };
 
   systemd.services."mail" = {
-    path = [ pkgs.gnupg pkgs.rofi pkgs.rofi-pass ];
+    path = [
+      pkgs.gnupg
+      pkgs.rofi
+      pkgs.rofi-pass
+    ];
     script = ''
       set -eu
       ${pkgs.isync}/bin/mbsync -a

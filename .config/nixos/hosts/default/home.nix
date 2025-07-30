@@ -11,7 +11,7 @@
   services = {
     gpg-agent = {
       enable = true;
-      pinentryPackage = pkgs.pinentry-rofi;
+      pinentry.package = pkgs.pinentry-curses;
       maxCacheTtl = 60480000;
       defaultCacheTtl = 60480000;
     };
@@ -65,7 +65,7 @@
     poppler_utils # For zathura preview
     qbittorrent
     telegram-desktop
-    darktable
+    # darktable
     spotify
     discord
     zathura
@@ -80,7 +80,10 @@
     # Langs
 
     ## Python
-    (python3.withPackages (ps: [ ps.matplotlib ps.numpy ]))
+    (python3.withPackages (ps: [
+      ps.matplotlib
+      ps.numpy
+    ]))
     ## Guile
     guile
     guile-json
