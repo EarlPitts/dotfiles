@@ -218,7 +218,7 @@ require 'diffview'.setup {
 -- vim.g['conjure#client#guile#socket#pipename'] = "/tmp/.guile-socket"
 
 -- Tagbar Haskell
-vim.g.tagbar_type_haskell                     = {
+vim.g.tagbar_type_haskell = {
   ctagsbin = 'hasktags',
   ctagsargs = '-x -c -o-',
   kinds = {
@@ -254,7 +254,7 @@ vim.g.tagbar_type_haskell                     = {
 }
 
 -- Tagbar Scala Support
-vim.g.tagbar_type_scala                       = {
+vim.g.tagbar_type_scala   = {
   ctagstype = 'scala',
   kinds = {
     'p:packages:1',
@@ -267,5 +267,17 @@ vim.g.tagbar_type_scala                       = {
     'c:classes',
     'r:cclasses',
     'm:methods'
+  }
+}
+
+-- Copilot settings
+require("CopilotChat").setup {
+  model = "claude-sonnet-4",
+  mappings = {
+    reset = { normal = "", },
+    accept_diff = {
+      normal = "",
+      insert = "",
+    }
   }
 }

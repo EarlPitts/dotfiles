@@ -87,16 +87,7 @@ require("lazy").setup({
         { "zbirenbaum/copilot.lua" },
         { "nvim-lua/plenary.nvim", branch = "master" },
       },
-      build = "make tiktoken",
-      opts = {
-        mappings = {
-          reset = { normal = "", },
-          accept_diff = {
-            normal = "",
-            insert = "",
-          },
-        }
-      },
+      build = "make tiktoken"
     },
   }
 })
