@@ -33,10 +33,13 @@
     LIBVA_DRIVER_NAME = "iHD";
   }; # Force intel-media-driver
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    download-buffer-size = 2147483648; # 2 GB
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+  };
 
   boot = {
     # Bootloader.
