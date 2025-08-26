@@ -39,6 +39,7 @@
       "nix-command"
       "flakes"
     ];
+    trusted-users = [ "root" "ben" ];
   };
 
   boot = {
