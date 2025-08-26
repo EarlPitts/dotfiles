@@ -12,6 +12,7 @@ lspconfig.pyright.setup {
 lspconfig.lua_ls.setup {}
 
 lspconfig.hls.setup {
+  filetypes = { 'haskell', 'lhaskell', 'cabal' },
   root_dir = function(fname)
     return lspconfig.util.path.dirname(fname)
   end
