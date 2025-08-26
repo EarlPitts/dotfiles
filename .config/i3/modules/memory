@@ -1,14 +1,14 @@
 #!/usr/bin/env sh
 
-# main="$(free -h -w | grep Mem | awk -F '[[:space:]]+' '{print $8}')"
+main="$(free -h -w | grep Mem | awk -F '[[:space:]]+' '{print $8}')"
 # swap=
-all="$(free -thw | grep Total | awk -F '[[:space:]]+' '{print $4}')"
+# all="$(free -thw | grep Total | awk -F '[[:space:]]+' '{print $4}')"
 
 # full text
-echo "$all"
+echo "$main"
 
 # short text
-echo "$all"
+echo "$main"
 
 # color if load is too high
 # if [ $(echo "$all" | head -c1) -lt 5 ]; then
