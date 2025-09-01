@@ -87,7 +87,7 @@
     stack
     cabal-install
     haskell-language-server
-    (agda.withPackages (ps: [ps.standard-library]))
+    (agda.withPackages (ps: [ ps.standard-library ]))
     ## Shell
     shellcheck
     nodePackages.bash-language-server

@@ -65,7 +65,7 @@
     poppler_utils # For zathura preview
     qbittorrent
     telegram-desktop
-    # darktable
+    darktable
     spotify
     discord
     zathura
