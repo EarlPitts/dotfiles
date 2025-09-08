@@ -39,7 +39,10 @@
       "nix-command"
       "flakes"
     ];
-    trusted-users = [ "root" "ben" ];
+    trusted-users = [
+      "root"
+      "ben"
+    ];
   };
 
   boot = {
@@ -155,6 +158,12 @@
   virtualisation.docker.enable = true;
 
   programs.virt-manager.enable = true;
+
+  services.earlyoom = {
+    enable = true;
+    reportInterval = 0;
+    enableNotifications = true;
+  };
 
   services.throttled = {
     enable = true;
