@@ -83,7 +83,7 @@
     coursier
     graalvm-ce
     ## Haskell
-    ghc
+    (ghc.withPackages (hp: with hp; [ zlib ]))
     stack
     cabal-install
     haskell-language-server
