@@ -81,13 +81,11 @@ require("lazy").setup({
   'tweekmonster/startuptime.vim',
   'chrisbra/Recover.vim',
   {
-    {
-      "CopilotC-Nvim/CopilotChat.nvim",
-      dependencies = {
-        { "zbirenbaum/copilot.lua" },
-        { "nvim-lua/plenary.nvim", branch = "master" },
-      },
-      build = "make tiktoken"
+    "olimorris/codecompanion.nvim",
+    opts = {},
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
     },
-  }
+  },
 })

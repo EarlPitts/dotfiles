@@ -33,11 +33,8 @@ map('n', '<space>gr', '<cmd>Gitsigns reset_hunk<CR>')
 map('n', '<space>gt', ':DiffviewFileHistory --reverse --grep=')
 
 -- Copilot
-map('n', '<leader>cc', '<cmd>CopilotChatToggle<CR>')
-map('n', '<leader>cr', '<cmd>CopilotChatReset<CR>')
-map('n', '<leader>ce', '<cmd>CopilotChatExplain<CR>')
-map('n', '<leader>cf', '<cmd>CopilotChatFix<CR>')
-map('n', '<leader>ct', '<cmd>CopilotChatTests<CR>')
+map('n', '<leader>cc', '<cmd>CodeCompanionChat Toggle<CR>')
+map("v", "<leader>cc", "<cmd>CodeCompanionChat Add<CR>")
 
 -- Telescope
 map('n', '<C-b>', '<cmd>Telescope buffers<CR>')
