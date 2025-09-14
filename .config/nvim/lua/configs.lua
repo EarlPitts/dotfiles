@@ -270,14 +270,15 @@ vim.g.tagbar_type_scala   = {
   }
 }
 
--- Copilot settings
-require("CopilotChat").setup {
-  model = "claude-sonnet-4",
-  mappings = {
-    reset = { normal = "", },
-    accept_diff = {
-      normal = "",
-      insert = "",
-    }
-  }
-}
+-- CodeCompanion
+require("codecompanion").setup({
+  strategies = {
+    chat = {
+      adapter = {
+        name = "copilot",
+        model = "claude-sonnet-4",
+      },
+    },
+  },
+})
+vim.cmd([[cab cc CodeCompanion]])
