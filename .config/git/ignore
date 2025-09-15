@@ -9,6 +9,11 @@ wiki
 *.swp
 stuff
 .direnv
+
+# Scala
 .metals
 .scala-build
-shell.nix
+
+# Haskell
+.stack-work/
+dist-newstyle/
