@@ -1,24 +1,18 @@
 --LSP Config
-local lspconfig = require('lspconfig')
-
 local map = vim.keymap.set
 
-lspconfig.pyright.setup {
-  root_dir = function(fname)
-    return lspconfig.util.path.dirname(fname)
-  end
-}
+vim.lsp.enable('pyright')
 
-lspconfig.hls.setup {
+vim.lsp.enable('hls')
+vim.lsp.config('hls', {
   filetypes = { 'haskell', 'lhaskell', 'cabal' },
-  root_dir = function(fname)
-    return lspconfig.util.path.dirname(fname)
-  end
-}
+})
 
-lspconfig.erlangls.setup {}
+vim.lsp.enable('erlangls')
 
-lspconfig.nixd.setup {}
+vim.lsp.enable('rust_analyzer')
+
+vim.lsp.enable('nixd')
 
 local inlayHints = {
   includeInlayParameterNameHints = "all",
@@ -30,8 +24,9 @@ local inlayHints = {
   includeInlayFunctionLikeReturnTypeHints = true,
   includeInlayEnumMemberValueHints = true,
 }
-lspconfig.volar.setup {}
-lspconfig.ts_ls.setup {
+vim.lsp.enable('vue_ls')
+vim.lsp.enable('ts_ls')
+vim.lsp.config('ts_ls', {
   settings = {
     typescript = {
       inlayHints = inlayHints,
@@ -54,23 +49,11 @@ lspconfig.ts_ls.setup {
     "typescript",
     "vue",
   },
-}
-lspconfig.angularls.setup {};
-lspconfig.eslint.setup {};
+})
+vim.lsp.enable('angularls')
+vim.lsp.enable('eslint')
 
-lspconfig.purescriptls.setup {
-  settings = {
-    purescript = {
-      formatter = "purs-tidy",
-    }
-  }
-}
-
-lspconfig.bashls.setup {
-  root_dir = function(fname)
-    return lspconfig.util.path.dirname(fname)
-  end
-}
+vim.lsp.enable('bashls')
 
 vim.diagnostic.config({ virtual_text = true })
 
