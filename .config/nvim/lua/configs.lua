@@ -282,3 +282,13 @@ require("codecompanion").setup({
   },
 })
 vim.cmd([[cab cc CodeCompanion]])
+
+require("neotest").setup({
+  adapters = {
+    require("neotest-scala")({
+        runner = "sbt",
+        framework = "scalatest",
+    }),
+    require("neotest-haskell")
+  },
+})

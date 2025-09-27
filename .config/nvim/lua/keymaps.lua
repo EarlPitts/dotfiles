@@ -43,6 +43,15 @@ map('n', '<C-t>', '<cmd>Telescope tags<CR>')
 map('n', '<leader><C-p>', '<cmd>Telescope find_files<CR>')
 map('n', '<C-s>', '<cmd>lua require"telescope.builtin".find_files({cwd = "~/References/Snippets"})<CR>')
 
+-- Neotest
+map('n', "tO", '<cmd>lua require("neotest").summary.toggle()<cr>')
+map('n', "tP", '<cmd>lua require("neotest").output_panel.toggle()<cr>')
+map('n', "tR", '<cmd>lua require("neotest").run.run(vim.fn.expand("%"))<cr>')
+map('n', "td", '<cmd>lua require("neotest").run.run({strategy = "dap"})<cr>')
+map('n', "to", '<cmd>lua require("neotest").output.open()<cr>')
+map('n', "tr", '<cmd>lua require("neotest").run.run()<cr>')
+map('n', "ts", '<cmd>lua require("neotest").run.stop()<cr>')
+
 -- git awareness for file picker
 if vim.fn.isdirectory(".git") == 1 then
   map('n', '<C-p>', '<cmd>Telescope git_files<CR>')
