@@ -74,17 +74,17 @@ require("lazy").setup({
   -- 'RRethy/nvim-base16'
 
   -- Misc
-  {
-    "nvim-neotest/neotest",
-    dependencies = {
-      "nvim-neotest/nvim-nio",
-      "nvim-lua/plenary.nvim",
-      "antoinemadec/FixCursorHold.nvim",
-      "nvim-treesitter/nvim-treesitter",
-      "stevanmilic/neotest-scala",
-      "mrcjkb/neotest-haskell"
-    }
-  },
+  -- {
+  --   "nvim-neotest/neotest",
+  --   dependencies = {
+  --     "nvim-neotest/nvim-nio",
+  --     "nvim-lua/plenary.nvim",
+  --     "antoinemadec/FixCursorHold.nvim",
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "stevanmilic/neotest-scala",
+  --     "mrcjkb/neotest-haskell"
+  --   }
+  -- },
   { 'aserowy/tmux.nvim',      config = true },
   'metakirby5/codi.vim', -- TODO ft python, codi zsh func
   { 'Olical/conjure',         ft = { 'scheme', 'racket', 'python' } },
