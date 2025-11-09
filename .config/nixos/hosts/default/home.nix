@@ -63,12 +63,12 @@
     dunst
     libnotify
     scrot
-    poppler_utils # For zathura preview
     qbittorrent
     telegram-desktop
     darktable
     spotify
     discord
+    poppler-utils # For zathura preview
     zathura
     firefox
     tor-browser

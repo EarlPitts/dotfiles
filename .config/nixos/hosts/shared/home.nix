@@ -82,7 +82,6 @@
     ## Scala
     sbt
     coursier
-    graalvm-ce
     ## Haskell
     (ghc.withPackages (hp: with hp; [ zlib ]))
     stack
