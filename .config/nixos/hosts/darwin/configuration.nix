@@ -68,7 +68,6 @@
       # "anki"
       "google-chrome"
       "firefox"
-      "insomnia"
       "intellij-idea"
       "karabiner-elements"
       "microsoft-teams"

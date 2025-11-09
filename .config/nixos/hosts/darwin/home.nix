@@ -23,6 +23,7 @@
       zathura
       openvpn
       redis
+      claude-code
 
       (google-cloud-sdk.withExtraComponents (
         with google-cloud-sdk.components;
