@@ -71,6 +71,7 @@
     neovim
     emacs
     git
+    jujutsu
     difftastic
     gnumake
     docker-compose

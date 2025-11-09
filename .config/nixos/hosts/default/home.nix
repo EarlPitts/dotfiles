@@ -50,6 +50,7 @@
     rofi-calc
     ueberzugpp
     adwaita-icon-theme
+    zed-editor
     feh
     sxiv
     unclutter-xfixes
