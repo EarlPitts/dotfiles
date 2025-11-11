@@ -95,6 +95,7 @@
 
     defaults = {
       ".GlobalPreferences"."com.apple.mouse.scaling" = 3.0;
+      universalaccess.reduceTransparency = true;
       NSGlobalDomain = {
         KeyRepeat = 2;
         InitialKeyRepeat = 15;
