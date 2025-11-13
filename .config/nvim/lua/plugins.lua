@@ -41,6 +41,15 @@ require("lazy").setup({
   'nvim-treesitter/playground',
   { 'scalameta/nvim-metals',           dependencies = { "nvim-lua/plenary.nvim" } },
   -- 'mfussenegger/nvim-dap',
+  'saghen/blink.cmp',
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = {},
+    dependencies = {
+        { "mason-org/mason.nvim", opts = {} },
+        "neovim/nvim-lspconfig",
+    },
+  },
 
   -- Notes
   { 'vimwiki/vimwiki' },

@@ -283,6 +283,41 @@ require("codecompanion").setup({
 })
 vim.cmd([[cab cc CodeCompanion]])
 
+-- Blink
+require('blink.cmp').setup({
+  fuzzy = { implementation = 'lua', },
+  completion = {
+    menu = { auto_show = false, },
+  },
+  signature = { enabled = true },
+  sources = {
+    default = {'path', 'lsp', 'buffer'},
+    providers = {
+      buffer = {min_keyword_length = 3},
+      lsp = {fallbacks = {}},
+      path = {fallbacks = {'lsp'}},
+    },
+  },
+  keymap = {
+    preset = 'default',
+    ['<C-n>'] = { 
+      function(cmp) 
+        if cmp.is_visible() then
+          cmp.select_next()
+        else
+          cmp.show_and_insert()
+        end
+      end 
+    },
+  },
+})
+
+-- Mason
+require("mason").setup()
+require("mason-lspconfig").setup {
+  automatic_enable = false,
+}
+
 -- require("neotest").setup({
 --   adapters = {
 --     require("neotest-scala")({

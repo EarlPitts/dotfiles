@@ -24,38 +24,52 @@ local inlayHints = {
   includeInlayFunctionLikeReturnTypeHints = true,
   includeInlayEnumMemberValueHints = true,
 }
-vim.lsp.enable('vue_ls')
-vim.lsp.enable('ts_ls')
-vim.lsp.config('ts_ls', {
+vim.lsp.config('vtsls', {
   settings = {
-    typescript = {
-      inlayHints = inlayHints,
-    },
-    javascript = {
-      inlayHints = inlayHints,
-    },
-  },
-  init_options = {
-    plugins = {
-      {
-        name = "@vue/typescript-plugin",
-        location = vim.fn.expand("$NODE") .. "/lib/node_modules/@vue/typescript-plugin",
-        languages = { "javascript", "typescript", "vue" },
+    vtsls = {
+      tsserver = {
+        typescript = {
+          inlayHints = inlayHints,
+        },
+        javascript = {
+          inlayHints = inlayHints,
+        },
+        globalPlugins = {
+          {
+            name = "@vue/typescript-plugin",
+            location = vim.fn.stdpath('data') ..
+                '/mason/packages/vue-language-server/node_modules/@vue/language-server',
+            languages = { "vue" },
+            configNamespace = 'typescript',
+          }
+        },
       },
     },
   },
-  filetypes = {
-    "javascript",
-    "typescript",
-    "vue",
-  },
+  filetypes = { 'typescript', 'javascript', 'vue' },
+})
+
+vim.lsp.config('angularls', {
+  root_dir = function(fname)
+    local util = require('lspconfig.util')
+    
+    -- Look for Angular-specific files
+    local angular_root = util.root_pattern(
+      'angular.json',
+      'workspace.json',
+      '.angular-cli.json'
+    )(fname)
+    
+    -- Only return root if Angular files are found
+    return angular_root
+  end
 })
 vim.lsp.enable('angularls')
 vim.lsp.enable('eslint')
+vim.lsp.enable({ 'vtsls', 'vue_ls' })
 
 vim.lsp.enable('bashls')
 
-vim.diagnostic.config({ virtual_text = true })
 
 -- Global mappings.
 -- See `:help vim.diagnostic.*` for documentation on any of the below functions
@@ -69,8 +83,7 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setqflist)
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
   callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+    vim.diagnostic.config({ virtual_text = true })
 
     -- Buffer local mappings.
     -- See `:help vim.lsp.*` for documentation on any of the below functions

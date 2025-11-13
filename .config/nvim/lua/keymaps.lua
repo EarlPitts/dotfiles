@@ -34,7 +34,7 @@ map('n', '<space>gt', ':DiffviewFileHistory --reverse --grep=')
 
 -- Copilot
 map('n', '<leader>cc', '<cmd>CodeCompanionChat Toggle<CR>')
-map("v", "<leader>cc", "<cmd>CodeCompanionChat Add<CR>")
+map('v', '<leader>cc', '<cmd>CodeCompanionChat Add<CR>')
 
 -- Telescope
 map('n', '<C-b>', '<cmd>Telescope buffers<CR>')
@@ -59,7 +59,6 @@ else
   map('n', '<C-p>', '<cmd>Telescope find_files<CR>')
 end
 
-map('i', '<C-n>', '<C-x><C-o>') -- Remap omnicomplete
 -- map('n', '<Space>', 'za')                                -- Folding
 
 -- Copy to/from clipboard
