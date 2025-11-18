@@ -287,7 +287,13 @@ vim.cmd([[cab cc CodeCompanion]])
 require('blink.cmp').setup({
   fuzzy = { implementation = 'lua', },
   completion = {
-    menu = { auto_show = false, },
+    menu = {
+      auto_show = false,
+      draw = {
+        columns = { { 'kind' }, { 'label', 'label_description', gap = 1 } },
+      },
+    },
+    list = { selection = { preselect = false, auto_insert = true }}
   },
   signature = { enabled = true },
   sources = {
