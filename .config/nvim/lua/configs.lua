@@ -311,7 +311,7 @@ require('blink.cmp').setup({
         if cmp.is_visible() then
           cmp.select_next()
         else
-          cmp.show_and_insert()
+          cmp.show()
         end
       end 
     },
