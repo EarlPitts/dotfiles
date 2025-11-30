@@ -290,7 +290,7 @@ require('blink.cmp').setup({
     menu = {
       auto_show = false,
       draw = {
-        columns = { { 'kind' }, { 'label', 'label_description', gap = 1 } },
+        columns = { { 'label', 'label_description', gap = 1 }, { 'kind' } },
       },
     },
     list = { selection = { preselect = false, auto_insert = true }}
