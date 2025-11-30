@@ -49,6 +49,7 @@
     jq
     jless
     visidata
+    inetutils
     pandoc
     imagemagick
     exiftool
