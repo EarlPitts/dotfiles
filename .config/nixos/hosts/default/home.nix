@@ -58,7 +58,6 @@
     xorg.xdpyinfo
     xclip
     anki
-    slack
     grobi
     dunst
     libnotify
@@ -67,7 +66,6 @@
     telegram-desktop
     darktable
     spotify
-    discord
     poppler-utils # For zathura preview
     zathura
     firefox
