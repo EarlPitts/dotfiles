@@ -6,6 +6,15 @@ vim.lsp.enable('pyright')
 vim.lsp.enable('hls')
 vim.lsp.config('hls', {
   filetypes = { 'haskell', 'lhaskell', 'cabal' },
+  settings = {
+    haskell = {
+      plugin = {
+        hlint = {
+          diagnosticsOn = false
+        }
+      }
+    }
+  }
 })
 
 vim.lsp.enable('erlangls')
