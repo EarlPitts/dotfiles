@@ -77,7 +77,7 @@
       "slack"
       "vscodium"
       "wireshark"
-      # "zed"
+      "zed"
       "zoom"
     ];
   };
