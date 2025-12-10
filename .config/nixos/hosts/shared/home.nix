@@ -44,7 +44,7 @@
     doggo
     fastfetch
     killall
-    genpass
+    pwgen
     curlie
     jq
     jless
