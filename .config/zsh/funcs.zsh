@@ -27,6 +27,7 @@ update() {
         nixos-rebuild switch --flake ~/.config/nixos --sudo
     else
         sudo darwin-rebuild switch --flake ~/.config/nixos/
+        brew update && brew upgrade --greedy
     fi
 }
 
