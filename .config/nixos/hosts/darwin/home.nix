@@ -24,6 +24,7 @@
       openvpn
       redis
       claude-code
+      choose-gui
 
       (google-cloud-sdk.withExtraComponents (
         with google-cloud-sdk.components;

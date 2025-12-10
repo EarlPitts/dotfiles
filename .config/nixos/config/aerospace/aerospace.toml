@@ -49,6 +49,9 @@ alt-shift-space = 'layout floating tiling' # 'floating toggle' in i3
 # should be supported at all https://github.com/nikitabobko/AeroSpace/issues/5
 # alt-a = 'focus parent'
 
+# Choose (rofi-clone) shortcuts
+alt-shift-p = 'exec-and-forget $HOME/.config/choose/passes'
+
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
 alt-3 = 'workspace 3'

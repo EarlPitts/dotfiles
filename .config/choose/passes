@@ -1,0 +1,10 @@
+#!/bin/sh
+
+PATH=$PATH:"$HOME"/.nix-profile/bin/
+
+pass=$(ls ~/.password-store | xargs basename -s ".gpg" | choose)
+field=$(printf "user\npass\nOTP" | choose -p field)
+
+[ "$field" = user ] && pass "$pass" | grep user | cut -d ':' -f2 | tr -d ' ' | pbcopy
+[ "$field" = pass ] && pass "$pass" -c1
+[ "$field" = OTP ] && pass otp "$pass" -c
