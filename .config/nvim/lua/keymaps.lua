@@ -73,3 +73,6 @@ map('n', '<C-w>-', '5<C-w>-')
 map('n', '<C-w>+', '5<C-w>+')
 map('n', '<C-w>,', '10<C-w><')
 map('n', '<C-w>.', '10<C-w>>')
+
+-- Close tabs
+map('n', '<C-w><C-o>', '<cmd>tabo<CR>')
