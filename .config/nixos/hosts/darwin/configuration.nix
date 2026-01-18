@@ -60,6 +60,7 @@
     brews = [
       "nvm"
       "edosrecki/tools/google-cloud-redis"
+      "mole"
     ];
     taps = [ "nikitabobko/tap" ];
     casks = [
