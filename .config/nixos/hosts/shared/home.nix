@@ -95,7 +95,7 @@
     nodePackages.bash-language-server
     ## Nix
     nixd
-    nixfmt-rfc-style
+    nixfmt
     ## Lua
     lua-language-server
     ## Python
