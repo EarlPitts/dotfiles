@@ -102,7 +102,6 @@ require("lazy").setup({
   'chrisbra/Recover.vim',
   {
     "olimorris/codecompanion.nvim",
-    tag = "v17.33.0",
     opts = {},
     dependencies = {
       "nvim-lua/plenary.nvim",
