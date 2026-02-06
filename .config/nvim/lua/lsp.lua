@@ -10,6 +10,8 @@ vim.lsp.config('hls', {
 
 vim.lsp.enable('erlangls')
 
+vim.lsp.enable('phpactor')
+
 vim.lsp.enable('rust_analyzer')
 
 vim.lsp.enable('nixd')

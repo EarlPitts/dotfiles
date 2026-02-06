@@ -42,8 +42,7 @@
 
       # Langs
       nodejs
-      vue-language-server
-      typescript-language-server
+      phpactor
       python3
     ];
   };
