@@ -50,3 +50,6 @@
 	autoStash = true
 [alias]
 	st = status
+[credential "https://github.tools.sap"]
+	helper = 
+	helper = !/Users/I348749/.nix-profile/bin/gh auth git-credential

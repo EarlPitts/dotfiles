@@ -32,7 +32,6 @@
     eza
     bat
     slides
-    gh
     ripgrep
     ripgrep-all
     fd

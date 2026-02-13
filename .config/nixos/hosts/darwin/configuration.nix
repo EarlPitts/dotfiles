@@ -61,8 +61,17 @@
       "nvm"
       "edosrecki/tools/google-cloud-redis"
       "mole"
+      "gh"
+      "hai"
+      "opencode"
     ];
-    taps = [ "nikitabobko/tap" ];
+    taps = [
+      "nikitabobko/tap"
+      {
+        name = "hAIperspace/hai";
+        clone_target = "https://github.tools.sap/hAIperspace/hai-homebrew";
+      }
+    ];
     casks = [
       "aerospace"
       "ghostty"
