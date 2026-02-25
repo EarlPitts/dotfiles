@@ -35,6 +35,8 @@
     ripgrep
     ripgrep-all
     fd
+    gh
+    opencode
     fzf
     nnn
     ranger

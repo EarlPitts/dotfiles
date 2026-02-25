@@ -61,12 +61,12 @@
       "nvm"
       "edosrecki/tools/google-cloud-redis"
       "mole"
-      "gh"
       "hai"
-      "opencode"
+      "terraform"
     ];
     taps = [
       "nikitabobko/tap"
+      "hashicorp/tap"
       {
         name = "hAIperspace/hai";
         clone_target = "https://github.tools.sap/hAIperspace/hai-homebrew";
