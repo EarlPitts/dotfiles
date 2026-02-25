@@ -246,7 +246,7 @@
       pkgs.bash
       pkgs.i3lock-color
       pkgs.gawk
-      pkgs.xorg.xdpyinfo
+      pkgs.xdpyinfo
     ];
     unitConfig = {
       Before = [

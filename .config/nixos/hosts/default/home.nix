@@ -55,10 +55,10 @@
     feh
     sxiv
     unclutter-xfixes
-    calibre
-    xorg.xdpyinfo
+    # calibre
+    xdpyinfo
     xclip
-    anki
+    # anki
     grobi
     dunst
     libnotify

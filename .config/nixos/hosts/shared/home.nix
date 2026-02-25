@@ -87,9 +87,6 @@
     graalvmPackages.graalvm-ce
     ## Haskell
     (ghc.withPackages (hp: with hp; [ zlib ]))
-    stack
-    cabal-install
-    haskell-language-server
     (agda.withPackages (ps: [ ps.standard-library ]))
     ## Shell
     shellcheck
