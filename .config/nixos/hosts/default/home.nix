@@ -58,7 +58,7 @@
     # calibre
     xdpyinfo
     xclip
-    # anki
+    anki
     grobi
     dunst
     libnotify
