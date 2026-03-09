@@ -55,7 +55,7 @@
     feh
     sxiv
     unclutter-xfixes
-    # calibre
+    calibre
     xdpyinfo
     xclip
     anki
