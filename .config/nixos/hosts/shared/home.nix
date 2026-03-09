@@ -15,6 +15,9 @@
     gpg = {
       enable = true;
     };
+    neovim = {
+      enable = true;
+    };
   };
 
   services.syncthing.enable = true;
@@ -70,7 +73,6 @@
     bmon
 
     # Devtools
-    neovim
     emacs
     git
     jujutsu
