@@ -56,6 +56,8 @@ vim.lsp.config('vtsls', {
   filetypes = { 'typescript', 'javascript', 'vue' },
 })
 
+vim.lsp.enable('elmls')
+
 vim.lsp.config('angularls', {
   root_dir = function(fname)
     local util = require('lspconfig.util')
