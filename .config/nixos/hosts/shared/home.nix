@@ -92,7 +92,7 @@
     (agda.withPackages (ps: [ ps.standard-library ]))
     ## Shell
     shellcheck
-    nodePackages.bash-language-server
+    bash-language-server
     ## Nix
     nixd
     nixfmt
