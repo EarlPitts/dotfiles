@@ -39,5 +39,12 @@
           home-manager.darwinModules.home-manager
         ];
       };
+      nixosConfigurations.hub = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/server/configuration.nix
+          home-manager.nixosModules.default
+        ];
+      };
     };
 }
