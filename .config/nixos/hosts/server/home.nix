@@ -8,6 +8,32 @@
 
   home.stateVersion = "23.11"; # Please read the comment before changing.
 
+  home.sessionVariables = {
+    EDITOR = "nvim";
+  };
+
+  programs = {
+    home-manager.enable = true;
+    direnv = {
+      enable = true;
+      enableZshIntegration = true;
+      nix-direnv.enable = true;
+    };
+    gpg = {
+      enable = true;
+    };
+    neovim = {
+      enable = true;
+    };
+  };
+
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
+
+  nixpkgs.config.allowUnfree = true;
+
   services = {
     gpg-agent = {
       enable = true;
@@ -28,6 +54,17 @@
     borgbackup
     sshfs
     udiskie
+    tree
+    ripgrep
+    eza
+    bat
+    fzf
+    ranger
+    killall
+    jq
+    tmux
+    git
+    direnv
 
     polkit
   ];
