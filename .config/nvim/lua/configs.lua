@@ -6,31 +6,22 @@ local noremap = { noremap = true }
 -- Lower startup time
 vim.loader.enable()
 
--- Treesitter
-require 'nvim-treesitter.configs'.setup {
-  ensure_installed = {
-    'c',
-    'bash',
-    'lua',
-    'python',
-    'scheme',
-    'comment',
-    'make',
-    'norg',
-    'haskell',
-    'erlang',
-    'regex',
-    'markdown',
-    'markdown_inline',
-    'vimdoc',
-    'nix'
-  },
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true
-  }
+require('nvim-treesitter').install {
+  'c',
+  'bash',
+  'lua',
+  'python',
+  'scheme',
+  'comment',
+  'make',
+  'norg',
+  'haskell',
+  'erlang',
+  'regex',
+  'markdown',
+  'markdown_inline',
+  'vimdoc',
+  'nix'
 }
 
 vim.api.nvim_exec([[

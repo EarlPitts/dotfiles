@@ -74,6 +74,7 @@
 
     # Devtools
     emacs
+    tree-sitter
     git
     jujutsu
     difftastic

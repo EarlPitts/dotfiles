@@ -37,8 +37,11 @@ require("lazy").setup({
   --     ft = {'python', 'c'}
   -- }
   'neovim/nvim-lspconfig',
-  { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-  'nvim-treesitter/playground',
+  {
+    'nvim-treesitter/nvim-treesitter',
+    lazy = false,
+    build = ':TSUpdate'
+  },
   { 'scalameta/nvim-metals',           dependencies = { "nvim-lua/plenary.nvim" } },
   -- 'mfussenegger/nvim-dap',
   'saghen/blink.cmp',
