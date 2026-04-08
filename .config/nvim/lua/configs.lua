@@ -14,7 +14,6 @@ require('nvim-treesitter').install {
   'scheme',
   'comment',
   'make',
-  'norg',
   'haskell',
   'erlang',
   'regex',
