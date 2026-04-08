@@ -12,6 +12,7 @@ require('nvim-treesitter').install {
   'lua',
   'python',
   'scheme',
+  'scala',
   'comment',
   'make',
   'haskell',
