@@ -88,8 +88,6 @@
     sbt
     coursier
     graalvmPackages.graalvm-ce
-    ## Haskell
-    (ghc.withPackages (hp: with hp; [ zlib ]))
     (agda.withPackages (ps: [ ps.standard-library ]))
     ## Shell
     shellcheck
