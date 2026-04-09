@@ -84,10 +84,6 @@
 
     # Langs
 
-    ## Scala
-    sbt
-    coursier
-    graalvmPackages.graalvm-ce
     (agda.withPackages (ps: [ ps.standard-library ]))
     ## Shell
     shellcheck
@@ -95,8 +91,6 @@
     ## Nix
     nixd
     nixfmt
-    ## Lua
-    lua-language-server
     ## Python
     pyright
   ];

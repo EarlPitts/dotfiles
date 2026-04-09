@@ -44,6 +44,9 @@
       nodejs
       phpactor
       python3
+      sbt
+      coursier
+      graalvmPackages.graalvm-ce
     ];
   };
 
