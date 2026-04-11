@@ -39,6 +39,9 @@ export MANPAGER="bat --style snip"
 
 export KEYTIMEOUT=1
 
+# For readline support
+export PYTHON_BASIC_REPL=1
+
 # virsh connects to qemu:///session by default
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
