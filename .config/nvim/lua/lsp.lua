@@ -12,6 +12,14 @@ vim.lsp.config('hls', {
     }
   }
 })
+vim.lsp.enable('purescriptls')
+vim.lsp.config('purescriptls', {
+  settings = {
+    purescript = {
+      buildCommand = "spago build --json-errors",
+    },
+  },
+})
 
 vim.lsp.enable('erlangls')
 

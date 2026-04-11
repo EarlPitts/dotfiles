@@ -16,6 +16,7 @@ require('nvim-treesitter').install {
   'comment',
   'make',
   'haskell',
+  'purescript',
   'erlang',
   'regex',
   'markdown',
