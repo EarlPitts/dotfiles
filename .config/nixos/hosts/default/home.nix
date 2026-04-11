@@ -71,7 +71,7 @@
     zathura
     firefox
     wireshark
-    bottles
+    (bottles.override { removeWarningPopup = true; })
     (mpv.override { scripts = [ mpvScripts.mpris ]; })
 
     polkit
