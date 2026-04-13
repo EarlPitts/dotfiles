@@ -67,10 +67,6 @@ require("lazy").setup({
   --     dependencies = { "nvim-lua/plenary.nvim" },
   -- },
 
-  -- Snippets
-  'SirVer/ultisnips',
-  'honza/vim-snippets',
-
   -- Git TODO load these only if in git repo
   'tpope/vim-fugitive',
   -- 'airblade/vim-gitgutter',
