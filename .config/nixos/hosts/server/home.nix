@@ -65,6 +65,8 @@
     tmux
     git
     direnv
+    tree-sitter
+    gcc
 
     polkit
   ];
