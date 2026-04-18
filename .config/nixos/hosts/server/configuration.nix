@@ -58,6 +58,15 @@
     #   openFirewall = true;
     # };
 
+    syncthing = {
+        enable = true;
+        group = "wheel";
+        user = "ben";
+        dataDir = "/home/ben";    # Default folder for new synced folders
+        configDir = "/home/ben/.config/syncthing";   # Folder for Syncthing's settings and keys
+        guiAddress = "0.0.0.0:8384";
+    };
+
     openssh.enable = true;
     libinput.enable = true;
     udisks2.enable = true;
