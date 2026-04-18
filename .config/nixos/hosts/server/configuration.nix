@@ -58,12 +58,14 @@
     #   openFirewall = true;
     # };
 
+    jellyfin.enable = true;
+
     syncthing = {
         enable = true;
         group = "wheel";
         user = "ben";
-        dataDir = "/home/ben";    # Default folder for new synced folders
-        configDir = "/home/ben/.config/syncthing";   # Folder for Syncthing's settings and keys
+        dataDir = "/home/ben";
+        configDir = "/home/ben/.config/syncthing";
         guiAddress = "0.0.0.0:8384";
     };
 
