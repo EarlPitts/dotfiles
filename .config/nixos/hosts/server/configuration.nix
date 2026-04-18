@@ -1,3 +1,16 @@
+# # TODO
+# - Borg backups
+# - Badminbot
+# - smartmontools tests
+# - nginx
+# - tlp?
+# - vsftpd?
+# - automounts
+#
+# new(?):
+#   - prosody
+#   - jitsi meet
+
 {
   config,
   lib,
@@ -11,6 +24,7 @@
   imports = [
     ./hardware-configuration.nix
     ./main-user.nix
+    ./jobs.nix
     inputs.home-manager.nixosModules.default
   ];
 
