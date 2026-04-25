@@ -22,7 +22,6 @@ require("lazy").setup({
 
   -- Editing
   'numToStr/Comment.nvim',
-  'mbbill/undotree',
   'tpope/vim-surround',
   -- 'editorconfig/editorconfig-vim,'
 
@@ -44,7 +43,9 @@ require("lazy").setup({
   },
   { 'scalameta/nvim-metals',           dependencies = { "nvim-lua/plenary.nvim" } },
   -- 'mfussenegger/nvim-dap',
-  'saghen/blink.cmp',
+  { 'saghen/blink.cmp',
+    branch = 'v1'
+  },
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {},

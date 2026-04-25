@@ -21,6 +21,7 @@ require('nvim-treesitter').install {
   'regex',
   'markdown',
   'markdown_inline',
+  'php',
   'vimdoc',
   'nix'
 }
@@ -29,6 +30,9 @@ vim.api.nvim_exec([[
     set foldmethod=expr
     set foldexpr=nvim_treesitter#foldexpr()
 ]], true)
+
+-- Undotree
+vim.cmd("packadd nvim.undotree")
 
 -- Markdown preview
 vim.g.mkdp_theme = 'light'

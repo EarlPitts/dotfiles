@@ -15,11 +15,12 @@
     gpg = {
       enable = true;
     };
-    neovim = {
-      enable = true;
-      withRuby = false;
-      withPython3 = false;
-    };
+    # neovim = {
+    #   enable = true;
+    #   withRuby = false;
+    #   withPython3 = false;
+    #   extraLuaConfig = builtins.readFile /home/ben/.config/nvim/init.lua.bck;
+    # };
   };
 
   services.syncthing.enable = true;
@@ -42,6 +43,7 @@
     fd
     gh
     opencode
+    neovim
     fzf
     nnn
     ranger
@@ -52,6 +54,7 @@
     killall
     pwgen
     curlie
+    hexyl
     jq
     jless
     visidata

@@ -6,7 +6,7 @@ local map = vim.keymap.set
 map('n', ';', ':')
 map('n', '<leader>,', '<cmd>w<CR>')
 map('n', '<leader>.', '<cmd>Tagbar<CR>')
-map('n', '<F2>', '<cmd>UndotreeToggle<CR>')
+map("n", "<leader>u", require("undotree").open)
 map('n', '<F3>', '<cmd>DiffviewOpen<CR>')
 map('n', '<F12>', '<cmd>tabnew wiki/index.md<CR>:Tagbar<CR>')
 map('n', '<leader>j', '<cmd>%!jq<CR>') -- Format JSON
