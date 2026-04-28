@@ -22,9 +22,6 @@
     gpg = {
       enable = true;
     };
-    neovim = {
-      enable = true;
-    };
   };
 
   nix.settings.experimental-features = [
@@ -51,6 +48,8 @@
     neomutt
     isync
     smartmontools
+    neovim
+    btop
     borgbackup
     sshfs
     udiskie

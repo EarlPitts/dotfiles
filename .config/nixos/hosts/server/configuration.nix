@@ -26,7 +26,7 @@
   imports = [
     ./hardware-configuration.nix
     ./main-user.nix
-    ./jobs.nix
+    # ./jobs.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -46,7 +46,7 @@
     # Bootloader.
     loader.grub = {
       enable = true;
-      device = "/dev/vda";
+      device = "/dev/sda";
     };
     kernel.sysctl."kernel.sysrq" = 1; # Enable sysrq keys
   };
@@ -75,6 +75,11 @@
     # };
 
     jellyfin.enable = true;
+
+    thinkfan = {
+      enable = true;
+      levels = [[ 0 0 32767 ]];
+    };
 
     syncthing = {
         enable = true;
