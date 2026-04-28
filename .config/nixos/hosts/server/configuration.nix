@@ -6,10 +6,12 @@
 # - tlp?
 # - vsftpd?
 # - automounts
+# - git
 #
 # new(?):
 #   - prosody
 #   - jitsi meet
+#   - raspberry stuff (spotify, gifs ...)
 
 {
   config,
