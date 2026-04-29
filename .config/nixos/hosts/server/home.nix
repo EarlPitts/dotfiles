@@ -66,6 +66,8 @@
     direnv
     tree-sitter
     gcc
+    nixd
+    nixfmt
 
     polkit
   ];
