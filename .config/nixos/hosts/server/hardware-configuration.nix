@@ -23,7 +23,7 @@
       fsType = "ext4";
     };
 
-  fileSystems."/home/obabo/Art" =
+  fileSystems."/home/ben/Art" =
     { device = "/dev/disk/by-uuid/e77f33d0-d318-4ae4-ac4b-948dcfe0fd41";
       fsType = "ext4";
     };
