@@ -47,4 +47,29 @@
     };
   };
 
+  # SMART scan
+  systemd.timers."smart" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "Sun 00:00:00";
+      Unit = "prune_backups.service";
+    };
+  };
+
+  systemd.services."smart" = {
+    script = ''
+      ${pkgs.smartmontools}/bin/smartctl -t long /dev/sda
+      ${pkgs.smartmontools}/bin/smartctl -t long /dev/sdb
+      #smartctl -t long /dev/sdc
+      # Prevent external hard-drive from sleeping
+      #while true; do
+      #   dd if=/dev/sdc iflag=direct count=1 of=/dev/null
+      #   sleep 60
+      #done
+    '';
+    serviceConfig = {
+      Type = "oneshot";
+    };
+  };
+
 }
