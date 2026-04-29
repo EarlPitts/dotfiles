@@ -19,19 +19,20 @@
     };
 
   fileSystems."/mnt/Backup" =
-    { device = "8940d8bb-f9fb-447a-a399-e2704168ab4a";
-      fsType = "ext4";
-    };
-
-  fileSystems."/mnt/Media" =
-    { device = "beaa72bd-4788-475e-9fab-22bcad9e63d1";
+    { device = "/dev/disk/by-uuid/8940d8bb-f9fb-447a-a399-e2704168ab4a";
       fsType = "ext4";
     };
 
   fileSystems."/home/obabo/Art" =
-    { device = "e77f33d0-d318-4ae4-ac4b-948dcfe0fd41";
+    { device = "/dev/disk/by-uuid/e77f33d0-d318-4ae4-ac4b-948dcfe0fd41";
       fsType = "ext4";
     };
+
+  fileSystems."/mnt/Media" =
+    { device = "/dev/disk/by-uuid/beaa72bd-4788-475e-9fab-22bcad9e63d1";
+      fsType = "ext4";
+    };
+
 
   swapDevices = [ ];
 
