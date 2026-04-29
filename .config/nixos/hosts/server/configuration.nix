@@ -78,19 +78,28 @@
 
     thinkfan = {
       enable = true;
-      levels = [[ 0 0 32767 ]];
+      levels = [
+        [
+          0
+          0
+          32767
+        ]
+      ];
     };
 
     syncthing = {
-        enable = true;
-        group = "wheel";
-        user = "ben";
-        dataDir = "/home/ben";
-        configDir = "/home/ben/.config/syncthing";
-        guiAddress = "0.0.0.0:8384";
+      enable = true;
+      group = "wheel";
+      user = "ben";
+      dataDir = "/home/ben";
+      configDir = "/home/ben/.config/syncthing";
+      guiAddress = "0.0.0.0:8384";
     };
 
-    openssh.enable = true;
+    openssh = {
+      enable = true;
+      ports = [ 3632 ];
+    };
     libinput.enable = true;
     udisks2.enable = true;
 
