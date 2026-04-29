@@ -46,7 +46,7 @@
     # Bootloader.
     loader.grub = {
       enable = true;
-      device = "/dev/sda";
+      device = "/dev/disk/by-id/wwn-0x5000c500190a5653";
     };
     kernel.sysctl."kernel.sysrq" = 1; # Enable sysrq keys
   };

@@ -28,11 +28,6 @@
       fsType = "ext4";
     };
 
-  fileSystems."/srv" =
-    { device = "e74110be-729a-488e-86ab-f96cda8dffd3";
-      fsType = "ext4";
-    };
-
   fileSystems."/home/obabo/Art" =
     { device = "e77f33d0-d318-4ae4-ac4b-948dcfe0fd41";
       fsType = "ext4";
