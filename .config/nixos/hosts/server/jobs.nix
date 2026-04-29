@@ -10,21 +10,41 @@
   };
 
   systemd.services."backup" = {
-    path = [
-      pkgs.borg
-    ];
     script = ''
       set -eu
 
       # My Stuff
-      ${pkgs.borg} create /mnt/Backup/home::$(date +%m-%d) /home/ben
+      ${pkgs.borgbackup}/bin/borg create /mnt/Backup/home::$(date +%m-%d) /home/ben
 
       # All the services in /srv
-      ${pkgs.borg} create /mnt/Backup/services::$(date +%m-%d) /srv
+      ${pkgs.borgbackup}/bin/borg create /mnt/Backup/services::$(date +%m-%d) /srv
     '';
     serviceConfig = {
       EnvironmentFile = "/root/.secrets";
       Type = "oneshot";
     };
   };
+
+  # Weekly backup pruning
+  systemd.timers."prune_backups" = {
+    wantedBy = [ "timers.target" ];
+    timerConfig = {
+      OnCalendar = "Sun 3:00:00";
+      Unit = "prune_backups.service";
+    };
+  };
+
+  systemd.services."prune_backups" = {
+    script = ''
+      set -eu
+
+      ${pkgs.borgbackup}/bin/borg prune --keep-daily=7 --keep-weekly=4 /mnt/Backup/home
+      ${pkgs.borgbackup}/bin/borg prune --keep-daily=7 --keep-weekly=4 /mnt/Backup/services
+    '';
+    serviceConfig = {
+      EnvironmentFile = "/root/.secrets";
+      Type = "oneshot";
+    };
+  };
+
 }

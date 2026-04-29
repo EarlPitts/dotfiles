@@ -26,7 +26,7 @@
   imports = [
     ./hardware-configuration.nix
     ./main-user.nix
-    # ./jobs.nix
+    ./jobs.nix
     inputs.home-manager.nixosModules.default
   ];
 
