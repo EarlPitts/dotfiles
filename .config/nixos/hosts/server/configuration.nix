@@ -67,6 +67,11 @@
   security.sudo.wheelNeedsPassword = false;
 
   services = {
+    logind.settings.Login = {
+      HandleLidSwitch = "ignore";
+      HandleLidSwitchDocked = "ignore";
+    };
+
     # immich = {
     #   enable = true;
     #   port = 2283;
