@@ -27,4 +27,4 @@ compinit; promptinit
 eval "$(direnv hook zsh)"
 
 # Start tmux in SSH session automatically
-source ~/.config/zsh/auto-tmux.zsh
+[ $SSH_CONNECTION ] && source ~/.config/zsh/auto-tmux.zsh

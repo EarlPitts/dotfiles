@@ -1,7 +1,10 @@
 #!/usr/bin/zsh
 
-if [[ $SSH_CONNECTION && -n "$(pgrep tmux)" && ! $TMUX ]]; then
+if [[ -n "$(pgrep tmux)" && ! $TMUX ]]; then
     tmux a;
-elif [[ $SSH_CONNECTION && -z "$(pgrep tmux)" ]]; then
+elif [[ -z "$(pgrep tmux)" ]]; then
     tmux;
 fi
+
+# Also set GPG tty
+export GPG_TTY=$(tty)
