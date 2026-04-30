@@ -6,7 +6,7 @@
 # - tlp?
 # - vsftpd?
 # - automounts
-# - git
+# - git (password store!)
 #
 # new(?):
 #   - prosody

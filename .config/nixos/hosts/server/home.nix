@@ -68,6 +68,8 @@
     gcc
     nixd
     nixfmt
+    ghostty.terminfo
+    difftastic
 
     polkit
   ];
