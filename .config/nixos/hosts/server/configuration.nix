@@ -23,6 +23,7 @@
     ./hardware-configuration.nix
     ./main-user.nix
     ./jobs.nix
+    ./services/badminbot.nix
     inputs.home-manager.nixosModules.default
   ];
 
