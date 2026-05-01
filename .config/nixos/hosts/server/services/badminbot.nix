@@ -3,7 +3,8 @@
   # TODO preferably package the whole bot with nix
   systemd.services.badminbot = {
     description = "Badminbot";
-    after = [ "network.target" ];
+    after = [ "network-online.target" ];
+    wants = [ "network-online.target" ];
     wantedBy = [ "multi-user.target" ];
     serviceConfig = {
       ExecStart = "/home/ben/Projects/badminbot-v2/venv/bin/python /home/ben/Projects/badminbot-v2/bot.py";
