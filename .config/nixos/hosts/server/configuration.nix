@@ -47,7 +47,7 @@
     kernel.sysctl."kernel.sysrq" = 1; # Enable sysrq keys
   };
 
-  networking.hostName = "hub"; # Define your hostname.
+  networking.hostName = "hub";
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ 9090 ];
@@ -133,17 +133,10 @@
     wget
   ];
 
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
   programs.zsh = {
     enableCompletion = false;
     enable = true;
   };
-
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
 
   services.earlyoom = {
     enable = true;
