@@ -1,15 +1,11 @@
 # # TODO
-# - Borg backups
-# - Badminbot
-# - smartmontools tests
 # - nginx
-# - tlp?
 # - vsftpd?
-# - automounts
 # - git (password store!)
 #
 # new(?):
 #   - prosody
+#   - nectcloud
 #   - jitsi meet
 #   - raspberry stuff (spotify, gifs ...)
 
@@ -72,12 +68,14 @@
       HandleLidSwitchDocked = "ignore";
     };
 
-    # immich = {
-    #   enable = true;
-    #   port = 2283;
-    #   host = "0.0.0.0";
-    #   openFirewall = true;
-    # };
+    immich = {
+      enable = true;
+      port = 2283;
+      host = "0.0.0.0";
+      openFirewall = true;
+      mediaLocation = "/srv/immich";
+      machine-learning.enable = false;
+    };
 
     jellyfin.enable = true;
 
