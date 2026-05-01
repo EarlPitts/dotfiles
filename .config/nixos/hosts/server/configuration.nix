@@ -46,7 +46,7 @@
     # Bootloader.
     loader.grub = {
       enable = true;
-      device = "/dev/disk/by-id/wwn-0x5000c500190a5653";
+      device = "/dev/disk/by-id/ata-KINGSTON_SV300S37A240G_50026B7759058BED";
     };
     kernel.sysctl."kernel.sysrq" = 1; # Enable sysrq keys
   };
