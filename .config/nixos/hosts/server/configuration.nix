@@ -69,17 +69,38 @@
       HandleLidSwitchDocked = "ignore";
     };
 
+    nginx = {
+      enable = true;
+      recommendedProxySettings = true;
+      recommendedOptimisation = true;
+      recommendedGzipSettings = true;
+      virtualHosts."movies.bendeguz.xyz" = {
+        locations."/" = {
+          proxyPass = "http://localhost:8096";
+          proxyWebsockets = true;
+        };
+      };
+      virtualHosts."pics.bendeguz.xyz" = {
+        locations."/" = {
+          proxyPass = "http://localhost:2283";
+          proxyWebsockets = true;
+        };
+      };
+    };
+
     immich = {
       enable = true;
-      port = 2283;
       host = "0.0.0.0";
-      openFirewall = true;
       mediaLocation = "/srv/immich";
       machine-learning.enable = false;
     };
 
-    jellyfin.enable = true;
+    jellyfin = {
+      enable = true;
+      dataDir = "/srv/jellyfin";
+    };
 
+    # Disable fan because it's noisy as hell
     thinkfan = {
       enable = true;
       levels = [
