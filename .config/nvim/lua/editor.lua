@@ -30,7 +30,8 @@ set.shortmess = set.shortmess + 'I' -- Turn off intro message
 set.laststatus = 3                  -- Global statusline
 set.showcmd = true
 set.showmode = false
-set.completeopt = 'menu' -- Turn off completion preview window
+set.completeopt = { "menuone", "noselect" }
+set.pumheight = 10
 
 -- Folding
 set.foldmethod = 'indent' -- Fold based on indent level

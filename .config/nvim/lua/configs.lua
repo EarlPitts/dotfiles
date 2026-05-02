@@ -279,40 +279,40 @@ require("codecompanion").setup({
 })
 vim.cmd([[cab cc CodeCompanion]])
 
--- Blink
-require('blink.cmp').setup({
-  fuzzy = { implementation = 'lua', },
-  completion = {
-    menu = {
-      auto_show = false,
-      draw = {
-        columns = { { 'label', 'label_description', gap = 1 }, { 'kind' } },
-      },
-    },
-    list = { selection = { preselect = false, auto_insert = true }}
-  },
-  signature = { enabled = true },
-  sources = {
-    default = {'path', 'lsp', 'buffer'},
-    providers = {
-      buffer = {min_keyword_length = 3},
-      lsp = {fallbacks = {}},
-      path = {fallbacks = {'lsp'}},
-    },
-  },
-  keymap = {
-    preset = 'default',
-    ['<C-n>'] = { 
-      function(cmp) 
-        if cmp.is_visible() then
-          cmp.select_next()
-        else
-          cmp.show()
-        end
-      end 
-    },
-  },
-})
+-- -- Blink
+-- require('blink.cmp').setup({
+--   fuzzy = { implementation = 'lua', },
+--   completion = {
+--     menu = {
+--       auto_show = false,
+--       draw = {
+--         columns = { { 'label', 'label_description', gap = 1 }, { 'kind' } },
+--       },
+--     },
+--     list = { selection = { preselect = false, auto_insert = true }}
+--   },
+--   signature = { enabled = true },
+--   sources = {
+--     default = {'path', 'lsp', 'buffer'},
+--     providers = {
+--       buffer = {min_keyword_length = 3},
+--       lsp = {fallbacks = {}},
+--       path = {fallbacks = {'lsp'}},
+--     },
+--   },
+--   keymap = {
+--     preset = 'default',
+--     ['<C-n>'] = { 
+--       function(cmp) 
+--         if cmp.is_visible() then
+--           cmp.select_next()
+--         else
+--           cmp.show()
+--         end
+--       end 
+--     },
+--   },
+-- })
 
 -- Mason
 require("mason").setup()
