@@ -21,7 +21,6 @@ require("lazy").setup({
   'nvim-telescope/telescope.nvim',
 
   -- Editing
-  'numToStr/Comment.nvim',
   'tpope/vim-surround',
   -- 'editorconfig/editorconfig-vim,'
 

@@ -37,9 +37,6 @@ vim.cmd("packadd nvim.undotree")
 -- Markdown preview
 vim.g.mkdp_theme = 'light'
 
--- Comment.nvim
-require('Comment').setup()
-
 -- Gitsigns
 require('gitsigns').setup {
   on_attach = function(bufnr)
