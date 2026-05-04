@@ -42,6 +42,9 @@ require("lazy").setup({
   },
   { 'scalameta/nvim-metals',           dependencies = { "nvim-lua/plenary.nvim" } },
   -- 'mfussenegger/nvim-dap',
+  { 'saghen/blink.cmp',
+    branch = 'v1'
+  },
   {
     "mason-org/mason-lspconfig.nvim",
     opts = {},
