@@ -283,7 +283,14 @@ require('blink.cmp').setup({
     menu = {
       auto_show = false,
       draw = {
-        columns = { { 'label', 'label_description', gap = 1 }, { 'kind' } },
+        columns = { { 'label', 'label_description', gap = 1 }, { 'kind' }, { 'module' } },
+        components = {
+          module = {
+            text = function(ctx)
+              return ctx.item.detail or ''
+            end,
+          },
+        },
       },
     },
     list = { selection = { preselect = false, auto_insert = true }}
