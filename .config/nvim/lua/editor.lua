@@ -14,13 +14,8 @@ set.breakindent = true
 -- Search
 set.ignorecase = true -- Case insensitive search
 set.smartcase = true
-set.showmatch = true  -- Highlight matching parentheses
-
--- Performance
-set.lazyredraw = true -- Redraw only when needed
 
 -- UI
-set.ruler = false
 set.cursorline = true               -- Highlight current line
 set.cursorlineopt = 'line'          -- Don't underline line number
 set.number = true                   -- Show line numbers
@@ -28,9 +23,7 @@ set.number = true                   -- Show line numbers
 set.title = true                    -- TODO
 set.shortmess = set.shortmess + 'I' -- Turn off intro message
 set.laststatus = 3                  -- Global statusline
-set.showcmd = true
 set.showmode = false
-set.completeopt = 'menu' -- Turn off completion preview window
 
 -- Folding
 set.foldmethod = 'indent' -- Fold based on indent level
@@ -38,8 +31,6 @@ set.foldnestmax = 5       -- 5 nested fold max
 set.foldlevelstart = 5    -- Open most folds by default
 
 -- Colors
-set.termguicolors = true
-vim.g.base16colorspace = 256
 vim.cmd.colorscheme 'base16-eighties'
 
 -- Misc
