@@ -73,6 +73,7 @@
     wireshark
     (bottles.override { removeWarningPopup = true; })
     (mpv.override { scripts = [ mpvScripts.mpris ]; })
+    (import ./st.nix { inherit pkgs; })
 
     polkit
 
