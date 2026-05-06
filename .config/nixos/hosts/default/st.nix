@@ -5,12 +5,12 @@ pkgs.st.overrideAttrs (oldAttrs: rec {
   buildInputs = oldAttrs.buildInputs ++ [ pkgs.harfbuzz ];
   patches = [
     (pkgs.fetchurl {
-      url = "https://st.suckless.org/patches/boxdraw/st-boxdraw_v2-0.8.5.diff";
-      hash = "sha256-BGRSYG/Otiq8jwaNiRxaXqPY0rinE9BTtWj5cQAYEIE=";
+      url = "https://st.suckless.org/patches/scrollback/st-scrollback-0.9.2.diff";
+      hash = "sha256-jbY7+D3wbLoSzbAuV4y0mvx4nHJrTIX2bpWzclYrrHo=";
     })
     (pkgs.fetchurl {
-      url = "https://st.suckless.org/patches/ligatures/0.9.3/st-ligatures-boxdraw-20251007-0.9.3.diff";
-      hash = "sha256-WWMYYTqnyh2eCK0Ro0T4luDANP7BlMD27JdkVKPYu8k=";
+      url = "https://st.suckless.org/patches/ligatures/0.9.3/st-ligatures-scrollback-20251007-0.9.3.diff";
+      hash = "sha256-E6N3A9bM18hposmmkxbOonZ4QkyTYmWuhsRmgcOQUSg=";
     })
   ];
   # Using a local file
@@ -198,6 +198,8 @@ pkgs.st.overrideAttrs (oldAttrs: rec {
      */
     static MouseShortcut mshortcuts[] = {
     	/* mask                 button   function        argument       release */
+      { XK_ANY_MOD,           Button4, kscrollup,      {.i = 1} },
+      { XK_ANY_MOD,           Button5, kscrolldown,    {.i = 1} },
     	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
     	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
     	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
@@ -223,6 +225,8 @@ pkgs.st.overrideAttrs (oldAttrs: rec {
     	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
     	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
     	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+      { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+      { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
     };
 
     /*
