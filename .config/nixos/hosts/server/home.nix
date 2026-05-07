@@ -71,7 +71,6 @@
     ghostty.terminfo
     difftastic
     (pass.withExtensions (exts: [ passExtensions.pass-otp ]))
-    rtorrent
 
     polkit
   ];

@@ -153,6 +153,7 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
+    rtorrent
   ];
 
   programs.zsh = {
