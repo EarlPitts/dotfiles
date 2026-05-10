@@ -52,7 +52,7 @@
     wantedBy = [ "timers.target" ];
     timerConfig = {
       OnCalendar = "Sun 00:00:00";
-      Unit = "prune_backups.service";
+      Unit = "smart.service";
     };
   };
 
