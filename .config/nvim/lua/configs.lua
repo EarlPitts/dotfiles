@@ -7,23 +7,24 @@ local noremap = { noremap = true }
 vim.loader.enable()
 
 require('nvim-treesitter').install {
-  'c',
   'bash',
-  'lua',
-  'python',
-  'scheme',
-  'scala',
+  'c',
   'comment',
-  'make',
-  'haskell',
-  'purescript',
   'erlang',
-  'regex',
-  'markdown',
+  'haskell',
+  'lua',
+  'make',
   'markdown_inline',
-  'php',
-  'vimdoc',
+  'markdown',
   'nix'
+  'php',
+  'purescript',
+  'python',
+  'regex',
+  'scala',
+  'scheme',
+  'sql',
+  'vimdoc',
 }
 
 vim.api.nvim_exec([[
