@@ -16,7 +16,7 @@ require('nvim-treesitter').install {
   'make',
   'markdown_inline',
   'markdown',
-  'nix'
+  'nix',
   'php',
   'purescript',
   'python',
@@ -24,7 +24,7 @@ require('nvim-treesitter').install {
   'scala',
   'scheme',
   'sql',
-  'vimdoc',
+  'vimdoc'
 }
 
 vim.api.nvim_exec([[
