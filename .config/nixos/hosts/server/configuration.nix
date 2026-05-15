@@ -36,6 +36,7 @@
     trusted-users = [
       "root"
       "ben"
+      "deploy"
     ];
   };
 
@@ -61,7 +62,32 @@
   main-user.enable = true;
   main-user.userName = "ben";
 
-  security.sudo.wheelNeedsPassword = false;
+  users = {
+    users.deploy = {
+      isSystemUser = true;
+      group = "deploy";
+      shell = pkgs.bash;
+      openssh.authorizedKeys.keys = [
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEBdYYplqTmhBqXtqFmuXlTaS4X4Cg9OdS14EVgKpfQX github-actions-deploy"
+      ];
+    };
+    groups.deploy = { };
+  };
+
+  security.sudo = {
+    wheelNeedsPassword = false;
+    extraRules = [
+      {
+        users = [ "deploy" ];
+        commands = [
+          {
+            command = "/run/current-system/sw/bin/systemctl restart badminbotV3";
+            options = [ "NOPASSWD" ];
+          }
+        ];
+      }
+    ];
+  };
 
   services = {
     logind.settings.Login = {

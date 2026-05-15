@@ -25,7 +25,7 @@
       WorkingDirectory = "/srv/badminbot";
       Restart = "on-failure";
       # DynamicUser = true;
-      User = "ben";
+      User = "deploy";
     };
   };
 }
