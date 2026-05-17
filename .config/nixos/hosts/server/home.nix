@@ -41,8 +41,6 @@
   };
 
   home.packages = with pkgs; [
-
-    # CLI tools
     acpi
     lsof
     neomutt
@@ -57,6 +55,7 @@
     ripgrep
     eza
     bat
+    fd
     fzf
     ranger
     killall
@@ -71,8 +70,6 @@
     ghostty.terminfo
     difftastic
     (pass.withExtensions (exts: [ passExtensions.pass-otp ]))
-
-    polkit
   ];
 
 }
