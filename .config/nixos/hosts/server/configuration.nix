@@ -89,6 +89,8 @@
     ];
   };
 
+  security.acme.acceptTerms = true;
+
   services = {
     logind.settings.Login = {
       HandleLidSwitch = "ignore";
@@ -100,6 +102,7 @@
       recommendedProxySettings = true;
       recommendedOptimisation = true;
       recommendedGzipSettings = true;
+      recommendedTlsSettings = true;
       virtualHosts."movies.bendeguz.xyz" = {
         locations."/" = {
           proxyPass = "http://localhost:8096";
@@ -107,6 +110,8 @@
         };
       };
       virtualHosts."pics.bendeguz.xyz" = {
+        addSSL = true;
+        enableACME = true;
         locations."/" = {
           proxyPass = "http://localhost:2283";
           proxyWebsockets = true;
