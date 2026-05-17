@@ -110,7 +110,7 @@
         };
       };
       virtualHosts."pics.bendeguz.xyz" = {
-        addSSL = true;
+        forceSSL = true;
         enableACME = true;
         locations."/" = {
           proxyPass = "http://localhost:2283";
