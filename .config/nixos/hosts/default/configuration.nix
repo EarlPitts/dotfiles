@@ -54,10 +54,6 @@
   };
 
   networking.hostName = "T480";
-  networking.extraHosts = ''
-    192.168.0.20 movies.bendeguz.xyz
-    192.168.0.20 pics.bendeguz.xyz
-  '';
   networking.wireless.iwd.enable = true;
 
   # Open ports in the firewall.
