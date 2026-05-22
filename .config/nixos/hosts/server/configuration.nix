@@ -81,7 +81,7 @@
         users = [ "deploy" ];
         commands = [
           {
-            command = "/run/current-system/sw/bin/systemctl restart badminbotV3";
+            command = "/run/current-system/sw/bin/systemctl restart badminbot";
             options = [ "NOPASSWD" ];
           }
         ];
