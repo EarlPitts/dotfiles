@@ -121,6 +121,11 @@
       };
     };
 
+    microbin = {
+      enable = true;
+      dataDir = "/srv/bin";
+    };
+
     immich = {
       enable = true;
       host = "0.0.0.0";
