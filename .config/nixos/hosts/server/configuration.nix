@@ -119,11 +119,21 @@
           proxyWebsockets = true;
         };
       };
+      virtualHosts."bin.bendeguz.xyz" = {
+        forceSSL = true;
+        enableACME = true;
+        locations."/" = {
+          proxyPass = "http://localhost:8080";
+        };
+      };
     };
 
     microbin = {
       enable = true;
       dataDir = "/srv/bin";
+      settings = {
+        MICROBIN_BIND = "127.0.0.1";
+      };
     };
 
     immich = {
