@@ -103,6 +103,7 @@
       recommendedOptimisation = true;
       recommendedGzipSettings = true;
       recommendedTlsSettings = true;
+      clientMaxBodySize = "500m";
       virtualHosts."movies.bendeguz.xyz" = {
         forceSSL = true;
         enableACME = true;
