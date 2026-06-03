@@ -51,11 +51,10 @@
 
   networking.hostName = "hub";
 
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ 9090 ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false; # TODO
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 3632 443 80 ];
+  };
 
   time.timeZone = "Europe/Budapest";
 
@@ -149,6 +148,30 @@
       dataDir = "/srv/jellyfin";
     };
 
+    fail2ban = {
+      enable = true;
+      maxretry = 3;
+      bantime = "24h";
+
+      jails = {
+        nginx-botsearch.settings = {
+          enabled = true;
+          filter = "nginx-botsearch";
+          logpath = "/var/log/nginx/access.log";
+          maxretry = 2;
+          bantime = 86400;
+        };
+
+        nginx-bad-request.settings = {
+          enabled = true;
+          filter = "nginx-bad-request";
+          logpath = "/var/log/nginx/access.log";
+          maxretry = 2;
+          bantime = 86400;
+        };
+      };
+    };
+
     # Disable fan because it's noisy as hell
     thinkfan = {
       enable = true;
@@ -208,11 +231,6 @@
   programs.zsh = {
     enableCompletion = false;
     enable = true;
-  };
-
-  services.earlyoom = {
-    enable = true;
-    reportInterval = 0;
   };
 
   environment.pathsToLink = [ "/libexec" ];
