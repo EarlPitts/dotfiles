@@ -53,7 +53,11 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 3632 443 80 ];
+    allowedTCPPorts = [
+      3632
+      443
+      80
+    ];
   };
 
   time.timeZone = "Europe/Budapest";
@@ -171,6 +175,8 @@
         };
       };
     };
+
+    journald.extraConfig = ''SystemMaxUse=500M'';
 
     # Disable fan because it's noisy as hell
     thinkfan = {
