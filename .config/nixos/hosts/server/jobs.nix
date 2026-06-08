@@ -7,10 +7,10 @@
       paths = [ "/home/ben" ];
       repo = "/mnt/Backup/home";
       startAt = "*-*-* 2:00:00";
+      user = "ben";
       encryption = {
         mode = "repokey";
-        passCommand = "cat /root/.borg-pass";
-        # passCommand = "${pkgs.pass}/bin/pass Misc/ServerBackup"; TODO
+        passCommand = "${pkgs.pass}/bin/pass Misc/ServerBackup";
       };
       prune.keep = {
         daily = 7;
