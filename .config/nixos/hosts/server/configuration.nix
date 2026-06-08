@@ -178,6 +178,8 @@
 
     journald.extraConfig = ''SystemMaxUse=500M'';
 
+    smartd.enable = true;
+
     # Disable fan because it's noisy as hell
     thinkfan = {
       enable = true;
