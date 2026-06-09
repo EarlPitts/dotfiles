@@ -176,9 +176,13 @@
       };
     };
 
-    journald.extraConfig = ''SystemMaxUse=500M'';
+    journald.extraConfig = "SystemMaxUse=500M";
 
-    smartd.enable = true;
+    smartd = {
+      enable = true;
+      defaults.autodetected = "-a -o on -S on -n standby,q -s (S/../.././03|L/../10/./04)";
+      extraOptions = [ "--interval=28800" ]; # every 8 hours
+    };
 
     # Disable fan because it's noisy as hell
     thinkfan = {
