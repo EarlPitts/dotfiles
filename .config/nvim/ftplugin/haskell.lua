@@ -1,4 +1,4 @@
-local set = vim.opt
+local set = vim.bo
 
 set.shiftwidth = 2  -- Indent size
 set.tabstop = 2     -- How many columns a tab counts for
