@@ -75,6 +75,8 @@
       ];
     };
     groups.deploy = { };
+
+    users.nginx.extraGroups = [ config.users.groups.anubis.name ];
   };
 
   security.sudo = {
@@ -98,6 +100,16 @@
     logind.settings.Login = {
       HandleLidSwitch = "ignore";
       HandleLidSwitchDocked = "ignore";
+    };
+
+    anubis.instances = {
+      "bin" = {
+        enable = true;
+        settings = {
+          TARGET = "http://localhost:8080";
+          BIND = "/run/anubis/anubis-bin/anubis.sock";
+        };
+      };
     };
 
     nginx = {
@@ -127,7 +139,10 @@
         forceSSL = true;
         enableACME = true;
         locations."/" = {
-          proxyPass = "http://localhost:8080";
+          proxyPass = "http://unix:${config.services.anubis.instances.bin.settings.BIND}";
+          extraConfig = ''
+            proxy_set_header X-Real-IP $remote_addr;
+          '';
         };
       };
     };
