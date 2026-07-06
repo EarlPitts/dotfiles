@@ -22,12 +22,14 @@ update() {
     # Update neovim plugins
     nvim --headless "+Lazy! sync" +qa
     # System update
-    if [ $(uname -s) != Darwin ]; then
+    if [ $(hostname) == T480 ]; then
         nix flake update --flake ~/.config/nixos
         nixos-rebuild switch --flake ~/.config/nixos --sudo
-    else
+    else if [$(uname -s) == Darwin ]; then
         sudo darwin-rebuild switch --flake ~/.config/nixos/
         brew update && brew upgrade --greedy
+    else 
+        nixos-rebuild switch --flake ~/.config/nixos --sudo
     fi
 }
 
