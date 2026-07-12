@@ -23,7 +23,6 @@
       zathura
       openvpn
       redis
-      claude-code
       choose-gui
 
       (google-cloud-sdk.withExtraComponents (

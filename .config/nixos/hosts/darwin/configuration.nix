@@ -85,8 +85,6 @@
       "bruno"
       # "psst"
       "slack"
-      "vscodium"
-      "wireshark"
       "zed"
       "zoom"
     ];
