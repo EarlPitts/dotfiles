@@ -25,7 +25,7 @@ update() {
     if [ $(hostname) = T480 ]; then
         nix flake update --flake ~/.config/nixos
         nixos-rebuild switch --flake ~/.config/nixos --sudo
-    elif [$(uname -s) = Darwin ]; then
+    elif [ $(uname -s) = Darwin ]; then
         sudo darwin-rebuild switch --flake ~/.config/nixos/
         brew update && brew upgrade --greedy
     else 
