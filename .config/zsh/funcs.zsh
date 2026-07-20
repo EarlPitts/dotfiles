@@ -16,7 +16,8 @@ dislocker() {
         sudo mount -o loop /run/media/dislocker-file /mnt
 }
 
-update() {
+update() (
+    set -e
     # System update
     if [ $(hostname) = T480 ]; then
         nix flake update --flake ~/.config/nixos
@@ -31,7 +32,7 @@ update() {
     git submodule update --recursive --remote
     # Update neovim plugins
     nvim --headless "+Lazy! sync" +qa
-}
+)
 
 tunnel() {
     echo -n "Local port: " && read local_port
