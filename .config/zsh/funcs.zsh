@@ -17,10 +17,6 @@ dislocker() {
 }
 
 update() {
-    # Update git submodules (zsh and tmux plugins)
-    git submodule update --recursive --remote
-    # Update neovim plugins
-    nvim --headless "+Lazy! sync" +qa
     # System update
     if [ $(hostname) = T480 ]; then
         nix flake update --flake ~/.config/nixos
@@ -31,6 +27,10 @@ update() {
     else 
         nixos-rebuild switch --flake ~/.config/nixos --sudo
     fi
+    # Update git submodules (zsh and tmux plugins)
+    git submodule update --recursive --remote
+    # Update neovim plugins
+    nvim --headless "+Lazy! sync" +qa
 }
 
 tunnel() {
