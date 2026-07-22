@@ -3,6 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     nix-darwin = {
       url = "github:LnL7/nix-darwin";
@@ -19,6 +20,7 @@
     inputs@{
       self,
       nixpkgs,
+      nixpkgs-stable,
       nix-darwin,
       home-manager,
       ...
@@ -32,7 +34,10 @@
         ];
       };
       darwinConfigurations."FYPYG0PQFC" = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          pkgs-stable = import nixpkgs-stable { system = "aarch64-darwin"; };
+        };
         system = "aarch64-darwin";
         modules = [
           ./hosts/darwin/configuration.nix

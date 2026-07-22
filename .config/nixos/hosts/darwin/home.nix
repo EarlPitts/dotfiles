@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
   imports = [
@@ -23,7 +23,7 @@
       zathura
       openvpn
       redis
-      choose-gui
+      pkgs-stable.choose-gui
 
       (google-cloud-sdk.withExtraComponents (
         with google-cloud-sdk.components;

@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, pkgs-stable, ... }:
 {
 
   users.users."I348749" = {
@@ -18,7 +18,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs pkgs-stable; };
     users = {
       "I348749" = import ./home.nix;
     };
