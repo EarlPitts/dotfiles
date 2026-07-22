@@ -21,6 +21,9 @@ vim.lsp.config('purescriptls', {
   },
 })
 
+vim.lsp.enable('terraformls')
+vim.lsp.enable('tflint')
+
 vim.lsp.enable('erlangls')
 
 vim.lsp.enable('phpactor')
