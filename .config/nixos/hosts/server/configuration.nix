@@ -24,6 +24,7 @@
     ./main-user.nix
     ./jobs.nix
     ./services/badminbot.nix
+    ./services/planning-poker.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -71,7 +72,7 @@
       group = "deploy";
       shell = pkgs.bash;
       openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEBdYYplqTmhBqXtqFmuXlTaS4X4Cg9OdS14EVgKpfQX github-actions-deploy"
+        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINWrYymEv5XhNLCasQv/3+NEdyPmm/UGtl0M7K1AFus8 github-actions-deploy"
       ];
     };
     groups.deploy = { };
@@ -87,6 +88,10 @@
         commands = [
           {
             command = "/run/current-system/sw/bin/systemctl restart badminbot";
+            options = [ "NOPASSWD" ];
+          }
+          {
+            command = "/run/current-system/sw/bin/systemctl restart planning-poker";
             options = [ "NOPASSWD" ];
           }
         ];
@@ -108,6 +113,13 @@
         settings = {
           TARGET = "http://localhost:8080";
           BIND = "/run/anubis/anubis-bin/anubis.sock";
+        };
+      };
+      "poker" = {
+        enable = true;
+        settings = {
+          TARGET = "http://localhost:8000";
+          BIND = "/run/anubis/anubis-poker/anubis.sock";
         };
       };
     };
@@ -140,6 +152,16 @@
         enableACME = true;
         locations."/" = {
           proxyPass = "http://unix:${config.services.anubis.instances.bin.settings.BIND}";
+          extraConfig = ''
+            proxy_set_header X-Real-IP $remote_addr;
+          '';
+        };
+      };
+      virtualHosts."poker.bendeguz.xyz" = {
+        forceSSL = true;
+        enableACME = true;
+        locations."/" = {
+          proxyPass = "http://unix:${config.services.anubis.instances.poker.settings.BIND}";
           extraConfig = ''
             proxy_set_header X-Real-IP $remote_addr;
           '';
