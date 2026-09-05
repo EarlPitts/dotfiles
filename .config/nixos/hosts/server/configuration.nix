@@ -130,7 +130,7 @@
       recommendedOptimisation = true;
       recommendedGzipSettings = true;
       recommendedTlsSettings = true;
-      clientMaxBodySize = "4096m";
+      clientMaxBodySize = "512m";
       virtualHosts."movies.bendeguz.xyz" = {
         forceSSL = true;
         enableACME = true;
@@ -174,7 +174,7 @@
       dataDir = "/srv/bin";
       settings = {
         MICROBIN_BIND = "127.0.0.1";
-        MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB = 4096;
+        MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB = 512;
         MICROBIN_NO_LISTING = true;
       };
     };
