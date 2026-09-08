@@ -65,6 +65,7 @@
     figlet
     entr
     tmux
+    zip
     unzip
     p7zip
     nmap
