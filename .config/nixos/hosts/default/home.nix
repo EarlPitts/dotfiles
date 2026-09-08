@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, pkgs-stable, ... }:
 
 {
   imports = [ ../shared/home.nix ];
@@ -47,7 +47,7 @@
 
     # GUI
     rofi
-    rofi-pass
+    pkgs-stable.rofi-pass
     rofi-calc
     ueberzugpp
     adwaita-icon-theme

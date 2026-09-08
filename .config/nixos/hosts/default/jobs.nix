@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  pkgs-stable,
+  ...
+}:
 {
   systemd.timers."mail" = {
     wantedBy = [ "timers.target" ];
@@ -13,7 +17,7 @@
     path = [
       pkgs.gnupg
       pkgs.rofi
-      pkgs.rofi-pass
+      pkgs-stable.rofi-pass
     ];
     script = ''
       set -eu

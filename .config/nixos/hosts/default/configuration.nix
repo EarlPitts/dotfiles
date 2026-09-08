@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  pkgs-stable,
   callPackage,
   inputs,
   ...
@@ -78,8 +79,6 @@
     libinput.enable = true;
     udisks2.enable = true;
 
-    journald.extraConfig = ''SystemMaxUse=500M'';
-
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -127,7 +126,7 @@
   };
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { inherit inputs pkgs-stable; };
     users = {
       "ben" = import ./home.nix;
     };
