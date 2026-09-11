@@ -64,7 +64,9 @@ else
     export AREAS="$WORK/Areas"
     export INBOX="$WORK/Inbox"
 
-    export PATH="$PATH:/Users/i348749/Projects/active/opstools"
+    export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi/agent"
+
+    export PATH="$PATH:/Users/i348749/SAPDevelop/active/opstools"
     export CLOUD_SQL_IAM_USER=segmentation-sql-proxy@sap-segmentationduahubxzpsxccc.iam
     # export TERM=alacritty # for tmux
 
