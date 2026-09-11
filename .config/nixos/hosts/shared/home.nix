@@ -42,7 +42,6 @@
     ripgrep-all
     fd
     gh
-    opencode
     neovim
     fzf
     nnn
