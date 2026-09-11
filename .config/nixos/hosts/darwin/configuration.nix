@@ -1,4 +1,9 @@
-{ pkgs, inputs, pkgs-stable, ... }:
+{
+  pkgs,
+  inputs,
+  pkgs-stable,
+  ...
+}:
 {
 
   users.users."I348749" = {
@@ -66,6 +71,7 @@
     ];
     taps = [
       "nikitabobko/tap"
+      "crmne/tap"
       "hashicorp/tap"
       {
         name = "hAIperspace/hai";
@@ -74,6 +80,7 @@
     ];
     casks = [
       "aerospace"
+      "fastpotify"
       "ghostty"
       # "anki"
       "google-chrome"
