@@ -26,8 +26,6 @@ export BOOKS="$REFERENCES/Books"
 export CHEATSHEETS="$REFERENCES/Cheatsheets"
 export PAPERS="$REFERENCES/Papers"
 
-export PROJECTS="$HOME/Projects"
-
 # Path
 export PATH=$PATH:~/.local/bin:~/.config/emacs/bin
 export GUILE_LOAD_PATH=~/.nix-profile/share/guile/site/3.0
@@ -46,6 +44,7 @@ export PYTHON_BASIC_REPL=1
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
 if [ $(uname -s) != Darwin ]; then
+    export PROJECTS="$HOME/Projects"
     export WIKI="$PERSONAL/Wiki"
     export TODOS="$PERSONAL/Todos"
     export CHECKLISTS="$PERSONAL/Checklists"
@@ -57,6 +56,8 @@ if [ $(uname -s) != Darwin ]; then
         exec startx "$XDG_CONFIG_HOME/X11/xinitrc"
     fi
 else
+    export PROJECTS="$HOME/SAPDevelop"
+
     # MacOS stuff
     export WIKI="$WORK/Wiki"
     export TODOS="$WORK/Todos"
