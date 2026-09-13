@@ -1,7 +1,10 @@
 { pkgs, pkgs-stable, ... }:
 
 {
-  imports = [ ../shared/home.nix ];
+  imports = [
+    ../shared/home.nix
+    ./easyeffects.nix
+  ];
 
   home.username = "ben";
   home.homeDirectory = "/home/ben";
