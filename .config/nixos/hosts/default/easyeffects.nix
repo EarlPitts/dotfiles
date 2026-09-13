@@ -8,7 +8,7 @@
     "QT_QPA_PLATFORM=offscreen"
   ];
 
-  home.file.".config/easyeffects/irs/Razor Surround ((48k Z-Edition)) 2.Stereo +20 bass Low Latency.irs".source =
+  home.file.".local/share/easyeffects/irs/Razor Surround ((48k Z-Edition)) 2.Stereo +20 bass Low Latency.irs".source =
     pkgs.fetchurl {
       url = "https://github.com/JackHack96/EasyEffects-Presets/raw/refs/heads/master/irs/Razor%20Surround%20((48k%20Z-Edition))%202.Stereo%20+20%20bass%20Low%20Latency.irs";
       sha256 = "sha256-mg27oBVR3h68pLLZ3kputU5fY+iHIsK3d9FNuIrGntQ=";
