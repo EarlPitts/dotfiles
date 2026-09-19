@@ -236,10 +236,25 @@
   environment.pathsToLink = [ "/libexec" ];
 
   # TODO Use upower and powerManagement.resumeCommands?
-  # Lowbat suspend and lock
-  services.udev.extraRules = ''
-    SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="${pkgs.systemd}/bin/systemctl suspend"
-  '';
+  services.udev.extraRules =
+    let
+      # Only suspend if there is no ongoing tlp discharge/recalibration.
+      lowbatSuspend = pkgs.writeShellScript "lowbat-suspend" ''
+        set -eu
+        lock=/run/tlp/lock_tlp_discharge
+        if [ -e "$lock" ] && ! ${pkgs.util-linux}/bin/flock -n "$lock" true; then
+          ${pkgs.systemd}/bin/systemd-cat -t lowbat-suspend \
+            echo "tlp discharge/recalibrate in progress, skipping suspend"
+          exit 0
+        fi
+        ${pkgs.systemd}/bin/systemd-cat -t lowbat-suspend \
+          echo "low battery, suspending"
+        exec ${pkgs.systemd}/bin/systemctl suspend
+      '';
+    in
+    ''
+      SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="${lowbatSuspend}"
+    '';
 
   # TODO Hard coded user, use coreutils instead of bash/gawk?
   systemd.services.wakelock = {
