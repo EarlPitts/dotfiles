@@ -24,7 +24,6 @@
   };
 
   programs = {
-    zathura.enable = true;
     mpv = {
       enable = true;
       scripts = [ pkgs.mpvScripts.mpris ];
@@ -76,6 +75,7 @@
     darktable
     spotify
     poppler-utils # For zathura preview
+    zathura
     firefox
     wireshark
     (bottles.override { removeWarningPopup = true; })

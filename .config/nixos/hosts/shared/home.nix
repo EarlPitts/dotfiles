@@ -13,13 +13,16 @@
       nix-direnv.enable = true;
     };
     gpg.enable = true;
-    bat.enable = true;
+    bat = {
+      enable = true;
+      config = {
+        theme = "base16";
+        style = "plain,changes";
+        italic-text = "always";
+      };
+    };
     btop.enable = true;
     fzf.enable = true;
-    tmux = {
-      enable = true;
-      extraConfig = builtins.readFile ../../../tmux/tmux.conf;
-    };
     # neovim = {
     #   enable = true;
     #   withRuby = false;
@@ -73,6 +76,7 @@
     (pass.withExtensions (exts: [ passExtensions.pass-otp ]))
     miniserve
     rlwrap
+    tmux
 
     # Monitoring
     htop
