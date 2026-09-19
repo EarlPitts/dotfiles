@@ -23,6 +23,14 @@
     # };
   };
 
+  programs = {
+    zathura.enable = true;
+    mpv = {
+      enable = true;
+      scripts = [ pkgs.mpvScripts.mpris ];
+    };
+  };
+
   home.packages = with pkgs; [
 
     # CLI tools
@@ -68,11 +76,9 @@
     darktable
     spotify
     poppler-utils # For zathura preview
-    zathura
     firefox
     wireshark
     (bottles.override { removeWarningPopup = true; })
-    (mpv.override { scripts = [ mpvScripts.mpris ]; })
     (import ./st.nix { inherit pkgs; })
 
     polkit

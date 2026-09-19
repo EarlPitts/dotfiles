@@ -12,8 +12,13 @@
       enableZshIntegration = true;
       nix-direnv.enable = true;
     };
-    gpg = {
+    gpg.enable = true;
+    bat.enable = true;
+    btop.enable = true;
+    fzf.enable = true;
+    tmux = {
       enable = true;
+      extraConfig = builtins.readFile ../../../tmux/tmux.conf;
     };
     # neovim = {
     #   enable = true;
@@ -36,14 +41,12 @@
     # CLI tools
     tree
     eza
-    bat
     slides
     ripgrep
     ripgrep-all
     fd
     gh
     neovim
-    fzf
     nnn
     ranger
     calcurse
@@ -63,7 +66,6 @@
     exiftool
     figlet
     entr
-    tmux
     zip
     unzip
     p7zip
@@ -73,7 +75,6 @@
     rlwrap
 
     # Monitoring
-    btop
     htop
     bmon
 
