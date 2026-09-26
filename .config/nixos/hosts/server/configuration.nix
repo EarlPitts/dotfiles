@@ -215,8 +215,6 @@
       };
     };
 
-    journald.extraConfig = "SystemMaxUse=500M";
-
     smartd = {
       enable = true;
       defaults.autodetected = "-a -o on -S on -n standby,q -s (S/../.././03|L/../10/./04)";
