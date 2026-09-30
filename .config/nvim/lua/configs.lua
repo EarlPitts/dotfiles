@@ -270,7 +270,7 @@ require("codecompanion").setup({
     chat = {
       adapter = {
         name = "copilot",
-        model = "claude-opus-4.8",
+        model = "claude-opus-5",
       },
     },
   },
