@@ -66,21 +66,19 @@
       "nvm"
       "edosrecki/tools/google-cloud-redis"
       "mole"
-      "hai"
       "terraform"
     ];
     taps = [
       "nikitabobko/tap"
       "crmne/tap"
-      "hashicorp/tap"
       {
-        name = "hAIperspace/hai";
-        clone_target = "https://github.tools.sap/hAIperspace/hai-homebrew";
+        name = "hashicorp/tap";
+        trusted = true;
+        force_auto_update = true;
       }
     ];
     casks = [
       "aerospace"
-      "fastpotify"
       "ghostty"
       # "anki"
       "google-chrome"
@@ -92,6 +90,8 @@
       "bruno"
       # "psst"
       "slack"
+      "spotifast"
+      "tunnelblick"
       "zed"
       "zoom"
     ];
