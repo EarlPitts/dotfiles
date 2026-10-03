@@ -76,6 +76,12 @@ require('lualine').setup {
   },
 }
 
+require('tmux').setup({
+    copy_sync = {
+        enable = false,
+    },
+})
+
 -- Telescope
 require('telescope').setup {
   defaults = {

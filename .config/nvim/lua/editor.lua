@@ -34,11 +34,8 @@ set.foldlevelstart = 5    -- Open most folds by default
 vim.cmd.colorscheme 'base16-eighties'
 
 -- Misc
-vim.schedule(function()
-  vim.opt.clipboard = 'unnamed'   -- System clipboard
-end)
-set.mouse = ''                    -- Disable mouse
--- set.omnifunc = 'syntaxcomplete#Complete'    -- TODO what's this? :D
+vim.opt.clipboard = 'unnamed'   -- System clipboard (primary)
+vim.opt.mouse = ''
 
 local colors = require('base16-colorscheme').colors
 

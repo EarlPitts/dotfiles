@@ -93,7 +93,7 @@ require("lazy").setup({
   --     "mrcjkb/neotest-haskell"
   --   }
   -- },
-  { 'aserowy/tmux.nvim',      config = true },
+  { 'aserowy/tmux.nvim' },
   'metakirby5/codi.vim', -- TODO ft python, codi zsh func
   { 'Olical/conjure',         ft = { 'scheme', 'racket', 'python' } },
   { 'wlangstroth/vim-racket', ft = 'scheme' },
