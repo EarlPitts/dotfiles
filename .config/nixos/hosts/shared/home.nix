@@ -91,6 +91,7 @@
     gnumake
     docker-compose
     universal-ctags
+    pi-coding-agent
 
     # Langs
 

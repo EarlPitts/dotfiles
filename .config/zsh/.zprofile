@@ -43,6 +43,8 @@ export PYTHON_BASIC_REPL=1
 # virsh connects to qemu:///session by default
 export LIBVIRT_DEFAULT_URI=qemu:///system
 
+export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi/agent"
+
 if [ $(uname -s) != Darwin ]; then
     export PROJECTS="$HOME/Projects"
     export WIKI="$PERSONAL/Wiki"
@@ -64,8 +66,6 @@ else
     export CHECKLISTS="$WORK/Checklists"
     export AREAS="$WORK/Areas"
     export INBOX="$WORK/Inbox"
-
-    export PI_CODING_AGENT_DIR="$XDG_CONFIG_HOME/pi/agent"
 
     export PATH="$PATH:/Users/i348749/SAPDevelop/active/opstools"
     export CLOUD_SQL_IAM_USER=segmentation-sql-proxy@sap-segmentationduahubxzpsxccc.iam

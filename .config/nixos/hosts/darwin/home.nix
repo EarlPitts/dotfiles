@@ -24,7 +24,6 @@
       openvpn
       redis
       pkgs-stable.choose-gui
-      pi-coding-agent
 
       (google-cloud-sdk.withExtraComponents (
         with google-cloud-sdk.components;
