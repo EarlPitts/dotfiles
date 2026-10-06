@@ -168,6 +168,8 @@
     enableNotifications = true;
   };
 
+  services.upower.enable = true;
+
   services.throttled = {
     enable = true;
     extraConfig = ''
