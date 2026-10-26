@@ -276,7 +276,7 @@ require("codecompanion").setup({
     chat = {
       adapter = {
         name = "copilot",
-        model = "claude-opus-5",
+        model = "claude-opus-5.5",
       },
     },
   },
