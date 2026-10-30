@@ -13,9 +13,9 @@ if [ "$(echo "$item" | cut -d/ -f1)" = "Projects" ]; then
     project=$(echo "$item" | cut -d/ -f3)
     # Session for project already exists
     if tmux has-session -t="$project"; then
-        tmux switch -t "$project"
+        tmux switch-client -t "$project"
     else
-        tmux new -s "$project" -c "$HOME/$item" -d && tmux switch -t "$project"
+        tmux new -s "$project" -c "$HOME/$item" -d && tmux switch-client -t "$project"
     fi
 else
     tmux split-window -h "$EDITOR" "$HOME/$item"
