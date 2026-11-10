@@ -16,6 +16,10 @@ dislocker() {
         sudo mount -o loop /run/media/dislocker-file /mnt
 }
 
+backup() {
+  BORG_PASSPHRASE=$(pass Misc/Backup | head -n1 ) borg create --exclude-caches -x --exclude $HOME/Desktop/temp --exclude $XDG_CACHE_HOME --progress ssh://ben/home/ben/Backups/T480::$(date +%y-%m-%d) $HOME
+}
+
 update() (
     set -e
     # System update
