@@ -47,6 +47,11 @@ in
 
   services.tailscale.enable = true;
 
+  networking.applicationFirewall = {
+    enable = true;
+    enableStealthMode = true;
+  };
+
   launchd.user.agents.colima = {
     serviceConfig = {
       ProgramArguments = [
