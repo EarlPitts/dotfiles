@@ -1,9 +1,13 @@
 {
+  config,
   pkgs,
   inputs,
   pkgs-stable,
   ...
 }:
+let
+  user = config.system.primaryUser;
+in
 {
 
   users.users."I348749" = {
@@ -109,8 +113,67 @@
     startup.chime = false;
 
     defaults = {
+      CustomUserPreferences = {
+        "com.tinyspeck.slackmacgap" = {
+          SlackNoAutoUpdates = true; # to avoid the helper tool notification
+        };
+
+        "com.apple.assistant.support" = {
+          "Assistant Enabled" = false;
+          "Siri Data Sharing Opt-In Status" = 2; # 2 is opt out
+        };
+        "com.apple.Siri" = {
+          StatusMenuVisible = false;
+          UserHasDeclinedEnable = true;
+          VoiceTriggerUserEnabled = false;
+          TypeToSiriEnabled = false;
+        };
+
+        "com.apple.CloudSubscriptionFeatures.optIn" = {
+          "545129924" = false;
+        };
+
+        "com.apple.NetworkBrowser" = {
+          DisableAirDrop = true;
+        };
+
+        "com.apple.controlcenter" = {
+          AirplayRecieverEnabled = false;
+        };
+
+        "com.apple.lookup.shared" = {
+          LookupSuggestionsDisabled = true;
+        };
+
+        "com.apple.gamed" = {
+          Disabled = true;
+        };
+
+        "com.apple.AdLib" = {
+          allowApplePersonalizedAdvertising = false;
+          allowIdentifierForAdvertising = false;
+          forceLimitAdTracking = true;
+        };
+
+        "com.apple.CrashReporter" = {
+          DialogType = "none";
+        };
+
+        "com.apple.desktopservices" = {
+          DSDontWriteNetworkStores = true;
+          DSDontWriteUSBStores = true;
+        };
+
+        "com.apple.TimeMachine" = {
+          DoNotOfferNewDisksForBackup = true;
+
+        };
+      };
       ".GlobalPreferences"."com.apple.mouse.scaling" = 3.0;
-      universalaccess.reduceTransparency = true;
+      universalaccess = {
+        reduceTransparency = true;
+        reduceMotion = true;
+      };
       NSGlobalDomain = {
         KeyRepeat = 2;
         InitialKeyRepeat = 15;
@@ -125,6 +188,9 @@
         "com.apple.sound.beep.feedback" = 0;
         "com.apple.keyboard.fnState" = true;
         "com.apple.swipescrolldirection" = false;
+        NSAutomaticWindowAnimationsEnabled = false;
+        NSWindowResizeTime = 0.001;
+        NSDocumentSaveNewDocumentsToCloud = false;
       };
 
       dock = {
@@ -132,6 +198,27 @@
         tilesize = 40;
         show-recents = false;
         launchanim = false;
+        mru-spaces = false;
+        expose-group-apps = true;
+        expose-animation-duration = 0.1;
+        autohide-delay = 0.0;
+        autohide-time-modifier = 0.2;
+        mineffect = "scale";
+        # 1 = disabled
+        wvous-tl-corner = 1;
+        wvous-tr-corner = 1;
+        wvous-bl-corner = 1;
+        wvous-br-corner = 1;
+      };
+
+      spaces.spans-displays = true;
+
+      WindowManager = {
+        GloballyEnabled = false;
+        EnableTilingByEdgeDrag = false;
+        EnableTopTilingByEdgeDrag = false;
+        EnableTilingOptionAccelerator = false;
+        EnableStandardClickToShowDesktop = false;
       };
 
       finder = {
@@ -148,7 +235,21 @@
         Clicking = true;
         TrackpadThreeFingerTapGesture = 0;
       };
+
+      loginwindow.GuestEnabled = false;
+
+      screensaver = {
+        askForPassword = true;
+        askForPasswordDelay = 0;
+      };
     };
   };
 
+    activationScripts.postActivation.text = ''
+      echo "disabling Handoff / Universal Clipboard and Photos hot-plug..." >&2
+      sudo -u ${user} defaults -currentHost write com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool false
+      sudo -u ${user} defaults -currentHost write com.apple.coreservices.useractivityd ActivityReceivingAllowed -bool false
+      sudo -u ${user} defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+    '';
+  };
 }
