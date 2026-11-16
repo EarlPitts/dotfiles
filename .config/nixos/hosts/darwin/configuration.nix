@@ -45,6 +45,8 @@ in
     colima
   ];
 
+  services.tailscale.enable = true;
+
   launchd.user.agents.colima = {
     serviceConfig = {
       ProgramArguments = [
@@ -92,6 +94,7 @@ in
       "microsoft-teams"
       "phpstorm"
       "bruno"
+      "moonlight"
       # "psst"
       "slack"
       "spotifast"
