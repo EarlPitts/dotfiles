@@ -76,7 +76,10 @@ in
     ];
     taps = [
       "nikitabobko/tap"
-      "crmne/tap"
+      {
+        name = "crmne/tap";
+        trusted = true;
+      }
       {
         name = "hashicorp/tap";
         trusted = true;
@@ -246,7 +249,6 @@ in
         askForPasswordDelay = 0;
       };
     };
-  };
 
     activationScripts.postActivation.text = ''
       echo "disabling Handoff / Universal Clipboard and Photos hot-plug..." >&2
