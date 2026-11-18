@@ -25,6 +25,7 @@
     ./jobs.nix
     ./services/badminbot.nix
     ./services/planning-poker.nix
+    ./services/vikunja.nix
     inputs.home-manager.nixosModules.default
   ];
 
