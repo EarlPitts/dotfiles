@@ -26,6 +26,9 @@
     ./services/badminbot.nix
     ./services/planning-poker.nix
     ./services/vikunja.nix
+    ./services/microbin.nix
+    ./services/immich.nix
+    ./services/jellyfin.nix
     inputs.home-manager.nixosModules.default
   ];
 
@@ -108,23 +111,6 @@
       HandleLidSwitchDocked = "ignore";
     };
 
-    anubis.instances = {
-      "bin" = {
-        enable = true;
-        settings = {
-          TARGET = "http://localhost:8080";
-          BIND = "/run/anubis/anubis-bin/anubis.sock";
-        };
-      };
-      "poker" = {
-        enable = true;
-        settings = {
-          TARGET = "http://localhost:8000";
-          BIND = "/run/anubis/anubis-poker/anubis.sock";
-        };
-      };
-    };
-
     nginx = {
       enable = true;
       recommendedProxySettings = true;
@@ -132,64 +118,6 @@
       recommendedGzipSettings = true;
       recommendedTlsSettings = true;
       clientMaxBodySize = "512m";
-      virtualHosts."movies.bendeguz.xyz" = {
-        forceSSL = true;
-        enableACME = true;
-        locations."/" = {
-          proxyPass = "http://localhost:8096";
-          proxyWebsockets = true;
-        };
-      };
-      virtualHosts."pics.bendeguz.xyz" = {
-        forceSSL = true;
-        enableACME = true;
-        locations."/" = {
-          proxyPass = "http://localhost:2283";
-          proxyWebsockets = true;
-        };
-      };
-      virtualHosts."bin.bendeguz.xyz" = {
-        forceSSL = true;
-        enableACME = true;
-        locations."/" = {
-          proxyPass = "http://unix:${config.services.anubis.instances.bin.settings.BIND}";
-          extraConfig = ''
-            proxy_set_header X-Real-IP $remote_addr;
-          '';
-        };
-      };
-      virtualHosts."poker.bendeguz.xyz" = {
-        forceSSL = true;
-        enableACME = true;
-        locations."/" = {
-          proxyPass = "http://unix:${config.services.anubis.instances.poker.settings.BIND}";
-          extraConfig = ''
-            proxy_set_header X-Real-IP $remote_addr;
-          '';
-        };
-      };
-    };
-
-    microbin = {
-      enable = true;
-      dataDir = "/srv/bin";
-      settings = {
-        MICROBIN_BIND = "127.0.0.1";
-        MICROBIN_MAX_FILE_SIZE_UNENCRYPTED_MB = 512;
-        MICROBIN_NO_LISTING = true;
-      };
-    };
-
-    immich = {
-      enable = true;
-      host = "0.0.0.0";
-      mediaLocation = "/srv/immich";
-      machine-learning.enable = false;
-    };
-
-    jellyfin = {
-      enable = true;
-      dataDir = "/srv/jellyfin";
     };
 
     fail2ban = {
