@@ -33,11 +33,6 @@
 
   services.syncthing.enable = true;
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
   nixpkgs.config.allowUnfree = true;
   home.packages = with pkgs; [
 

@@ -14,25 +14,13 @@
     ./hardware-configuration.nix
     ./main-user.nix
     ./jobs.nix
-    inputs.home-manager.nixosModules.default
   ];
 
-  nixpkgs.config.packageOverrides = pkgs: {
-    intel-vaapi-driver = pkgs.intel-vaapi-driver.override { enableHybridCodec = true; };
-  };
   hardware.graphics = {
-    # hardware.graphics since NixOS 24.11
-    enable32Bit = true;
     enable = true;
-    extraPackages = with pkgs; [
-      intel-media-driver # LIBVA_DRIVER_NAME=iHD
-      intel-vaapi-driver # LIBVA_DRIVER_NAME=i965 (older but works better for Firefox/Chromium)
-      libvdpau-va-gl
-    ];
+    enable32Bit = true;
+    extraPackages = [ pkgs.libvdpau-va-gl ];
   };
-  environment.sessionVariables = {
-    LIBVA_DRIVER_NAME = "iHD";
-  }; # Force intel-media-driver
 
   nix.settings = {
     download-buffer-size = 2147483648; # 2 GB
@@ -51,17 +39,42 @@
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
-    kernel.sysctl."kernel.sysrq" = 1; # Enable sysrq keys
+    kernel.sysctl = {
+      "kernel.sysrq" = 1; # Enable sysrq keys
+      "vm.swappiness" = 180; # Favor swapping
+    };
   };
 
-  networking.hostName = "T480";
-  networking.wireless.iwd.enable = true;
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+    priority = 100;
+  };
+
+  networking = {
+    hostName = "T480";
+
+    useDHCP = false;
+    interfaces.enp0s31f6.useDHCP = true; # dhcpcd only for the Ethernet port
+
+    wireless.iwd = {
+      enable = true;
+      settings = {
+        General.EnableNetworkConfiguration = true; # DHCP on Wi-Fi
+        Network = {
+          NameResolvingService = "resolvconf";
+          EnableIPv6 = true;
+        };
+      };
+    };
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ 9090 ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  networking.firewall.enable = false;
+  # networking.firewall.enable = false;
 
   time.timeZone = "Europe/Budapest";
 
@@ -103,7 +116,6 @@
       windowManager.i3 = {
         enable = true;
         extraPackages = with pkgs; [
-          rofi
           i3blocks
           i3lock-color
         ];
@@ -180,9 +192,9 @@
 
       [BATTERY]
       Update_Rate_s: 30
-      PL1_Tdp_W: 29
+      PL1_Tdp_W: 18
       PL1_Duration_s: 28
-      PL2_Tdp_W: 44
+      PL2_Tdp_W: 30
       PL2_Duration_S: 0.002
       Trip_Temp_C: 85
       cTDP: 0
@@ -190,11 +202,11 @@
 
       [AC]
       Update_Rate_s: 5
-      PL1_Tdp_W: 44
+      PL1_Tdp_W: 28
       PL1_Duration_s: 28
       PL2_Tdp_W: 44
       PL2_Duration_S: 0.002
-      Trip_Temp_C: 95
+      Trip_Temp_C: 90
       cTDP: 0
       Disable_BDPROCHOT: False
 
@@ -206,29 +218,32 @@
       ANALOGIO: 0
 
       [UNDERVOLT.AC]
-      CORE: 0
-      GPU: 0
-      CACHE: 0
-      UNCORE: 0
+      CORE: -85
+      GPU: -85
+      CACHE: -85
+      UNCORE: -85
       ANALOGIO: 0
     '';
   };
 
-  powerManagement.powertop.enable = true;
+  # powerManagement.powertop.enable = true;
   # services.thermald.enable = true;
   services.tlp = {
     enable = true;
     settings = {
-      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_SCALING_GOVERNOR_ON_AC = "powersave";
       CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
 
-      CPU_ENERGY_PERF_POLICY_ON_AC = ""; # Needed for throttled
-      CPU_ENERGY_PERF_POLICY_ON_BAT = ""; # Needed for throttled
+      CPU_ENERGY_PERF_POLICY_ON_AC = "balance_performance";
+      CPU_ENERGY_PERF_POLICY_ON_BAT = "balance_power";
+
+      CPU_BOOST_ON_AC = 1;
+      CPU_BOOST_ON_BAT = 0; # no turbo on battery
 
       CPU_MIN_PERF_ON_AC = 0;
       CPU_MAX_PERF_ON_AC = 100;
       CPU_MIN_PERF_ON_BAT = 0;
-      CPU_MAX_PERF_ON_BAT = 40;
+      CPU_MAX_PERF_ON_BAT = 100;
 
       START_CHARGE_THRESH_BAT1 = 75;
       STOP_CHARGE_THRESH_BAT1 = 80;
@@ -236,6 +251,8 @@
   };
 
   environment.pathsToLink = [ "/libexec" ];
+
+  systemd.oomd.enable = false; # Using earlyoom instead
 
   # TODO Use upower and powerManagement.resumeCommands?
   services.udev.extraRules =

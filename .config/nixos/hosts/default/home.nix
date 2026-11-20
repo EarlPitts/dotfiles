@@ -39,7 +39,6 @@
     lsof
     neomutt
     isync
-    gh
     smartmontools
     borgbackup
     yt-dlp
