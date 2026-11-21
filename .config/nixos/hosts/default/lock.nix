@@ -4,12 +4,9 @@ pkgs.writeShellApplication {
   name = "lock";
   runtimeInputs = with pkgs; [
     i3lock-color
-    xdpyinfo
-    gawk
     procps
   ];
   text = ''
-    resolution=$(xdpyinfo | awk '/dimensions:/ { print $2 }')
     font_color=09050390
 
     wallpaper="$HOME/.local/share/wallpapers/lockScreen.jpg"
