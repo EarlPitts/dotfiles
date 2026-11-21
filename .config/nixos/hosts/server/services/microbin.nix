@@ -17,7 +17,7 @@
     anubis.instances."bin" = {
       enable = true;
       settings = {
-        TARGET = "http://localhost:8080";
+        TARGET = "http://127.0.0.1:8080";
         BIND = "/run/anubis/anubis-bin/anubis.sock";
       };
     };

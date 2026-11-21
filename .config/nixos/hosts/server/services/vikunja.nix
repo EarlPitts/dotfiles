@@ -19,6 +19,7 @@
   services = {
     vikunja = {
       enable = true;
+      address = "127.0.0.1";
       frontendScheme = "https";
       frontendHostname = "todo.bendeguz.xyz";
       settings.service.enableregistration = false;
@@ -27,7 +28,7 @@
     anubis.instances."todo" = {
       enable = true;
       settings = {
-        TARGET = "http://localhost:3456";
+        TARGET = "http://127.0.0.1:3456";
         BIND = "/run/anubis/anubis-todo/anubis.sock";
       };
     };

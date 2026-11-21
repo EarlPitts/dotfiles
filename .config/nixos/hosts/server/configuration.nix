@@ -23,6 +23,7 @@
     ./hardware-configuration.nix
     ./main-user.nix
     ./jobs.nix
+    ./hardening.nix
     ./services/badminbot.nix
     ./services/planning-poker.nix
     ./services/vikunja.nix
@@ -38,6 +39,10 @@
       experimental-features = [
         "nix-command"
         "flakes"
+      ];
+      allowed-users = [
+        "@wheel"
+        "deploy"
       ];
       trusted-users = [
         "root"
@@ -170,12 +175,24 @@
       recommendedGzipSettings = true;
       recommendedTlsSettings = true;
       clientMaxBodySize = "512m";
+
+      # reject non-matching vhosts
+      virtualHosts."_" = {
+        default = true;
+        rejectSSL = true;
+        locations."/".return = "444";
+      };
     };
 
     fail2ban = {
       enable = true;
       maxretry = 3;
       bantime = "24h";
+      bantime-increment = {
+        enable = true;
+        maxtime = "4w";
+      };
+      ignoreIP = [ "192.168.0.0/24" ]; # ignore LAN
 
       jails = {
         nginx-botsearch.settings = {
@@ -220,15 +237,37 @@
       user = "ben";
       dataDir = "/home/ben";
       configDir = "/home/ben/.config/syncthing";
-      guiAddress = "0.0.0.0:8384";
+      guiAddress = "127.0.0.1:8384";
     };
 
     openssh = {
       enable = true;
       ports = [ 3632 ];
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        PermitRootLogin = "no";
+        AllowUsers = [
+          "ben"
+          "deploy"
+        ];
+        MaxAuthTries = 3;
+        LoginGraceTime = 30;
+        X11Forwarding = false;
+        AllowAgentForwarding = false;
+        ClientAliveInterval = 300;
+        ClientAliveCountMax = 2;
+      };
+
+      # CI deploy key: no tunnels/forwarding/tty tricks
+      extraConfig = ''
+        Match User deploy
+          AllowTcpForwarding no
+          AllowStreamLocalForwarding no
+          PermitTunnel no
+          X11Forwarding no
+      '';
     };
-    libinput.enable = true;
-    udisks2.enable = true;
 
     keyd = {
       enable = true;

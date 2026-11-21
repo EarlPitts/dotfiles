@@ -3,7 +3,7 @@
   services = {
     immich = {
       enable = true;
-      host = "0.0.0.0";
+      host = "127.0.0.1";
       mediaLocation = "/srv/immich";
       machine-learning.enable = false;
     };
@@ -12,7 +12,7 @@
       forceSSL = true;
       enableACME = true;
       locations."/" = {
-        proxyPass = "http://localhost:2283";
+        proxyPass = "http://127.0.0.1:2283";
         proxyWebsockets = true;
       };
     };
