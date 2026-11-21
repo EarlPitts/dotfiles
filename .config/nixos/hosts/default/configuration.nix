@@ -282,33 +282,6 @@
       SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="${lowbatSuspend}"
     '';
 
-  # TODO Hard coded user, use coreutils instead of bash/gawk?
-  systemd.services.wakelock = {
-    enable = true;
-    description = "Lock the screen on resume from suspend";
-    path = [
-      pkgs.bash
-      pkgs.i3lock-color
-      pkgs.gawk
-      pkgs.xdpyinfo
-    ];
-    unitConfig = {
-      Before = [
-        "suspend.target"
-        "sleep.target"
-      ];
-    };
-    serviceConfig = {
-      ExecStart = "/home/ben/.local/bin/lock";
-      Type = "forking";
-      User = "ben";
-      Environment = "DISPLAY=:0";
-    };
-    wantedBy = [
-      "suspend.target"
-      "sleep.target"
-    ];
-  };
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
@@ -316,29 +289,6 @@
   #   font = "Lat2-Terminus16";
   #   keyMap = "us";
   #   useXkbConfig = true; # use xkb.options in tty.
-  # };
-
-  # powerManagement = {
-  #   enable = true;
-  #   resumeCommands = ''
-  #       resolution=$(xdpyinfo | grep dimensions | awk '{print $2}')
-  #
-  #       FONT_COLOR=09050390
-  #
-  #       if [ "$resolution" = "1920x1080" ]; then
-  #           wallpaper="/home/$USER/.local/share/wallpapers/lockScreen.jpg"
-  #       else
-  #           wallpaper="/home/$USER/.local/share/wallpapers/lockScreenSmall.jpg"
-  #       fi
-  #
-  #       i3lock -u -k -e \
-  #           --time-str="%H:%M" --time-color=$FONT_COLOR --time-size=45 \
-  #           --date-str="%B %d, %A" --date-color=$FONT_COLOR \
-  #           --greeter-text="Hi, I'm a computer." --greeter-color=$FONT_COLOR --greeter-pos="ix:h/2.4"
-  #       --greeter-size=40 \
-  #           -i "$wallpaper" \
-  #           --pass-media-keys
-  #   '';
   # };
 
   # For more information, see `man configuration.nix` or https://nixos.org/manual/nixos/stable/options#opt-system.stateVersion .

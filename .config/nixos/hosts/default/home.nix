@@ -1,5 +1,8 @@
 { pkgs, pkgs-stable, ... }:
 
+let
+  lock = import ./lock.nix { inherit pkgs; };
+in
 {
   imports = [ ../shared/home.nix ];
 
@@ -17,6 +20,14 @@
     };
     mpris-proxy.enable = true;
 
+    screen-locker = {
+      enable = true;
+      lockCmd = "${lock}/bin/lock";
+      inactiveInterval = 10;
+      xautolock.enable = false;
+      xss-lock.extraOptions = [ "--transfer-sleep-lock" ];
+    };
+
     # dunst = {
     #   enable = true;
     #   configFile = "~/.config/dunst/dunstrc";
@@ -28,6 +39,13 @@
       enable = true;
       scripts = [ pkgs.mpvScripts.mpris ];
     };
+  };
+
+  systemd.user.targets.x11-session.Unit = {
+    Description = "X11 session (startx + i3)";
+    BindsTo = [ "graphical-session.target" ];
+    Wants = [ "graphical-session-pre.target" ];
+    After = [ "graphical-session-pre.target" ];
   };
 
   home.packages = with pkgs; [

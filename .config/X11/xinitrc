@@ -21,4 +21,12 @@ udiskie & # Auto mounting drives
 unclutter & # Hide mouse cursor
 grobi watch &
 dunst &
-exec i3 # Start Window Manager
+
+# Set up dbus and other session-related stuff manually (because of startx)
+dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_SESSION_ID
+systemctl --user start x11-session.target
+
+i3
+
+# stop session services on exit
+systemctl --user stop x11-session.target

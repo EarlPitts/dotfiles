@@ -41,7 +41,7 @@ bindsym XF86AudioPrev exec playerctl -i firefox previous
 bindsym $mod+space exec ~/.local/bin/keylayout
 
 ## Lockscreen
-bindsym $mod+p exec ~/.local/bin/lock
+bindsym $mod+p exec loginctl lock-session
 bindsym Mod1+p exec ~/.local/bin/winlock
 
 ## Suspend
