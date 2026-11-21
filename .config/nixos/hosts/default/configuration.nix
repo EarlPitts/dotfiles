@@ -58,6 +58,8 @@
     useDHCP = false;
     interfaces.enp0s31f6.useDHCP = true; # dhcpcd only for the Ethernet port
 
+    dhcpcd.wait = "if-carrier-up";
+
     wireless.iwd = {
       enable = true;
       settings = {
@@ -169,8 +171,13 @@
 
   programs.fuse.enable = true;
 
-  virtualisation.libvirtd.enable = true;
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    libvirtd.enable = true;
+    docker = {
+      enable = true;
+      enableOnBoot = false;
+    };
+  };
 
   programs.virt-manager.enable = true;
 
