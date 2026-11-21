@@ -32,17 +32,26 @@
     inputs.home-manager.nixosModules.default
   ];
 
-  nix.settings = {
-    download-buffer-size = 2147483648; # 2 GB
-    experimental-features = [
-      "nix-command"
-      "flakes"
-    ];
-    trusted-users = [
-      "root"
-      "ben"
-      "deploy"
-    ];
+  nix = {
+    settings = {
+      download-buffer-size = 134217728; # 128 MB
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [
+        "root"
+        "ben"
+        "deploy"
+      ];
+    };
+
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 14d";
+    };
+    optimise.automatic = true;
   };
 
   boot = {
@@ -50,11 +59,54 @@
     loader.grub = {
       enable = true;
       device = "/dev/disk/by-id/ata-KINGSTON_SV300S37A240G_50026B7759058BED";
+      configurationLimit = 10;
     };
-    kernel.sysctl."kernel.sysrq" = 1; # Enable sysrq keys
+    kernel.sysctl = {
+      "kernel.sysrq" = 1; # Enable sysrq keys
+      "vm.swappiness" = 100;
+      "vm.page-cluster" = 0; # No swap readahead; pointless for zram
+    };
   };
 
-  networking.hostName = "hub";
+  # Compressed swap in RAM first
+  zramSwap = {
+    enable = true;
+    algorithm = "lz4"; # cheaper than zstd
+    memoryPercent = 50;
+  };
+
+  systemd.oomd.enable = false;
+  services.earlyoom = {
+    enable = true;
+    freeMemThreshold = 10;
+    freeSwapThreshold = 50;
+    extraArgs = [
+      "--prefer"
+      "^(immich|immich-api|jellyfin)$"
+      "--avoid"
+      "^(sshd|sshd-session|nginx|\\.postgres-wrapp|redis-server|systemd.*)$"
+    ];
+  };
+
+  # Above this, immich is throttled and pushed to swap
+  systemd.services.immich-server.serviceConfig.MemoryHigh = "1.5G";
+
+  services.journald.settings.Journal.SystemMaxUse = "300M";
+
+  networking = {
+    hostName = "hub";
+
+    # static IP
+    useDHCP = false;
+    interfaces.enp0s25.ipv4.addresses = [
+      {
+        address = "192.168.0.20";
+        prefixLength = 24;
+      }
+    ];
+    defaultGateway = "192.168.0.1";
+    nameservers = [ "192.168.0.1" ];
+  };
 
   networking.firewall = {
     enable = true;
