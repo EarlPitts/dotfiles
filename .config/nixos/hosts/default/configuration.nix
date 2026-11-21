@@ -98,6 +98,13 @@
       alsa.enable = true;
       alsa.support32Bit = true;
       pulse.enable = true;
+
+      # disable X11 bell
+      extraConfig.pipewire."90-no-x11-bell" = {
+        "context.properties" = {
+          "module.x11.bell" = false;
+        };
+      };
     };
 
     xserver = {
