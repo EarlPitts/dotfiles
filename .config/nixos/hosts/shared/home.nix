@@ -21,7 +21,15 @@
         italic-text = "always";
       };
     };
-    btop.enable = true;
+    btop = {
+      enable = true;
+      settings = {
+        color_theme = "TTY";
+        vim_keys = true;
+        save_config_on_exit = false;
+      };
+    };
+
     fzf.enable = true;
     # neovim = {
     #   enable = true;
