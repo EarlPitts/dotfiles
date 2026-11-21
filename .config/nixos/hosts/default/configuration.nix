@@ -184,6 +184,14 @@
     enable = true;
     reportInterval = 0;
     enableNotifications = true;
+    freeMemThreshold = 10;
+    freeSwapThreshold = 50;
+    extraArgs = [
+      "--prefer"
+      "^(Isolated Web Co|Web Content)$"
+      "--avoid"
+      "^(X|xinit|i3|i3bar|pipewire|pipewire-pulse|wireplumber|sshd|systemd.*)$"
+    ];
   };
 
   services.upower.enable = true;
@@ -280,7 +288,6 @@
     ''
       SUBSYSTEM=="power_supply", ATTR{status}=="Discharging", ATTR{capacity}=="[0-5]", RUN+="${lowbatSuspend}"
     '';
-
 
   # Select internationalisation properties.
   # i18n.defaultLocale = "en_US.UTF-8";
