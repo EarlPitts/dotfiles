@@ -17,11 +17,6 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
     unset f
 fi
 
-udiskie & # Auto mounting drives
-unclutter & # Hide mouse cursor
-grobi watch &
-dunst &
-
 # Set up dbus and other session-related stuff manually (because of startx)
 dbus-update-activation-environment --systemd DISPLAY XAUTHORITY XDG_SESSION_ID
 systemctl --user start x11-session.target
