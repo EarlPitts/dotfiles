@@ -4,7 +4,10 @@ let
   lock = import ./lock.nix { inherit pkgs; };
 in
 {
-  imports = [ ../shared/home.nix ];
+  imports = [
+    ../shared/home.nix
+    ./jobs.nix
+  ];
 
   home.username = "ben";
   home.homeDirectory = "/home/ben";
