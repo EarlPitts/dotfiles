@@ -244,7 +244,6 @@
       enable = true;
       ports = [ 3632 ];
       settings = {
-        PasswordAuthentication = false;
         KbdInteractiveAuthentication = false;
         PermitRootLogin = "no";
         AllowUsers = [
